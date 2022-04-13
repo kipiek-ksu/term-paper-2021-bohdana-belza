@@ -1,0 +1,1546 @@
+CHANGES
+=======
+
+This file contains all the raw change logs from the past month,
+so that you can see exactly what changes have been made recently.
+
+---------------------------------------------------------------
+
+2011-06-24 Friday 06:52  moodlerobot
+
+	* githash.php, version.php, filter/manage.php,
+	lib/navigationlib.php, lib/tablelib.php,
+	mod/feedback/lang/en/feedback.php, mod/quiz/editlib.php,
+	mod/quiz/lang/en/quiz.php, mod/wiki/pagelib.php: 
+	
+	on-demand cvs snapshot
+
+2011-06-24 Friday 00:28  moodlerobot
+
+	* githash.php, version.php, theme/canvas/style/core.css,
+	githash.php, version.php, theme/canvas/style/core.css: 
+	
+	emergency cvs snapshot
+
+2011-06-23 Thursday 17:40  moodlerobot
+
+	* install/lang/: az/admin.php, bg/admin.php: 
+	
+	file admin.php was initially added on branch MOODLE_20_STABLE.
+
+2011-06-23 Thursday 17:40  moodlerobot
+
+	* githash.php, version.php, admin/repositoryinstance.php,
+	backup/util/helper/backup_cron_helper.class.php, calendar/lib.php,
+	grade/lib.php, grade/export/lib.php,
+	grade/export/xml/grade_export_xml.php, grade/export/xml/index.php,
+	grade/export/xml/lang/en/gradeexport_xml.php,
+	install/lang/ru/admin.php, install/lang/ru/install.php,
+	lang/en/question.php, lib/olson.php, lib/outputcomponents.php,
+	lib/portfoliolib.php, lib/simpletestlib.php, lib/timezone.txt,
+	lib/db/install.xml, lib/db/upgrade.php, mod/assignment/lib.php,
+	mod/assignment/renderer.php, mod/chat/report.php,
+	mod/choice/renderer.php, mod/data/lib.php, mod/data/view.php,
+	mod/data/preset/imagegallery/csstemplate.css,
+	mod/forum/discuss.php, mod/forum/lib.php, mod/glossary/export.php,
+	mod/glossary/lib.php, mod/lesson/format.php, mod/lesson/lib.php,
+	mod/lesson/pagetypes/shortanswer.php, mod/quiz/attemptlib.php,
+	mod/quiz/lib.php, mod/quiz/locallib.php, mod/quiz/renderer.php,
+	mod/quiz/startattempt.php, mod/quiz/lang/en/quiz.php,
+	mod/workshop/locallib.php, mod/workshop/allocation/random/lib.php,
+	mod/workshop/allocation/random/lang/en/workshopallocation_random.ph
+	p, mod/workshop/form/numerrors/assessment_form.php,
+	mod/workshop/lang/en/workshop.php, question/format/gift/format.php,
+	question/format/gift/simpletest/testgiftformat.php,
+	question/format/qti_two/format.php, question/format/xml/format.php,
+	question/type/calculated/edit_calculated_form.php,
+	repository/filepicker.js, repository/lib.php,
+	repository/flickr_public/lib.php, theme/base/style/question.css,
+	githash.php, version.php, admin/repositoryinstance.php,
+	backup/util/helper/backup_cron_helper.class.php, calendar/lib.php,
+	grade/lib.php, grade/export/lib.php,
+	grade/export/xml/grade_export_xml.php, grade/export/xml/index.php,
+	grade/export/xml/lang/en/gradeexport_xml.php,
+	install/lang/az/admin.php, install/lang/bg/admin.php,
+	install/lang/en/install.php, install/lang/hu/install.php,
+	install/lang/it/install.php, install/lang/ja/install.php,
+	lib/olson.php, lib/outputcomponents.php, lib/timezone.txt,
+	mod/lesson/pagetypes/shortanswer.php, mod/quiz/attemptlib.php,
+	mod/quiz/locallib.php, mod/quiz/startattempt.php,
+	mod/workshop/allocation/random/lib.php,
+	mod/workshop/allocation/random/lang/en/workshopallocation_random.ph
+	p, mod/workshop/form/numerrors/assessment_form.php,
+	mod/workshop/lang/en/workshop.php, repository/filepicker.js,
+	repository/lib.php, repository/flickr_public/lib.php, githash.php,
+	version.php, lib/olson.php, lib/timezone.txt: 
+	
+	weekly cvs snapshot
+
+2011-06-21 Tuesday 08:34  moodlerobot
+
+	* githash.php, version.php, backup/cc/includes/constants.php,
+	backup/moodle2/restore_stepslib.php, install/lang/bg/error.php,
+	install/lang/bg/install.php, install/lang/de/install.php,
+	install/lang/en/install.php, install/lang/it/install.php,
+	install/lang/zh_cn/admin.php, install/lang/zh_cn/moodle.php,
+	lang/en/question.php, lib/navigationlib.php, lib/setup.php,
+	lib/db/services.php, lib/filestorage/file_storage.php,
+	lib/filestorage/stored_file.php, mod/quiz/attemptlib.php,
+	mod/quiz/index.php, mod/quiz/lib.php, mod/quiz/locallib.php,
+	mod/quiz/renderer.php, mod/quiz/review.php,
+	mod/quiz/reviewquestion.php, mod/quiz/lang/en/quiz.php,
+	mod/scorm/lib.php, question/format/xml/format.php,
+	question/type/edit_question_form.php,
+	question/type/questionbase.php, question/type/questiontypebase.php,
+	question/type/calculated/edit_calculated_form.php,
+	question/type/calculatedsimple/edit_calculatedsimple_form.php,
+	question/type/essay/renderer.php,
+	question/type/multianswer/edit_multianswer_form.php,
+	question/type/multianswer/lang/en/qtype_multianswer.php,
+	question/type/multichoice/edit_multichoice_form.php,
+	question/type/multichoice/question.php,
+	question/type/multichoice/questiontype.php,
+	question/type/multichoice/renderer.php,
+	question/type/multichoice/styles.css, user/externallib.php,
+	user/index.php: 
+	
+	on-demand cvs snapshot
+
+2011-06-18 Saturday 01:27  moodlerobot
+
+	* githash.php, version.php, admin/qbehaviours.php,
+	admin/qtypes.php, admin/settings/plugins.php, lang/en/admin.php,
+	lang/en/question.php, lib/adminlib.php, lib/weblib.php,
+	lib/dml/moodle_database.php, lib/editor/tinymce/lib.php,
+	mod/quiz/db/upgrade.php,
+	question/type/calculated/edit_calculated_form.php,
+	question/type/calculatedmulti/edit_calculatedmulti_form.php,
+	question/type/calculatedsimple/edit_calculatedsimple_form.php,
+	question/type/multianswer/question.php,
+	question/type/numerical/edit_numerical_form.php,
+	question/type/numerical/question.php, theme/base/style/admin.css: 
+	
+	on-demand cvs snapshot
+
+2011-06-17 Friday 17:54  moodlerobot
+
+	* githash.php, version.php, lib/thirdpartylibs.xml,
+	lib/editor/tinymce/lib.php, lib/editor/tinymce/readme_moodle.txt,
+	lib/editor/tinymce/version.php,
+	lib/editor/tinymce/lang/en/editor_tinymce.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/jquery.tinymce.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/license.txt,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/tiny_mce.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/tiny_mce_dev.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/tiny_mce_jquery.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/tiny_mce_jquery_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/tiny_mce_popup.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/tiny_mce_popup_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/tiny_mce_prototype.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/tiny_mce_prototype_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/tiny_mce_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/langs/en.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advhr/editor_plugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advhr/editor_plugin_src
+	.js, lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advhr/rule.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advhr/css/advhr.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advhr/js/rule.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advhr/langs/en_dlg.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advimage/editor_plugin.
+	js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advimage/editor_plugin_
+	src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advimage/image.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advimage/css/advimage.c
+	ss,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advimage/img/sample.gif
+	, lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advimage/js/image.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advimage/langs/en_dlg.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advlink/editor_plugin.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advlink/editor_plugin_s
+	rc.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advlink/link.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advlink/css/advlink.css
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advlink/js/advlink.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advlink/langs/en_dlg.js
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advlist/editor_plugin.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/advlist/editor_plugin_s
+	rc.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/autoresize/editor_plugi
+	n.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/autoresize/editor_plugi
+	n_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/autosave/editor_plugin.
+	js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/autosave/editor_plugin_
+	src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/autosave/langs/en.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/bbcode/editor_plugin.js
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/bbcode/editor_plugin_sr
+	c.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/contextmenu/editor_plug
+	in.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/contextmenu/editor_plug
+	in_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/directionality/editor_p
+	lugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/directionality/editor_p
+	lugin_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/dragmath/dragmath.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/dragmath/editor_plugin.
+	js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/dragmath/editor_plugin_
+	src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/dragmath/img/dragmath.g
+	if,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/dragmath/js/dragmath.js
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/dragmath/langs/en_dlg.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/editor_plugin.
+	js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/editor_plugin_
+	src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/emotions.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-coo
+	l.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-cry
+	.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-emb
+	arassed.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-foo
+	t-in-mouth.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-fro
+	wn.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-inn
+	ocent.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-kis
+	s.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-lau
+	ghing.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-mon
+	ey-mouth.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-sea
+	led.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-smi
+	le.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-sur
+	prised.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-ton
+	gue-out.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-und
+	ecided.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-win
+	k.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/img/smiley-yel
+	l.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/js/emotions.js
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/emotions/langs/en_dlg.j
+	s, lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/example/dialog.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/example/editor_plugin.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/example/editor_plugin_s
+	rc.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/example/img/example.gif
+	, lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/example/js/dialog.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/example/langs/en.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/example/langs/en_dlg.js
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/fullpage/editor_plugin.
+	js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/fullpage/editor_plugin_
+	src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/fullpage/fullpage.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/fullpage/css/fullpage.c
+	ss,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/fullpage/js/fullpage.js
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/fullpage/langs/en_dlg.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/fullscreen/editor_plugi
+	n.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/fullscreen/editor_plugi
+	n_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/fullscreen/fullscreen.h
+	tm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/iespell/editor_plugin.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/iespell/editor_plugin_s
+	rc.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/editor_plu
+	gin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/editor_plu
+	gin_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/template.h
+	tm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/skins/clea
+	rlooks2/window.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/skins/clea
+	rlooks2/img/alert.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/skins/clea
+	rlooks2/img/button.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/skins/clea
+	rlooks2/img/buttons.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/skins/clea
+	rlooks2/img/confirm.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/skins/clea
+	rlooks2/img/corners.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/skins/clea
+	rlooks2/img/horizontal.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/inlinepopups/skins/clea
+	rlooks2/img/vertical.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/insertdatetime/editor_p
+	lugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/insertdatetime/editor_p
+	lugin_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/layer/editor_plugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/layer/editor_plugin_src
+	.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/legacyoutput/editor_plu
+	gin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/legacyoutput/editor_plu
+	gin_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/editor_plugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/editor_plugin_src
+	.js, lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/media.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/css/content.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/css/media.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/img/flash.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/img/flv_player.sw
+	f,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/img/quicktime.gif
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/img/realmedia.gif
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/img/shockwave.gif
+	, lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/img/trans.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/img/windowsmedia.
+	gif, lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/js/embed.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/js/media.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/media/langs/en_dlg.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodleemoticon/dialog.p
+	hp,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodleemoticon/editor_p
+	lugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodleemoticon/editor_p
+	lugin_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodleemoticon/img/mood
+	leemoticon.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodleemoticon/js/dialo
+	g_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodleemoticon/js/rev2/
+	dialog.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodlemedia/editor_plug
+	in.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodlemedia/editor_plug
+	in_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodlemedia/moodlemedia
+	.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodlemedia/css/media.c
+	ss,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodlemedia/img/icon.gi
+	f,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodlemedia/js/media.js
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodlenolink/editor_plu
+	gin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodlenolink/editor_plu
+	gin_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodlenolink/img/ed_nol
+	ink.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/moodlenolink/langs/en.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/nonbreaking/editor_plug
+	in.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/nonbreaking/editor_plug
+	in_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/noneditable/editor_plug
+	in.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/noneditable/editor_plug
+	in_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/pagebreak/editor_plugin
+	.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/pagebreak/editor_plugin
+	_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/pagebreak/css/content.c
+	ss,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/pagebreak/img/pagebreak
+	.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/pagebreak/img/trans.gif
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/paste/editor_plugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/paste/editor_plugin_src
+	.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/paste/pastetext.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/paste/pasteword.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/paste/js/pastetext.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/paste/js/pasteword.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/paste/langs/en_dlg.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/preview/editor_plugin.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/preview/editor_plugin_s
+	rc.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/preview/example.html,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/preview/preview.html,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/preview/jscripts/embed.
+	js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/print/editor_plugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/print/editor_plugin_src
+	.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/save/editor_plugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/save/editor_plugin_src.
+	js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/searchreplace/editor_pl
+	ugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/searchreplace/editor_pl
+	ugin_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/searchreplace/searchrep
+	lace.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/searchreplace/css/searc
+	hreplace.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/searchreplace/js/search
+	replace.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/searchreplace/langs/en_
+	dlg.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/changelog.
+	txt,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/config.php
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/editor_plu
+	gin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/editor_plu
+	gin_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/rpc.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/classes/En
+	chantSpell.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/classes/Go
+	ogleSpell.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/classes/PS
+	pell.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/classes/PS
+	pellShell.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/classes/Sp
+	ellChecker.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/classes/ut
+	ils/JSON.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/classes/ut
+	ils/Logger.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/css/conten
+	t.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/img/wline.
+	gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/spellchecker/includes/g
+	eneral.php,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/style/editor_plugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/style/editor_plugin_src
+	.js, lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/style/props.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/style/css/props.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/style/js/props.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/style/langs/en_dlg.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/tabfocus/editor_plugin.
+	js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/tabfocus/editor_plugin_
+	src.js, lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/cell.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/editor_plugin.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/editor_plugin_src
+	.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/merge_cells.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/row.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/table.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/css/cell.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/css/row.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/css/table.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/js/cell.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/js/merge_cells.js
+	, lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/js/row.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/js/table.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/table/langs/en_dlg.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/template/blank.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/template/editor_plugin.
+	js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/template/editor_plugin_
+	src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/template/template.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/template/css/template.c
+	ss,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/template/js/template.js
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/template/langs/en_dlg.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/visualchars/editor_plug
+	in.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/visualchars/editor_plug
+	in_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/wordcount/editor_plugin
+	.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/wordcount/editor_plugin
+	_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/abbr.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/acronym.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/attributes.h
+	tm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/cite.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/del.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/editor_plugi
+	n.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/editor_plugi
+	n_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/ins.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/css/attribut
+	es.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/css/popup.cs
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/js/abbr.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/js/acronym.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/js/attribute
+	s.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/js/cite.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/js/del.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/js/element_c
+	ommon.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/js/ins.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/plugins/xhtmlxtras/langs/en_dlg
+	.js, lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/about.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/anchor.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/charmap.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/color_picker.ht
+	m,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/editor_template
+	.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/editor_template
+	_src.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/image.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/link.htm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/source_editor.h
+	tm,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/img/colorpicker
+	.jpg,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/img/icons.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/js/about.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/js/anchor.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/js/charmap.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/js/color_picker
+	.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/js/image.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/js/link.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/js/source_edito
+	r.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/langs/en.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/langs/en_dlg.js
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/default/c
+	ontent.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/default/d
+	ialog.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/default/u
+	i.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/default/i
+	mg/buttons.png,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/default/i
+	mg/items.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/default/i
+	mg/menu_arrow.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/default/i
+	mg/menu_check.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/default/i
+	mg/progress.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/default/i
+	mg/tabs.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/o2k7/cont
+	ent.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/o2k7/dial
+	og.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/o2k7/ui.c
+	ss,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/o2k7/ui_b
+	lack.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/o2k7/ui_s
+	ilver.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/o2k7/img/
+	button_bg.png,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/o2k7/img/
+	button_bg_black.png,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/advanced/skins/o2k7/img/
+	button_bg_silver.png,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/simple/editor_template.j
+	s,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/simple/editor_template_s
+	rc.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/simple/img/icons.gif,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/simple/langs/en.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/simple/skins/default/con
+	tent.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/simple/skins/default/ui.
+	css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/simple/skins/o2k7/conten
+	t.css,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/simple/skins/o2k7/ui.css
+	,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/themes/simple/skins/o2k7/img/bu
+	tton_bg.png,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/utils/editable_selects.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/utils/form_utils.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/utils/mctabs.js,
+	lib/editor/tinymce/tiny_mce/3.3.9.2/utils/validate.js: 
+	
+	on-demand cvs snapshot
+
+2011-06-17 Friday 01:38  moodlerobot
+
+	* install/lang/ha/langconfig.php: 
+	
+	file langconfig.php was initially added on branch MOODLE_20_STABLE.
+
+2011-06-17 Friday 01:38  moodlerobot
+
+	* githash.php, version.php, auth/cas/auth.php,
+	auth/cas/lang/en/auth_cas.php,
+	backup/moodle2/restore_activity_task.class.php,
+	backup/moodle2/restore_stepslib.php, install/lang/af/admin.php,
+	install/lang/af/langconfig.php, install/lang/am/install.php,
+	install/lang/am/langconfig.php, install/lang/am/moodle.php,
+	install/lang/ar/admin.php, install/lang/ar/error.php,
+	install/lang/ar/install.php, install/lang/ar/langconfig.php,
+	install/lang/ar/moodle.php, install/lang/ast/admin.php,
+	install/lang/ast/error.php, install/lang/ast/install.php,
+	install/lang/ast/langconfig.php, install/lang/ast/moodle.php,
+	install/lang/az/langconfig.php, install/lang/be/langconfig.php,
+	install/lang/be/moodle.php, install/lang/bg/error.php,
+	install/lang/bg/install.php, install/lang/bg/langconfig.php,
+	install/lang/bg/moodle.php, install/lang/bn/admin.php,
+	install/lang/bn/error.php, install/lang/bn/install.php,
+	install/lang/bn/langconfig.php, install/lang/bn/moodle.php,
+	install/lang/bs/install.php, install/lang/bs/langconfig.php,
+	install/lang/ca/admin.php, install/lang/ca/error.php,
+	install/lang/ca/install.php, install/lang/ca/langconfig.php,
+	install/lang/ca/moodle.php, install/lang/ckb/langconfig.php,
+	install/lang/cs/admin.php, install/lang/cs/error.php,
+	install/lang/cs/install.php, install/lang/cs/langconfig.php,
+	install/lang/cs/moodle.php, install/lang/cy/admin.php,
+	install/lang/cy/error.php, install/lang/cy/install.php,
+	install/lang/cy/langconfig.php, install/lang/cy/moodle.php,
+	install/lang/da/admin.php, install/lang/da/error.php,
+	install/lang/da/install.php, install/lang/da/langconfig.php,
+	install/lang/da/moodle.php, install/lang/de/admin.php,
+	install/lang/de/error.php, install/lang/de/install.php,
+	install/lang/de/langconfig.php, install/lang/de/moodle.php,
+	install/lang/de_du/error.php, install/lang/de_du/install.php,
+	install/lang/de_du/langconfig.php,
+	install/lang/de_kids/langconfig.php, install/lang/dv/admin.php,
+	install/lang/dv/error.php, install/lang/dv/install.php,
+	install/lang/dv/langconfig.php, install/lang/dv/moodle.php,
+	install/lang/el/admin.php, install/lang/el/error.php,
+	install/lang/el/install.php, install/lang/el/langconfig.php,
+	install/lang/el/moodle.php, install/lang/en/admin.php,
+	install/lang/en/error.php, install/lang/en/install.php,
+	install/lang/en/langconfig.php, install/lang/en/moodle.php,
+	install/lang/en_us/langconfig.php, install/lang/es/admin.php,
+	install/lang/es/error.php, install/lang/es/install.php,
+	install/lang/es/langconfig.php, install/lang/es/moodle.php,
+	install/lang/es_ar/langconfig.php,
+	install/lang/es_es/langconfig.php,
+	install/lang/es_mx/langconfig.php, install/lang/et/admin.php,
+	install/lang/et/error.php, install/lang/et/install.php,
+	install/lang/et/langconfig.php, install/lang/et/moodle.php,
+	install/lang/eu/admin.php, install/lang/eu/error.php,
+	install/lang/eu/install.php, install/lang/eu/langconfig.php,
+	install/lang/eu/moodle.php, install/lang/fa/admin.php,
+	install/lang/fa/install.php, install/lang/fa/langconfig.php,
+	install/lang/fa/moodle.php, install/lang/fi/admin.php,
+	install/lang/fi/error.php, install/lang/fi/install.php,
+	install/lang/fi/langconfig.php, install/lang/fi/moodle.php,
+	install/lang/fil/langconfig.php, install/lang/fil/moodle.php,
+	install/lang/fj/langconfig.php, install/lang/fj/moodle.php,
+	install/lang/fr/admin.php, install/lang/fr/error.php,
+	install/lang/fr/install.php, install/lang/fr/langconfig.php,
+	install/lang/fr/moodle.php, install/lang/fr_ca/install.php,
+	install/lang/fr_ca/langconfig.php, install/lang/fr_ca/moodle.php,
+	install/lang/ga/langconfig.php, install/lang/gd/langconfig.php,
+	install/lang/gd/moodle.php, install/lang/gl/admin.php,
+	install/lang/gl/error.php, install/lang/gl/install.php,
+	install/lang/gl/langconfig.php, install/lang/gl/moodle.php,
+	install/lang/gu/error.php, install/lang/gu/langconfig.php,
+	install/lang/gu/moodle.php, install/lang/ha/langconfig.php,
+	install/lang/he/admin.php, install/lang/he/error.php,
+	install/lang/he/install.php, install/lang/he/langconfig.php,
+	install/lang/he/moodle.php, install/lang/hi/langconfig.php,
+	install/lang/hi/moodle.php, install/lang/hr/admin.php,
+	install/lang/hr/error.php, install/lang/hr/install.php,
+	install/lang/hr/langconfig.php, install/lang/hr/moodle.php,
+	install/lang/hu/admin.php, install/lang/hu/error.php,
+	install/lang/hu/install.php, install/lang/hu/langconfig.php,
+	install/lang/hu/moodle.php, install/lang/hy/admin.php,
+	install/lang/hy/error.php, install/lang/hy/install.php,
+	install/lang/hy/langconfig.php, install/lang/hy/moodle.php,
+	install/lang/id/langconfig.php, install/lang/id/moodle.php,
+	install/lang/is/admin.php, install/lang/is/error.php,
+	install/lang/is/install.php, install/lang/is/langconfig.php,
+	install/lang/is/moodle.php, install/lang/it/admin.php,
+	install/lang/it/error.php, install/lang/it/install.php,
+	install/lang/it/langconfig.php, install/lang/it/moodle.php,
+	install/lang/ja/admin.php, install/lang/ja/error.php,
+	install/lang/ja/install.php, install/lang/ja/langconfig.php,
+	install/lang/ja/moodle.php, install/lang/ka/admin.php,
+	install/lang/ka/install.php, install/lang/ka/langconfig.php,
+	install/lang/kk/install.php, install/lang/kk/langconfig.php,
+	install/lang/kk/moodle.php, install/lang/km/admin.php,
+	install/lang/km/error.php, install/lang/km/install.php,
+	install/lang/km/langconfig.php, install/lang/km/moodle.php,
+	install/lang/kn/langconfig.php, install/lang/ko/admin.php,
+	install/lang/ko/error.php, install/lang/ko/install.php,
+	install/lang/ko/langconfig.php, install/lang/ko/moodle.php,
+	install/lang/la/langconfig.php, install/lang/la/moodle.php,
+	install/lang/lo/admin.php, install/lang/lo/install.php,
+	install/lang/lo/langconfig.php, install/lang/lo/moodle.php,
+	install/lang/lt/langconfig.php, install/lang/lt/moodle.php,
+	install/lang/lv/admin.php, install/lang/lv/error.php,
+	install/lang/lv/install.php, install/lang/lv/langconfig.php,
+	install/lang/lv/moodle.php, install/lang/mi_tn/langconfig.php,
+	install/lang/mi_tn/moodle.php, install/lang/mi_wwow/admin.php,
+	install/lang/mi_wwow/error.php, install/lang/mi_wwow/install.php,
+	install/lang/mi_wwow/langconfig.php,
+	install/lang/mi_wwow/moodle.php, install/lang/mk/admin.php,
+	install/lang/mk/error.php, install/lang/mk/install.php,
+	install/lang/mk/langconfig.php, install/lang/mk/moodle.php,
+	install/lang/ml/langconfig.php, install/lang/ml/moodle.php,
+	install/lang/mn/admin.php, install/lang/mn/error.php,
+	install/lang/mn/install.php, install/lang/mn/langconfig.php,
+	install/lang/mn/moodle.php, install/lang/mr/admin.php,
+	install/lang/mr/error.php, install/lang/mr/install.php,
+	install/lang/mr/langconfig.php, install/lang/mr/moodle.php,
+	install/lang/ms/langconfig.php, install/lang/my/langconfig.php,
+	install/lang/nl/admin.php, install/lang/nl/error.php,
+	install/lang/nl/install.php, install/lang/nl/langconfig.php,
+	install/lang/nl/moodle.php, install/lang/nn/langconfig.php,
+	install/lang/nn/moodle.php, install/lang/no/admin.php,
+	install/lang/no/error.php, install/lang/no/install.php,
+	install/lang/no/langconfig.php, install/lang/no/moodle.php,
+	install/lang/no_gr/langconfig.php, install/lang/no_gr/moodle.php,
+	install/lang/pl/admin.php, install/lang/pl/error.php,
+	install/lang/pl/install.php, install/lang/pl/langconfig.php,
+	install/lang/pl/moodle.php, install/lang/pt/admin.php,
+	install/lang/pt/error.php, install/lang/pt/install.php,
+	install/lang/pt/langconfig.php, install/lang/pt/moodle.php,
+	install/lang/pt_br/admin.php, install/lang/pt_br/error.php,
+	install/lang/pt_br/install.php, install/lang/pt_br/langconfig.php,
+	install/lang/pt_br/moodle.php, install/lang/ro/admin.php,
+	install/lang/ro/error.php, install/lang/ro/install.php,
+	install/lang/ro/langconfig.php, install/lang/ro/moodle.php,
+	install/lang/ru/admin.php, install/lang/ru/error.php,
+	install/lang/ru/install.php, install/lang/ru/langconfig.php,
+	install/lang/ru/moodle.php, install/lang/si/admin.php,
+	install/lang/si/error.php, install/lang/si/install.php,
+	install/lang/si/langconfig.php, install/lang/si/moodle.php,
+	install/lang/sk/admin.php, install/lang/sk/error.php,
+	install/lang/sk/install.php, install/lang/sk/langconfig.php,
+	install/lang/sk/moodle.php, install/lang/sl/admin.php,
+	install/lang/sl/error.php, install/lang/sl/install.php,
+	install/lang/sl/langconfig.php, install/lang/sl/moodle.php,
+	install/lang/sm/install.php, install/lang/sm/langconfig.php,
+	install/lang/sm/moodle.php, install/lang/so/admin.php,
+	install/lang/so/install.php, install/lang/so/langconfig.php,
+	install/lang/so/moodle.php, install/lang/sq/langconfig.php,
+	install/lang/sq/moodle.php, install/lang/sr/langconfig.php,
+	install/lang/sr_cr/admin.php, install/lang/sr_cr/error.php,
+	install/lang/sr_cr/install.php, install/lang/sr_cr/langconfig.php,
+	install/lang/sr_cr/moodle.php,
+	install/lang/sr_cr_bo/langconfig.php, install/lang/sr_lt/admin.php,
+	install/lang/sr_lt/error.php, install/lang/sr_lt/install.php,
+	install/lang/sr_lt/langconfig.php, install/lang/sr_lt/moodle.php,
+	install/lang/sv/admin.php, install/lang/sv/error.php,
+	install/lang/sv/install.php, install/lang/sv/langconfig.php,
+	install/lang/sv/moodle.php, install/lang/sw/langconfig.php,
+	install/lang/ta/admin.php, install/lang/ta/error.php,
+	install/lang/ta/install.php, install/lang/ta/langconfig.php,
+	install/lang/ta/moodle.php, install/lang/ta_lk/admin.php,
+	install/lang/ta_lk/error.php, install/lang/ta_lk/install.php,
+	install/lang/ta_lk/langconfig.php, install/lang/ta_lk/moodle.php,
+	install/lang/te/admin.php, install/lang/te/error.php,
+	install/lang/te/install.php, install/lang/te/langconfig.php,
+	install/lang/te/moodle.php, install/lang/th/admin.php,
+	install/lang/th/install.php, install/lang/th/langconfig.php,
+	install/lang/th/moodle.php, install/lang/ti/langconfig.php,
+	install/lang/ti/moodle.php, install/lang/tl/admin.php,
+	install/lang/tl/error.php, install/lang/tl/install.php,
+	install/lang/tl/langconfig.php, install/lang/tl/moodle.php,
+	install/lang/to/install.php, install/lang/to/langconfig.php,
+	install/lang/to/moodle.php, install/lang/tr/admin.php,
+	install/lang/tr/error.php, install/lang/tr/install.php,
+	install/lang/tr/langconfig.php, install/lang/tr/moodle.php,
+	install/lang/uk/langconfig.php, install/lang/uk/moodle.php,
+	install/lang/ur/install.php, install/lang/ur/langconfig.php,
+	install/lang/ur/moodle.php, install/lang/uz/install.php,
+	install/lang/uz/langconfig.php, install/lang/uz/moodle.php,
+	install/lang/vi/admin.php, install/lang/vi/install.php,
+	install/lang/vi/langconfig.php, install/lang/vi/moodle.php,
+	install/lang/zh_cn/admin.php, install/lang/zh_cn/error.php,
+	install/lang/zh_cn/install.php, install/lang/zh_cn/langconfig.php,
+	install/lang/zh_cn/moodle.php, install/lang/zh_tw/admin.php,
+	install/lang/zh_tw/error.php, install/lang/zh_tw/install.php,
+	install/lang/zh_tw/langconfig.php, install/lang/zh_tw/moodle.php,
+	install/lang/zu/error.php, install/lang/zu/install.php,
+	install/lang/zu/langconfig.php, lib/completionlib.php,
+	lib/messagelib.php, lib/moodlelib.php, lib/upgradelib.php,
+	lib/simpletest/testmoodlelib.php, message/edit.php,
+	mod/assignment/lib.php, mod/scorm/api.php, mod/scorm/lib.php,
+	mod/scorm/player.php, mod/wiki/edit.php, mod/wiki/pagelib.php,
+	repository/recent/lib.php, tag/lib.php, theme/index.php,
+	theme/formal_white/version.php, theme/formal_white/db/install.php,
+	theme/formal_white/db/upgrade.php,
+	theme/formal_white/style/core.css,
+	theme/formal_white/style/formal_white.css, user/externallib.php,
+	webservice/simpletest/testwebservice.php, githash.php, version.php,
+	lib/simpletest/testmoodlelib.php, mod/assignment/lib.php,
+	mod/scorm/api.php, mod/scorm/datamodel.php, mod/scorm/player.php,
+	tag/lib.php: 
+	
+	weekly cvs snapshot
+
+2011-06-17 Friday 01:37  moodlerobot
+
+	* theme/formal_white/db/upgrade.php: 
+	
+	file upgrade.php was added on branch MOODLE_20_STABLE on 2011-06-16
+	17:39:04 +0000
+
+2011-06-17 Friday 01:37  moodlerobot
+
+	* githash.php, version.php, backup/backup.class.php,
+	backup/restore.php, backup/controller/restore_controller.class.php,
+	backup/moodle2/restore_activity_task.class.php,
+	backup/moodle2/restore_qtype_plugin.class.php,
+	backup/moodle2/restore_stepslib.php,
+	backup/util/factories/convert_factory.class.php,
+	backup/util/helper/backup_general_helper.class.php,
+	backup/util/helper/convert_helper.class.php,
+	backup/util/helper/simpletest/testconverthelper.php,
+	backup/util/includes/convert_includes.php,
+	backup/util/ui/base_ui.class.php,
+	backup/util/ui/base_ui_stage.class.php,
+	backup/util/ui/renderer.php, backup/util/ui/restore_ui.class.php,
+	backup/util/ui/restore_ui_stage.class.php, blocks/edit_form.php,
+	blog/lib.php, course/lib.php,
+	course/format/topics/lang/en/format_topics.php,
+	course/format/weeks/lang/en/format_weeks.php,
+	install/lang/af/admin.php, install/lang/af/langconfig.php,
+	install/lang/am/install.php, install/lang/am/langconfig.php,
+	install/lang/am/moodle.php, install/lang/ar/admin.php,
+	install/lang/ar/error.php, install/lang/ar/install.php,
+	install/lang/ar/langconfig.php, install/lang/ar/moodle.php,
+	install/lang/ast/admin.php, install/lang/ast/error.php,
+	install/lang/ast/install.php, install/lang/ast/langconfig.php,
+	install/lang/ast/moodle.php, install/lang/az/langconfig.php,
+	install/lang/be/langconfig.php, install/lang/be/moodle.php,
+	install/lang/bg/install.php, install/lang/bg/langconfig.php,
+	install/lang/bg/moodle.php, install/lang/bn/admin.php,
+	install/lang/bn/install.php, install/lang/bn/langconfig.php,
+	install/lang/bn/moodle.php, install/lang/bs/install.php,
+	install/lang/bs/langconfig.php, install/lang/ca/admin.php,
+	install/lang/ca/error.php, install/lang/ca/install.php,
+	install/lang/ca/langconfig.php, install/lang/ca/moodle.php,
+	install/lang/cs/admin.php, install/lang/cs/error.php,
+	install/lang/cs/install.php, install/lang/cs/langconfig.php,
+	install/lang/cs/moodle.php, install/lang/cy/admin.php,
+	install/lang/cy/error.php, install/lang/cy/install.php,
+	install/lang/cy/langconfig.php, install/lang/cy/moodle.php,
+	install/lang/da/admin.php, install/lang/da/error.php,
+	install/lang/da/install.php, install/lang/da/langconfig.php,
+	install/lang/da/moodle.php, install/lang/de/admin.php,
+	install/lang/de/error.php, install/lang/de/install.php,
+	install/lang/de/langconfig.php, install/lang/de/moodle.php,
+	install/lang/de_du/error.php, install/lang/de_du/install.php,
+	install/lang/de_du/langconfig.php,
+	install/lang/de_kids/langconfig.php, install/lang/dv/admin.php,
+	install/lang/dv/error.php, install/lang/dv/install.php,
+	install/lang/dv/langconfig.php, install/lang/dv/moodle.php,
+	install/lang/el/admin.php, install/lang/el/error.php,
+	install/lang/el/install.php, install/lang/el/langconfig.php,
+	install/lang/el/moodle.php, install/lang/en/admin.php,
+	install/lang/en/error.php, install/lang/en/install.php,
+	install/lang/en/langconfig.php, install/lang/en/moodle.php,
+	install/lang/en_us/langconfig.php, install/lang/es/admin.php,
+	install/lang/es/error.php, install/lang/es/install.php,
+	install/lang/es/langconfig.php, install/lang/es/moodle.php,
+	install/lang/es_ar/langconfig.php,
+	install/lang/es_es/langconfig.php,
+	install/lang/es_mx/langconfig.php, install/lang/et/admin.php,
+	install/lang/et/error.php, install/lang/et/install.php,
+	install/lang/et/langconfig.php, install/lang/et/moodle.php,
+	install/lang/eu/admin.php, install/lang/eu/error.php,
+	install/lang/eu/install.php, install/lang/eu/langconfig.php,
+	install/lang/eu/moodle.php, install/lang/fa/admin.php,
+	install/lang/fa/install.php, install/lang/fa/langconfig.php,
+	install/lang/fa/moodle.php, install/lang/fi/admin.php,
+	install/lang/fi/error.php, install/lang/fi/install.php,
+	install/lang/fi/langconfig.php, install/lang/fi/moodle.php,
+	install/lang/fil/langconfig.php, install/lang/fil/moodle.php,
+	install/lang/fj/langconfig.php, install/lang/fr/admin.php,
+	install/lang/fr/error.php, install/lang/fr/install.php,
+	install/lang/fr/langconfig.php, install/lang/fr/moodle.php,
+	install/lang/fr_ca/install.php, install/lang/fr_ca/langconfig.php,
+	install/lang/fr_ca/moodle.php, install/lang/ga/langconfig.php,
+	install/lang/gd/langconfig.php, install/lang/gl/admin.php,
+	install/lang/gl/error.php, install/lang/gl/install.php,
+	install/lang/gl/langconfig.php, install/lang/gl/moodle.php,
+	install/lang/gu/error.php, install/lang/gu/langconfig.php,
+	install/lang/gu/moodle.php, install/lang/he/admin.php,
+	install/lang/he/error.php, install/lang/he/install.php,
+	install/lang/he/langconfig.php, install/lang/he/moodle.php,
+	install/lang/hi/langconfig.php, install/lang/hi/moodle.php,
+	install/lang/hr/admin.php, install/lang/hr/error.php,
+	install/lang/hr/install.php, install/lang/hr/langconfig.php,
+	install/lang/hr/moodle.php, install/lang/hu/admin.php,
+	install/lang/hu/error.php, install/lang/hu/install.php,
+	install/lang/hu/langconfig.php, install/lang/hu/moodle.php,
+	install/lang/hy/admin.php, install/lang/hy/error.php,
+	install/lang/hy/install.php, install/lang/hy/langconfig.php,
+	install/lang/hy/moodle.php, install/lang/id/langconfig.php,
+	install/lang/id/moodle.php, install/lang/is/admin.php,
+	install/lang/is/error.php, install/lang/is/install.php,
+	install/lang/is/langconfig.php, install/lang/is/moodle.php,
+	install/lang/it/admin.php, install/lang/it/error.php,
+	install/lang/it/install.php, install/lang/it/langconfig.php,
+	install/lang/it/moodle.php, install/lang/ja/admin.php,
+	install/lang/ja/error.php, install/lang/ja/install.php,
+	install/lang/ja/langconfig.php, install/lang/ja/moodle.php,
+	install/lang/ka/admin.php, install/lang/ka/install.php,
+	install/lang/ka/langconfig.php, install/lang/kk/install.php,
+	install/lang/kk/langconfig.php, install/lang/kk/moodle.php,
+	install/lang/km/admin.php, install/lang/km/error.php,
+	install/lang/km/install.php, install/lang/km/langconfig.php,
+	install/lang/km/moodle.php, install/lang/kn/langconfig.php,
+	install/lang/ko/admin.php, install/lang/ko/error.php,
+	install/lang/ko/install.php, install/lang/ko/langconfig.php,
+	install/lang/ko/moodle.php, install/lang/la/langconfig.php,
+	install/lang/la/moodle.php, install/lang/lo/admin.php,
+	install/lang/lo/install.php, install/lang/lo/langconfig.php,
+	install/lang/lo/moodle.php, install/lang/lt/langconfig.php,
+	install/lang/lt/moodle.php, install/lang/lv/admin.php,
+	install/lang/lv/error.php, install/lang/lv/install.php,
+	install/lang/lv/langconfig.php, install/lang/lv/moodle.php,
+	install/lang/mi_tn/langconfig.php, install/lang/mi_tn/moodle.php,
+	install/lang/mi_wwow/admin.php, install/lang/mi_wwow/error.php,
+	install/lang/mi_wwow/install.php,
+	install/lang/mi_wwow/langconfig.php,
+	install/lang/mi_wwow/moodle.php, install/lang/mk/admin.php,
+	install/lang/mk/error.php, install/lang/mk/install.php,
+	install/lang/mk/langconfig.php, install/lang/mk/moodle.php,
+	install/lang/ml/langconfig.php, install/lang/ml/moodle.php,
+	install/lang/mn/admin.php, install/lang/mn/error.php,
+	install/lang/mn/install.php, install/lang/mn/langconfig.php,
+	install/lang/mn/moodle.php, install/lang/mr/admin.php,
+	install/lang/mr/error.php, install/lang/mr/install.php,
+	install/lang/mr/langconfig.php, install/lang/mr/moodle.php,
+	install/lang/ms/langconfig.php, install/lang/nl/admin.php,
+	install/lang/nl/error.php, install/lang/nl/install.php,
+	install/lang/nl/langconfig.php, install/lang/nl/moodle.php,
+	install/lang/nn/langconfig.php, install/lang/nn/moodle.php,
+	install/lang/no/admin.php, install/lang/no/error.php,
+	install/lang/no/install.php, install/lang/no/langconfig.php,
+	install/lang/no/moodle.php, install/lang/no_gr/langconfig.php,
+	install/lang/no_gr/moodle.php, install/lang/pl/admin.php,
+	install/lang/pl/error.php, install/lang/pl/install.php,
+	install/lang/pl/langconfig.php, install/lang/pl/moodle.php,
+	install/lang/pt/admin.php, install/lang/pt/error.php,
+	install/lang/pt/install.php, install/lang/pt/langconfig.php,
+	install/lang/pt/moodle.php, install/lang/pt_br/admin.php,
+	install/lang/pt_br/error.php, install/lang/pt_br/install.php,
+	install/lang/pt_br/langconfig.php, install/lang/pt_br/moodle.php,
+	install/lang/ro/admin.php, install/lang/ro/error.php,
+	install/lang/ro/install.php, install/lang/ro/langconfig.php,
+	install/lang/ro/moodle.php, install/lang/ru/admin.php,
+	install/lang/ru/error.php, install/lang/ru/install.php,
+	install/lang/ru/langconfig.php, install/lang/ru/moodle.php,
+	install/lang/si/admin.php, install/lang/si/error.php,
+	install/lang/si/install.php, install/lang/si/langconfig.php,
+	install/lang/si/moodle.php, install/lang/sk/admin.php,
+	install/lang/sk/error.php, install/lang/sk/install.php,
+	install/lang/sk/langconfig.php, install/lang/sk/moodle.php,
+	install/lang/sl/admin.php, install/lang/sl/error.php,
+	install/lang/sl/install.php, install/lang/sl/langconfig.php,
+	install/lang/sl/moodle.php, install/lang/sm/install.php,
+	install/lang/sm/langconfig.php, install/lang/sm/moodle.php,
+	install/lang/so/admin.php, install/lang/so/install.php,
+	install/lang/so/langconfig.php, install/lang/so/moodle.php,
+	install/lang/sq/langconfig.php, install/lang/sq/moodle.php,
+	install/lang/sr/langconfig.php, install/lang/sr_cr/admin.php,
+	install/lang/sr_cr/error.php, install/lang/sr_cr/install.php,
+	install/lang/sr_cr/langconfig.php, install/lang/sr_cr/moodle.php,
+	install/lang/sr_cr_bo/langconfig.php, install/lang/sr_lt/admin.php,
+	install/lang/sr_lt/error.php, install/lang/sr_lt/install.php,
+	install/lang/sr_lt/langconfig.php, install/lang/sr_lt/moodle.php,
+	install/lang/sv/admin.php, install/lang/sv/error.php,
+	install/lang/sv/install.php, install/lang/sv/langconfig.php,
+	install/lang/sv/moodle.php, install/lang/ta/admin.php,
+	install/lang/ta/error.php, install/lang/ta/install.php,
+	install/lang/ta/langconfig.php, install/lang/ta/moodle.php,
+	install/lang/ta_lk/admin.php, install/lang/ta_lk/error.php,
+	install/lang/ta_lk/install.php, install/lang/ta_lk/langconfig.php,
+	install/lang/ta_lk/moodle.php, install/lang/te/admin.php,
+	install/lang/te/langconfig.php, install/lang/te/moodle.php,
+	install/lang/th/admin.php, install/lang/th/install.php,
+	install/lang/th/langconfig.php, install/lang/th/moodle.php,
+	install/lang/ti/langconfig.php, install/lang/ti/moodle.php,
+	install/lang/tl/admin.php, install/lang/tl/error.php,
+	install/lang/tl/install.php, install/lang/tl/langconfig.php,
+	install/lang/tl/moodle.php, install/lang/to/install.php,
+	install/lang/to/langconfig.php, install/lang/to/moodle.php,
+	install/lang/tr/admin.php, install/lang/tr/error.php,
+	install/lang/tr/install.php, install/lang/tr/langconfig.php,
+	install/lang/tr/moodle.php, install/lang/uk/langconfig.php,
+	install/lang/uk/moodle.php, install/lang/ur/install.php,
+	install/lang/ur/langconfig.php, install/lang/ur/moodle.php,
+	install/lang/uz/install.php, install/lang/uz/langconfig.php,
+	install/lang/uz/moodle.php, install/lang/vi/admin.php,
+	install/lang/vi/install.php, install/lang/vi/langconfig.php,
+	install/lang/vi/moodle.php, install/lang/zh_cn/admin.php,
+	install/lang/zh_cn/error.php, install/lang/zh_cn/install.php,
+	install/lang/zh_cn/langconfig.php, install/lang/zh_cn/moodle.php,
+	install/lang/zh_tw/admin.php, install/lang/zh_tw/error.php,
+	install/lang/zh_tw/install.php, install/lang/zh_tw/langconfig.php,
+	install/lang/zh_tw/moodle.php, install/lang/zu/error.php,
+	install/lang/zu/install.php, install/lang/zu/langconfig.php,
+	lang/en/admin.php, lang/en/backup.php, lang/en/block.php,
+	lang/en/blog.php, lang/en/error.php, lang/en/message.php,
+	lang/en/notes.php, lang/en/pagetype.php, lang/en/plugin.php,
+	lang/en/question.php, lang/en/role.php, lang/en/tag.php,
+	lang/en/webservice.php, lib/adminlib.php, lib/blocklib.php,
+	lib/completionlib.php, lib/componentlib.class.php,
+	lib/messagelib.php, lib/moodlelib.php, lib/pluginlib.php,
+	lib/questionlib.php, lib/upgradelib.php, lib/db/access.php,
+	lib/db/services.php, lib/simpletest/testmoodlelib.php,
+	login/token.php, message/edit.php, message/lib.php,
+	mod/assignment/lib.php, mod/assignment/lang/en/assignment.php,
+	mod/chat/lib.php, mod/chat/lang/en/chat.php, mod/choice/lib.php,
+	mod/choice/lang/en/choice.php, mod/data/lib.php,
+	mod/data/backup/moodle2/backup_data_stepslib.php,
+	mod/data/lang/en/data.php, mod/feedback/lib.php,
+	mod/feedback/lang/en/feedback.php, mod/folder/lib.php,
+	mod/folder/lang/en/folder.php, mod/forum/lib.php,
+	mod/forum/view.php,
+	mod/forum/backup/moodle2/backup_forum_stepslib.php,
+	mod/forum/lang/en/forum.php, mod/glossary/lib.php,
+	mod/glossary/backup/moodle2/backup_glossary_stepslib.php,
+	mod/glossary/lang/en/glossary.php, mod/imscp/lib.php,
+	mod/imscp/locallib.php, mod/imscp/lang/en/imscp.php,
+	mod/lesson/format.php, mod/lesson/lib.php,
+	mod/lesson/lang/en/lesson.php, mod/page/lib.php,
+	mod/page/lang/en/page.php, mod/quiz/lib.php,
+	mod/quiz/backup/moodle2/restore_quiz_stepslib.php,
+	mod/quiz/db/upgradelib.php, mod/quiz/lang/en/quiz.php,
+	mod/resource/lib.php, mod/resource/lang/en/resource.php,
+	mod/scorm/api.php, mod/scorm/lib.php, mod/scorm/player.php,
+	mod/scorm/report.php, mod/scorm/userreport.php,
+	mod/scorm/lang/en/scorm.php, mod/survey/lib.php,
+	mod/survey/lang/en/survey.php, mod/url/lib.php,
+	mod/url/backup/moodle2/backup_url_stepslib.php,
+	mod/url/lang/en/url.php, mod/wiki/edit.php, mod/wiki/lib.php,
+	mod/wiki/pagelib.php, mod/wiki/lang/en/wiki.php,
+	mod/workshop/assessment.php, mod/workshop/lib.php,
+	mod/workshop/locallib.php, mod/workshop/mod_form.php,
+	mod/workshop/submission.php, mod/workshop/version.php,
+	mod/workshop/view.php, mod/workshop/db/access.php,
+	mod/workshop/lang/en/workshop.php, notes/lib.php,
+	question/format.php, question/format/xml/format.php,
+	question/type/calculated/questiontype.php,
+	question/type/calculatedmulti/questiontype.php,
+	question/type/calculatedmulti/backup/moodle2/restore_qtype_calculat
+	edmulti_plugin.class.php,
+	question/type/calculatedsimple/edit_calculatedsimple_form.php,
+	question/type/calculatedsimple/questiontype.php,
+	question/type/essay/backup/moodle2/restore_qtype_essay_plugin.class
+	.php,
+	question/type/match/backup/moodle2/restore_qtype_match_plugin.class
+	.php,
+	question/type/multianswer/backup/moodle2/restore_qtype_multianswer_
+	plugin.class.php, question/type/multichoice/questiontype.php,
+	question/type/multichoice/backup/moodle2/restore_qtype_multichoice_
+	plugin.class.php,
+	question/type/random/backup/moodle2/restore_qtype_random_plugin.cla
+	ss.php, question/type/randomsamatch/questiontype.php,
+	question/type/truefalse/backup/moodle2/restore_qtype_truefalse_plug
+	in.class.php, repository/recent/lib.php, tag/lib.php,
+	theme/index.php, theme/base/style/core.css,
+	theme/formal_white/version.php, theme/formal_white/db/install.php,
+	theme/formal_white/db/upgrade.php,
+	theme/formal_white/style/core.css,
+	theme/formal_white/style/formal_white.css, user/externallib.php,
+	user/index.php, user/lib.php, webservice/upload.php,
+	webservice/simpletest/testwebservice.php: 
+	
+	weekly cvs snapshot (2.1beta)
+
+2011-06-09 Thursday 10:14  moodlerobot
+
+	* githash.php, version.php, lib/moodlelib.php, lib/weblib.php,
+	lib/simpletest/testmoodlelib.php, githash.php, pluginfile.php,
+	version.php, admin/registration/confirmregistration.php,
+	admin/registration/index.php, admin/report/spamcleaner/module.js,
+	admin/roles/module.js, admin/settings/courses.php,
+	admin/webservice/service_user_settings.php,
+	admin/webservice/testclient.php, admin/webservice/tokens.php,
+	install/lang/af/admin.php, install/lang/is/admin.php,
+	install/lang/sr_cr/install.php, install/lang/sr_lt/install.php,
+	lib/moodlelib.php, lib/resourcelib.php, lib/weblib.php,
+	lib/simpletest/testmoodlelib.php, mod/assignment/lib.php,
+	mod/glossary/backup/moodle2/backup_glossary_stepslib.php,
+	mod/wiki/comments.php, mod/wiki/diff.php, mod/wiki/edit_form.php,
+	mod/wiki/files.php, mod/wiki/filesedit.php,
+	mod/wiki/filesedit_form.php, mod/wiki/history.php,
+	mod/wiki/index.php, mod/wiki/lib.php, mod/wiki/locallib.php,
+	mod/wiki/lock.php, mod/wiki/map.php, mod/wiki/module.js,
+	mod/wiki/pagelib.php, mod/wiki/prettyview.php,
+	mod/wiki/renderer.php, mod/wiki/search.php, mod/wiki/styles.css,
+	mod/wiki/version.php, mod/wiki/view.php, mod/wiki/viewversion.php,
+	mod/wiki/db/access.php, mod/wiki/db/upgrade.php,
+	mod/wiki/editors/wikieditor.php, mod/wiki/editors/wiki/buttons.js,
+	mod/wiki/lang/en/wiki.php, mod/workshop/db/upgradelib.php,
+	question/type/numerical/db/upgrade.php,
+	theme/anomaly/style/general.css, theme/base/style/core.css,
+	theme/formal_white/config.php, theme/formal_white/lib.php,
+	theme/formal_white/settings.php, theme/formal_white/version.php,
+	theme/formal_white/db/install.php,
+	theme/formal_white/lang/en/theme_formal_white.php,
+	theme/formal_white/layout/frontpage.php,
+	theme/formal_white/layout/general.php,
+	theme/formal_white/pix/gradient_h.jpg,
+	theme/formal_white/pix/sprite.png,
+	theme/formal_white/style/calendar.css,
+	theme/formal_white/style/core.css,
+	theme/formal_white/style/course.css,
+	theme/formal_white/style/formal_white.css,
+	theme/formal_white/style/menu.css,
+	theme/formal_white/style/pagelayout.css,
+	theme/formal_white/style/quiz.css,
+	theme/formal_white/style/tabs.css, theme/fusion/style/core.css,
+	theme/fusion/style/pagelayout.css,
+	theme/leatherbound/style/core.css,
+	theme/overlay/style/pagelayout.css: 
+	
+	weekly cvs snapshot
+
+2011-06-09 Thursday 10:10  moodlerobot
+
+	* theme/formal_white/version.php: 
+	
+	file version.php was added on branch MOODLE_20_STABLE on 2011-06-09
+	02:15:09 +0000
+
+2011-06-09 Thursday 10:10  moodlerobot
+
+	* theme/formal_white/db/install.php: 
+	
+	file install.php was added on branch MOODLE_20_STABLE on 2011-06-09
+	02:15:10 +0000
+
+2011-06-09 Thursday 10:09  moodlerobot
+
+	* mod/wiki/filesedit_form.php: 
+	
+	file filesedit_form.php was added on branch MOODLE_20_STABLE on
+	2011-06-09 02:15:06 +0000
+
+2011-06-09 Thursday 10:09  moodlerobot
+
+	* mod/wiki/files.php: 
+	
+	file files.php was added on branch MOODLE_20_STABLE on 2011-06-09
+	02:15:06 +0000
+
+2011-06-09 Thursday 10:09  moodlerobot
+
+	* mod/wiki/filesedit.php: 
+	
+	file filesedit.php was added on branch MOODLE_20_STABLE on
+	2011-06-09 02:15:06 +0000
+
+2011-06-09 Thursday 10:09  moodlerobot
+
+	* githash.php, pluginfile.php, version.php, admin/generator.php,
+	admin/index.php, admin/message.php, admin/qtypes.php,
+	admin/registration/confirmregistration.php,
+	admin/registration/index.php,
+	admin/report/questioninstances/index.php,
+	admin/report/spamcleaner/module.js, admin/roles/module.js,
+	admin/settings/appearance.php, admin/settings/courses.php,
+	admin/settings/plugins.php, admin/settings/server.php,
+	admin/webservice/service_user_settings.php,
+	admin/webservice/testclient.php, admin/webservice/tokens.php,
+	backup/moodle2/backup_qtype_plugin.class.php,
+	backup/moodle2/backup_stepslib.php,
+	backup/moodle2/restore_qtype_plugin.class.php,
+	backup/moodle2/restore_stepslib.php, enrol/externallib.php,
+	lang/en/admin.php, lang/en/error.php, lang/en/message.php,
+	lang/en/moodle.php, lang/en/notes.php, lang/en/question.php,
+	lang/en/webservice.php, lib/adminlib.php, lib/cronlib.php,
+	lib/html2text.php, lib/installlib.php, lib/messagelib.php,
+	lib/moodlelib.php, lib/outputrenderers.php,
+	lib/outputrequirementslib.php, lib/pagelib.php,
+	lib/questionlib.php, lib/resourcelib.php, lib/upgradelib.php,
+	lib/weblib.php, lib/db/install.xml, lib/db/messages.php,
+	lib/db/services.php, lib/db/upgrade.php, lib/db/upgradelib.php,
+	lib/simpletest/testmoodlelib.php,
+	lib/simpletest/testquestionlib.php, lib/simpletest/testweblib.php,
+	message/defaultoutputs.php, message/edit.php,
+	message/externallib.php, message/lib.php, message/module.js,
+	message/renderer.php, message/output/lib.php,
+	message/output/email/message_output_email.php,
+	message/output/email/settings.php,
+	message/output/email/lang/en/message_email.php,
+	message/output/jabber/message_output_jabber.php,
+	message/output/jabber/settings.php,
+	message/output/jabber/lang/en/message_jabber.php,
+	mod/assignment/lib.php, mod/forum/settings.php,
+	mod/forum/lang/en/forum.php,
+	mod/glossary/backup/moodle2/backup_glossary_stepslib.php,
+	mod/quiz/accessrules.php, mod/quiz/addrandom.php,
+	mod/quiz/addrandomform.php, mod/quiz/attempt.php,
+	mod/quiz/attemptlib.php, mod/quiz/comment.php, mod/quiz/edit.js,
+	mod/quiz/edit.php, mod/quiz/editlib.php, mod/quiz/grade.php,
+	mod/quiz/index.php, mod/quiz/lib.php, mod/quiz/locallib.php,
+	mod/quiz/mod_form.php, mod/quiz/module.js,
+	mod/quiz/override_form.php, mod/quiz/overridedelete.php,
+	mod/quiz/overrideedit.php, mod/quiz/overrides.php,
+	mod/quiz/processattempt.php, mod/quiz/renderer.php,
+	mod/quiz/report.php, mod/quiz/review.php,
+	mod/quiz/reviewquestion.php, mod/quiz/settings.php,
+	mod/quiz/settingslib.php, mod/quiz/startattempt.php,
+	mod/quiz/styles.css, mod/quiz/summary.php, mod/quiz/version.php,
+	mod/quiz/view.php,
+	mod/quiz/backup/moodle2/backup_quiz_activity_task.class.php,
+	mod/quiz/backup/moodle2/backup_quiz_stepslib.php,
+	mod/quiz/backup/moodle2/restore_quiz_activity_task.class.php,
+	mod/quiz/backup/moodle2/restore_quiz_stepslib.php,
+	mod/quiz/db/access.php, mod/quiz/db/install.php,
+	mod/quiz/db/install.xml, mod/quiz/db/log.php,
+	mod/quiz/db/messages.php, mod/quiz/db/subplugins.php,
+	mod/quiz/db/upgrade.php, mod/quiz/db/upgradelib.php,
+	mod/quiz/lang/en/quiz.php, mod/quiz/pix/icon.gif,
+	mod/quiz/pix/icon.png, mod/quiz/pix/navflagged.png,
+	mod/quiz/report/attemptsreport.php, mod/quiz/report/default.php,
+	mod/quiz/report/reportlib.php,
+	mod/quiz/report/grading/gradingsettings_form.php,
+	mod/quiz/report/grading/report.php,
+	mod/quiz/report/grading/styles.css,
+	mod/quiz/report/grading/version.php,
+	mod/quiz/report/grading/lang/en/quiz_grading.php,
+	mod/quiz/report/overview/overview_table.php,
+	mod/quiz/report/overview/overviewgraph.php,
+	mod/quiz/report/overview/overviewsettings_form.php,
+	mod/quiz/report/overview/report.php,
+	mod/quiz/report/overview/version.php,
+	mod/quiz/report/overview/db/install.xml,
+	mod/quiz/report/overview/db/upgrade.php,
+	mod/quiz/report/overview/lang/en/quiz_overview.php,
+	mod/quiz/report/responses/report.php,
+	mod/quiz/report/responses/responses_table.php,
+	mod/quiz/report/responses/responsessettings_form.php,
+	mod/quiz/report/responses/styles.css,
+	mod/quiz/report/responses/version.php,
+	mod/quiz/report/responses/lang/en/quiz_responses.php,
+	mod/quiz/report/simpletest/testreportlib.php,
+	mod/quiz/report/statistics/cron.php,
+	mod/quiz/report/statistics/qstats.php,
+	mod/quiz/report/statistics/report.php,
+	mod/quiz/report/statistics/responseanalysis.php,
+	mod/quiz/report/statistics/statistics_form.php,
+	mod/quiz/report/statistics/statistics_graph.php,
+	mod/quiz/report/statistics/statistics_question_table.php,
+	mod/quiz/report/statistics/statistics_table.php,
+	mod/quiz/report/statistics/version.php,
+	mod/quiz/report/statistics/db/access.php,
+	mod/quiz/report/statistics/db/install.php,
+	mod/quiz/report/statistics/db/install.xml,
+	mod/quiz/report/statistics/db/upgrade.php,
+	mod/quiz/report/statistics/lang/en/quiz_statistics.php,
+	mod/quiz/report/statistics/simpletest/mdl_question.csv,
+	mod/quiz/report/statistics/simpletest/mdl_question_states.csv,
+	mod/quiz/report/statistics/simpletest/test_qstats.php,
+	mod/quiz/simpletest/testaccessrules.php,
+	mod/quiz/simpletest/testeditlib.php,
+	mod/quiz/simpletest/testlib.php,
+	mod/quiz/simpletest/testlocallib.php,
+	mod/quiz/simpletest/testquizdisplayoptions.php,
+	mod/wiki/comments.php, mod/wiki/diff.php, mod/wiki/edit_form.php,
+	mod/wiki/files.php, mod/wiki/filesedit.php,
+	mod/wiki/filesedit_form.php, mod/wiki/history.php,
+	mod/wiki/index.php, mod/wiki/lib.php, mod/wiki/locallib.php,
+	mod/wiki/lock.php, mod/wiki/map.php, mod/wiki/module.js,
+	mod/wiki/pagelib.php, mod/wiki/prettyview.php,
+	mod/wiki/renderer.php, mod/wiki/search.php, mod/wiki/styles.css,
+	mod/wiki/version.php, mod/wiki/view.php, mod/wiki/viewversion.php,
+	mod/wiki/db/access.php, mod/wiki/db/upgrade.php,
+	mod/wiki/editors/wikieditor.php, mod/wiki/editors/wiki/buttons.js,
+	mod/wiki/lang/en/wiki.php, mod/workshop/db/upgradelib.php,
+	notes/externallib.php, question/addquestion.php,
+	question/category.php, question/category_class.php,
+	question/category_form.php, question/edit.php,
+	question/editlib.php, question/export.php,
+	question/export_form.php, question/file.php, question/flags.js,
+	question/format.php, question/import.php, question/import_form.php,
+	question/move_form.php, question/preview.js, question/preview.php,
+	question/previewlib.php, question/qbank.js, question/qengine.js,
+	question/question.php, question/toggleflag.php,
+	question/upgrade.php, question/format/README.txt,
+	question/format/aiken/format.php,
+	question/format/aiken/lang/en/qformat_aiken.php,
+	question/format/blackboard/format.php,
+	question/format/blackboard/lang/en/qformat_blackboard.php,
+	question/format/blackboard_six/format.php,
+	question/format/blackboard_six/lang/en/qformat_blackboard_six.php,
+	question/format/examview/format.php,
+	question/format/examview/lang/en/qformat_examview.php,
+	question/format/gift/format.php,
+	question/format/gift/lang/en/qformat_gift.php,
+	question/format/gift/simpletest/testgiftformat.php,
+	question/format/learnwise/format.php,
+	question/format/learnwise/lang/en/qformat_learnwise.php,
+	question/format/missingword/format.php,
+	question/format/missingword/lang/en/qformat_missingword.php,
+	question/format/multianswer/format.php,
+	question/format/multianswer/lang/en/qformat_multianswer.php,
+	question/format/qti_two/custommediafilter.php,
+	question/format/qti_two/format.php,
+	question/format/qti_two/qt_common.php,
+	question/format/qti_two/lang/en/qformat_qti_two.php,
+	question/format/webct/format.php,
+	question/format/webct/lang/en/qformat_webct.php,
+	question/format/xhtml/format.php,
+	question/format/xhtml/lang/en/qformat_xhtml.php,
+	question/format/xml/format.php,
+	question/format/xml/lang/en/qformat_xml.php,
+	question/simpletest/testimportexport.php,
+	question/type/edit_question_form.php, question/type/question.html,
+	question/type/questionbase.php, question/type/questiontype.php,
+	question/type/questiontypebase.php, question/type/rendererbase.php,
+	question/type/calculated/datasetdefinitions_form.php,
+	question/type/calculated/datasetitems_form.php,
+	question/type/calculated/edit_calculated_form.php,
+	question/type/calculated/lib.php,
+	question/type/calculated/question.php,
+	question/type/calculated/questiontype.php,
+	question/type/calculated/renderer.php,
+	question/type/calculated/styles.css,
+	question/type/calculated/version.php,
+	question/type/calculated/backup/moodle2/backup_qtype_calculated_plu
+	gin.class.php,
+	question/type/calculated/backup/moodle2/restore_qtype_calculated_pl
+	ugin.class.php, question/type/calculated/db/install.xml,
+	question/type/calculated/db/upgrade.php,
+	question/type/calculated/db/upgradelib.php,
+	question/type/calculated/lang/en/qtype_calculated.php,
+	question/type/calculatedmulti/edit_calculatedmulti_form.php,
+	question/type/calculatedmulti/lib.php,
+	question/type/calculatedmulti/question.php,
+	question/type/calculatedmulti/questiontype.php,
+	question/type/calculatedmulti/renderer.php,
+	question/type/calculatedmulti/styles.css,
+	question/type/calculatedmulti/version.php,
+	question/type/calculatedmulti/backup/moodle2/backup_qtype_calculate
+	dmulti_plugin.class.php,
+	question/type/calculatedmulti/backup/moodle2/restore_qtype_calculat
+	edmulti_plugin.class.php,
+	question/type/calculatedmulti/lang/en/qtype_calculatedmulti.php,
+	question/type/calculatedsimple/edit_calculatedsimple_form.php,
+	question/type/calculatedsimple/lib.php,
+	question/type/calculatedsimple/question.php,
+	question/type/calculatedsimple/questiontype.php,
+	question/type/calculatedsimple/renderer.php,
+	question/type/calculatedsimple/styles.css,
+	question/type/calculatedsimple/version.php,
+	question/type/calculatedsimple/backup/moodle2/backup_qtype_calculat
+	edsimple_plugin.class.php,
+	question/type/calculatedsimple/backup/moodle2/restore_qtype_calcula
+	tedsimple_plugin.class.php,
+	question/type/calculatedsimple/lang/en/qtype_calculatedsimple.php,
+	question/type/description/edit_description_form.php,
+	question/type/description/question.html,
+	question/type/description/question.php,
+	question/type/description/questiontype.php,
+	question/type/description/renderer.php,
+	question/type/description/version.php,
+	question/type/description/lang/en/qtype_description.php,
+	question/type/essay/display.html,
+	question/type/essay/edit_essay_form.php,
+	question/type/essay/lib.php, question/type/essay/question.php,
+	question/type/essay/questiontype.php,
+	question/type/essay/renderer.php, question/type/essay/styles.css,
+	question/type/essay/version.php,
+	question/type/essay/backup/moodle2/backup_qtype_essay_plugin.class.
+	php,
+	question/type/essay/backup/moodle2/restore_qtype_essay_plugin.class
+	.php, question/type/essay/lang/en/qtype_essay.php,
+	question/type/match/display.html,
+	question/type/match/edit_match_form.php,
+	question/type/match/lib.php, question/type/match/question.php,
+	question/type/match/questiontype.php,
+	question/type/match/renderer.php, question/type/match/version.php,
+	question/type/match/backup/moodle2/backup_qtype_match_plugin.class.
+	php,
+	question/type/match/backup/moodle2/restore_qtype_match_plugin.class
+	.php, question/type/match/db/install.xml,
+	question/type/match/db/upgrade.php,
+	question/type/match/db/upgradelib.php,
+	question/type/match/lang/en/qtype_match.php,
+	question/type/missingtype/display.html,
+	question/type/missingtype/edit_missingtype_form.php,
+	question/type/missingtype/question.php,
+	question/type/missingtype/questiontype.php,
+	question/type/missingtype/renderer.php,
+	question/type/missingtype/version.php,
+	question/type/missingtype/lang/en/qtype_missingtype.php,
+	question/type/missingtype/pix/icon.gif,
+	question/type/multianswer/edit_multianswer_form.php,
+	question/type/multianswer/module.js,
+	question/type/multianswer/question.php,
+	question/type/multianswer/questiontype.php,
+	question/type/multianswer/renderer.php,
+	question/type/multianswer/styles.css,
+	question/type/multianswer/version.php,
+	question/type/multianswer/backup/moodle2/backup_qtype_multianswer_p
+	lugin.class.php,
+	question/type/multianswer/backup/moodle2/restore_qtype_multianswer_
+	plugin.class.php, question/type/multianswer/db/upgrade.php,
+	question/type/multianswer/db/upgradelib.php,
+	question/type/multianswer/lang/en/qtype_multianswer.php,
+	question/type/multichoice/display.html,
+	question/type/multichoice/edit_multichoice_form.php,
+	question/type/multichoice/lib.php,
+	question/type/multichoice/question.php,
+	question/type/multichoice/questiontype.php,
+	question/type/multichoice/renderer.php,
+	question/type/multichoice/styles.css,
+	question/type/multichoice/version.php,
+	question/type/multichoice/backup/moodle2/backup_qtype_multichoice_p
+	lugin.class.php,
+	question/type/multichoice/backup/moodle2/restore_qtype_multichoice_
+	plugin.class.php, question/type/multichoice/db/install.xml,
+	question/type/multichoice/db/upgrade.php,
+	question/type/multichoice/db/upgradelib.php,
+	question/type/multichoice/lang/en/qtype_multichoice.php,
+	question/type/numerical/display.html,
+	question/type/numerical/edit_numerical_form.php,
+	question/type/numerical/lib.php,
+	question/type/numerical/question.php,
+	question/type/numerical/questiontype.php,
+	question/type/numerical/renderer.php,
+	question/type/numerical/styles.css,
+	question/type/numerical/version.php,
+	question/type/numerical/backup/moodle2/backup_qtype_numerical_plugi
+	n.class.php,
+	question/type/numerical/backup/moodle2/restore_qtype_numerical_plug
+	in.class.php, question/type/numerical/db/install.xml,
+	question/type/numerical/db/upgrade.php,
+	question/type/numerical/db/upgradelib.php,
+	question/type/numerical/lang/en/qtype_numerical.php,
+	question/type/numerical/simpletest/helper.php,
+	question/type/numerical/simpletest/testanswer.php,
+	question/type/numerical/simpletest/testanswerprocessor.php,
+	question/type/numerical/simpletest/testquestion.php,
+	question/type/numerical/simpletest/testquestiontype.php,
+	question/type/numerical/simpletest/testwalkthrough.php,
+	question/type/random/edit_random_form.php,
+	question/type/random/questiontype.php,
+	question/type/random/version.php,
+	question/type/random/backup/moodle2/restore_qtype_random_plugin.cla
+	ss.php, question/type/random/lang/en/qtype_random.php,
+	question/type/randomsamatch/edit_randomsamatch_form.php,
+	question/type/randomsamatch/questiontype.php,
+	question/type/randomsamatch/version.php,
+	question/type/randomsamatch/backup/moodle2/backup_qtype_randomsamat
+	ch_plugin.class.php,
+	question/type/randomsamatch/backup/moodle2/restore_qtype_randomsama
+	tch_plugin.class.php,
+	question/type/randomsamatch/lang/en/qtype_randomsamatch.php,
+	question/type/shortanswer/display.html,
+	question/type/shortanswer/edit_shortanswer_form.php,
+	question/type/shortanswer/lib.php,
+	question/type/shortanswer/question.php,
+	question/type/shortanswer/questiontype.php,
+	question/type/shortanswer/renderer.php,
+	question/type/shortanswer/styles.css,
+	question/type/shortanswer/version.php,
+	question/type/shortanswer/backup/moodle2/backup_qtype_shortanswer_p
+	lugin.class.php,
+	question/type/shortanswer/backup/moodle2/restore_qtype_shortanswer_
+	plugin.class.php, question/type/shortanswer/db/upgradelib.php,
+	question/type/shortanswer/lang/en/qtype_shortanswer.php,
+	question/type/shortanswer/simpletest/testquestion.php,
+	question/type/shortanswer/simpletest/testquestiontype.php,
+	question/type/simpletest/testquestionbase.php,
+	question/type/simpletest/testquestiontype.php,
+	question/type/truefalse/display.html,
+	question/type/truefalse/edit_truefalse_form.php,
+	question/type/truefalse/lib.php,
+	question/type/truefalse/question.php,
+	question/type/truefalse/questiontype.php,
+	question/type/truefalse/renderer.php,
+	question/type/truefalse/styles.css,
+	question/type/truefalse/version.php,
+	question/type/truefalse/backup/moodle2/backup_qtype_truefalse_plugi
+	n.class.php,
+	question/type/truefalse/backup/moodle2/restore_qtype_truefalse_plug
+	in.class.php, question/type/truefalse/db/upgradelib.php,
+	question/type/truefalse/lang/en/qtype_truefalse.php,
+	theme/index.php, theme/switchdevice.php,
+	theme/anomaly/style/general.css, theme/base/style/core.css,
+	theme/base/style/question.css, theme/canvas/style/question.css,
+	theme/formal_white/config.php, theme/formal_white/lib.php,
+	theme/formal_white/settings.php, theme/formal_white/version.php,
+	theme/formal_white/db/install.php,
+	theme/formal_white/lang/en/theme_formal_white.php,
+	theme/formal_white/layout/frontpage.php,
+	theme/formal_white/layout/general.php,
+	theme/formal_white/pix/gradient_h.jpg,
+	theme/formal_white/pix/sprite.png,
+	theme/formal_white/style/calendar.css,
+	theme/formal_white/style/core.css,
+	theme/formal_white/style/course.css,
+	theme/formal_white/style/formal_white.css,
+	theme/formal_white/style/menu.css,
+	theme/formal_white/style/pagelayout.css,
+	theme/formal_white/style/quiz.css,
+	theme/formal_white/style/tabs.css, theme/fusion/style/core.css,
+	theme/fusion/style/pagelayout.css,
+	theme/leatherbound/style/core.css,
+	theme/overlay/style/pagelayout.css, theme/standard/style/core.css,
+	theme/standard/style/question.css, user/editadvanced.php,
+	webservice/externallib.php, webservice/lib.php,
+	webservice/simpletest/testwebservice.php: 
+	
+	weekly cvs snapshot
+
+2011-06-03 Friday 05:56  moodlerobot
+
+	* install/lang/my/langconfig.php: 
+	
+	file langconfig.php was initially added on branch MOODLE_20_STABLE.
+
+2011-06-03 Friday 05:55  moodlerobot
+
+	* githash.php, version.php, githash.php, version.php,
+	backup/moodle2/restore_plugin.class.php,
+	backup/util/plan/restore_structure_step.class.php,
+	backup/util/plan/restore_task.class.php,
+	install/lang/he/install.php, install/lang/my/langconfig.php,
+	lib/enrollib.php, lib/modinfolib.php, lib/navigationlib.php,
+	lib/statslib.php, theme/canvas/style/core.css,
+	theme/canvas/style/text.css, githash.php, version.php,
+	backup/moodle2/restore_plugin.class.php,
+	backup/util/plan/restore_structure_step.class.php,
+	backup/util/plan/restore_task.class.php, course/moodleform_mod.php,
+	lib/enrollib.php, lib/modinfolib.php, lib/navigationlib.php,
+	lib/pluginlib.php, lib/statslib.php,
+	lib/simpletest/testnavigationlib.php, theme/canvas/style/core.css,
+	theme/canvas/style/text.css: 
+	
+	weekly cvs snapshot
+

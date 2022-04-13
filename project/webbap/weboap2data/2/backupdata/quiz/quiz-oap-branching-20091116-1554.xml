@@ -1,0 +1,3491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<!-- question: 335  -->
+  <question type="multichoice">
+    <name><text>01</text>
+</name>
+    <questiontext format="html">
+<text>Виразом якого типу може бути умова у мові Паскаль?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+логічного
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+цілого
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+дійсного
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+рядкового
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 336  -->
+  <question type="multichoice">
+    <name><text>02</text>
+</name>
+    <questiontext format="html">
+<text>Яке ім'я має логічний тип у мові Паскаль?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+boolean
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+bool
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+byte
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+integer
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 337  -->
+  <question type="multichoice">
+    <name><text>03</text>
+</name>
+    <questiontext format="html">
+<text>Скільки значень можуть приймати булеві змінні?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+4
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 338  -->
+  <question type="multichoice">
+    <name><text>04</text>
+</name>
+    <questiontext format="html">
+<text>Які функції визначені на множині логічного типу?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+ord
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+succ
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+pred
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+chr
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 339  -->
+  <question type="multichoice">
+    <name><text>05</text>
+</name>
+    <questiontext format="html">
+<text>Які з цих співвідношень вірні?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+False &lt; True
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+Ord (False)=0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+Succ(False)=True
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+Succ(True)=False
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 340  -->
+  <question type="multichoice">
+    <name><text>06</text>
+</name>
+    <questiontext format="html">
+<text>Які з цих логічних операцій визначені на множині логічного типу?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+and
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+or
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+not
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+min
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 341  -->
+  <question type="multichoice">
+    <name><text>07</text>
+</name>
+    <questiontext format="html">
+<text>Які з цих тверджень вірні?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+(False) and (True) = (False)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+(True) and (True) = (True)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+(True) and (False) = (True)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+(False) and (False) = (True)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 342  -->
+  <question type="multichoice">
+    <name><text>08</text>
+</name>
+    <questiontext format="html">
+<text>Які з цих тверджень вірні?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+(False) or (True) = (True)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+(True) or (True) = (True)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+(True) or (False) = (False)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+(False) or (False) = (True)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 343  -->
+  <question type="multichoice">
+    <name><text>09</text>
+</name>
+    <questiontext format="html">
+<text>Результат яких з цих операцій має булевий тип?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+=
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+&lt;&gt;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+&lt;=
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+div
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 344  -->
+  <question type="multichoice">
+    <name><text>10</text>
+</name>
+    <questiontext format="html">
+<text>Які з цих стандартних визначених функцій приймають булеві значення?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+Odd(Х)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+Eoln(F)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+Eof(F)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+Ord(x)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 345  -->
+  <question type="multichoice">
+    <name><text>11</text>
+</name>
+    <questiontext format="html">
+<text>Оберіть з поданих нижче умов прості умови:</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-100">
+        <text>
+(Sin(2*x) &gt; Ѕ) OR ((X + Y) Mod Prime = 0)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+b*b &gt;= 4*a*c
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+Number Div Modulo = 2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+Odd ( m ) And (n &lt; 10е4)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 346  -->
+  <question type="multichoice">
+    <name><text>12</text>
+</name>
+    <questiontext format="html">
+<text>Оберіть з поданих нижче умов складені умови:</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+Eof(f) Or (c = 0) {f - файл дійсних чисел}
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+Not(beta) And (gamma) {beta і gamma - змінні типу Boolean}
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+(A + B) = (C - D)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+Odd(A*P + B)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 347  -->
+  <question type="multichoice">
+    <name><text>13</text>
+</name>
+    <questiontext format="html">
+<text>Оберіть всі правильні варіанти запису умови Not((A &amp;gt; 0) And (B &amp;lt;&amp;gt; 0))</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+Not(A &gt; 0) Or Not(B &lt;&gt; 0)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+(A &lt;= 0) Or (B = 0)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+Not(A &gt; 0) And Not(B &lt;&gt; 0)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+(A &lt;= 0) And (B = 0)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 348  -->
+  <question type="multichoice">
+    <name><text>14</text>
+</name>
+    <questiontext format="html">
+<text>Яким службовим словом позначається умовний оператор у мові Паскаль?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+if
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+case
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+while
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+until
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 349  -->
+  <question type="multichoice">
+    <name><text>15</text>
+</name>
+    <questiontext format="html">
+<text>Скільки форм умовного оператору існує у мові Паскаль?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+безліч
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 350  -->
+  <question type="multichoice">
+    <name><text>16</text>
+</name>
+    <questiontext format="html">
+<text>Оберіть всі можливі форми умовного оператора у мові Паскаль?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+If Then
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+If Then Else
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+Case Of
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+While Do
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 351  -->
+  <question type="multichoice">
+    <name><text>17</text>
+</name>
+    <questiontext format="html">
+<text>Які числа можна порівнювати за величиною?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+цілі
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+дійсні
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+раціональні
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+ірраціональні
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 352  -->
+  <question type="multichoice">
+    <name><text>18</text>
+</name>
+    <questiontext format="html">
+<text>Згідно до чого порівнюють рядки?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+згідно до алфавітного порядку
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+згідно до довжини рядка
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+згідно до алфавітного порядку і довжини рядка
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+згідно до алфавітного порядку і регістру символів
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 353  -->
+  <question type="multichoice">
+    <name><text>19</text>
+</name>
+    <questiontext format="html">
+<text>Чим визначається складність розгалуження?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+складністю умови
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+складністю обчислень гілок
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+складністю кроків
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+складністю кроків
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 354  -->
+  <question type="multichoice">
+    <name><text>20</text>
+</name>
+    <questiontext format="html">
+<text>Від чого залежить час виконання програми з розгалуженням?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+від гілки, за якою слідує процес виконання
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+від найдовшой гілки
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+від найкоротшої гілки
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+від середнього арифметичного всіх гілок
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 355  -->
+  <question type="multichoice">
+    <name><text>21</text>
+</name>
+    <questiontext format="html">
+<text>Яке співвідношення має місце, якщо Тп - складність програми за часом в гіршому випадку, Ту - складність за часом умови і Тв1, Тв2 - складності гілок за часом програми?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+Tп = Tу + Max( Tв1, Tв2 )
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+Tп = Tу + Min( Tв1, Tв2 )
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+Tп = Tу + Tв1 + Tв2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+Tп = Tу + Med( Tв1, Tв2 )
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 356  -->
+  <question type="multichoice">
+    <name><text>22</text>
+</name>
+    <questiontext format="html">
+<text>Як співвідносяться час виконання логічних операцій з часом виконання адитивних операцій</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+час виконання логічних операцій значно менший
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+час виконання логічних операцій незначно менший, або дорівнює часу виконання адитивних операцій
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+приблизно однакові
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+час виконання логічних операцій більший
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 357  -->
+  <question type="multichoice">
+    <name><text>23</text>
+</name>
+    <questiontext format="html">
+<text>Які з цих операцій за часом виконання є логічними операціями?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+and
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+not
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+&lt;&gt;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+&lt;=
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 358  -->
+  <question type="multichoice">
+    <name><text>24</text>
+</name>
+    <questiontext format="html">
+<text>Які з цих операцій за часом виконання є адитивними операціями?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+*
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
++
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+&lt;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+&lt;=
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 359  -->
+  <question type="multichoice">
+    <name><text>25</text>
+</name>
+    <questiontext format="html">
+<text>Скільки варіантів розвитку дій представляє оператор case?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+безліч
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 360  -->
+  <question type="multichoice">
+    <name><text>26</text>
+</name>
+    <questiontext format="html">
+<text>В яких випадках перед else необхідно ставити символ &amp;quot;;&amp;quot;?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+в жодному випадку
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+завжди
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+не принципово
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+якщо в then був складений оператор
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 361  -->
+  <question type="multichoice">
+    <name><text>27</text>
+</name>
+    <questiontext format="html">
+<text>У випадку декількох вкладених if, до якого з них компілятор віднесе else, якщо не кожний if має цю гілку?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+до найближчого
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+до першого
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+до останнього
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+згідно з форматуванням тексту у запису програми
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 362  -->
+  <question type="multichoice">
+    <name><text>28</text>
+</name>
+    <questiontext format="html">
+<text>Яким чином можна віднести else-гілку не до найближчого if у разі вкладеності?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+вказувати обидва ключових слова (else else)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+взяти найближчий if у операторні дужки begin-end
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+ставити після найближчого if символ &quot;;&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+не реалізовується жодним способом
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 363  -->
+  <question type="multichoice">
+    <name><text>29</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Які помилки є у записі оператору вибору?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt; case &amp;lt;перемикач&amp;gt; of&amp;nbsp;&amp;nbsp; &amp;nbsp;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;константа&amp;gt; : &amp;lt;один_оператор&amp;gt;;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; [&amp;lt;список_констант&amp;gt; : &amp;lt;один_оператор&amp;gt;;]&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; [&amp;lt;список_констант&amp;gt; : &amp;lt;список_операторів&amp;gt;;]&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; [else: &amp;lt;один_оператор&amp;gt;;]&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; end;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+не можна використовувати список операторів
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+після else двокрапка не ставиться
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+не можна використовувати список констант
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+у кінці запису оператору case слово end не ставиться
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 364  -->
+  <question type="multichoice">
+    <name><text>30</text>
+</name>
+    <questiontext format="html">
+<text>Як здійснюється виконання оператору &lt;strong&gt;case&lt;/strong&gt;, якщо мітка у списку констант дорівнює значенню селектора?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+виконується відповідний оператор, і управління передається оператору, що слідує за ключовим словом end
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+відбувається подальша перевірка на приналежність перемикача іншому списку костант
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+відбувається перехід на оператор після ключового слова else
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+виконується відповідний оператор, і припиняється виконання програми
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 365  -->
+  <question type="multichoice">
+    <name><text>31</text>
+</name>
+    <questiontext format="html">
+<text>Що відбувається, якщо не знайдено списку констант, до якого належить перемикач?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+за наявності, виконується else-гілка
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+за відсутності else-гілки не виконується нічого
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+виконується оператор, відповідний першому списку констант
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+виконується оператор, відповідний останньому списку констант
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 366  -->
+  <question type="multichoice">
+    <name><text>32</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору розгалуження?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt; a:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; if a&amp;gt;0 then a:=a+1;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 367  -->
+  <question type="multichoice">
+    <name><text>33</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору розгалуження?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt;a:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; if a&amp;lt;0 then a:=a+1;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 368  -->
+  <question type="multichoice">
+    <name><text>34</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору розгалуження?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt;a:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; if a&amp;lt;0 then a:=a+1&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else a:=a-1;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 369  -->
+  <question type="multichoice">
+    <name><text>35</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору розгалуження?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt;&amp;nbsp; a:=2;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; if a&amp;gt;=2 then a:=a*a;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+4
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 370  -->
+  <question type="multichoice">
+    <name><text>36</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору розгалуження?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt;&amp;nbsp; a:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; if a=0 then a:=1 else;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 371  -->
+  <question type="multichoice">
+    <name><text>37</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Чому буде дорівнювати b після виконання оператору розгалуження? &lt;/p&gt;
+  &lt;p&gt;a:=0;b:=a;&lt;/p&gt;
+  &lt;p&gt;if a&amp;lt;b then b:=a+1 else b:=a+a&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 372  -->
+  <question type="multichoice">
+    <name><text>38</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a+b після виконання оператору розгалуження?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt; a:=1; b:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; if a&amp;gt;0 then a:=a+1 else if b&amp;gt;0 then b:=b+1;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 373  -->
+  <question type="multichoice">
+    <name><text>39</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a*b після виконання оператору розгалуження?&lt;/font&gt;&lt;/p&gt; 
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;a:=1; b:=0;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; if a&amp;lt;0 then a:=a+1 else if b&amp;lt;0 then b:=b+1;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 374  -->
+  <question type="multichoice">
+    <name><text>40</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a/b після виконання оператору розгалуження?&lt;/font&gt;&lt;/p&gt; 
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt;&amp;nbsp; a:=1; b:=2;&lt;/font&gt;&lt;/div&gt; 
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; if (a&amp;gt;0) and (b&amp;gt;0) then if a=2 then a:=a+1&lt;/font&gt;&lt;/div&gt; 
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else a:=a-1;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+0.5
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 375  -->
+  <question type="multichoice">
+    <name><text>41</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a+b після виконання оператору розгалуження?&lt;/font&gt;&lt;/p&gt; 
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt; a:=1; b:=2;&lt;/font&gt;&lt;/div&gt; 
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; if (a&amp;gt;0) and (b&amp;gt;0) then if a=2 then a:=a+1&lt;/font&gt;&lt;/div&gt; 
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else&lt;/font&gt;&lt;/div&gt; 
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else a:=a-1;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+0.5
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 376  -->
+  <question type="multichoice">
+    <name><text>42</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору вибору?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt; a:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; case a of&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1,2: a:=a+1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1,3: a:=a-1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; end;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 377  -->
+  <question type="multichoice">
+    <name><text>43</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору вибору?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt;&amp;nbsp; a:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; case a of&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1,2: a:=a+1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1: a:=a-1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; end;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 378  -->
+  <question type="multichoice">
+    <name><text>44</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору вибору?&lt;/font&gt;&lt;/p&gt; &lt;font size=&quot;3&quot;&gt; a:=1;&lt;br /&gt;&amp;nbsp;&amp;nbsp; case a of&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 2: a:=a+1;&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else a:=a-1;&lt;br /&gt;&amp;nbsp;&amp;nbsp; end;&lt;/font&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 379  -->
+  <question type="multichoice">
+    <name><text>45</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору вибору?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt; a:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; case a of&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 2: a:=a+1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; end;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 380  -->
+  <question type="multichoice">
+    <name><text>46</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору вибору?&lt;/font&gt;&lt;/p&gt; 
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;a:=1; b:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; case a of&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1: if b=1 then a:=2;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1,3: a:=a-1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; end;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 381  -->
+  <question type="multichoice">
+    <name><text>47</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a+b після виконання оператору вибору?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt;a:=1; b:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; case a+b of&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 3: if b=1 then a:=2;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1,3: a:=a-1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; end;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 382  -->
+  <question type="multichoice">
+    <name><text>48</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a*b після виконання оператору вибору?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt; a:=1; b:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; case a of&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; b: if b=1 then a:=2;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1: a:=a-1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; end;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 383  -->
+  <question type="multichoice">
+    <name><text>49</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a після виконання оператору вибору?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt; a:=1; b:=2;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; case a of&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; b: if b=1 then a:=2;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else a:=a-1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; end;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 384  -->
+  <question type="multichoice">
+    <name><text>50</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;
+Чому буде дорівнювати a+b після виконання оператору вибору?&lt;/font&gt;&lt;/p&gt;
+  &lt;div&gt; &lt;font size=&quot;3&quot;&gt; a:=1; b:=1;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; case a of&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; b+1: if b=1 then a:=2;&lt;/font&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; end;&lt;/font&gt;&lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+</quiz>

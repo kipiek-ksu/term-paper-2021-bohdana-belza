@@ -1,0 +1,269 @@
+<h2   class="main">email_list</h2><hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): CREATE TABLE mdl_email_preference (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    trackbymail SMALLINT(4) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_preference COMMENT='Global preferences for Email' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaipref_use_ix ON mdl_email_preference (userid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_mail (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    subject VARCHAR(255) NOT NULL DEFAULT '',
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    body TEXT,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_mail COMMENT='All mails are stored in this table' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaimail_sub_ix ON mdl_email_mail (subject) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaimail_tim_ix ON mdl_email_mail (timecreated) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaimail_use_ix ON mdl_email_mail (userid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaimail_cou_ix ON mdl_email_mail (course) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_send (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    mailid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    type enum('to', 'cc', 'bcc') NOT NULL DEFAULT 'to',
+    readed SMALLINT(4) NOT NULL DEFAULT 0,
+    sended SMALLINT(4) NOT NULL DEFAULT 1,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_send COMMENT='Mail user send, type and it is readed' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaisend_rea_ix ON mdl_email_send (readed) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaisend_typ_ix ON mdl_email_send (type) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaisend_sen_ix ON mdl_email_send (sended) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaisend_use_ix ON mdl_email_send (userid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaisend_cou_ix ON mdl_email_send (course) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaisend_mai_ix ON mdl_email_send (mailid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_folder (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    isparenttype enum('inbox', 'sendbox', 'trash', 'draft') DEFAULT NULL,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_folder COMMENT='All Folders for store mails. \'isparenttype\' content only typ' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaifold_isp_ix ON mdl_email_folder (isparenttype) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaifold_use_ix ON mdl_email_folder (userid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_subfolder (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    folderparentid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    folderchildid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_subfolder COMMENT='SubFolders for one folder for store mails' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaisubf_fol_ix ON mdl_email_subfolder (folderparentid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaisubf_fol2_ix ON mdl_email_subfolder (folderchildid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_foldermail (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    mailid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    folderid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_foldermail COMMENT='Mails of one folder' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaifold_mai_ix ON mdl_email_foldermail (mailid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_emaifold_fol_ix ON mdl_email_foldermail (folderid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_filter (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    folderid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    rules TEXT,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_filter COMMENT='Filter mail for one folder' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add mail', 'email_mail', 'subject') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add mail in draft', 'email_mail', 'subject') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'reply', 'email_mail', 'subject') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'reply all', 'email_mail', 'subject') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'forward', 'email_mail', 'subject') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add subfolder', 'email_folder', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'update subfolder', 'email_folder', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'remove subfolder', 'email_folder', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view course mails', 'email_send', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view all courses mails', 'email_send', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view mail', 'email_send', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'remove mail', 'email_send', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<div class="notifysuccess" style="text-align:center">[[email_list]] таблицы были правильно установлены</div><br />
+<hr />

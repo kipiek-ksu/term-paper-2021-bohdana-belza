@@ -1,0 +1,4532 @@
+<?php
+
+/*
+ * Created on 11.8.2007
+ * rca ejournal.module
+ * 
+ * continue with point "41. Major changes to node_access system" 
+ * TODOs:
+ *  - check if the form_id are OK (they had to be changed)
+ *  - fix the formatting issue, Eclipse php autoformatting really sucks
+ */
+
+/*
+    ejournal.module by rca, ideas taken from Open Source Journal, and
+    ejournal.module - Part of the ejournal module for Drupal
+                                                                                
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+                                                                                
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+                                                                                
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+*/
+
+/** 
+ * @file ejournal.module
+ * This module helps organize a group of selected nodes into a publication, such as
+ * a newspaper, magazine or newsletter (I call it journal, but you should know that
+ * it is not an module for a true peer-reviewed publication). 
+ * You can set as many ejournals as you wish, each of them have issues which are 
+ * identified by Year, Volume, and Number (this can be set in template)
+ * Each issue contains articles, these are the ordinary Drupal node types,
+ * you simply select which of them should be 'articles' (e.g. it is advisable
+ * to create your own document type with flexinode and the assign it to this module)
+ * The articles are organized into sections, and the sections are simply a keywords
+ * maintained by taxonomy module (again, you will tell ejournal module which
+ * vocabulary to use for which journal).
+ *
+ * @note See the module help for usage and administration information.
+ */
+
+define('ISSUE_FUTURE', 3);
+define('ISSUE_CURRENT', 2);
+define('ISSUE_PUBLISHED', 1);
+define('ISSUE_NOT_PUBLISHED', 0);
+define('ISSUE_WORKING', -1);
+define('PROOFREADER_APPROVED', 1);
+define('PROOFREADER_NOT_APPROVED', 0);
+define('PROOFREADER_IGNORED', 2);
+
+define('GID_CHIEFEDITORS', 2);
+define('GID_EDITORS', 1);
+define('GID_PROOFREADERS', 1);
+define('GID_REVIEWERS', 3);
+define('GID_AUTHORS', 9);
+define('GID_OTHERS', 0);
+define('GID_STAFF', 0);
+
+
+function ejournal_version() {
+	return '0.9';
+}
+
+/** 
+ * Implementation of hook_menu: Define menu links.
+ * 
+ *   - ejournal -> publications page
+ * @note See hook_menu for a description of parameters and return values.
+ */
+function ejournal_menu($may_cache) {
+	$items = array ();
+	if (!$may_cache) {
+		//admin/settings/ejournal
+    $items[] = array (
+        'path' => 'admin/settings/ejournal',
+        'title' => t('E-journal'), 
+        'callback' => 'ejournal_admin_settings', 
+        'access' => ejournal_user_access(array ('chief editor')), 
+      );
+    $items[] = array (
+        'path' => 'admin/settings/ejournal/list',
+        'title' => t('List'), 
+        'callback' => 'ejournal_admin_settings', 
+        'access' => ejournal_user_access(array ('chief editor')), 
+        'type' => MENU_DEFAULT_LOCAL_TASK, 
+        'weight' => -10,
+      );
+    //admin/settings/ejournal/global
+		$items[] = array (
+			'path' => 'admin/settings/ejournal/global',
+			'title' => t('Global settings'), 
+            'description' => t('Set the general options for all e-journals on this site.'), 
+            'callback' => 'drupal_get_form', 
+            'callback arguments' => array ('ejournal_form_settings'), 
+            'access' => user_access('administer site configuration'), 
+            'type' => MENU_LOCAL_TASK, // optional
+	    );    
+    //admin/settings/ejournal/add
+    $items[] = array (
+        'path' => 'admin/settings/ejournal/add',
+        'title' => t('Add journal'), 
+        'callback' => 'ejournal_admin_settings', 
+        'access' => ejournal_user_access(array ('chief editor')), 
+        'type' => MENU_LOCAL_TASK, 
+        //'weight' => -10
+      );
+
+    /*
+    //admin/settings/ejournal/edit/{jid}
+    $items[] = array (
+        'path' => 'admin/settings/ejournal/edit',
+        'title' => t('E-journal'), 
+        'callback' => 'ejournal_admin_settings', 
+        'access' => ejournal_user_access(array ('chief editor'), ejournal_journal_get(arg(4))), 
+        'type' => MENU_DEFAULT_LOCAL_TASK, 'weight' => -9);
+      
+    */
+    /*    
+    $items[] = array (
+			'path' => 'admin/ejournal',
+			'title' => t('E-journal main page'),
+      'callback' => 'ejournal_admin', 
+      'description' => t('Control your publications.'), 
+      'position' => 'left', 
+      'weight' => -10, 
+      'callback' => 'system_admin_menu_block_page', 
+      'access' => ejournal_user_access(array ('chief editor'), ejournal_journal_get(arg(4))));
+    */
+		// admin/ejournal
+		$items[] = array (
+			'path' => 'admin/ejournal',
+			'title' => t('E-journal'), 
+      'callback' => 'ejournal_admin', 
+      'access' => ejournal_user_access(array ('chief editor'), ejournal_journal_get(arg(4))),
+      //'type' => MENU_DEFAULT_LOCAL_TASK
+      );		
+		$items[] = array (
+			'path' => 'admin/ejournal/working',
+			'title' => t('Working'), 
+      'callback' => 'ejournal_admin', 'access' => ejournal_user_access(array ('chief editor', 'editor'), ejournal_journal_get(arg(3))), 
+      'type' => MENU_LOCAL_TASK, 
+      'weight' => -8);
+		$items[] = array (
+			'path' => 'admin/ejournal/authors',
+			'title' => t('Authors'), 
+      'callback' => 'ejournal_admin', 
+      'access' => ejournal_user_access(array ('chief editor')), //rca TODO get access also to ejournal-{jid} only
+	    'type' => MENU_LOCAL_TASK);
+
+		// public stuff
+		$items[] = array (
+			'path' => 'ejournal',
+			'title' => t('Journal'
+		), 'access' => user_access('access content'), 'callback' => 'ejournal_public_page', 'type' => MENU_SUGGESTED_ITEM);
+
+		if ($menu = ejournal_invoke_all('menu', $may_cache)) {
+			$items = array_merge($items, $menu);
+		}
+	}
+	return $items;
+}
+
+/**
+ * Implementation of hook_enable().
+ */ 
+function ejournal_enable() {
+  node_access_rebuild();
+}
+
+function ejournal_disable() {
+  ejournal_grant_disabling(TRUE);
+  node_access_rebuild();
+}
+
+/**
+ * hook_perm: Define user permissions for module ejournal
+ */
+function ejournal_perm() {
+	$perms = array (
+		'ejournal chief editor',
+		'ejournal editor',
+		'ejournal proofreader'
+	);
+	$journals = db_query("SELECT * FROM {ejournal_journals} WHERE jid>=1");
+	while ($journal = db_fetch_object($journals)) {
+		$perms[] = 'ejournal-' . $journal->jid . ' chief editor';
+		$perms[] = 'ejournal-' . $journal->jid . ' editor';
+		$perms[] = 'ejournal-' . $journal->jid . ' proofreader';
+	}
+
+	if ($plugin_perm = ejournal_invoke_all('perm')) {
+		$perms = array_merge($perms, $plugin_perm);
+	}
+	return $perms;
+}
+
+/**
+ * Implementation of hook_node_grants().
+ */
+
+function ejournal_node_grants($user, $op) {
+	if (ejournal_user_access(array ('chief editor'), ejournal_user_extract_jid_from_permissions($user), $user)) {
+		return array ('ejrn' => array (2));
+	}
+	$grants = array ();
+	if (ejournal_user_access(array ('editor',	'proofreader'), ejournal_user_extract_jid_from_permissions($user), $user)) {
+		$grants[] = 1;
+	}
+	$grants[] = 0; // null is because we delete editor's entry after issue publication 
+	$grants[] = $user->uid;
+
+	return array (
+		'ejrn' => $grants
+	);
+}
+
+/**
+ * Implementation of hook_help().
+ */
+function ejournal_help($section = 'admin/help#ejournal') {
+	switch ($section) {
+		case 'admin/ejournal' : //TODO where goes this?
+			$output = '<p>' . t('Settings for periodically-issued publications.') . '</p>';
+			break;
+		case 'admin/help#ejournal' :
+			$output = '<p>' . t('This module helps organize a publication or group of publications, each with multiple editions.') . '</p>';
+			break;
+	}
+	return $output;
+}
+
+function ejournal_form_settings() {
+	// global layouts
+	$form['ejournal_custom_layouts'] = array (
+		'#type' => 'checkbox',
+		'#title' => t('Custom layouts?'), 
+        '#default_value' => variable_get('ejournal_custom_layouts', '0'), 
+        '#description' => t("If this option is checked, publications, sections and editions can each have their own own layouts that override the global layouts selected above."));
+	// automatic publication, not tested	
+	$form['ejournal_use_cron'] = array (
+		'#type' => 'checkbox',
+		'#title' => t('Automatic issue publication?'), 
+        '#default_value' => variable_get('ejournal_use_cron', '0'), 
+        '#description' => t("If this option is checked, the future issue will be automatically published, at the given date and without human help."));
+
+	//TODO
+	// rights to edit taxonomies (selected ones)
+
+	if ($settings = ejournal_invoke_all('settings')) {
+		$form['plugins'] = array (
+			'#type' => 'fieldset',
+			'#title' => t('E-journal plugins'
+		),  'form' => $settings,);
+	}
+	
+	return system_settings_form($form);
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function ejournal_nodeapi(&$node, $op, $teaser = NULL, $page = NULL) {
+
+	//test if this node-type is considered to be an article-type
+	if (!$jid = ejournal_article_from_journal($node)) {
+    //it is not pure e-journal, but our plugins may do something with it
+		$plugins = ejournal_invoke_all('from_journal', $node);
+		foreach ($plugins as $plugin => $jid) {
+			ejournal_invoke('nodeapi', $plugin, $node, $op, $teaser, $page);
+		}
+		return;
+	}
+
+	switch ($op) {
+		case 'settings' :
+			break;
+
+		case 'insert' :
+      ejournal_article_insert($jid, $node);
+			break;
+
+		case 'update' :
+      ejournal_article_update($jid, $node);
+			break;
+
+		case 'delete' :
+			ejournal_article_delete($jid, $node);
+			break;
+
+		case 'load' :
+      ejournal_grants_load($jid, $node);
+      
+			// prevent node/{nid}/delete call
+			if (arg(0) == 'node' && arg(2) == 'delete' && !ejournal_user_access(array('chief editor'), ejournal_journal_get($jid))) {
+				drupal_set_message(t('This article belongs to already published issue. Only designated users may change its contents.'));
+				drupal_goto('node/' . arg(1));
+			}
+			break;
+
+		case 'validate' :
+			if (isset ($node->nid_issue) && !$node->nid_issue) {
+				form_set_error('nid_issue', t('No issue selected for this %type.', array ('%type' => 'article')));
+			}
+			if (!ejournal_user_access(array('chief editor'), $jid)) {
+				$issue_status = db_result(db_query("SELECT ei.status FROM {ejournal_articles} ea INNER JOIN {ejournal_issues} ei ON ea.iid=ei.iid AND ea.nid='%d'", $node->nid));
+
+				//$issue_status may be empty when ISSUE_WORKING or article is going to be inserted
+				if (!($issue_status == ISSUE_FUTURE || $issue_status == ISSUE_NOT_PUBLISHED)) {
+					//form_set_error('path', t('This article belongs to already published issue. Only chief editor may change its contents.'));
+					drupal_set_message(t('This article belongs to already published issue. Only designated users may change its contents.'));
+					drupal_goto('node/' . $node->nid);
+				}
+			}
+			break;
+
+		case 'view' :
+			if ($citation = ejournal_article_display_citation($node)) {
+				$node->content["ejournal-citation"] = array (
+					"#value" => $citation,
+					"#weight" => 10,					
+				);
+			}
+			if ($log = ejournal_article_display_log($node->nid, $jid)) {
+				$node->content["ejournal-log"] = array (
+					"#value" => $log,
+					"#weight" => 10,					
+				);
+			}
+			break;
+	}
+
+	//invoke plugins
+	ejournal_invoke_all('nodeapi', $node, $op, $teaser, array (
+		'page' => $page,
+		'jid' => $jid,
+		'journal' => $journal,
+		'article' => $article,
+	));
+}
+
+/**
+ * Implementation of hook_block().
+ */
+function ejournal_block($op = 'list', $delta = 0) {
+	//current issue contents  
+	if ($plugin_block = ejournal_invoke_all('block', $op, $delta)) {
+		return $plugin_block;
+	}
+}
+
+/**
+ * Implementation of hook_taxonomy().
+ */
+function ejournal_taxonomy($op, $type, $object = NULL) {
+	if ($type == 'term' && $op == 'delete') {
+		db_query("DELETE FROM {ejournal_authors} WHERE tid='%d'", $object->tid);
+	}
+}
+
+function ejournal_cron() {
+
+	if (variable_get('ejournal_use_cron', 0)) {
+
+		$start = variable_get('drupal_cron_last', time());
+		$stopt = time() + (3600);
+
+		$issues = db_query("SELECT * FROM {ejournal_issues} WHERE date_published > '%d' AND date_published < '%d' AND status = '%d'", $start, $stopt, ISSUE_FUTURE);
+
+		while ($issue = db_fetch_object($issues)) {
+
+			db_query("UPDATE {ejournal_issues} SET status='%d' WHERE status='%d' AND jid='%d'", ISSUE_PUBLISHED, ISSUE_CURRENT, $issue->jid);
+			db_query("UPDATE {ejournal_issues} SET status='%d' WHERE status='%d' AND jid='%d'", ISSUE_CURRENT, ISSUE_PUBLISHED, $issue->iid);
+			ejournal_grant_issue_published($issue->iid);
+
+			watchdog('ejournal', t('Issue !iid from journal !jid was just automatically published.', array (
+				'!iid' => l($issue->iid,
+				ejournal_admin_path_get(array('iid' => $issue->iid, 'jid' => $issue->jid, 'action' => 'edit'))), '!jid' => l($issue->jid, "admin/settings/ejournal/edit/$issue->jid"))));
+		}
+		ejournal_invoke_all('cron');
+	}
+}
+/**
+ * Implementation of hook_db_rewrite_sql
+ */
+
+function ejournal_link_alter(& $node, & $links) {
+	foreach ($links AS $module => $link) {
+		//TODO - get ejournal data
+		if (strstr($module, 'taxonomy_term')) {
+			// Link back to the forum and not the taxonomy term page
+			$links[$module]['href'] = str_replace('taxonomy/term', "ejournal/$journal->jid/term", $link['href']);
+		}
+	}
+}
+
+function ejournal_db_rewrite_sql($query, $primary_table, $primary_field) {
+
+	if (arg(0) == 'ejournal' && arg(2) == 'term' && $primary_field == 'nid' && $primary_table == 'n') {
+		$jid = arg(1);
+		if (is_numeric($jid)) {
+			$journal = ejournal_journal_get($jid);
+		} else {
+			$journal = ejournal_journal_get_by_path($jid);
+		}
+
+		if ($journal->jid) {
+
+			//$types = implode("', '", split(',', $journal->node_types));
+			$return['join'] = "INNER JOIN {ejournal_articles} ea ON $primary_table.nid=ea.nid";
+			$return['where'] = "ea.jid=$journal->jid";
+			return $return;
+		}
+	}
+}
+
+/**
+ * Implementation of hook_forms(). All node forms share the same form handler
+ */
+function ejournal_forms() {
+	//register callbacks for forms of different e-journals (they are on one page)
+	// TODO watch if the form is rendered correctly
+	foreach (array_values(ejournal_journals_get_all()) as $jid) {
+		$forms['ejournal_issue_manage_form'.$jid]['callback'] = 'ejournal_issue_manage_form';
+	}
+	return $forms;
+}
+
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function ejournal_form_alter($form_id, & $form) {
+
+	if (!$jid = ejournal_article_from_journal($form['#node'])) {
+		return;
+	}
+
+	// display issue and section form
+	$form['ejournal-pre'] = array (
+		'#type' => 'fieldset',
+		'#weight' => 0,
+		'form' => ejournal_article_form_edit_pre($form['#node'],
+		$jid
+	));
+
+	// proofreader, article_log, email_functions
+	$form['ejournal-post'] = array (
+		'#type' => 'fieldset',
+		'#weight' => 29,
+		'form' => ejournal_article_form_edit_post($form['#node'],
+		$jid
+	));
+
+	//note, we changed the order of arguments, because the first is always sent by reference
+	if ($plugin_alter = ejournal_invoke_all('form_alter', $form, $form_id)) {
+		$form['plugins'] = array (
+			'form' => $plugin_alter
+		);
+	}
+
+}
+
+/**
+ * Implementation of hook_node_type().
+ */
+function ejournal_node_type($op, $info) {
+	if ($op != 'delete' && !empty ($info->old_type) && $info->old_type != $info->type) {
+		ejournal_node_type_update($info->old_type, $info->type);
+	}
+}
+
+/**
+ * Updates node type name stored in the e-journal database.
+ *
+ * @param $old_type
+ *   The current node type of the nodes.
+ * @param $type
+ *   The new node type of the nodes.
+ */
+function ejournal_node_type_update($old_type, $type) {
+	db_query("UPDATE {ejournal_store} SET type = '%s' WHERE type = '%s'", $type, $old_type);
+}
+
+/** 
+ * ejournal_admin_settings: Routes  admin/settings menu calls.
+ */
+function ejournal_admin_settings() {
+	$edit = $_POST;	
+	$op = $edit["op"] ? $edit["op"] : arg(3);
+	//print_r(array($op, $edit));
+  
+	switch ($op) {
+	  case 'add':	
+		  $output = drupal_get_form('ejournal_journal_edit_form', $edit);
+		  break;
+	  case 'edit':
+		  $output = drupal_get_form('ejournal_journal_edit_form', (array)(ejournal_journal_get(arg(4))));
+		  break;
+    case 'delete':
+      $edit = (array)ejournal_journal_get(arg(4));
+    case t('Delete'):
+      if (!$edit['confirm']) {        
+        $output = drupal_get_form('ejournal_journal_confirm_delete_form', $edit);
+      }
+      else {
+        $edit['action'] = 'delete';
+        ejournal_journal_delete($edit);        
+      }
+      break;
+    case t('Submit') :    
+				$edit = ejournal_journal_edit($edit);
+				drupal_goto('admin/settings/ejournal');
+      break;
+    default :
+			$output .= ejournal_journal_list(TRUE);
+	}
+	print theme('ejournal_page', $output);
+}
+
+/** 
+ * ejournal_admin: Routes menu calls.
+ */
+function ejournal_admin() {
+
+  $edit = $_POST;
+  $a = ejournal_admin_path_get();
+  $jid = $a["jid"];
+  $vid = $a["vid"];
+  $iid = $a["iid"];
+  $action = $edit["op"] ? $edit["op"] : $a["action"];
+  
+
+  //p rint_r(array(arg(2),$a,$action,$jid,$vid,$iid));
+	switch ($action) {
+	
+		case 'add' :
+      if ($iid == 'X') {
+        $edit['jid'] = $jid;
+        $output = drupal_get_form('ejournal_issue_edit_form', $edit);
+      }
+      break;
+		case 'edit' :
+      if ($vid) {
+        $edit['jid'] = $jid;
+        $edit['volume'] = $vid;
+        $output = ejournal_volume_edit($edit);
+      } else if ($iid) {
+        $edit['jid'] = $jid;
+        $edit['iid'] = $iid;
+        $output = drupal_get_form('ejournal_issue_edit_form', $edit);
+      } 
+      break;
+		case 'working' :
+		case 'manage' :
+      if($jid && !$iid) {
+        $output = ejournal_issue_manage($jid, ISSUE_WORKING); //manage or work with one issue
+      }
+      else if($iid) {
+        $output = ejournal_issue_manage($jid, $iid);  //move working articles (working issue)
+      }
+      else {
+        $output = ejournal_issue_manage(NULL, ISSUE_WORKING); //Display all articles without issue (default)
+      }
+      
+      break;
+		case 'authors' :
+      $output = drupal_get_form('ejournal_authors_edit_form', $jid ? ejournal_journal_get($jid) : NULL);
+      break;
+		case t('Delete') :
+      if (!$edit['confirm']) {      
+        if($vid) {
+          $output = drupal_get_form('ejournal_volume_confirm_delete_form', $edit);
+        }else if($iid) {
+          $output = drupal_get_form('ejournal_issue_confirm_delete_form', $edit);
+        }      
+      } else {
+        $edit['action'] = 'delete';
+        if($vid) {
+          ejournal_volume_delete($edit);
+        }else if($iid) {
+          ejournal_issue_delete($edit);
+        }
+        drupal_goto(ejournal_admin_path());
+      }
+      break;
+		case t('Submit') :
+    
+    if ($a['action'] == 'manage') {
+        $edit = ejournal_issue_manage_edit($edit);
+        drupal_goto(ejournal_admin_path(array('action' => 'manage', 'jid' => $jid, 'iid' => $iid)));
+      } else if ($a['action'] == 'working') {
+        $edit = ejournal_issue_manage_edit($edit);
+        drupal_goto(ejournal_admin_path(array('action' => 'working', 'jid' => $jid, 'iid' => $iid)));
+      } else if (($a['action'] == 'add') || $a['action'] == 'edit') {
+        if($vid) {
+          $edit = ejournal_volume_process($edit);
+          drupal_goto(ejournal_admin_path());
+        } else if ($iid) {
+          
+          $edit = ejournal_issue_edit($edit);
+          if ($iid) {
+            drupal_goto(ejournal_admin_path(array('jid' => $jid, 'iid' => $iid)));
+          } else {
+            drupal_goto(ejournal_admin_path());
+          }
+        }
+      } else if ($action == 'authors') {
+        ejournal_authors_edit_save($edit);
+        drupal_goto(ejournal_admin_path(array('action' => 'working', 'jid' => $jid)));
+      }
+      
+      break;
+		case 'section' :
+      $output .= ejournal_section_table();
+      break;
+		case t('Check access rights') :
+      ejournal_grant_journal_recheck_access($edit['jid']);
+      default :
+    $output .= ejournal_journal_list();
+	}
+	print theme('ejournal_page', $output);
+}
+
+function ejournal_admin_path($arg = array()) {
+  $r = 'admin/ejournal';
+  $r .= $arg['action'] ? '/' . $arg['action'] : '/display';
+  $r .= $arg['jid'] ? '/' . $arg['jid'] : '/_';
+  $r .= $arg['vid'] ? '/' . $arg['vid'] : '/_';
+  $r .= $arg['iid'] ? '/' . $arg['iid'] : '/_';
+  
+  //$r .= $arg[''] ? '/' . $arg[''] : '';
+  return $r;  
+}
+
+function ejournal_admin_path_get() {
+  return array(
+    'base' => 'admin/ejournal',
+    'action' => str_replace('_', '', arg(2)),
+    'jid' => str_replace('_', '', arg(3)),
+    'vid' => str_replace('_', '', arg(4)),
+    'iid' => str_replace('_', '', arg(5)),
+    
+  );
+}
+/*******************************************
+ *   JOURNALS
+ ******************************************/
+
+/** 
+ * ejournal_journal_get: get a journal record from the database
+ *
+ * @param $arg
+ *   A journal ID number or path
+ *
+ * @return
+ *   An object containing all of the values for a single record in the 
+ *   {ejournal_journals} table plus respective values from {ejournal_store}
+ */
+function ejournal_journal_get($arg) {
+	static $ejournal = array ();
+	if ($ejournal[$arg]) {
+		return $ejournal[$arg];
+	}
+
+	if (is_numeric($arg)) {
+		$col = 'jid';
+	} else {
+		$col = 'path';
+	}
+	$journal = db_fetch_object(db_query("SELECT * FROM {ejournal_journals} WHERE " . $col . "='%d'", $arg));
+	$adds = db_query("SELECT * FROM {ejournal_store} WHERE jid = '%d'", $journal->jid);
+
+	while ($one = db_fetch_object($adds)) {
+		if ($journal-> {
+			$one->jkey }) {
+			$journal-> {
+				$one->jkey }
+			.= ",$one->jvalue";
+		} else {
+			$journal-> {
+				$one->jkey }
+			= $one->jvalue;
+		}
+	}
+
+	$ejournal[$arg] = $journal;
+
+	return $journal;
+
+}
+
+/** 
+ * ejournal_journal_get_by_path: get a journal record from the database, based on its title
+ *
+ * @param $name
+ *   A journal name
+ *
+ * @return
+ *   An object containing all of the values for a single record in the 
+ *   {ejournal_journals} table.
+ */
+function ejournal_journal_get_by_path($name) {
+	$title = preg_replace('/_/', ' ', $name);
+	return db_fetch_object(db_query("SELECT * FROM {ejournal_journals} WHERE LOWER('%s') LIKE LOWER(path)", trim($title)));
+}
+
+/** 
+ * ejournal_journal_list: list the existing journals, publications
+ * @param $admin
+ *   If set, then the view for admin/settings/journal is generated, otherwise
+ *   normal chie-editor-view with all the issues is generated
+ *
+ * @return
+ *   An HTML-formatted table listing each journal and its issues,
+ *   if the user does not have absolute rights, only journals 
+ *   assigned to him/her will be listed 
+ */
+function ejournal_journal_list($admin = FALSE) {
+
+	$order = variable_get('ejournal_issue_order', 'DESC');
+	$journals = db_query("SELECT * FROM {ejournal_journals} WHERE jid > 0");
+	$header = array (t('journal/issues'), array ("data" => t("operations"), "colspan" => 2));
+	$issue_status = _ejournal_issue_statuses();
+	$issue_status[ISSUE_CURRENT] = '<b>' . $issue_status[ISSUE_CURRENT] . '</b>';
+	$issue_status[ISSUE_NOT_PUBLISHED] = '<i>' . $issue_status[ISSUE_NOT_PUBLISHED] . '</i>';
+	$issue_status[ISSUE_WORKING] = '<i>' . $issue_status[ISSUE_WORKING] . '</i>';
+
+	while ($journal = db_fetch_object($journals)) {
+		if (!ejournal_user_access(array ('chief editor'), $journal)) {
+			next;
+		}
+    if($admin) {
+      $rows[] = array (
+          l('<b>' . t($journal->title) . '</b>', "ejournal/$journal->jid", array (), NULL, NULL, FALSE, TRUE) . '<br/>' . $journal->description, 
+          l(t("edit journal"), 
+          "admin/settings/ejournal/edit/$journal->jid"), 
+          l(t("delete journal"), 
+          "admin/settings/ejournal/delete/$journal->jid")
+        );      
+    }
+    else {
+      
+      $rows[] = array (
+          l('<b>' . t($journal->title) . '</b>', 
+          "ejournal/$journal->jid", 
+          array (), 
+          NULL, 
+          NULL, 
+          FALSE, 
+          TRUE),
+          l(t("add issue"), 
+          ejournal_admin_path(array('action' => 'add', 'jid' => $journal->jid, 'iid' => 'X'))),
+          "", //l(t("edit journal"), 
+          "", //"admin/settings/ejournal/edit/$journal->jid"),           
+        );
+      $result = _ejournal_journal_get_issues($journal, NULL, TRUE);
+      $previous_volume = -1;
+      $issues = array ();
+      while ($issue = db_fetch_object($result)) {
+        if ($issue->volume != $previous_volume) {
+          if ($previous_volume != -1) {
+            $rows[] = array (
+                implode('<br />',
+                $issues
+              ), 
+            array (
+              'data' => l(t('edit volume ') . $previous_volume, ejournal_admin_path(array('action' => 'edit', 'jid' => $journal->jid, 'vid' => $previous_volume))),
+              'colspan' => 2
+              )
+            );
+            $issues = array ();
+          }
+        }
+        $issues[] = ' ' . ejournal_issue_reference($issue, $journal) . ' ' . $issue_status[$issue->status] . ' (' . l(t('edit'), ejournal_admin_path(array('action' => 'edit', 'jid' => $journal->jid, 'iid' => $issue->iid))) . ', ' . l(t('manage'), ejournal_admin_path(array('action' => 'manage', 'jid' => $journal->jid, 'iid' => $issue->iid))) . ')';
+        $previous_volume = $issue->volume;
+      }
+      if ($issues) {
+        $rows[] = array (
+          implode('<br />',
+          $issues
+        ), array (
+          'data' => l(t('edit volume '
+        ) . $previous_volume, ejournal_admin_path(array('action' => 'edit', 'jid' => $journal->jid, 'vid' => $previous_volume))), 'colspan' => 2));
+      }
+    }
+	}
+	$output = theme("table", $header, $rows);
+	return $output;
+}
+
+/** 
+ * ejournal_journal_edit_form: return a form for editing a journal
+ *
+ * @param $edit
+ *   an array of values handled by the form
+ *
+ * @return
+ *   array of form elements 
+ */
+function ejournal_journal_edit_form($edit = array ()) {
+	if (!$edit) {
+		$edit['jid'] = 0;
+	}
+	$journal = ejournal_journal_get($edit['jid']);
+
+	// Enabled?
+	$enabled = array (
+		'1' => 'published',
+		'0' => 'not-published'
+	);
+	$form['enabled'] = array (
+		'#type' => 'select',
+		'#title' => t("Status"), 
+    '#default_value' => $edit['enabled'], '#options' => $enabled, 
+    '#description' => t("You may publish/close the journal with one click"),
+    );
+
+	// Journal identification  
+	$form['title'] = array (
+		'#type' => 'textfield',
+		'#title' => t('Journal title'), 
+    '#default_value' => $edit['title'], '#size' => 50, '#maxlength' => 128, 
+    '#description' => t('The title for this journal.'), 
+    '#required' => 1,
+    );
+
+	$form['path'] = array (
+		'#type' => 'textfield',
+		'#title' => t('Journal path'), 
+    '#default_value' => $edit['path'], '#size' => 50, '#maxlength' => 64, 
+    '#description' => t('The relative url where the journal will be accessible (e.g. ikaros - the journal will be at http://www.site.org/ikaros). Please avoid using spaces and accented characters.'), 
+    '#required' => 1,
+    );
+
+	$form['description'] = array (
+		'#type' => 'textarea',
+		'#title' => t('Description'), 
+    '#default_value' => $edit['description'], 
+    '#cols' => 70, 
+    '#rows' => 4, 
+    '#description' => t('A description of this journal.'),
+    );
+
+	// ISSN  
+	$form['issn'] = array (
+		'#type' => 'textfield',
+		'#title' => t('ISSN'), 
+    '#default_value' => $edit['issn'], '#size' => 50, '#maxlength' => 64, 
+    '#description' => t('The ISSN (International Standard Serial Number) is an eight-digit number which identifies periodical publications as such, including electronic serials. A number can be obtained from the <a href="http://www.issn.org">ISSN web site</a>.'), 
+    '#required' => 0,
+    );
+
+	// Publisher
+	$form['publisher_name'] = array (
+		'#type' => 'textfield',
+		'#title' => t('Publisher'), 
+    '#default_value' => $edit['publisher_name'], '#size' => 50, '#maxlength' => 128, 
+    '#description' => t('A person or institution responsible for the journal'),
+    );
+
+	$form['publisher_url'] = array (
+		'#type' => 'textfield',
+		'#title' => t('Publisher URL'), 
+    '#default_value' => $edit['publisher_url'], '#size' => 50, '#maxlength' => 128, 
+    '#description' => t('URL address of the publisher - fully qualified, e.g. http://www.mysite.org'),
+    );
+
+	$form['publisher_email'] = array (
+		'#type' => 'textfield',
+		'#title' => t('Publisher email'), 
+    '#default_value' => $edit['publisher_email'], '#size' => 50, '#maxlength' => 64, 
+    '#description' => t('Contact email for the publisher'),
+    );
+
+	// Identification of issues, group of items
+	$form['issue'] = array (
+		'#type' => 'fieldset',
+		'#title' => t('Starting point and frequency'), 
+    '#description' => t('Leave items blank if not used with this journal, chief editors can re-set numbers in the publishing process.'), 
+    '#collapsible' => FALSE, '#collapsed' => FALSE);
+
+	$options = _ejournal_journal_get_identification_formats();
+	$form['issue']['issue_format'] = array (
+		'#type' => 'radios',
+		'#title' => t('Issue identification'), 
+    '#default_value' => $edit['issue_format'], 
+    '#options' => $options, 
+    '#description' => t('Select the default format for identifying journal issues and/or volumes. It is believed that the items will be only numerical, but you may also choose the last option and write what you like to identify the issue (but ejournal module will not check numbering of issues for you).'), 
+    '#required' => 1,
+    );
+
+	// this is saved in {ejournal_store}
+	$form['issue']['issues_per_volume'] = array (
+		'#type' => 'textfield',
+		'#title' => t('Issues per volume'), 
+    '#default_value' => $edit['issues_per_volume'], 
+    '#size' => 50, 
+    '#maxlength' => 64,
+    );
+	$form['issue']['volumes_per_year'] = array (
+		'#type' => 'textfield',
+		'#title' => t('Volumes per year'), 
+    '#default_value' => $edit['volumes_per_year'], 
+    '#size' => 50, '#maxlength' => 64,
+    );
+
+	// archive
+	$order = array (
+		'DESC' => 'descending',
+		'ASC' => 'ascending'
+	);
+	$form['archive_order'] = array (
+		'#type' => 'select',
+		'#title' => t('Display order for listing issues in the archive'), 
+    '#default_value' => $edit['archive_order'], 
+    '#options' => $order, 
+    '#description' => t('Descending order means that the most recent issues will appear at the top of the list.'),
+    );
+
+	// about page
+	$form['about_page'] = array (
+		'#type' => 'textfield',
+		'#title' => t('About page'), 
+    '#default_value' => $edit['about_page'], 
+    '#size' => 50, '#maxlength' => 64, 
+    '#description' => t('Insert a node number for &quot;about page&quot; of this journal. If none is given, the default archive will be displayed under /ejournal/{journal_number}/about'),
+    );
+
+	// Select a layout
+	if (variable_get('ejournal_custom_layouts', '0')) {
+		$layouts = ejournal_layouts(TRUE);
+		$form['ejournal_layout'] = array (
+			'#type' => 'select',
+			'#title' => t('Ejournal layout'), 
+      '#default_value' => $edit['ejournal_layout'], 
+      '#options' => $layouts, 
+      '#description' => t('Select a layout to control the display of headline listings for this publication. If none is selected, the default settings will be used.'),
+      );
+	} else {
+		// Even if custom layouts are turned off, pass through the value as a hidden input. That way the settings are still there if custom layouts gets turned on again later.
+		$form['ejournal_layout'] = array (
+			'#type' => 'hidden',
+			'#value' => $edit['ejournal_layout'],
+			
+		);
+	}
+
+	// Select vocabularies
+	if (module_exists('taxonomy')) {
+
+		$vids = ejournal_get_all_vocabularies();
+		$selected_vids = $journal->vid ? split(',', ($journal->vid)) : '';
+
+		$form['taxonomy'] = array (
+			'#type' => 'fieldset',
+			'#title' => t('Taxonomy'), 
+      '#collapsible' => FALSE, 
+      '#collapsed' => FALSE
+      );
+		$form['taxonomy']['vid'] = array (
+			'#type' => 'select',
+			'#title' => t('Section'), 
+      '#default_value' => $selected_vids, 
+      '#options' => $vids, 
+      '#multiple' => TRUE, 
+      '#description' => t("Select a vocabulary that contains sections/topics for this !journal. If none is selected, the journal can not be organized into sections.", array (	'!settings' => l(t('journal'	), 'ejournal/edit/journal/' . $edit['jid']))) . '<br/><b>' . t("WARNING: if you select vocabulary (or vocabularies) for section, your nodetypes must use them in order to be shown in the e-journal. If you select wrong vocabulary, your articles will not be displayed in the issue. (Note: you may select several vocabularies, and your nodetypes need not belong to all of them)") . '</b>',
+      );
+
+		$selected_vids = $journal->author_vid ? explode(',', $journal->author_vid) : '';
+		$form['taxonomy']['author_vid'] = array (
+			'#type' => 'select',
+			'#title' => t('Authors'), 
+      '#default_value' => $selected_vids, 
+      '#options' => $vids, 
+      '#description' => t("Ejournal module uses taxonomy module to display authors (because in Drupal, only one user may become &quot;named&quot; author of the node). If you have set your authors vocabulary, select it here. If none is selected, {%authors} variable can not be used in a citation template - see below."), 
+      '#multiple' => TRUE,
+      );
+
+		$selected_vids = $journal->other_vid ? explode(',', $journal->other_vid) : '';
+		$form['taxonomy']['other_vid'] = array (
+			'#type' => 'select',
+			'#title' => t('Other vocabularies'), 
+      '#default_value' => $selected_vids, 
+      '#options' => $vids, 
+      '#description' => t("Apart from authors and sections, you may want to choose other vocabularies which should be offered as index (i.e. list of taxonomy terms for browsing)."), '#multiple' => TRUE,
+      );
+
+	} else {
+		drupal_set_message(t("Please, start taxonomy module if you want to have your journal organized into sections/topics."));
+	}
+
+	// list of node-types associated with this journal, saved in {ejournal_store}  
+	$registered = db_query("SELECT jid, jvalue AS type FROM {ejournal_store} WHERE jkey='node_types'");
+	while ($ntype = db_fetch_object($registered)) {
+		if ($ntype->jid != $edit['jid']) {
+			$others[$ntype->type] = node_get_types('name', $ntype);
+		}
+	}
+  
+	foreach (node_get_types() as $type => $obj) {
+		if (!$others[$type]) {
+			$nodetypes[$type] = $obj->name;
+		}
+	}
+
+	//node types considered for e-journal
+	$form['doctypes'] = array (
+		'#type' => 'fieldset',
+		'#title' => t('Automatic selection rules'), 
+    '#description' => t('Ejournal module &quot;gathers&quot; only specific node types. Here you can choose which node types will belong to this journal (other node types will simply be ignored). Node types already registered with another journal can not be selected again.'), 
+    '#collapsible' => FALSE, 
+    '#collapsed' => FALSE
+    );
+
+	$form['doctypes']['node_types'] = array (
+		'#type' => 'checkboxes',
+		'#title' => t('Content types'), 
+    '#default_value' => explode(',', $edit['node_types']), 
+    '#options' => $nodetypes, 
+    '#description' => t("A list of node types you want to include in this journal."), 
+    '#required' => 1,
+    );
+
+	if ($others) {
+		$form['doctypes'][''] = array (
+			'#type' => 'item',
+			'#value' => t('Some node type(s) were already registered with another journal: %types',
+			array (
+				'%types' => implode(', ',
+				$others
+			)
+		)),);
+	}
+
+	// prepare nodetypes that are free
+	foreach (explode(',', $edit['node_types']) as $type) {
+		unset ($nodetypes[$type]);
+	}
+	// call plugins
+	if ($plugins = ejournal_invoke_all('journal_form', $edit, $journal, $nodetypes)) {
+
+		$form['plugins'] = array (
+			'#type' => 'fieldset',
+			'#title' => t('E-journal plugins'), 
+      '#weight' => 30, 
+      'form' => $plugins
+      );
+	}
+
+	if (function_exists('queue_overview')) {
+		$options = array (
+    '1' => t('Yes, use queue module'), 
+    '0' => t('No, do not use queue module'));
+	} else {
+		$options = array (
+    '0' => t('No, the queue module is not enabled'));
+	}
+
+	$form['queue'] = array (
+		'#type' => 'fieldset',
+		'#title' => t('Automatic voting rules'), 
+    '#collapsible' => TRUE, 
+    '#collapsed' => $optins['1'] ? FALSE : TRUE 
+    );
+
+	$form['queue']['use_queue'] = array (
+		'#type' => 'radios',
+		'#title' => t('Queue and article publication'), 
+    '#default_value' => isset($options['1']) ? $edit['use_queue'] : 0, 
+    '#options' => $options, 
+    '#description' => t('By default, choice, whether document is published or not, is completely in the hands of &quot;administrators&quot; (i.e. people with role &quot;administer nodes&quot;). But e-journal module can profit from the submission queues (if queue module is enabled) and may <b>automatically publish</b> unpublished nodes. The chief editor may publish individual nodes manually from the issue management page, simply by changing the combo box value, however, when submission queue is enabled, ejournal module may automatically publish all articles that got the <b>score above</b> the defined threshold. See option below.'), 
+    '#required' => 1,
+    );
+
+	$post = drupal_map_assoc(array_reverse(array ( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 10000)));
+  
+	$form['queue']['queue_threshold'] = array (
+		'#type' => 'select',
+		'#title' => t('Queue threshold'), 
+    '#default_value' => $edit['queue_threshold'], 
+    '#options' => $post, 
+    '#description' => t('Queue module has its own threshold when documents get promoted, see !queue . But our threshold tells e-journal module when to <b>automatically publish</b> the unpublished node, that means, when the score <b>reaches</b> the limit, the status of the node will be changed from &quot;unpublished&quot; to &quot;published&quot;. If you only want to see votes/score but do not want to use automatic publishing, select the highest possible threshold.', array ('!queue' => l('queue module','admin/settings/queue'))),
+    );
+
+	// Citation template
+	$template = '<b>{%journal}</b> ' . t('Name of the journal') . "<br/>\n" .
+	'<b>{%issn}</b> ' . t('International serials standard number') . "<br/>\n" .
+	'<b>{%publisher}</b> ' . t('The value from the field publisher') . "<br/>\n" .
+	'<b>{%publisher_url}</b> ' . t("The publisher's web address") . "<br/>\n" .
+	'<b>{%publisher_email}</b> ' . t('Email address (if given)') . "<br/>\n" .
+	'<b>{%year}</b> ' . t('Year when the issue was published') . "<br/>\n" .
+	'<b>{%volume}</b> ' . t('Volume of the issue') . "<br/>\n" .
+	'<b>{%number}</b> ' . t('Number of the issue') . "<br/>\n" .
+	'<b>{%custom_id}</b> ' . t('Custom identification (if any)') . "<br/>\n" .
+	'<b>{%issue_date}</b> ' . t('Date when issue was published as DD. MM. YYYY') . "<br/>\n" .
+	'<b>{%nid}</b> ' . t('Number of the node that is viewed') . "<br/>\n" .
+	'<b>{%title}</b> ' . t('Title of the node') . "<br/>\n" .
+	'<b>{%article_created}</b> ' . t('Date when node was created as DD. MM. YYYY') . "<br/>\n" .
+	'<b>{%article_changed}</b> ' . t('Date when node was changed as DD. MM. YYYY') . "<br/>\n" .
+	'<b>{%url}</b> ' . t('URL where this node is viewed') . "<br/>\n" .
+	'<b>{%now}</b> ' . t('Date when the node is viewed as DD. MM. YYYY') . "<br/>\n" .
+	'<b>{%section}</b> ' . t('Name of the section (from vocabulary)') . "<br/>\n" .
+	'<b>{%authors}</b> ' . t('All the authors assigned to this node (from vocabulary, joined with semicolon)') . "<br/>\n";
+
+	$form['citation_template'] = array (
+		'#type' => 'textarea',
+		'#title' => t('Citation template'), 
+    '#default_value' => $edit['citation_template'], 
+    '#cols' => 70, 
+    '#rows' => 4, 
+    '#description' => t("A citation may be generated for every published article (leave empty if not wanted), example <code>{%authors}. {%title}. In {%journal}, {%year}, {%volume}, no. {%number}. ISSN {%issn}.</code><br/> Possible fields:<br/>") . $template, 
+    '#required' => FALSE,
+    );
+
+    // TODO, invoke plugin?
+	//$group .= ejournal_shortly_journal_form_edit($edit, $nodetypes);  
+
+	$form['op'][] = array (
+		'#type' => 'submit',
+		'#value' => t('Submit')
+    );
+
+	if ($edit["jid"]) {
+		$form['jid'] = array (
+			'#type' => 'hidden',
+			'#value' => $edit['jid'],
+		  );
+		$form['op'][] = array (
+			'#type' => 'submit',
+			'#value' => t('Delete'),
+      );
+	}
+
+	$form[' '] = array (
+		'#type' => 'item',
+		'#value' => '<hr/>'
+	);
+	$form['check'] = array (
+		'#type' => 'fieldset',
+		'#title' => t('Access rights'), 
+    '#description' => t('E-journal honours access rights. If you imported articles from your own system, or if you have doubts regarding rights to display/delete/change the (un)published articles, you may start this function which will check all articles again and recreate respective permissions. Note, this may take a lot of time, depending on the number of documents checked.'), 
+    '#collapsible' => TRUE, 
+    '#collapsed' => TRUE,
+    );
+
+	$form['check']['access'] = array (
+		'#type' => 'submit',
+		'#value' => t("Check access rights"),
+    );
+
+	return $form;
+}
+
+/** 
+ * ejournal_edit_journal: save changes to a journal
+ *
+ * @param $edit
+ *   an array of values to be saved
+ *
+ * @return
+ *   the same array, with modifications if a new record is created 
+ */
+function ejournal_journal_edit($edit) {
+
+	if ($edit['jid']) {
+
+		$ret = db_query("UPDATE {ejournal_journals} SET vid='%s', title = '%s', description = '%s', path='%s', citation_template='%s', about_page='%s', ejournal_layout='%s', archive_order='%s', enabled='%d', issn='%s', publisher_name ='%s', publisher_url='%s', publisher_email='%s', issue_format='%d' WHERE jid = '%d'", implode(',', (array) $edit['vid']), $edit['title'], $edit['description'], urlencode($edit['path']), $edit['citation_template'], $edit['about_page'], $edit['ejournal_layout'], $edit['archive_order'], $edit['enabled'], $edit['issn'], $edit['publisher_name'], $edit['publisher_url'], $edit['publisher_email'], $edit['issue_format'], $edit['jid']);
+
+		if ($ret) {
+			drupal_set_message(t('The journal %title has been updated.', array (
+				'%title' => $edit['title']
+			)));
+		}
+	} else {
+		$edit['jid'] = db_next_id('{ejournal_journals}_jid');
+		$ret = db_query("INSERT INTO {ejournal_journals} (jid, vid, title, description, path, citation_template, about_page, ejournal_layout, archive_order, enabled, issn, publisher_name, publisher_url, publisher_email, issue_format) VALUES ('%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s', '%s', '%s', '%d')", $edit['jid'], implode(',', (array) $edit['vid']), $edit['title'], $edit['description'], urlencode($edit['path']), $edit['citation_template'], $edit['about_page'], $edit['ejournal_layout'], $edit['archive_order'], $edit['enabled'], $edit['issn'], $edit['publisher_name'], $edit['publisher_url'], $edit['publisher_email'], $edit['issue_format']);
+
+		if ($ret) {
+			drupal_set_message(t('The journal %title has been created.', array (
+				'%title' => $edit['title']
+			)));
+		}
+	}
+
+	//TODO - check if this works
+	$edit = array_merge($edit, ejournal_invoke_all('journal_edit', $edit));
+	ejournal_journal_store_settings($edit);
+
+	return $edit;
+}
+
+/** 
+ * ejournal_journal_delete: delete a journal
+ *
+ * @param $edit
+ *   associative array of journal parameters passed from HTML form
+ *
+ * @return
+ *   A message stating that the publication has been deleted 
+ */
+function ejournal_journal_delete($edit) {
+	if (!$edit['jid']) {
+		return;
+	}
+
+	if (db_query("DELETE FROM {ejournal_journals} WHERE jid = '%d'", $edit['jid'])) {
+		ejournal_journal_delete_settings($edit);
+		drupal_set_message(t('The journal %title has been deleted.', array (
+			'%title' => $edit['title']
+		)));
+	}
+
+	if (db_query("DELETE FROM {ejournal_issues} WHERE jid = '%d'", $edit['jid'])) {
+		drupal_set_message(t('All issues of the journal %title have been deleted.', array (
+			'%title' => $edit['title']
+		)));
+	}
+
+	if (db_query("DELETE FROM {ejournal_email_templates} WHERE jid = '%d'", $edit['jid'])) {
+		drupal_set_message(t('All email templates of the journal %title have been deleted.', array (
+			'%title' => $edit['title']
+		)));
+	}
+
+	if ($edit['delete_everything']) {
+		ejournal_delete_everything($edit['jid'], NULL);
+	} else {
+		$logdel = db_query("SELECT nid FROM {ejournal_articles} WHERE jid='%d'", $edit['jid']);
+		while ($del = db_fetch_object($logdel)) {
+			db_query("DELETE FROM {ejournal_articles} WHERE nid='%d'", $del->nid);
+			db_query("DELETE FROM {ejournal_articles_log} WHERE nid='%d'", $del->nid);
+		}
+	}
+
+	if ($edit['delete_everything']) {
+		drupal_set_message(t('Attempts were made to delete all documents associated with the journal %title.', array (
+			'%title' => $edit['title']
+		)));
+	} else {
+		drupal_set_message(t('Documents associated with the journal %title were not deleted (only their links to the journal were removed).', array (
+			'%title' => $edit['title']
+		)));
+	}
+
+	ejournal_invoke_all('journal_delete', $edit);
+}
+
+/** 
+ * ejournal_journal_confirm_delete_form: confirm before deleting a publication
+ *
+ * @param $edit
+ *   the publication ID to be deleted
+ *
+ * @return
+ *   An array of form elements
+ */
+function ejournal_journal_confirm_delete_form($edit) {
+
+	$form['confirm'] = array (
+		'#type' => 'hidden',
+		'#value' => 1
+	);
+	$form['jid'] = array (
+		'#type' => 'hidden',
+		'#value' => $edit['jid']
+	);
+	$form['title'] = array (
+		'#type' => 'hidden',
+		'#value' => $edit['title']
+	);
+
+	$form['delete_everything'] = _delete_everything_form('journal', $edit['delete_everything']);
+
+	$form['submit'] = array (
+		'#type' => 'item',
+		'#value' => t('Delete journal "%title"', array ('%title' => $edit['title'])), 
+    '#description' => t('Are you sure you want to delete the journal and all its issues?'));
+	$form['op'] = array (
+		'#type' => 'submit',
+		'#value' => t('Delete'
+	));
+
+	return $form;
+}
+
+function ejournal_journal_store_settings($edit = array ()) {
+	if (!$edit['jid']) {
+		return;
+	}
+
+	$keys = array (
+		'year',
+		'volume',
+		'number',
+		'issues_per_volume',
+		'volumes_per_year',
+		'node_types',
+		'use_queue',
+		'queue_threshold',
+		'author_vid',
+		'other_vid',
+		'shortly_node_types'
+	);
+
+	if ($plugin_keys = ejournal_invoke_all('store_settings', $edit)) {
+		$keys = array_merge($keys, $plugin_keys);
+	}
+
+	foreach ($keys as $key) {
+		if (isset ($edit[$key])) {
+			db_query("DELETE FROM {ejournal_store} WHERE jid='%d' AND jkey='%s'", $edit['jid'], $key);
+			if (is_array($edit[$key])) {
+				foreach ($edit[$key] as $value) {
+					db_query("INSERT INTO {ejournal_store} (jid, jkey, jvalue) VALUES ('%d', '%s', '%s')", $edit['jid'], $key, $value);
+				}
+			} else {
+				db_query("INSERT INTO {ejournal_store} (jid, jkey, jvalue) VALUES ('%d', '%s', '%s')", $edit['jid'], $key, $edit[$key]);
+			}
+		}
+	}
+
+}
+
+function ejournal_journal_delete_settings($edit = array ()) {
+	if (!$edit['jid']) {
+		return;
+	}
+
+	$keys = array (
+		'year',
+		'volume',
+		'number',
+		'issues_per_volume',
+		'volumes_per_year',
+		'node_types'
+	);
+
+	if ($plugin_keys = ejournal_invoke_all('delete_settings', $edit)) {
+		$keys = array_merge($keys, $plugin_keys);
+	}
+
+	foreach ($keys as $key) {
+		db_query("DELETE FROM {ejournal_store} WHERE jid='%d' AND jkey='%s'", $edit['jid'], $key);
+	}
+
+}
+
+function _ejournal_journal_get_issues(& $journal, $volume = NULL, $admin = FALSE) {
+
+	$order = variable_get('ejournal_issue_order', 'DESC');
+	if ($admin) {
+		if (!ejournal_user_access(array (
+				'chief editor'
+			), $journal)) {
+			$restriction = "AND (status='" . ISSUE_FUTURE . "' OR status='" . ISSUE_WORKING . "') ";
+		}
+	} else {
+		if (!ejournal_user_access(array (
+				'chief editor'
+			), $journal)) {
+			$restriction = "AND (status='" . ISSUE_PUBLISHED . "' OR status='" . ISSUE_CURRENT . "') ";
+		}
+	}
+
+	if ($volume) {
+		$volume = "AND volume='" . db_escape_string($volume) . "' ";
+	}
+
+	$issues = db_query("SELECT * FROM {ejournal_issues} WHERE jid='%d' $restriction $volume ORDER BY date_published $order, volume $order, number $order, iid $order", $journal->jid);
+
+	if (db_num_rows($issues)) {
+		return $issues;
+	}
+}
+
+function _ejournal_journal_get_identification_formats() {
+	return array (
+		'3' => t('Volume, issue, and year'
+	), '2' => t('Volume and year'), '1' => t('Year'), '4' => t('Custom issue title'));
+}
+
+/**
+ * Just returns array of ids of all active journals
+ */
+function ejournal_journals_get_all() {
+  	$result = db_query("SELECT jid FROM {ejournal_journals}");
+	while ($jid = db_fetch_object($result)) {
+		$jids[] = $jid->jid;
+	}
+	return (array)$jids;
+}
+/*******************************************
+ *   VOLUMES
+ ******************************************/
+
+/** 
+ * ejournal_volume_edit: return a page for editing a journal volume
+ *
+ * @param $edit
+ *   an array of values handled by the form
+ *
+ * @return
+ *   An HTML-formatted form 
+ */
+function ejournal_volume_edit($edit = array ()) {
+	$journal = ejournal_journal_get($edit['jid']);
+
+	$output = drupal_get_form('ejournal_volume_edit_form', $edit);
+
+	$output .= "<hr/>\n";
+
+	$issue_statuses = _ejournal_issue_statuses();
+
+	$issues = _ejournal_journal_get_issues($journal, $edit['volume'], TRUE);
+
+	if (!$issues) {
+		$output .= '<p>' . t('There were found no issues with this identification - volume: "%volume".', array (
+			'%volume' => $edit['volume']
+		)) . "</p>\n";
+	} else {
+		$header = array (
+			t('Issue'
+		) . 'ID', t('Year'), t('Volume'), t('Number'), t('Custom identification'), t('Published'), t('Status'), t('Description'));
+
+		$output .= '<p>' . t('All the issues below will be affected.') . "</p>\n";
+
+		while ($issue = db_fetch_object($issues)) {
+			$rows[] = array (
+				l($issue->iid, ejournal_admin_path(array('action' => 'edit', 'iid' => $issue->iid))), $issue->year, 
+        $issue->volume, 
+        $issue->number, 
+        $issue->custom_identification, 
+        format_date($issue->date_published), 
+        $issue_statuses[$issue->status], 
+        $issue->description,
+        );
+		}
+		$output .= theme('table', $header, $rows);
+	}
+	return $output;
+}
+
+function ejournal_volume_edit_form($edit) {
+	$journal = ejournal_journal_get($edit['jid']);
+
+	$form['x1'] = array (
+		'#type' => 'item',
+		'#value' => '<h3>' . t('Volume %vol of journal "!journal"',
+		array (
+			'%vol' => $edit['volume'],
+			'!journal' => l($journal->title,
+			"admin/settings/ejournal/edit/$journal->jid"
+		)
+	)) . "</h3>\n");
+
+	$form['jid'] = array (
+		'#type' => 'hidden',
+		'#value' => $edit['jid']
+	);
+	$form['volume_old'] = array (
+		'#type' => 'hidden',
+		'#value' => $edit['volume']
+	);
+	$form['year_old'] = array (
+		'#type' => 'hidden',
+		'#value' => $edit['year']
+	);
+
+	$form['year'] = array (
+		'#type' => 'textfield',
+		'#title' => t('Year'
+	), '#default_value' => $edit['year'], '#size' => 50, '#maxlength' => 64, '#description' => t('If your journal use identification by year of publication, you may change all the values in the year fields now.'),);
+
+	$form['volume'] = array (
+		'#type' => 'textfield',
+		'#title' => t('Volume'
+	), '#default_value' => $edit['volume'], '#size' => 50, '#maxlength' => 64, '#description' => t('A number (or name) for this volume. Since many publications begin a new volume annually, the name might simply be the name of that year, e.g., "2004", or digit, e.g., "2"'),);
+
+	if ($plugins = ejournal_invoke_all('volume_form', $edit, $journal)) {
+		$form['plugins'] = array (
+			'#type' => 'fieldset',
+			'#title' => t('E-journal plugins'
+		), '#weight' => 30, 'form' => $plugins);
+	}
+
+	$form['op'] = array (
+		'#type' => 'submit',
+		'#value' => t("Submit"
+	));
+	$form['delete'] = array (
+		'#type' => 'submit',
+		'#value' => t("Delete"
+	));
+	return $form;
+}
+
+/** 
+ * ejournal_volume_process: save changes to a journal volume {ejournal_issues} table
+ * makes only updates and also only if the issue(s) already exists
+ *
+ * @param $edit
+ *   an array of values to be saved
+ *
+ * @return
+ *   the same array 
+ */
+function ejournal_volume_process($edit) {
+	$journal = ejournal_journal_get($edit['jid']);
+	$issues = _ejournal_journal_get_issues($journal, $edit['volume_old'], TRUE);
+
+	if ($issues) {
+		// _old = current value in the table, and we want to replace it with new value
+		if ($edit['volume'] != $edit['volume_old'] || ($edit['year'] != $edit['year_old'])) {
+			$cond = "volume='" . db_escape_string($edit['volume_old']) . "' ";
+			$set = "volume='" . db_escape_string($edit['volume']) . "' ";
+		}
+		if ($edit['year'] != $edit['year_old']) { // user wanted to update year in all issues of the volume, year_old is always empty value when editing volume with >1 issues
+			$set .= $set ? ", " : '';
+			$set .= "year='" . db_escape_string($edit['year']) . "' ";
+		}
+
+		if ($set && $cond) {
+			while ($issue = db_fetch_object($issues)) {
+				db_query("UPDATE {ejournal_issues} SET $set WHERE $cond");
+			}
+		}
+	} else {
+		drupal_set_message(t('There are no issues in volume %volume of journal %journal. Nothing was updated', array (
+			'%volume' => $edit['volume_old'],
+			'%journal' => $journal->title
+		)));
+	}
+
+	ejournal_invoke_all('volume_edit', $edit, $journal, $issues);
+
+	return $edit;
+}
+
+function ejournal_volume_reference($issue) {
+	return ($issue->volume ? t('Vol. ') . $issue->volume : '') . ($issue->year ? " ($issue->year)" : '');
+}
+/** 
+ * ejournal_volume_delete: delete a journal volume (all its issues)
+ *
+ * @param $edit
+ *   an array from the HTML form specifying the volume to be deleted
+ *
+ * @return
+ *   A message stating that the volume has been deleted 
+ */
+function ejournal_volume_delete($edit = array ()) {
+	$journal = ejournal_journal_get($edit['jid']);
+
+	if ($edit['delete_everything']) {
+		$type = t('articles');
+		if ($issues = _ejournal_journal_get_issues($journal, $edit['volume'], TRUE)) {
+			while ($issue = db_fetch_object($issues)) {
+				$affected += ejournal_delete_everything($edit['jid'], $issue->iid);
+			}
+		} else {
+			$affected = 0;
+		}
+		db_query("DELETE FROM {ejournal_issues} WHERE jid = '%d' AND volume = '%s'", $edit['jid'], $edit['volume']);
+	} else {
+		$result = db_query("DELETE FROM {ejournal_issues} WHERE jid = '%d' AND volume = '%s'", $edit['jid'], $edit['volume']);
+		$affected = db_affected_rows($result);
+		$type = t('issues');
+
+	}
+
+	if ($affected) {
+		drupal_set_message(t('Deleted %num %type identified by volume "%volume" from journal "%journal".', array (
+			'%num' => $affected,
+			'%type' => $type,
+			'%volume' => $edit['volume'],
+			'%journal' => $journal->title
+		)));
+	} else {
+		drupal_set_message(t('There are no %type in volume %volume of journal %journal. Nothing was deleted (but the empty volume)', array (
+			'%volume' => $edit['volume'],
+			'%type' => $type,
+			'%journal' => $journal->title
+		)));
+	}
+
+	ejournal_invoke_all('volume_delete', $edit, $journal, $issues);
+}
+
+/** 
+ * ejournal_volume_confirm_delete_form: confirm before deleting a journal volume
+ *
+ * @param $edit
+ *   an array with the values specifying the volume to be deleted
+ *
+ * @return
+ *   An array of form elements
+ */
+function ejournal_volume_confirm_delete_form($edit) {
+	$journal = ejournal_journal_get($edit['jid']);
+
+	$form['confirm'] = array (
+		'#type' => 'hidden',
+		'#value' => 1
+	);
+	$form['jid'] = array (
+		'#type' => 'hidden',
+		'#value' => $edit['jid']
+	);
+	$form['volume'] = array (
+		'#type' => 'hidden',
+		'#value' => $edit['volume']
+	);
+
+	// rca TODO api call
+	array_merge($form, _delete_everything_form('volume', $edit['delete_everything']));
+
+	$form['op'] = array (
+		'#type' => 'hidden',
+		'#value' => t('Delete'
+	));
+
+	$form['desc'] = array (
+		'#type' => 'item',
+		'#value' => t('Do you really want to delete volume "%volume" (that means all its issues!)  from the journal "%journal"?',
+		array (
+			'%journal' => $journal->title,
+			'%volume' => $edit['volume'],
+			
+		)
+	), '#description' => t('Are you sure you want to delete this volume name? If you do, the volume number will not be displayed in its place.'));
+
+	return $form;
+}
+
+/*******************************************
+ *   ISSUES
+ ******************************************/
+
+/** 
+ * ejournal_issue_get: get an ejournal_issue record from the database
+ *
+ * @param $iid
+ *   An issue ID number
+ *
+ * @return
+ *   An object containing all of the values for a single record in the 
+ *   {ejournal_issues} table.
+ */
+function ejournal_issue_get($iid) {
+	return db_fetch_object(db_query("SELECT * FROM {ejournal_issues} WHERE iid='%d'", $iid));
+}
+
+/** 
+ * ejournal_issue_current: return the current issue ID number for a journal. 
+ * If no edition is specified, returns the edition with the latest publication date.
+ *
+ * @param $jid
+ *   A journal ID number
+ *
+ * @return
+ *   An issue ID number
+ */
+function ejournal_issue_current($jid = 0) {
+	$issue = db_fetch_object(db_query("SELECT iid FROM {ejournal_issues} WHERE status='%d' AND jid='%d' ORDER BY date_published DESC", ISSUE_CURRENT, $jid));
+
+	if ($issue->iid) {
+		return $issue->iid;
+	}
+}
+
+/** 
+ * ejournal_issue_edit_form: return a form for editing a journal issue
+ *
+ * @param $edit
+ *   an array of values handled by the form
+ *
+ * @return
+ *   An array of form elements
+ */
+function ejournal_issue_edit_form($edit = array ()) {
+
+	$journal = ejournal_journal_get($edit['jid']);
+	if ($edit['iid']) {
+		$edit = (array) (ejournal_issue_get($edit['iid']));
+	}
+
+	$form['issue'] = array (
+		'#type' => 'fieldset',
+		'#title' => '<h3>' . t('Issue of journal ') . l($journal->title, "admin/settings/ejournal/edit/$journal->jid") . "</h3>\n", 
+    '#prefix' => '<div class="container-inline">', 
+    '#suffix' => '</div>',);
+
+	if ($edit['iid']) {
+		$form['issue']['#description'] = "<p>" . t('You may also !move articles between issues', array('!move' => l('move', ejournal_admin_path(array('action' => 'manage', 'jid' => $journal->jid, 'iid' => $edit['iid']))))) . "</p>\n";
+	}
+
+	$form['issue']['jid'] = array (
+		'#type' => 'hidden',
+		'#value' => $journal->jid
+	);
+
+	if ($journal->issue_format == 4) {
+		$form['issue']['custom_identification'] = array (
+			'#type' => 'textfield',
+			'#title' => t('Custom identification'), 
+      '#default_value' => $edit['custom_identification'], '#size' => 50, '#maxlength' => 128, '#description' => t('Your own identification of the issue, e.g., "March 2003" or "April 11-17, 2004."'),);
+	} else {
+		$last_hint = _ejournal_issue_get_increment($journal);
+		if ($journal->issue_format > 0) {
+			$form['issue']['year'] = array (
+				'#prefix' => '<b>' . t('Year') . ':</b>', 
+        '#type' => 'textfield', 
+        '#default_value' => $edit['iid'] ? $edit['year'] : $last_hint['year'], 
+        '#size' => 6, 
+        '#maxlength' => 6,
+        );
+		}
+		if ($journal->issue_format > 1) {
+			$form['issue']['volume'] = array (
+				'#type' => 'textfield',
+				'#default_value' => $edit['iid'] ? $edit['volume'] : $last_hint['volume'],
+				'#size' => 6,
+				'#maxlength' => 6,
+				'#prefix' => '<b>' . t('Volume') . ':</b>',
+        );
+		}
+		if ($journal->issue_format > 2) {
+			$form['issue']['number'] = array (
+				'#type' => 'textfield',
+				'#default_value' => $edit['iid'] ? $edit['number'] : $last_hint['number'],
+				'#size' => 6,
+				'#maxlength' => 6,
+				'#prefix' => '<b>' . t('Number'
+			) . ':</b>',);
+		}
+		// issue date
+		$form['issue']['issue_publication_time'] = _ejournal_date_form($edit['date_published'], 'issue');
+
+		$form['issue']['x1'] = array (
+			'#type' => 'item',
+			'#value' => "<br/><br/>(" . t('The last issue : <b>%date</b>, Year <b>%year</b>, Vol. <b>%volume</b>, No. <b>%number</b>',
+			array (
+				'%date' => $last_hint['issue_last_time'] ? format_date($last_hint['issue_last_time']
+			) : t('none'
+		), '%year' => $last_hint['issue_last_year'], '%volume' => $last_hint['issue_last_volume'], '%number' => $last_hint['issue_last_number'])) . ')');
+
+		if ($journal->issue_format == 3 && !$edit['date_published']) {
+			$edit['date_published'] = $last_hint['time'];
+		}
+	}
+
+	$form['description'] = array (
+		'#type' => 'textarea',
+		'#title' => t('Description'
+	), '#default_value' => $edit['description'], '#size' => 70, '#maxlength' => 4,);
+
+	// Issue status
+	$issue_status = _ejournal_issue_statuses();
+	$form['status'] = array (
+		'#type' => 'select',
+		'#title' => t('Issue status'), 
+    '#default_value' => $edit['status'], 
+    '#options' => $issue_status, 
+    '#description' => t('Choose status of this issue. <b>Current issue</b> is the one that is on the front page. <b>Back issues</b> are the published issues (i.e. non-current). <b>Future issue</b> will be opened (automatically) at the specified date/hour in the future (becoming current issue). <b>Not published</b> issues remain invisible (only chief editor can see them), <b>working issues</b> are invisible to readers, but editors and authors can send articles to them.'),);
+
+	$form['cover_page_nid'] = array (
+		'#type' => 'textfield',
+		'#title' => t('Cover page'), 
+    '#default_value' => $edit['cover_page_nid'], 
+    '#size' => 6, 
+    '#maxlength' => 6, 
+    '#description' => t('Number of the node which should be displayed as a cover page of this issue'),);
+
+	$form['op'] = array (
+		'#type' => 'submit',
+		'#value' => t("Submit"
+	));
+
+	//building form for management of articles which were attached to this issue
+	if (isset ($edit["iid"])) {
+		$form['delete']['op'] = array (
+			'#type' => 'submit',
+			'#value' => t("Delete")
+      );
+		$form['iid'] = array (
+			'#type' => 'hidden',
+			'#value' => $edit['iid']
+		);
+
+		$form['articles'] = array (
+			'#type' => 'fieldset',
+			'#title' => t('Manage articles'), 
+      '#expandable' => TRUE, 
+      '#expanded' => TRUE,
+      );
+
+		// Select all articles associated with this issue
+		$issue = ejournal_issue_get($edit['iid']);
+		$queue = $journal->use_queue;
+		$operations = ejournal_article_handle_operations('get');
+
+		$form['articles']['operation'] = array (
+			'#type' => 'fieldset',
+			'#prefix' => '<div class="container-inline">',
+			'#suffix' => '</div>'
+		);
+		$form['articles']['operation']['operation'] = array (
+			'#type' => 'select',
+			'#options' => $operations
+		);
+
+		$header = array (
+			NULL,
+			t('Article') . "/" . t('Type'), 
+      t('Published'), 
+      ($queue ? t('Moderated') : ''), 
+      ($queue ? t('Score') : ''), 
+      t('Approved'), 
+      t('Weight'), 
+      t('Section')
+      );
+		$yes_no = array (
+      0 => t('no'), 
+      1 => t('yes'),      
+      );
+    $proof_yes_no = array (
+      PROOFREADER_NOT_APPROVED => t('no'), 
+      PROOFREADER_APPROVED => t('yes'),
+      PROOFREADER_IGNORED => '---',
+      );
+
+		$articles = _ejournal_issue_get_articles($journal, $edit['iid'], TRUE);
+
+		foreach ($articles as $node) {
+
+			$rows[] = array (
+				theme('hidden', array (
+					'#name' => 'edit[nid][' . $node->nid . ']',
+					'#id' => 'edit-nid][' . $node->nid,
+					'#value' => $node->nid
+				)) .
+        theme('checkbox', array (
+          '#name' => 'edit[nid_checked][' . $node->nid . ']',
+          '#id' => 'edit-nid_checked][' . $node->nid,
+          '#return_value' => 1,
+          '#value' => 0,
+          '#parents' => array (
+            'nid_checked][' . $node->nid
+          )
+        )), 
+        l($node->title, 'node/' . $node->nid . '/edit?destination=' . urlencode(ejournal_admin_path(array('action' => 'edit', 'jid' => $journal->jid, 'iid' => $edit['iid'])))) . ' ' . theme('mark', node_mark($node->nid, $node->changed)) . ' / ' . node_get_types('name', $node), 
+        theme('select', array (
+          '#name' => 'edit[node_status][' . $node->nid . ']',
+          '#id' => 'edit-node_status][' . $node->nid,
+          '#options' => $yes_no,
+          '#value' => $node->status,
+          '#parents' => array (
+            'node_status][' . $node->nid
+          ))), 
+        ($queue ? $yes_no[$node->moderate] : ''), 
+        ($queue ? _ejournal_article_queue_status($node->nid) : ''), 
+        t($proof_yes_no[$node->p_status]),
+        them_ejournal_weight( array (        
+          '#name' => 'edit[node_weight][' . $node->nid . ']',
+          '#id' => 'edit-node_weight][' . $node->nid,
+          '#delta' => 10,
+          '#value' => $node->article_weight,
+          //'#options' => process_weight(array('#delta'=> 10)),
+          //'#options' => array( '#process' => array('process_weight' => array('#delta'=> 10))),
+          '#parents' => array (
+            'node_weight][' . $node->nid
+            )
+          )
+        ), 
+        theme('select', array (
+          '#name' => 'edit[section_tid][' . $node->nid . ']',
+          '#id' => 'edit-section_tid][' . $node->nid,
+          '#options' => ejournal_sections_get($journal->jid, $node->type),
+          '#value' => $node->tid, 
+          '#parents' => array ('section_tid][' . $node->nid)
+          )
+        ) . theme('hidden', array (
+              '#name' => 'edit[old_tid][' . $node->nid . ']',
+              '#id' => 'edit-old_tid][' . $node->nid,
+              '#value' => implode(",",	array_keys(ejournal_sections_of_article($journal->jid, $node->type, $node->tid)))
+              )
+            ),
+      );
+		}
+		$group = theme('table', $header, $rows);
+		//$group .= form_submit(t("Submit"));
+
+		$form['articles']['manage'] = array (
+			'#type' => 'item',
+			'#value' => $group,
+			
+		);
+		drupal_set_title(t('edit ') . "$journal->title, " . ejournal_issue_reference($issue, $journal));
+	}
+
+	if ($plugins = ejournal_invoke_all('issue_form', $edit, $journal)) {
+		$form['plugins'] = array (
+			'#type' => 'fieldset',
+			'#title' => t('E-journal plugins'
+		), '#weight' => 30, 'form' => $plugins);
+	}
+
+	return $form;
+}
+
+/**
+ *  ejournal_issue_manage : renders the main page with available articles for the
+ *  issue in question (only journals available to the current user
+ *  are shown)
+ *  This page is used for moving articles from one issue to another
+ *  or for WORKING area (moving articles that don't belong to any issue)
+ * 
+ *  @param $jid
+ *    comma delimited id(s) of journals (if empty, all journals are listed)
+ *  @param $iid
+ *    constant, type of the issue to render
+ *  @return
+ *    An HTML-rendered section with form(s)
+ */
+
+function ejournal_issue_manage($jid = NULL, $iid = ISSUE_WORKING) {
+
+	if ($jid) {
+		$jids = split(',', $jid);
+	} else {
+    $jids = ejournal_journals_get_all();
+	}
+
+	foreach ((array)$jids as $jid) {
+		$journal = ejournal_journal_get($jid);
+		$journal->iid = $iid; //normally, journal->iid is not set
+		$output .= "<h3>" . t($journal->title) . "</h3>\n";
+		$output .= drupal_get_form('ejournal_issue_manage_form' . $journal->jid, $journal);
+	}
+
+	return $output;
+}
+/**
+ * ejournal_issue_manage_form: returns the same for different ejournals, 
+ * it is a dynamic form of construction of forms, usually called via hook ejournal_forms 
+ */
+// TODO watch if the form is rendered correctly
+function ejournal_issue_manage_form() {
+	$journal = func_get_arg(0);
+	
+	$order = variable_get('ejournal_issue_order', 'DESC');
+	$issue_status = _ejournal_issue_statuses();
+	$yes_no = array (
+		'0' => t('no'), 
+		'1' => t('yes'),
+		);
+  $proof_yes_no = array (
+		PROOFREADER_NOT_APPROVED => t('no'), 
+		PROOFREADER_APPROVED => t('yes'),
+    PROOFREADER_IGNORED => '---',
+		); 
+	$operations = ejournal_article_handle_operations('get');
+	
+	$form = array ();
+	$form['articles'] = array (
+		'#type' => 'fieldset',
+		'#title' => t('Manage articles'), 
+    '#expandable' => TRUE, 
+    '#expanded' => TRUE,
+    );
+
+	$form['articles']['jid'] = array (
+		'#type' => 'hidden',
+		'#value' => $journal->jid
+	);
+
+	$form['articles']['operation'] = array (
+		'#type' => 'fieldset',
+		'#prefix' => '<div class="container-inline">',
+		'#suffix' => '</div>'
+	);
+	$form['articles']['operation']['operation'] = array (
+		'#type' => 'select',
+		'#defalut_value' => '',
+		'#options' => $operations
+	);
+	$form['articles']['operation']['op'] = array (
+		'#type' => 'submit',
+		'#value' => t("Submit")
+  );
+	
+
+	if (!ejournal_user_access(array ('chief editor'), $journal)) {
+		next;
+	}
+
+  $admin_path = ejournal_admin_path_get();
+  
+	$destination = ($admin_path['action'] == 'working') ? 
+                 urlencode(ejournal_admin_path(array('action' => 'working'))) :
+                 urlencode(ejournal_admin_path(array('action' => 'manage', 'jid' => $journal->jid)));  //normally, journal->iid is not set
+
+	$issues = ejournal_issues_get_all_available($journal->jid);
+	$queue = $journal->use_queue;
+	$header = array (
+		NULL,
+		t('Article') . '/' . t('Type'), 
+    t('Published'), 
+    ($queue ? t('Moderated') : ''), 
+    ($queue ? t('Score') : ''), 
+    t('Approved'), 
+    t('Available issues'), 
+    t('Section')
+  );
+
+	$result = _ejournal_issue_get_articles($journal, $journal->iid, TRUE); // normally a working issue
+//print_r($result);
+	foreach ($result as $node) {
+
+		$rows[] = array (
+			theme('hidden',	array (
+				'#name' => 'edit[nid][' . $node->nid . ']',
+				'#id' => 'edit-nid][' . $node->nid,
+				'#value' => $node->nid
+			  )
+      ) .	theme('checkbox', array (
+            '#name' => 'edit[nid_checked][' . $node->nid . ']',
+            '#id' => 'edit-nid_checked][' . $node->nid,
+            '#return_value' => 1,
+            '#value' => 0,
+            '#parents' => array (
+              'nid_checked][' . $node->nid
+              )
+            )
+          ),
+      l($node->title, 'node/' . $node->nid . '/edit' . '/edit?destination=' . $destination) . ' ' . theme('mark', node_mark($node->nid, $node->changed)) . ' (' . node_get_types('name', $node) . ')', 
+      theme('select', array (
+        '#name' => 'edit[node_status][' . $node->nid . ']',
+        '#id' => 'edit-node_status][' . $node->nid,
+        '#options' => $yes_no,
+        '#value' => $node->status,
+        '#parents' => array (
+          'node_status][' . $node->nid
+          )
+        )
+      ), 
+      ($queue ? $yes_no[$node->moderate] : ''), 
+      ($queue ? _ejournal_article_queue_status($node->nid) : ''), 
+      t($proof_yes_no[$node->p_status]), 
+      theme('select', array (
+        '#name' => 'edit[nid_issue][' . $node->nid . ']',
+        '#id' => 'edit-nid_issue][' . $node->nid,
+        '#options' => $issues,
+        '#value' => $node->iid,
+        '#parents' => array (
+          'nid_issue][' . $node->nid
+          )
+        )
+      ), 
+      theme('select', array (
+        '#name' => 'edit[section_tid][' . $node->nid . ']',
+        '#id' => 'edit-section_tid][' . $node->nid,
+        '#options' => ejournal_sections_get($journal->jid, $node->type), 
+        '#value' => $node->tid, 
+        '#parents' => array (
+          'section_tid][' . $node->nid
+          )
+        )
+      ) .		theme('hidden', array (
+              '#name' => 'edit[old_tid][' . $node->nid . ']',
+              '#id' => 'edit-old_tid][' . $node->nid,
+              '#value' => implode(",", array_keys(ejournal_sections_of_article($journal->jid, $node->type, $node->tid)))
+              )
+            ),
+    );
+	}
+
+	$group = theme("table", $header, $rows);
+
+	$form['articles']['manage'] = array (
+		'#type' => 'item',
+		'#value' => $group,
+		
+	);
+
+	return $form;
+}
+
+/** 
+ * ejournal_issue_edit: save changes to a journal issue
+ *
+ * @param $edit
+ *   an array of values to be saved
+ * @make_current $edit
+ *   a Boolean value that indicates whether or not this edition should become the current edition of the publication
+ *
+ * @return
+ *   the same array, with modifications if a new record is created 
+ */
+function ejournal_issue_edit($edit, $type = 'issue') {
+  //debug_print_backtrace() ;
+	if (!$edit['jid']) {
+		return;
+	};
+
+	$timestamp = _ejournal_validate_date($edit, $type);
+	$edit['date_published'] = $timestamp;
+
+	// old current_issue becomes back issue
+	if ($edit['status'] == ISSUE_CURRENT) {
+		db_query("UPDATE {ejournal_issues} SET status='%d' WHERE status='%d' AND jid='%d'", ISSUE_PUBLISHED, ISSUE_CURRENT, $edit['jid']);
+	}
+
+	if ($edit['iid']) {
+
+		db_query("UPDATE {ejournal_issues} SET jid='%d', year='%s', volume='%s', number='%s', custom_identification='%s', cover_page_nid='%s', date_published='%d', status='%d', issue_order='%d', description='%s' WHERE iid = '%d'", $edit['jid'], $edit['year'], $edit['volume'], $edit['number'], $edit['custom_identification'], $edit['cover_page_nid'], $timestamp, $edit['status'], $edit['issue_order'], $edit['description'], $edit['iid']);
+
+		// Handle operations: 
+		//print_r(array($edit['operation'], $edit['nid_checked'], isset($edit['nid_checked'])));
+		if ($edit['operation']) {
+			ejournal_article_handle_operations($edit);
+			drupal_set_message(t('The update has been performed.'));
+		}
+	} else {
+		$edit['iid'] = db_next_id('{ejournal_issues}_iid');
+		db_query("INSERT INTO {ejournal_issues} (iid, jid, year, volume, number, custom_identification, cover_page_nid, date_published, status, issue_order, description) VALUES ('%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%d', '%s')", $edit['iid'], $edit['jid'], $edit['year'], $edit['volume'], $edit['number'], $edit['custom_identification'], $edit['cover_page_nid'], $timestamp, $edit['status'], $edit['issue_order'], $edit['description']);
+	}
+
+	// now grant access to all articles that are in this issue 
+	if ($edit['status'] == ISSUE_CURRENT) {
+		ejournal_grant_issue_published($edit['iid']);
+		$current_issue = (array)ejournal_global_variable('ejrn_current_issue');
+		$current_issue[$edit['jid']] = (array) (array (
+			'iid' => $edit['iid'],
+			'jid' => $edit['jid'],
+			'year' => $edit['jid'],
+			'volume' => $edit['volume'],
+			'number' => $edit['number'],
+			'custom_identification' => $edit['custom_identification'],
+			'date_published' => $timestamp,
+			'description' => $edit['description']
+		));
+
+		//store the issue identification, for the template to use
+		ejournal_global_variable('ejrn_current_issue', $current_issue);
+		_ejournal_set_ejrn_next_issue($edit);
+	} else
+		if ($edit['status'] == ISSUE_FUTURE) {
+			_ejournal_set_ejrn_next_issue($edit);
+		}
+
+	$edit = array_merge($edit, ejournal_invoke_all('issue_edit', $edit));
+
+	return $edit;
+}
+
+function ejournal_issue_manage_edit($edit) {
+	// Handle operations:        
+	if ($edit['operation']) {
+		ejournal_article_handle_operations($edit);
+		drupal_set_message(t('The update has been performed.'));
+	}
+
+	// to be sure, now grant access to all articles that are in current issue
+	ejournal_grant_issue_published(ejournal_issue_current($edit['jid']));
+
+	return $edit;
+}
+
+function _ejournal_issue_get_articles($journal, $iid, $ignore_vid = FALSE) {
+
+	if (!$ignore_vid) { //administrative functions want to get all articles, regardless if the articles belong to vid or not
+		$vids = _ejournal_vocabulary_build_sql($journal->vid, 'td');
+	}
+
+	$order = variable_get('ejournal_issue_order', 'ASC');
+	if (!ejournal_user_access(array (
+			'chief editor'
+		), $journal)) {
+		$restriction = ' AND n.status=1 ';
+	}
+
+	$articles = db_query(db_rewrite_sql("SELECT DISTINCT n.nid, n.type, n.title, n.changed, n.status, n.moderate, t.tid, td.name, ea.iid, ea.weight AS article_weight, ea.proofreader_mark AS p_status FROM {node} n INNER JOIN {ejournal_articles} ea ON n.nid = ea.nid LEFT JOIN {term_node} t ON n.nid=t.nid LEFT JOIN {term_data} td ON t.tid=td.tid WHERE ea.iid='" . $iid . "' AND ea.jid='" . $journal->jid . "' $vids $restriction ORDER BY ea.weight $order, td.weight $order, td.name $order, n.title $order"));
+
+	$unique = array ();
+	while ($a = db_fetch_object($articles)) {
+		if (!$unique[$a->nid]) {
+			$unique[$a->nid] = $a;
+		} else
+			if ($unique[$a->nid]->tid != $a->tid) {
+				$unique[$a->nid]->tid = array_merge((array) $a->tid, (array) $unique[$a->nid]->tid);
+			}
+	}
+
+	return $unique;
+}
+
+/** 
+ * ejournal_issue_delete: delete a journal issue
+ *
+ * @param $edit
+ *   an array for the issue to be deleted
+ *
+ * @return
+ *   nothing 
+ */
+function ejournal_issue_delete($edit = array ()) {
+
+	$journal = ejournal_journal_get($edit['jid']);
+	$issue = ejournal_issue_get($edit['iid']);
+
+	if ($edit['delete_everything']) {
+		ejournal_delete_everything($edit['jid'], $edit['iid']);
+	} else {
+		db_query("DELETE FROM {ejournal_articles} WHERE iid = '%d' AND jid='%d'", $edit['iid'], $edit['jid']);
+		db_query("DELETE FROM {ejournal_articles_log} WHERE iid = '%d'", $edit['iid']);
+	}
+
+	db_query("DELETE FROM {ejournal_issues} WHERE iid = '%d' AND jid='%d'", $edit['iid'], $edit['jid']);
+
+	drupal_set_message(t('Deleted issue "%issue" from journal "%journal."', array (
+		'%issue' => ejournal_issue_reference($issue,
+		$journal
+	), '%journal' => $journal->title)));
+
+	ejournal_invoke_all('issue_delete', $edit, $journal, $issue);
+}
+
+/** 
+ * ejournal_issue_confirm_delete_form: confirm before deleting a journal issue
+ *
+ * @param $edit
+ *   an array for the issue to be deleted
+ *
+ * @return
+ *   An array of form elements
+ */
+
+function ejournal_issue_confirm_delete_form($edit) {
+	$journal = ejournal_journal_get($edit['jid']);
+
+	$form['jid'] = array (
+		'#type' => 'hidden',
+		'#value' => $edit['jid']
+	);
+	$form['iid'] = array (
+		'#type' => 'hidden',
+		'#value' => $edit['iid']
+	);
+	$form['confirm'] = array (
+		'#type' => 'hidden',
+		'#value' => 1
+	);
+
+	$form['delete_all'] = _delete_everything_form('issue', $edit['delete_everything']);
+
+	$form['item'] = array (
+		'#type' => 'item',
+		'#value' => t('Delete issue "%issue" from journal "%journal"?',
+		array (
+			'%issue' => ejournal_issue_reference((object) ($edit
+		)
+	), '%journal' => $journal->title)), '#description' => t('Are you sure you want to delete this issue?'),);
+	$form['op'] = array (
+		'#type' => 'submit',
+		'#value' => t('Delete'
+	));
+	$form['cancel']['op'] = array (
+		'#type' => 'submit',
+		'#value' => t('Cancel'
+	));
+	return $form;
+}
+
+function ejournal_issue_reference($issue, $journal = NULL) {
+	if (!$journal) {
+		$journal = ejournal_journal_get($issue->jid);
+	}
+	// we should perhaps do some tests if values are there
+	// however, if the format was chosen, it is the task of the user to provide data
+	switch ($journal->issue_format) {
+		case '4' :
+			return $issue->custom_identification;
+		case '1' :
+			return $issue->year;
+		case '2' :
+			return $issue->volume . '(' . $issue->year . ')';
+		case '3' :
+			return t('Vol. ') . $issue->volume . ', ' . t('no.') . $issue->number . ' (' . $issue->year . ')';
+			break;
+	}
+
+}
+
+function _ejournal_issue_statuses() {
+	return array (
+		ISSUE_FUTURE => t('future issue'
+	), ISSUE_CURRENT => t('current issue'), ISSUE_PUBLISHED => t('back issue'), ISSUE_NOT_PUBLISHED => t('not published'), ISSUE_WORKING => t('temporary'));
+}
+
+//should find the latest year|volume|number and return it plus 1
+function _ejournal_issue_get_increment($journal, $this_year = NULL) {
+
+	if ($journal->issue_format == 4) {
+		return array ();
+	}
+
+	if (!$this_year) {
+		$y = db_result(db_query("SELECT MAX(date_published) FROM {ejournal_issues} WHERE jid=%d", $journal->jid));
+		$this_year = $y ? date('Y', $y) : date('Y', time());
+	}
+
+	$begin = mktime(0, 0, 0, 1, 1, $this_year);
+	$end = mktime(0, 0, 0, 1, 1, $this_year +1);
+
+	$issues = db_query("SELECT * FROM {ejournal_issues} WHERE date_published > %d AND date_published < %d AND jid=%d ORDER BY date_published ASC", $begin, $end, $journal->jid);
+
+	$issue_count = 0;
+	$volume_count = 0;
+
+	$prev_vol = "";
+	while ($issue = db_fetch_object($issues)) {
+		if ($prev_vol != trim($issue->volume)) {
+			$volume_count++; //number of volumes in this year
+			$prev_vol = trim($issue->volume); // last volume
+		}
+
+		if ($issue_count) {
+			$total_time += ($issue->date_published - $last->date_published);
+		}
+		$issue_count++;
+		$last = $issue;
+		$iss[$volume_count] = $iss[$volume_count] + 1; //number of issues in each volume of the year
+	}
+
+	$iss_per_vol = is_numeric($journal->issues_per_volume) ? $journal->issues_per_volume : FALSE;
+	$vol_per_year = is_numeric($journal->volumes_per_year) ? $journal->volumes_per_year : FALSE;
+	$prev_vol = empty ($prev_vol) ? 0 : $prev_vol;
+	$prev_num = is_numeric($last->number) ? $last->number : FALSE;
+
+	//print_r(array('vol_per_year' => $vol_per_year, 'iss_per_vol' => $iss_per_vol, 'issue_count' => $issue_count, 'volume_count' => $volume_count, 'prev_vol' => $prev_vol, 'iss' => $iss, 'last' => $last));
+	//full format year, volume, number  
+	if ($journal->issue_format == 3) {
+		$iss_per_vol = $iss_per_vol ? $iss_per_vol : 12;
+		$vol_per_year = $vol_per_year ? $vol_per_year : 1;
+
+		if ($issue_count >= ($iss_per_vol * $vol_per_year)) {
+			$ret = array (
+				'year' => $this_year +1,
+				'last_year' => $this_year,
+				'volume' => is_numeric($prev_vol
+			) ? $prev_vol +1 : $prev_vol, 'last_volume' => $prev_vol, 'number' => 1, 'num_in_vol' => $issue_count,);
+		} else {
+			if ($volume_count < $vol_per_year) {
+				if ($iss[$volume_count] < $iss_per_vol) {
+					$volume = $prev_vol;
+					$number = $iss[$volume_count] + 1;
+				} else {
+					$volume = $prev_vol +1;
+					$number = 1;
+				}
+			} else {
+				if ($iss[$volume_count] < $iss_per_vol) {
+					$volume = $prev_vol;
+					$number = $iss[$volume_count] + 1;
+				} else {
+					$volume = $volume_count +1;
+					$number = 1;
+				}
+			}
+			$ret = array (
+				'year' => $this_year,
+				'last_year' => $this_year -1,
+				'volume' => $volume,
+				'last_volume' => $prev_vol ? $prev_vol -1 : $prev_vol,
+				'number' => $number,
+				'last_number' => $last->number,
+				'num_in_vol' => $issue_count
+			);
+
+		}
+
+	}
+
+	if ($issue_count > 1) {
+		$ret['time'] = $last->date_published + ($total_time / $issue_count);
+	} else {
+		$ret['time'] = $last->date_published + (30 * 86400);
+	}
+	$ret['issue_last_year'] = $last->year;
+	$ret['issue_last_volume'] = $last->volume;
+	$ret['issue_last_number'] = $last->number;
+	$ret['issue_last_time'] = $last->date_published;
+	return $ret;
+
+}
+
+function ejournal_issues_get_all_available($jid) {
+	if (!$jid)
+		return;
+
+	$journal = ejournal_journal_get($jid);
+	$statuses = _ejournal_issue_statuses();
+
+	$result = _ejournal_journal_get_issues($journal, NULL, TRUE);
+
+	while ($issue = db_fetch_object($result)) {
+		$ret[$statuses[$issue->status]][$issue->iid] = ejournal_issue_reference($issue, $journal);
+	}
+	$ret[$statuses[ISSUE_WORKING]][ISSUE_WORKING] = '<' . t('WORKING') . '>';
+	return $ret;
+}
+
+/*******************************************
+ *   ARTICLES
+ ******************************************/
+
+function ejournal_article_from_journal($node) {
+	static $ejnodes = array ();
+
+	if (array_key_exists($node->nid, $ejnodes)) {
+		return $ejnodes[$node->nid];
+	}
+	// user may have changed journal-node_type relation after some nodes were already created  
+	$jid = db_result(db_query("SELECT jid FROM {ejournal_articles} WHERE nid='%s'", $node->nid));
+	if ($jid) {
+		$ejnodes[$node->nid] = $jid;
+		return $jid;
+	}
+	if ($node->type) { //nodeapi is being called even when the node was not loaded  
+		$jid = db_result(db_query("SELECT jid FROM {ejournal_store} WHERE jvalue='%s' AND jkey='node_types'", $node->type));
+
+		$ejnodes[$node->nid] = $jid;
+		return $jid;
+	}
+}
+
+function ejournal_article_handle_operations($edit) {
+	if ($edit == 'get') {
+		return array (
+			'update_all' => t('Update all'), 
+      'update_sel' => t('Update selected'), 
+      'unpublish_all' => t('Send all to unpublished issue'), 
+      'unpublish_sel' => t('Send selected to unpublished issue'), 
+      0 => t('Do nothing'));
+	}
+  
+  
+  if(!$edit['edit']['nid']) {
+    return;
+  }
+  
+	foreach ($edit['edit']['nid'] as $nid) {    
+		$checked = $edit['edit']['nid_checked'][$nid];
+		$arg = array ();
+		switch ($edit['operation']) {
+			case 'update_sel' :
+				if (!$checked) {
+					break;
+				}
+			case 'update_all' :
+
+				if ($edit['edit']['nid_issue'][$nid]) {
+					$arg['iid'] = $edit['edit']['nid_issue'][$nid];
+				}
+				if ($edit['edit']['node_weight'][$nid]) {
+					$arg['weight'] = $edit['edit']['node_weight'][$nid];
+				}
+				_ejournal_article_update($nid, $arg);
+				ejournal_article_external_update($nid, array (
+					'status' => $edit['edit']['node_status'][$nid],
+					'tid' => $edit['edit']['section_tid'][$nid],
+					'old_tid' => $edit['edit']['old_tid'][$nid]
+				));
+				break;
+
+			case 'unpublish_sel' :
+				if (!$checked) {
+					break;
+				}
+			case 'unpublish_all' :
+				_ejournal_article_update($nid, array (
+					'iid' => ISSUE_NOT_PUBLISHED
+				));
+				break;
+		}
+
+	}
+}
+
+/**
+ * ejournal_article_insert: called from the nodeapi when article is inserted for the first time
+ *
+ * @param $jid
+ *    Id of the journal
+ * @param $node
+ *    Object representing node
+ */
+
+function ejournal_article_insert($jid, &$node) {
+  
+  // insert article
+  ejournal_article_add($jid, $node);
+
+  // logs, issues
+  ejournal_article_write_log($node->nid, $node->iid, $node->uid, t('insert'), $node->article_log);
+  // send alert emails
+  ejournal_email_article_inserted($jid, $node);
+
+  // grant access rights  
+  ejournal_grant_article_inserted($node->nid);
+  ejournal_grant_article_author($node->nid, $node->uid);  
+}
+
+function ejournal_article_update($jid, &$node) {
+			$journal = ejournal_journal_get($jid);
+			$article = ejournal_article_get($node->nid, $journal);
+			// issue changed
+			if ($article->iid != $node->nid_issue) {
+				$node->article_log = t("issue changed from %old to %new\n", array (
+					'%old' => $article->iid,
+					'%new' => $node->nid_issue
+          )) . $node->article_log;
+				$update['iid'] = $node->nid_issue;
+			}
+			// section changed, it will be handled by taxonomy module, we only log the operation
+			if ($node->taxonomy && !in_array($article->tid, $node->taxonomy)) {
+				$node->article_log = t("section has changed (old: %old)\n", array (
+					'%old' => $article->tid
+          )) . $node->article_log;
+			}
+			// proofreader mark changed
+			if ($node->proofreader_mark && $article->proofreader_mark != $node->proofreader_mark) {
+				$proof = _ejournal_article_get_proofreader_statuses();
+				$node->article_log = t("proofreader mark: " . $proof[$node->proofreader_mark] . "\n") . $node->article_log;
+				$update['proofreader_mark'] = $node->proofreader_mark;
+			}
+
+			if ($update) {
+				_ejournal_article_update($node->nid, $update);
+			}
+			if ($node->article_log) {
+				ejournal_article_write_log($node->nid, $node->iid, t('update'), $node->article_log);
+			}
+      
+			// reinsert access rights for author
+			ejournal_grant_article_author($node->nid, $node->uid);  
+}
+
+function _ejournal_article_update($nid, $arg = array ()) {
+
+	foreach ($arg as $key => $value) {
+		if (isset ($value)) {
+			$sql[] = "$key='" . db_escape_string($value) . "' ";
+		}
+	}
+	if (!$sql) {
+		return;
+	}
+	$set = implode(', ', $sql);
+
+	return db_query("UPDATE {ejournal_articles} SET $set WHERE nid='%d'", $nid);
+
+}
+
+/** 
+ * ejournal_article_delete: delete an article from an issue
+ *
+ * @param $jid
+ *   A journal ID
+ * @param $node
+ *   Reference to object representing deleted node
+ */
+function ejournal_article_delete($jid = NULL, $node) {
+	db_query("DELETE FROM {ejournal_articles} WHERE nid = '%d'", $node->nid);
+	db_query("DELETE FROM {ejournal_articles_log} WHERE nid = '%d'", $node->nid);
+	ejournal_grant_article_deleted($node->nid);
+}
+
+/** 
+ * ejournal_article_add: add a node to an issue
+ *
+ * @param $iid
+ *   An issue ID
+ * @param $nid
+ *   A node ID
+ */
+function ejournal_article_add($jid, $node) {
+
+	db_query("INSERT INTO {ejournal_articles} (jid, nid, iid, weight, proofreader_mark) VALUES ('%d', '%d', '%d', '%d', '%d')", $jid, $node->nid, $node->nid_issue, 0, $node->proofreader_mark);
+
+}
+
+
+function ejournal_article_external_update($nid, $arg = array ()) {
+
+	if (isset ($arg['status'])) {
+		db_query("UPDATE {node} SET status='%d' WHERE nid='%d'", $arg['status'], $nid);
+	}
+
+	if ($arg['tid'] && $arg['old_tid'] && ($arg['tid'] != $arg['old_tid'])) {
+		db_query("UPDATE {term_node} SET tid='%d' WHERE nid='%d' AND tid IN (%s)", $arg['tid'], $nid, $arg['old_tid']);
+	}
+
+}
+
+function ejournal_article_form_edit_pre(& $node, $jid) {
+	if (!$jid)
+		return;
+
+	$journal = ejournal_journal_get($jid);
+	if (!$node->nid_issue) {
+		$article = ejournal_article_get($node->nid, $journal);
+	}
+
+	if (ejournal_user_access(array (
+			'chief editor',
+			'editor'
+		), $journal)) {
+		$form = array ();
+		$issues = ejournal_issues_get_all_available($jid);
+		$issues[0] = '<' . t('none') . '>'; //intentional, we want them to select an issue, even if 'working' issue
+
+		foreach ($issues as $part) {
+			if ($part[$article->iid] || ejournal_user_access(array (
+					'chief editor'
+				), $journal)) {
+
+				$form['nid_issue'] = array (
+					'#type' => 'select',
+					'#title' => t('Available issues'
+				), '#default_value' => $node->nid_issue ? $node->nid_issue : $article->iid, '#options' => $issues, '#description' => t('This article will be published in the issue you are about to select. &quot;Future issues&quot; are somewhat special, they will be decided later. If you are a chief editor, you may have the right to send the article into the &quot;Back issues&quot; even though the issues were already published. Editors do not have such option.'), '#required' => TRUE,);
+				return $form;
+			}
+		}
+
+		$form['x'] = array (
+			'#type' => 'item',
+			'#title' => t('Only chief editor may assign/change issue of this article.'
+		),);
+
+	} else { //article is being edited by author   
+		$form['nid_issue'] = array (
+			'#type' => 'hidden',
+			'#value' => $node->nid_issue ? $node->nid_issue : ($article->iid ? $article->iid : '-1'
+		)); //working
+	}
+	return $form;
+}
+
+function ejournal_article_form_edit_post(& $node, $jid) {
+	if (!$jid)
+		return;
+	$form = array ();
+	if (ejournal_user_access(array ('chief editor',	'editor', 'proofreader'), $jid)) {
+
+		$journal = ejournal_journal_get($jid);
+		$article = ejournal_article_get($node->nid, $journal);
+
+		if (ejournal_user_access(array ('proofreader'), $journal)) {
+			$form['proofreader_mark'] = array (
+				'#type' => 'select',
+				'#title' => t('Proofreader\'s approval'), 
+        '#default_value' => $node->proofreader_mark ? $node->proofreader_mark : $article->proofreader_mark, 
+        '#options' => _ejournal_article_get_proofreader_statuses(), 
+        '#description' => t('The article may be published only after the proofreader\'s approval.'),);
+		}
+
+		if (ejournal_user_access(array (
+				'editor',
+				'chief editor'
+			), $journal)) {
+			$form['article_log'] = array (
+				'#type' => 'textarea',
+				'#title' => t('History of the article editing'
+			), '#default_value' => $node->article_log, '#size' => 70, '#maxlength' => 4, '#description' => t('Here you can add messages, visible only to the editor(s) and chief editor.'),);
+
+		}
+
+		//rca TODO, email management
+		//$form .= '<iframe width="100%" height="300px" src="modules/ejournal/email.htm"></iframe>';
+
+		$form['ejournal_article_log'] = array (
+			'#type' => 'item',
+			'#value' => ejournal_article_display_log($node->nid,
+			$journal
+		),);
+	}
+	return $form;
+}
+
+function ejournal_article_display_log($nid, $jid = NULL) {
+	if (!$nid) {
+		return;
+	}
+
+	if (ejournal_user_access(array (
+			'editor',
+			'chief editor',
+			'proofreader'
+		), $jid)) {
+		if ($log = ejournal_article_get_log($nid)) {
+			$output = "<pre id=\"ejournal-log\">\n";
+			$output .= implode("\n", $log);
+			$output .= "</pre>\n";
+		}
+		return $output;
+	}
+}
+
+function _ejournal_article_get_proofreader_statuses() {
+	return array (
+    PROOFREADER_IGNORED => t('proofreader ignored'),
+		PROOFREADER_APPROVED => t('proofreader approved'), 
+    PROOFREADER_NOT_APPROVED => t('proofreader not approved'));
+
+}
+
+function ejournal_article_write_log($nid, $iid, $type = 'message', $message) {
+	global $user;
+	$uid = $user->uid;
+	$hostname = $_SERVER['REMOTE_ADDR'];
+	$timestamp = time();
+
+	$entries = db_query("INSERT INTO {ejournal_articles_log} (nid, iid, uid, type, message, hostname, timestamp) VALUES ('%d', '%d', '%d', '%s', '%s', '%s', '%d')", $nid, $iid, $uid, $type, $message, $hostname, $timestamp);
+}
+
+function ejournal_article_get_log($nid) {
+	$entries = db_query("SELECT * FROM {ejournal_articles_log} WHERE nid='%d'", $nid);
+	while ($entry = db_fetch_object($entries)) {
+
+		$rows[] = _ejournal_article_format_log($entry);
+	}
+	return $rows;
+}
+
+function _ejournal_article_format_log($entry) {
+
+	$user = db_fetch_object(db_query("SELECT name FROM {users} WHERE uid='%d'", $entry->uid));
+	$name = $user->name;
+	$date = format_date($entry->timestamp);
+	$ip = $entry->hostname ? "($entry->hostname )" : '';
+	$type = $entry->type;
+
+	$log =<<<EOF
+$date :: $type :: $name $ip
+----------------------------------------------------------------------
+$entry->message
+EOF;
+	return $log;
+}
+
+function ejournal_article_get($nid, $journal, $cache = TRUE) {
+	static $article;
+	if (!$article[$nid]) {
+		$vids = _ejournal_vocabulary_build_sql($journal->vid, 'td');
+		$a = db_fetch_object(db_query("SELECT a.jid, a.iid, a.weight, a.proofreader_mark, t.tid FROM {ejournal_articles} a INNER JOIN {term_node} t ON a.nid=t.nid INNER JOIN {term_data} td ON t.tid = td.tid WHERE a.nid='%d' $vids", $nid));
+		$a->log = ejournal_article_get_log($nid);
+		if ($cache) {
+			$article[$nid] = & $a;
+		}
+		return $a;
+	} else {
+		return $article[$nid];
+	}
+}
+
+function _ejournal_article_queue_status($nid) {
+	if (!$nid) {
+		return;
+	}
+
+	$result = db_fetch_object(db_query("SELECT SUM(IF(uid > 0, 1, 0)) AS voted, SUM(vote) AS score FROM {queue} WHERE nid = '%d'", $nid));
+
+	return $result->voted ? "$result->voted/$result->score" : "NA";
+
+}
+
+function ejournal_article_display_citation(& $node) {
+
+	$issue = db_fetch_object(db_query("SELECT ei.* FROM {ejournal_articles} ea INNER JOIN {ejournal_issues} ei ON ea.iid=ei.iid WHERE ea.nid='%d'", $node->nid));
+    $journal = ejournal_journal_get($issue->jid);
+    ejournal_global_variable('ejrn_viewed_issue', $issue);
+    
+    //plugins can prevent or affect citation
+    if($plugin = ejournal_invoke_all('allow_citation', $node, (object)$journal, (object)$issue)) {
+    	foreach($plugin AS $array => $value) {
+    		if($value === FALSE) {
+    			return;
+    		}
+    	}
+    }
+
+	return theme('ejournal_article_citation', $journal, $issue, $node);
+}
+
+function _ejournal_article_get_section_name($journal, $nid) {
+	$vids = _ejournal_vocabulary_build_sql($journal->vid, 'td');
+
+	$section = db_fetch_object(db_query("SELECT td.name FROM {term_data} td INNER JOIN {term_node} tn ON td.tid=tn.tid AND tn.nid='%d' $vids", $nid));
+
+	return $section->name;
+}
+
+function _ejournal_article_get_author_names($journal, $nid) {
+
+	if ($journal->author_vid) {
+		$vids = _ejournal_vocabulary_build_sql($journal->author_vid, 'td');
+
+		$authors = db_query("SELECT td.name, td.tid FROM {term_data} td INNER JOIN {term_node} tn ON td.tid=tn.tid AND tn.nid='%d' $vids ORDER BY td.name ASC", $nid);
+
+		while ($author = db_fetch_object($authors)) {
+			$out[] = l($author->name, "ejournal/$journal->jid/term/$author->tid", NULL, urlencode("edit[type]") . "=author");
+		}
+
+		if ($out) {
+			return implode('; ', $out);
+		}
+	}
+
+}
+
+function ejournal_authors_edit_form($journal = NULL) {
+  $form = array ();
+	$i = 0;
+	if (!$journal) {
+		$journals = db_query("SELECT jid, title FROM {ejournal_journals} WHERE jid > 0 AND enabled = 1");
+		while ($journal = db_fetch_object($journals)) {
+			$j[] = $journal;
+			$i++;
+		}
+
+		if ($i == 1) {
+			$journal = ejournal_journal_get($j[0]->jid);
+		} else {
+			$output = t('Please, select a journal') . '<br/>';
+			foreach ($j as $journal) {
+				$output .= l($journal->title, ejournal_admin_path(array('action' => 'authors', 'jid' => $journal->jid))) . "<br/>\n";
+			}
+			$form['ejournal-authors'] = array( 
+        '#type' => 'fieldset',
+        '#title' => t('E-journal authors'),  
+        '#value' => $output,
+      );
+      return $form;
+		}
+	}
+  
+  if(!$journal->author_vid) {
+    $form['ejournal-authors'] = array( 
+        '#type' => 'fieldset',
+        '#title' => t('E-journal authors'),  
+        '#value' => t('There is no authors\' vocabulary assigned to this journal. Please fix it at the !administration page', array('!administration' => l('ejournal administration ','admin/settings/ejournal/edit/'.$journal->jid))),
+      );
+      return $form;
+  }
+
+	$limit = 30; // number of authors to retrieve
+	$header = array (
+      array (
+        'data' => t('ID'),
+        'field' => 'u.uid'
+        ), 
+      array (
+        'data' => t('Username'), 
+        'field' => 'u.name'
+        ), 
+      array (
+        'data' => t('Status'), 
+        'field' => 'u.status'
+        ), 
+      array (
+        'data' => t('Roles')
+        ), 
+      array (
+        'data' => t('Last access'), 
+        'field' => 'u.access', 
+        'sort' => 'desc'
+        ), 
+      t('Operations')
+    );
+	$author_roles = db_query("SELECT rid FROM {role} WHERE name = '%s' OR name = '%s'", 'ejournal author', "ejournal-" . $journal->jid . " author");
+	while ($rid = db_fetch_object($author_roles)) {
+		$rids[] = $rid->rid;
+	}
+	if (!$rids) {
+    $form['ejournal-authors'] = array( 
+        '#type' => 'fieldset',
+        '#title' => t('E-journal authors'),  
+        '#value' => "<h3>$journal->title</h3>" . t("No authors with roles: &quot;ejournal author&quot;, &quot;ejournal-$journal->jid author&quot;. You must first create one of these !roles and assign one of them to your users at !url. (&quot;ejournal author&quot; is for all your journals, whilst &quot;ejournal-$journal->jid&quot; is only for this particular journal)", array ('!roles' => l(t('roles'), 'admin/access'), '!url' => l(t('user administration page'), 'admin/user'))),
+    );
+    return $form;
+	}
+	$rids = implode(',', $rids);
+
+	$sql = "SELECT u.uid, u.name, u.status, u.access, ea.tid FROM {users} u LEFT JOIN {users_roles} r ON r.uid=u.uid LEFT JOIN {ejournal_authors} ea ON u.uid=ea.uid WHERE u.uid != 0 AND r.rid IN ($rids)";
+	$sql .= tablesort_sql($header);
+	$result = pager_query($sql, $limit);
+
+	$status = array (
+		t('blocked'), 
+    t('active')
+    );
+	$destination = drupal_get_destination();
+
+	if ($journal->author_vid) {
+		foreach (split(',', $journal->author_vid) as $vid) {
+			$tree = taxonomy_get_tree($vid);
+			if ($tree) {
+				$voc_name = db_result(db_query("SELECT name FROM {vocabulary} WHERE vid='%d'", $vid));
+				$authors['0'] = '<' . t('none') . '>';
+				foreach ($tree as $term) {
+					$authors[$voc_name][$term->tid] = _taxonomy_depth($term->depth, '-') . $term->name;
+				}
+			}
+		}
+	} else {
+    $form['ejournal-authors'] = array( 
+        '#type' => 'fieldset',
+        '#title' => t('E-journal authors'),  
+        '#value' => "<h3>$journal->title</h3>" . t("No vocabulary for authors was set up! Go to !url", array ('!url' => l(t('ejournal administration page'), 'admin/settings/ejournal/edit/' . $journal->jid))),
+        );
+    return $form;    
+	}
+
+	while ($account = db_fetch_object($result)) {
+		$rolesresult = db_query('SELECT r.name FROM {role} r INNER JOIN {users_roles} ur ON ur.rid = r.rid WHERE ur.uid = %d', $account->uid);
+		$roles = array ();
+
+		while ($role = db_fetch_object($rolesresult)) {
+			$roles[] = $role->name;
+		}
+
+		$rows[] = array (
+			$account->uid,
+			theme('username',	$account), 
+      $status[$account->status], 
+      implode(',<br />', $roles), 
+      format_date($account->access, 'small'), 
+      theme('select', array (
+          '#name' => "edit[tid][$account->uid]",
+          '#id' => "edit-tid][$account->uid",
+          '#value' => $account->tid,
+          '#options' => $authors,
+          '#parents' => array (
+            "tid][$account->uid"
+            ),
+          )
+        ),
+      );
+	}
+
+	$pager = theme('pager', NULL, $limit, 0);
+	if (!empty ($pager)) {
+		$rows[] = array (
+			array (
+				'data' => $pager,
+				'colspan' => '6'
+			)
+		);
+	}
+	
+	$form['table'] = array (
+		'#type' => 'item',
+		'#value' => theme('table', $header,	$rows)
+    );
+	$form['jid'] = array (
+		'#type' => 'hidden',
+		'#value' => $journal->jid
+	  );
+	$form['op'] = array (
+		'#type' => 'submit',
+		'#value' => t('Submit')
+    );
+
+	return $form;
+}
+
+function ejournal_authors_edit_save($edit = array ()) {
+
+	if (!$edit['jid']) {
+		return;
+	} else {
+		$journal = ejournal_journal_get($edit['jid']);
+	}
+
+	foreach ($edit['tid'] as $uid => $author_tid) {
+
+		if ($author_tid) { // tid can not be null
+			ejournal_authors_update($uid, $author_tid);
+		}
+
+	}
+
+}
+
+function ejournal_authors_update($uid, $author_tid) {
+	db_query("UPDATE {ejournal_authors} SET tid='%d', uid='%d' WHERE uid='%d'", $author_tid, $uid, $uid);
+	if (!db_affected_rows()) {
+		db_query("DELETE FROM {ejournal_authors} WHERE uid='%d'", $uid);
+		db_query("INSERT INTO {ejournal_authors} (tid, uid) VALUES ('%d', '%d')", $author_tid, $uid);
+	}
+}
+
+function ejournal_authors_find_by_tid($journal, $tid) {
+	$fullname = db_result(db_query("SELECT name FROM {term_data} WHERE tid='" . db_escape_string($tid) . "' AND vid IN ($journal->author_vid)"));
+
+	//$authors = db_query("SELECT td.name, u.uid, u.name as uname, u.mail, u.status FROM {ejournal_authors} ea INNER JOIN {term_data} td ON ea.tid=td.tid INNER JOIN users u ON ea.uid=u.uid WHERE td.tid='%d'", $tid);
+
+	$authors = db_query("SELECT td.name, td.tid, u.uid, u.name as uname, u.mail, u.status FROM {ejournal_authors} ea INNER JOIN {term_data} td ON ea.tid=td.tid INNER JOIN users u ON ea.uid=u.uid WHERE td.name='%s'", $fullname);
+	if (db_num_rows($authors)) {
+		return $authors;
+	}
+}
+
+function ejournal_authors_find_by_name($journal, $tid) {
+	if ($journal->author_vid) {
+		$fullname = db_result(db_query("SELECT name FROM {term_data} WHERE tid='" . db_escape_string($tid) . "' AND vid IN ($journal->author_vid)"));
+
+		list ($surname, $name) = preg_split("/[,()]+/", $fullname, 3);
+
+		// select ID of the profile fields
+		$result = db_query("SELECT fid, title, name FROM {profile_fields} WHERE name='profile_name' OR name='profile_surname'");
+		while ($item = db_fetch_object($result)) {
+			$fields[$item->name] = $item;
+		}
+
+		// retrieve person's data, if any
+		if ($fields['profile_name']->fid && $fields['profile_surname']->fid) {
+			$authors = db_query("SELECT pv0.uid, pv0.value, pv1.value FROM {profile_values} pv0 INNER JOIN {profile_values} pv1 ON pv0.fid='%d' AND pv1.fid='%d' WHERE pv0.uid=pv1.uid AND pv0.value = '%s' AND pv1.value = '%s'", $fields['profile_name']->fid, $fields['profile_surname']->fid, trim($name), trim($surname));
+
+			if (db_num_rows($authors)) {
+				return $authors;
+			}
+		}
+	}
+}
+
+/*********************************************************************
+ *                          NODE ACCESS SECTION                      *
+ *********************************************************************/
+ 
+/**
+ * Implementation of hook_node_access_records().
+ *
+ * Access rights were loaded into the node during nodeapi load
+ * now we return these access rights when node_access asks us
+ * to do so.  
+ */
+ 
+function ejournal_node_access_records($node) {  
+  if (ejournal_grant_disabling()) {
+    return;
+  }
+  global $user;
+  
+  if ( $node->ejournal['grants']['ejrn'] ) {
+    $g = $node->ejournal['grants']['ejrn'];
+    $grants = array();
+    $grants[] = array(
+     'realm' => 'ejrn',
+     'gid' => GID_CHIEFEDITORS,
+     'grant_view' => $g[GID_CHIEFEDITORS]['view'],
+     'grant_update' => $g[GID_CHIEFEDITORS]['update'],
+     'grant_delete' => $g[GID_CHIEFEDITORS]['delete'],
+     'priority' => 0,
+    );
+
+    $grants[] = array(
+     'realm' => 'ejrn',
+     'gid' => GID_EDITORS,
+     'grant_view' => $g[GID_EDITORS]['view'],
+     'grant_update' => $g[GID_EDITORS]['update'],
+     'grant_delete' => $g[GID_EDITORS]['delete'],
+     'priority' => 0,
+    );
+    
+    $grants[] = array(
+     'realm' => 'ejrn',
+     'gid' => GID_PROOFREADERS,
+     'grant_view' => $g[GID_PROOFREADERS]['view'],
+     'grant_update' => $g[GID_PROOFREADERS]['update'],
+     'grant_delete' => $g[GID_PROOFREADERS]['delete'],
+     'priority' => 0,
+    );
+    
+    $grants[] = array(
+     'realm' => 'ejrn',
+     'gid' => GID_REVIEWERS,
+     'grant_view' => $g['view'][GID_REVIEWERS],
+     'grant_update' => $g['update'][GID_REVIEWERS],
+     'grant_delete' => $g['delete'][GID_REVIEWERS],
+     'priority' => 0,
+    );
+    
+    $grants[] = array(
+     'realm' => 'ejrn',
+     'gid' => GID_OTHERS,
+     'grant_view' => $g[GID_OTHERS]['view'],
+     'grant_update' => $g[GID_OTHERS]['update'],
+     'grant_delete' => $g[GID_OTHERS]['delete'],
+     'priority' => 0,
+    );
+    
+    $grants[] = array(
+     'realm' => 'ejrn',
+     'gid' => GID_AUTHORS,
+     'grant_view' => $g[GID_AUTHORS]['view'],
+     'grant_update' => $g[GID_AUTHORS]['update'],
+     'grant_delete' => $g[GID_AUTHORS]['delete'],
+     'priority' => 0,
+    );
+
+    $grants[] = array(
+     'realm' => 'ejrn',
+     'gid' => $user->uid,  //individual composing author
+     'grant_view' => $g[$user->uid]['view'],
+     'grant_update' => $g[$user->uid]['update'],
+     'grant_delete' => $g[$user->uid]['delete'],
+     'priority' => 0,
+    );
+    
+    $grants[] = array(
+     'realm' => 'ejrn',
+     'gid' => GID_STAFF,
+     'grant_view' => $g[GID_STAFF]['view'],
+     'grant_update' => $g[GID_STAFF]['update'],
+     'grant_delete' => $g[GID_STAFF]['delete'],
+     'priority' => 0,
+    );    
+    return $grants;
+  }
+}
+
+/**
+ * Simple function to make sure we don't respond with grants when disabling
+ * ourselves.
+ */
+function ejournal_grant_disabling($set = NULL) {
+  static $disabling = false;
+  if ($set !== NULL) {
+    $disabling = $set;
+  }
+  return $disabling;
+}
+
+function ejournal_grants_load($jid = NULL, &$node, $realm = 'ejrn' ) {
+  $grants = array();
+  $grants[$realm] = ejournal_global_grants();
+  
+  //TODO merge ejournal_global_grants with values loaded from the database
+  
+  //ejournal_invoke_all
+  
+  $node->ejournal['grants'] = $grants;
+}
+
+/**
+ * ejournal_default_grants: default settings of access rights (for unpublished articles)
+ */
+function ejournal_global_grants($jid = NULL, $show_global_only = FALSE) {
+  static $grants;
+  if($grants[$jid] && !$show_global_only) {
+    return $grants[$jid];
+  }
+  else if(!$jid && $grants['default']) {
+    return $grants['default'];
+  }
+  
+  if($jid) {
+    $journal = ejournal_journal_get($jid);
+    $ug = array();
+    if($journal->local_global_grants && !$show_global_only) {
+      $ug = drupal_unpack($journal->local_global_grants);
+    }
+  }
+  
+  $found_grants = array (
+    GID_CHIEFEDITORS => array (
+      'view' => isset($ug['view'][GID_CHIEFEDITORS]) ? $ug['view'][GID_CHIEFEDITORS] : TRUE,
+      'update' => isset($ug['update'][GID_CHIEFEDITORS]) ? $ug['view'][GID_CHIEFEDITORS] : TRUE,
+      'delete' => isset($ug['delete'][GID_CHIEFEDITORS]) ? $ug['delete'][GID_CHIEFEDITORS] : TRUE,
+    ),
+    GID_EDITORS => array (
+      'view' => isset($ug['view'][GID_EDITORS]) ? $ug['view'][GID_EDITORS] : TRUE,
+      'update' => isset($ug['update'][GID_EDITORS]) ? $ug['view'][GID_EDITORS] : TRUE,
+      'delete' => isset($ug['delete'][GID_EDITORS]) ? $ug['delete'][GID_EDITORS] : FALSE,
+    ),
+    GID_PROOFREADERS => array (
+      'view' => isset($ug['view'][GID_PROOFREADERS]) ? $ug['view'][GID_PROOFREADERS] : TRUE,
+      'update' => isset($ug['update'][GID_PROOFREADERS]) ? $ug['view'][GID_PROOFREADERS] : TRUE,
+      'delete' => isset($ug['delete'][GID_PROOFREADERS]) ? $ug['delete'][GID_PROOFREADERS] : FALSE,
+    ),
+    GID_REVIEWERS => array (
+      'view' => isset($ug['view'][GID_REVIEWERS]) ? $ug['view'][GID_REVIEWERS] : TRUE,
+      'update' => isset($ug['update'][GID_REVIEWERS]) ? $ug['view'][GID_REVIEWERS] : FALSE,
+      'delete' => isset($ug['delete'][GID_REVIEWERS]) ? $ug['delete'][GID_REVIEWERS] : FALSE,
+    ),    
+    GID_AUTHORS => array (
+      'view' => isset($ug['view'][GID_AUTHORS]) ? $ug['view'][GID_AUTHORS] : TRUE,
+      'update' => isset($ug['update'][GID_AUTHORS]) ? $ug['view'][GID_AUTHORS] : FALSE,
+      'delete' => isset($ug['delete'][GID_AUTHORS]) ? $ug['delete'][GID_AUTHORS] : FALSE,
+    ),
+    GID_STAFF => array (
+      'view' => isset($ug['view'][GID_STAFF]) ? $ug['view'][GID_STAFF] : TRUE,
+      'update' => isset($ug['update'][GID_STAFF]) ? $ug['view'][GID_STAFF] : FALSE,
+      'delete' => isset($ug['delete'][GID_STAFF]) ? $ug['delete'][GID_STAFF] : FALSE,
+    ),
+    GID_OTHERS => array (
+      'view' => isset($ug['view'][GID_OTHERS]) ? $ug['view'][GID_OTHERS] : FALSE,
+      'update' => isset($ug['update'][GID_OTHERS]) ? $ug['view'][GID_OTHERS] : FALSE,
+      'delete' => isset($ug['delete'][GID_OTHERS]) ? $ug['delete'][GID_OTHERS] : FALSE,
+    ),
+  );
+  
+  if($show_global_only) {
+    $grants['default'] = $found_grants;
+    return $grants;
+  }
+  $grants[$jid] = $found_grants;
+  return $found_grants;
+}
+
+/** when article is *inserted* (but issue still unpublished)
+ *
+ *
+ *author            : view=1, update=1, delete=0    gid = user->uid
+ *editor&proofreader: view=1, update=1, delete=0    in gid 1
+ *chief editor      : view=1, update=1, delete=1    in gid 2       
+ *others            : view=0, update=0, delete=0    in gid 0
+ *
+ *when issue is made public
+ *author            : deleted 
+ *editor&proofreader: deleted 
+ *chief editor      : view=1, update=1, delete=1    in gid 2
+ *others            : view=1, update=0, delete=0    in gid 0
+ *
+ **/
+
+function ejournal_grant_article_inserted($nid, $realm = 'ejrn') {
+	//for chief editor
+	_ejournal_grant_update($nid, 1, 1, 1, $realm, GID_CHIEFEDITORS);
+	//for editor & proofreader
+	_ejournal_grant_update($nid, 1, 1, 0, $realm, GID_EDITORS);
+  _ejournal_grant_update($nid, 1, 1, 0, $realm, GID_PROOFREADERS);
+  _ejournal_grant_update($nid, 1, 1, 0, $realm, GID_REVIEWERS);
+  
+  _ejournal_grant_update($nid, 1, 1, 0, $realm, GID_STAFF);
+  _ejournal_grant_update($nid, 1, 1, 0, $realm, GID_AUTHORS);
+  
+	//for others
+	_ejournal_grant_update($nid, 0, 0, 0, $realm, GID_OTHERS);
+
+}
+
+function ejournal_grant_article_author($nid, $uid, $realm = 'ejrn') {
+	_ejournal_grant_update($nid, 1, 1, 0, $realm, $uid);
+}
+
+function ejournal_grant_article_deleted($nid, $realm = 'ejrn') {
+	_ejournal_grant_delete($nid, $realm);
+}
+
+function ejournal_grant_issue_published($iid) {
+	$nodes = db_query("SELECT n.nid, n.status, ea.iid, ea.jid, ea.proofreader_mark FROM {node} n RIGHT JOIN {ejournal_articles} ea ON n.nid=ea.nid WHERE ea.iid=%d", $iid);
+
+	while ($node = db_fetch_object($nodes)) {
+
+		if ($node->status) {
+			//issue is published, editor and proofreader need it no more
+			_ejournal_grant_delete($node->nid, 'ejrn');
+			//chief editor gets access
+			_ejournal_grant_update($node->nid, 1, 1, 1, 'ejrn', GID_CHIEFEDITORS);
+			//all the others are denied by default (if not changed by user)
+			_ejournal_grant_update($node->nid, 1, 0, 0, 'ejrn', GID_OTHERS);
+		} else {
+			if (!$issue) {
+				$issue = ejournal_issue_get($node->iid);
+				$journal = ejournal_journal_get($issue->jid);
+				$ref = ejournal_issue_reference($issue, $journal);
+			}
+			$text = t('The issue !issue is &quot;published&quot;, but the node !node is !unpublished. Moving the node to !working place.', array (
+				'!issue' => l($ref, ejournal_admin_path(array('action' => 'edit', 'jid' => $journal->jid, 'iid' => $issue->iid))), '!node' => l("$node->nid", "node/$node->nid/edit"), '!working' => l('working', ejournal_admin_path(array('action' => 'working', 'jid' => $journal->jid)))));
+			drupal_set_message($text);
+			_ejournal_article_update($node->nid, array (
+				'iid' => ISSUE_WORKING
+			));
+			ejournal_article_write_log($node->nid, ISSUE_WORKING, 'warning', $text);
+			watchdog('ejournal', $text);
+		}
+	}
+}
+
+function ejournal_grant_journal_recheck_access($jid) {
+
+	$journal = ejournal_journal_get($jid);
+
+	$articles = db_query("SELECT ea.nid, ea.iid, ea.jid, ei.status AS istatus FROM {ejournal_articles} ea LEFT JOIN {ejournal_issues} ei ON ea.iid=ei.iid WHERE ea.jid=%d", $jid);
+
+	$i = 0;
+	while ($article = db_fetch_object($articles)) {
+		$i++;
+		switch ($article->istatus) {
+			case ISSUE_CURRENT :
+			case ISSUE_PUBLISHED :
+				_ejournal_grant_update($article->nid, 1, 1, 1, 'ejrn', GID_CHIEFEDITORS);
+				_ejournal_grant_update($article->nid, 1, O, 0, 'ejrn', GID_OTHERS);
+				break;
+			case ISSUE_FUTURE :
+			case ISSUE_NOT_PUBLISHED :
+			default :
+				ejournal_grant_article_inserted($article->nid);
+		}
+
+	}
+
+	drupal_set_message(t("Access rights for all %num articles in journal %journal were rechecked. If you still encounter problems with &quot;access denied&quot;, please make sure that proper !permissions for displaying as well as for editing are set. Users must also have rights to use appropriate !filters.", array (
+      '%num' => $i,
+      '%journal' => $journal->title,
+      '!permissions' => l('permissions', "admin/access"), 
+      '!filters' => l('filters', "admin/filters")
+      )
+    )
+  );
+}
+
+function _ejournal_grant_insert($nid = 0, $view = 0, $update = 0, $delete = 0, $realm = 'ejrn', $gid = 0) {
+	db_query("DELETE FROM {ejournal_node_access} WHERE nid='%d' AND gid='%d' AND realm='%s'", $nid, $gid, $realm);
+	db_query("INSERT INTO {ejournal_node_access} (nid, gid, realm, grant_view, grant_update, grant_delete) VALUES ('%d', '%d', '%s', '%d', '%d', '%d')", $nid, $gid, $realm, $view, $update, $delete);
+
+}
+function _ejournal_grant_update($nid = 0, $view = 0, $update = 0, $delete = 0, $realm = 'ejrn', $gid = 0) {
+	db_query("UPDATE {ejournal_node_access} SET grant_view=%d, grant_update=%d, grant_delete=%d WHERE nid=%d AND realm='%s' AND gid='%d'", $view, $update, $delete, $nid, $realm, $gid);
+	if (!db_affected_rows()) {
+		_ejournal_grant_insert($nid, $view, $update, $delete, $realm, $gid);
+	}
+
+}
+function _ejournal_grant_delete($nid, $realm = 'ejrn', $gid = NULL) {
+	if ($gid) {
+		db_query("DELETE FROM {ejournal_node_access} WHERE nid=%d AND realm='%s' AND gid=%d", $nid, $realm, $gid);
+	} else {
+		db_query("DELETE FROM {ejournal_node_access} WHERE nid=%d AND realm='%s'", $nid, $realm);
+	}
+
+}
+
+
+
+
+function ejournal_user_access($roles, $journal = NULL, $user = NULL) {
+	foreach ($roles as $role) {
+		if (user_access('ejournal ' . $role, $user)) {
+			return 1;
+		}
+		if ($journal->jid && user_access('ejournal-' . ($journal->jid ? $journal->jid : $journal) . ' ' . $role, $user)) {
+			return 1;
+		}
+	}
+}
+
+//tries to extract jid from the user permissions to avoid expensive queries
+//of seeking which ejournal we are currently viewing, it is currently limited to one
+//journal only [but I consider it to be a temporary hack, rca TODO]
+function ejournal_user_extract_jid_from_permissions($user) {
+	static $ejrn_journal = array ();
+	if (isset ($ejrn_journals[$user->uid])) {
+		return $ejrn_journals[$user->uid];
+	}
+
+	$result = db_result(db_query("SELECT DISTINCT(p.perm) FROM {role} r INNER JOIN {permission} p ON p.rid = r.rid WHERE r.rid IN (%s) AND p.perm LIKE '%ejournal-%'", implode(',', array_keys($user->roles))));
+	if ($result) {
+		preg_match('/ejournal-([0-9]+)/', $result, $matches);
+		if ($matches[0]) {
+			$journal = new StdClass();
+			$journal->jid = $matches[0];
+			$ejrn_journals[$user->uid] = $journal;
+			return $journal;
+		}
+	} else {
+		$ejrn_journals[$user->uid] = '';
+	}
+}
+/********************************************
+ *   SECTIONS
+ *******************************************/
+/**
+ * ejournal_sections_get: Loads all vocabularies associated with the journal
+ *
+ * It should also include a function with the filename and parameters
+ *    theme_ejournal_layout_{name}($section, $params=NULL)
+ *
+ * @param $jid
+ *   ID of the journal 
+ * @param $document_type
+ *   string identifying document type
+ * @return
+ *   An associative array of all terms for particular document type, suitable for use as the $options in a form_select call, e.g.,
+ *      form_select($title, $name, $value, ejournal_sections_get($jid, $document_type), $description)
+ */
+
+function ejournal_sections_get($jid, $document_type = NULL) {
+	static $sections;
+
+	// remember vocabularies associated with this journal
+	if (!isset ($sections['journal'][$jid])) {
+
+		$result = db_fetch_object(db_query("SELECT vid FROM {ejournal_journals} WHERE jid='%d'", $jid));
+		if ($result->vid) {
+			$vid = split(',', ($result->vid));
+			$sections['journal'][$jid] = $vid;
+		} else {
+			return array ();
+		}
+	}
+
+	if (!$sections['document_type'][$document_type]) {
+		foreach ($sections['journal'][$jid] as $vid) {
+			if (!$sections['vocabulary'][$vid]) {
+
+				$tree = taxonomy_get_tree($vid);
+				if ($tree) {
+					foreach ($tree as $term) {
+						$sections['vocabulary'][$vid][$term->tid] = _taxonomy_depth($term->depth, '-') . $term->name;
+					}
+				}
+
+			}
+		}
+		if (is_null($document_type)) {
+			foreach ($sections['journal'][$jid] as $vid) {
+				$voc_name = db_result(db_query("SELECT name FROM {vocabulary} WHERE vid='%d'", $vid));
+				$out[$voc_name] = & $sections['vocabulary'][$vid];
+			}
+			return (array) $out;
+		}
+	}
+
+	// unless we already have definitions loaded
+	if (!isset ($sections['document_type'][$document_type])) {
+
+		$vocabularies = taxonomy_get_vocabularies($document_type);
+
+		foreach ($vocabularies as $vid => $vocabulary) {
+
+			// make sure that we add only vocabularies marked as 'sections' for this journal
+			if (in_array($vid, $sections['journal'][$jid]) && !$sections['vocabulary'][$vid]) {
+
+				// store a reference, not the copy of the whole thing (could someone verify this?)
+				$sections['document_type'][$document_type][$vocabulary->name] = & $sections['vocabulary'][$vid];
+			} else
+				if (in_array($vid, $sections['journal'][$jid]) && $sections['vocabulary'][$vid]) {
+					// we already have that vocabulary, but not registered for this document type yet
+					$sections['document_type'][$document_type][$vocabulary->name] = & $sections['vocabulary'][$vid];
+				}
+		}
+	}
+
+	return (array) $sections['document_type'][$document_type];
+}
+/*
+ * Returns array containing only sections of a given article
+ * @param $jid
+ *   object containing jid of the journal
+ * @param $document_type
+ *   string, identification of the documenty typ - e.g. 'flexinode-1'
+ * @param @tids
+ *   array of all the terms of the article
+ * @return
+ *   array containing tid and term_name of the section(s)
+ */
+function ejournal_sections_of_article($jid, $document_type, $tids = array ()) {
+	if (!$document_type)
+		return array ();
+
+	$sections = ejournal_sections_get($jid, $document_type);
+	$return = array ();
+	foreach ($sections as $vocabulary => $vids) {
+		foreach ($tids as $tid) {
+			if (isset ($vids[$tid])) {
+				$return[$tid] = $vids[$tid];
+			}
+		}
+	}
+	return $return;
+}
+
+/********************************************
+ *   EMAILS
+ *******************************************/
+function ejournal_mail_alter(& $mailkey, & $to, & $subject, & $body, & $from, & $headers) {
+	$body .= "\n" . "This e-mail generated by e-journal module (" . ejournal_version() . ")";
+}
+
+function ejournal_email_article_inserted($jid, $node) {
+	global $user;
+
+	$journal = ejournal_journal_get($jid);
+
+	if ($journal->publisher_email) {
+
+		$to = $journal->publisher_email;
+		$from = $to;
+		$subject = t('Ejournal %journal : article has been just inserted by %user', array (
+			'%journal' => $journal->title,
+			'%user' => $user->name
+		));
+		$body = t("New article \"%title\" has been just created by user %user. When you login, you can access the article at !url. \nAutomatically generated message, do not reply ;-)", array (
+			'%title' => $node->title,
+			'%user' => $user->name,
+			'!url' => url("node/$node->nid/edit"
+		))); //TODO issue a ticket which allows operations with article on one-click 
+		$body .= "========================================================================<br/>\n";
+		$body .= $node->body;
+		$headers = array (
+				//"Reply-to" => $from,
+	"X-Mailer" => "Drupal",
+				//"Return-path" => $from,
+		//"Errors-to" => $from,
+	
+		);
+
+		if (drupal_mail('new-content', $to, $subject, $body, $from, $headers)) {
+			drupal_set_message(t("E-mail sent to %to", array (
+				'%to' => $to
+			)));
+		} else {
+			drupal_set_message(t("Possible error sending e-mail to %to", array (
+				'%to' => $to
+			)));
+		}
+	}
+
+}
+
+/********************************************
+ *  PROFILE 
+ *******************************************/
+
+//TODO  use ejournal_profile_alter()
+//to change bib data for autors/editors? (or leave it for other volumes?, probably) 
+
+/********************************************
+ *   CUSTOM LAYOUTS
+ *******************************************/
+/**
+ * ejournal_layouts: Loads and lists all available journal layouts.
+ *
+ * Layouts are loaded from files in the ejournal directory. Each layout file should have the filename
+ *    layout_{name}.inc
+ * It should also include a function with the filename and parameters
+ *    theme_ejournal_layout_{name}($section, $params=NULL)
+ *
+ * @param $include_default
+ *   Whether to return array with first option as <default> indicating that layout will be handled by functions from ejournal.module
+ *
+ * @return
+ *   An array of layouts and their descriptions, suitable for use as the $options in a form_select call, e.g.,
+ *      form_select($title, $name, $value, ejournal_layouts(), $description)
+ */
+function ejournal_layouts($include_default = TRUE, $journal = NULL) {
+	static $layouts, $contexts;
+	if (!isset ($layouts)) {
+		$layouts = array ();
+		$files = file_scan_directory(drupal_get_path('module', 'ejournal'), '^layout_.*\.inc$');
+		foreach ($files as $filename => $file) {
+
+			// we will load the layout only if requested by journal
+			if ($journal && $journal->ejournal_layout == substr($file->name, 7)) {
+				include_once ($filename);
+			}
+			$layouts[substr($file->name, 7)] = substr($file->name, 7);
+		}
+	}
+
+	if ($include_default) {
+		return array_merge(array (
+			0 => t('<default>'
+		)), $layouts);
+	} else {
+		return $layouts;
+	}
+}
+
+/********************************************
+ *   RUNTIME LOAD
+ *******************************************/
+/** 
+ * we will load ejournal specific theme functions prior to default ones
+ * (i.e. theme functions may by overriden by those which are in the layout_{custom}.inc).
+ */
+
+if (arg(0) == 'ejournal') {
+	if (is_numeric(arg(1))) {
+		ejournal_layouts(FALSE, ejournal_journal_get(arg(1)));
+	} else {
+		ejournal_layouts(FALSE, ejournal_journal_get_by_path(arg(1)));
+	}
+} else
+	if (arg(0) == 'node') {
+		if (is_numeric(arg(1))) {
+			$node = new StdClass();
+			$node->nid = arg(1);
+			if ($jid = ejournal_article_from_journal($node)) {
+				ejournal_layouts(FALSE, ejournal_journal_get($jid));
+			}
+		}
+		//TODO get nid from symbolic url
+	}
+
+/********************************************
+ *   PUBLIC & THEMES
+ *******************************************/
+
+/** 
+ * ejournal_public_page: Display the journal(s).
+ */
+function ejournal_public_page() {
+	$jid = arg(1);
+	$iid = arg(2);
+  
+	if (is_numeric($jid)) {
+		$journal = ejournal_journal_get($jid);
+	} else if ($jid) {
+    $journal = ejournal_journal_get_by_path($jid);
+  }
+
+	if (!$journal) {
+		theme('ejournal_list_all_journals');
+		return;
+	}
+
+	if (is_numeric($iid)) {
+		if (arg(3) == 'print') {
+			print theme('ejournal_list_this_issue', $journal, $iid, 1);
+		} else {
+			print theme('ejournal_list_this_issue', $journal, $iid);
+		}
+		return;
+
+	} else	if ($iid == 'archive') { // list all issues in journal
+			theme('ejournal_archive', $journal);
+			return;
+  } else if ($iid == 'about') { // show about page
+    theme('ejournal_about', $journal);
+    return;
+  } else if ($iid == 'term') { // list nodes that belongs to taxonomy term
+    
+    $edit = $_POST['edit'] ? $_POST['edit'] : ($_GET['edit'] ? $_GET['edit'] : array ('tid' => arg(3)));
+    
+    if ($edit['type'] == 'author') {
+      theme('ejournal_show_author', $journal, arg(3));
+      return;
+    } else {
+      $tids = implode('+', is_array($edit['tid']) ? $edit['tid'] : array (
+      $edit['tid']
+      ));
+      if (!$depth = arg(4)) {
+        $depth = '0';
+      }
+      if (!$page = arg(5)) {
+        $page = 'page';
+      }
+      theme('ejournal_taxonomy_term_page', $journal, $tids, $depth, $page);
+      return;
+    }
+  } else if ($iid == 'list') { // browse vocabularies
+    if (!arg(3)) {
+      theme('ejournal_list_vocabularies', $journal);
+      return;
+    } else {
+      theme('ejournal_list_vocabulary', $journal, arg(3), arg(4), arg(5));
+      return;
+    }
+  } else if ($iid == 'print') { //ejournal/jid/print
+    $iid = ejournal_issue_current($journal->jid); //try to find the current issue
+    if ($iid) {
+      theme('ejournal_list_this_issue', $journal, $iid, 1);
+      return;
+    }
+	} else if ($iid) {
+    preg_match('/v(.+)/i', $iid, $match); // volume
+    $volume = $match[1] ? $match[1] : '';
+    
+    if ($volume && (!$issues = _ejournal_journal_get_issues($journal, $volume))) {
+      drupal_set_message(t('The volume you requested doesn\'t exist'));
+    }
+    theme('ejournal_archive', $journal, $issues); // if no issues, it will default to printing whole archive
+    return;
+    
+	} else { // the path was simply "/ejournal" 
+    
+    $iid = ejournal_issue_current($journal->jid); //try to find the current issue    
+    if ($iid) {
+      theme('ejournal_list_this_issue', $journal, $iid);
+      return;
+    } else {
+      theme('ejournal_archive', $journal);
+      return;
+    }
+    
+  }
+	theme('ejournal_list_all_journals'); // last resort
+}
+
+/**
+ * Provides a link to the CSS stylesheet associated with this module.
+ *
+ * @return a &lt;style&gt; tag that indicates what file browsers should import
+ */
+function ejournal_html_head() {
+
+	drupal_add_css(drupal_get_path('module', 'ejournal') . '/ejournal.css');
+	//TODO let plugins do their stuff
+	return "";
+}
+
+/** 
+ * theme_ejournal_page: Display the page.
+ *
+ * @param $output
+ *   A journal's body content
+ * @param $journal
+ *   A journal object
+ * @param $issue
+ *   An issue object
+ */
+
+if (!function_exists('theme_ejournal_page')) {
+	function theme_ejournal_page($output) {
+		drupal_set_html_head(ejournal_html_head());
+		return theme('page', $output);
+	}
+}
+
+/** 
+ * theme_ejournal_list_all_journals: A themeable function that lists all of the journals on the site.
+ *
+ * @return
+ *   An HTML-formatted display showing the name of each journal and its description.
+ */
+if (!function_exists('theme_ejournal_list_all_journals')) {
+	function theme_ejournal_list_all_journals() {
+		$result = db_query("SELECT * FROM {ejournal_journals} WHERE enabled='1'");
+
+		while ($journal = db_fetch_object($result)) {
+			$output .= theme('ejournal_journal_reference', $journal);
+		}
+
+		drupal_set_title(t('Journals'));
+		print theme('ejournal_page', "<div class=\"ejournal\">$output</div>");
+	}
+}
+
+if (!function_exists('theme_ejournal_list_this_issue')) {
+	function theme_ejournal_list_this_issue(& $journal, $iid, $print = FALSE) {
+		global $ejrn_viewed_issue;
+
+		$order = variable_get('ejournal_issue_order', 'DESC');
+		$issue = ejournal_issue_get($iid);
+
+		//ejrn_viewed_issue is a special variable used in themes to display identification of the
+		//current (displayed) issue, it may be shown in the header of the whole site
+		$ejrn_viewed_issue = $issue;
+
+		$output = theme('ejournal_journal_reference', $journal);
+
+		$result = _ejournal_issue_get_articles($journal, $iid);
+
+		if ($print && $iid) { // we will print contents of the whole issue (should we allow it?)
+			print "<html><head>";
+			print drupal_get_html_head();
+			print "</head><body>";
+			foreach ($result as $article) {
+				print node_view(node_load(array (
+					'nid' => $article->nid
+				)));
+				print "\n<hr/><hr/>";
+			}
+			print "\n</body></html>";
+			return;
+		}
+
+		$old_section = "";
+		foreach ($result as $article) {
+			if ($article->name != $old_section) {
+				$output .= theme('ejournal_section', $article->name);
+				$old_section = $article->name;
+			}
+			$output .= "<div class=\"author\">" . _ejournal_article_get_author_names($journal, $article->nid) . "</div>";
+			$output .= theme('ejournal_article_reference', & $article) . "<br/>";
+		}
+
+		drupal_set_title(t('%title %issue', array (
+			'%title' => $journal->title,
+			'%issue' => ejournal_issue_reference($issue,
+			$journal
+		))));
+		print theme('ejournal_page', "<div class=\"ejournal\">$output</div>", $journal);
+	}
+}
+
+if (!function_exists('theme_ejournal_journal_reference')) {
+	function theme_ejournal_journal_reference(& $journal) {
+		$output .= '<div class="ejournal" id="ejournal-' . $journal->jid . '">' . l($journal->title, "ejournal/$journal->jid") . "<br/>\n";
+		if ($journal->description) {
+			$output .= "<p>$journal->description</p>\n";
+		}
+		$output .= "</div>\n";
+
+		return $output;
+	}
+}
+
+if (!function_exists('theme_ejournal_volume_reference')) {
+	function theme_ejournal_volume_reference($issue, $jid = FALSE) {
+
+		$out = $jid ? l(ejournal_volume_reference($issue), "ejournal/$jid/v" . urlencode($issue->volume)) : ejournal_volume_reference($issue);
+		return "<div class=\"volume\">" . $out . "</div>\n";
+	}
+}
+
+/** 
+ * theme_ejournal_issue_reference: A themeable layout that formats a single issue of a journal.
+ *
+ * @param $issue
+ *   An edition object.
+ *
+ * @return
+ *   An HTML-formatted display showing the reference name of the issue
+ */
+if (!function_exists('theme_ejournal_issue_reference')) {
+	function theme_ejournal_issue_reference(& $issue, $full = TRUE) { //esta es la que est� usando!!
+
+		$output = "<div class=\"issue\">";
+		if ($full) {
+			$output .= l((ejournal_issue_reference($issue)), "ejournal/$issue->jid/$issue->iid");
+		} else {
+			$output .= $issue->number ? l(t('No. ') . $issue->number, "ejournal/$issue->jid/$issue->iid") : l($issue->custom, "ejournal/$issue->jid/$issue->iid");
+			$output .= "<br/>[ " . format_date($issue->date_published, 'custom', 'd. m. Y') . " ]";
+		}
+		$output .= "</div>\n";
+		return $output;
+	}
+}
+
+if (!function_exists('theme_ejournal_article_reference')) {
+	function theme_ejournal_article_reference(& $article) {
+
+		return l($article->title, "node/$article->nid", array (
+			'class' => 'article'
+		));
+
+	}
+}
+
+if (!function_exists('theme_ejournal_section')) {
+	function theme_ejournal_section($section) {
+		return "<div class=\"section\">$section</div>\n";
+	}
+}
+
+if (!function_exists('theme_ejournal_archive')) {
+	function theme_ejournal_archive(& $journal, $issues = NULL) {
+
+		if (!$issues) { // if no issues, we will display whole archive
+			$issues = _ejournal_journal_get_issues($journal);
+			$full_archive = 1;
+		}
+		$output = "<div class=\"archive\">\n";
+
+		$output .= "<div>";
+
+		while ($issue = db_fetch_object($issues)) {
+			if ($issue->volume != $old_volume) {
+				$output .= "</div><div>";
+				$output .= $full_archive ? theme('ejournal_volume_reference', $issue, $journal->jid) : theme('ejournal_volume_reference', $issue);
+				$old_volume = $issue->volume;
+			}
+			$output .= theme('ejournal_issue_reference', $issue, FALSE);
+
+			if (!$full_archive) {
+				$articles = _ejournal_issue_get_articles($journal, $issue->iid);
+				foreach ($articles as $article) {
+					$output .= l($article->title, "node/$article->nid") . "<br/>";
+				}
+			}
+		}
+		$output .= "</div>";
+
+		if ($full_archive && $journal->vid) {
+			$output .= "<div class=\"section-form\"><h3>" . t('Display articles in section') . "</h3>\n";			
+			$output .= drupal_get_form('theme_ejournal_section_form', $journal);
+			$output .= "</div>";
+		}
+		$output .= "</div>";
+		drupal_set_title(t('%journal archive', array (
+			'%journal' => $journal->title
+		)));
+		print theme('ejournal_page', $output);
+	}
+}
+function theme_ejournal_section_form($journal) {
+	$form = array ();
+	$form['tid'] = array (
+		'#type' => 'select',
+		'#title' => t('Section'), 
+    '#default_value' => NULL, 
+    '#options' => ejournal_sections_get($journal->jid, NULL));
+	$form['jid'] = array (
+		'#type' => 'hidden',
+		'#value' => $journal->jid
+	);
+	$form['op'] = array (
+		'#type' => 'submit',
+		'#value' => t('Submit'));
+	$form['#action'] = url("ejournal/$journal->jid/term");
+	return  $form;
+}
+
+if (!function_exists('theme_ejournal_about')) {
+	function theme_ejournal_about($journal) {
+		if (!$journal->about_page) {
+			theme('ejournal_archive', $journal);
+		}
+
+		$path = drupal_get_normal_path("node/".$journal->about_page);
+
+		$status = MENU_NOT_FOUND;
+		if ($path) {
+			menu_set_active_item($path);
+			$status = menu_execute_active_handler();
+      print(theme('ejournal_page', $status));
+		}
+		exit;
+	}
+}
+
+/**
+ * This is only adopted taxonomy_term_page function
+ * It would be better to call this function, however I need to construct
+ * different url(s) - not "taxonomy/term/1" but "ejournal/{jid}/term/1"
+ * If you can live without that, override theme_ejournal_taxonomy_term_page
+ * from some custom layout
+ **/
+
+if (!function_exists('theme_ejournal_taxonomy_term_page')) {
+	function theme_ejournal_taxonomy_term_page($journal, $str_tids = '', $depth = 0, $op = 'page') {
+
+		if (preg_match('/^([0-9]+[+ ])+[0-9]+$/', $str_tids)) {
+			$operator = 'or';
+			// The '+' character in a query string may be parsed as ' '.
+			$tids = preg_split('/[+ ]/', $str_tids);
+		} else
+			if (preg_match('/^([0-9]+,)*[0-9]+$/', $str_tids)) {
+				$operator = 'and';
+				$tids = explode(',', $str_tids);
+			} else {
+				drupal_not_found();
+			}
+
+		// Needed for '+' to show up in RSS discovery URLs
+		$rss_tids = urlencode($str_tids);
+
+		if ($tids) {
+			// Build title:
+			$result = db_query('SELECT name FROM {term_data} WHERE tid IN (%s)', implode(',', $tids));
+			$names = array ();
+			while ($term = db_fetch_object($result)) {
+				$names[] = $term->name;
+			}
+
+			if ($names) {
+				drupal_set_title($title = implode(', ', $names));
+
+				switch ($op) {
+					case 'page' :
+						// Build breadcrumb based on first hierarchy of first term:
+						$current->tid = $tids[0];
+						$breadcrumbs = array (
+							array (
+								'path' => $_GET['q']
+							)
+						);
+						while ($parents = taxonomy_get_parents($current->tid)) {
+							$current = array_shift($parents);
+							$breadcrumbs[] = array (
+								'path' => 'ejournal/' . $journal->jid . '/term/' . $current->tid,
+								'title' => $current->name
+							);
+						}
+						$breadcrumbs = array_reverse($breadcrumbs);
+						menu_set_location($breadcrumbs);
+
+						drupal_add_link(array (
+							'rel' => 'alternate',
+							'type' => 'application/rss+xml',
+							'title' => 'RSS - ' . $title,
+							'href' => url('ejournal/' . $journal->jid . 'term/' . $rss_tids . '/' . $depth . '/feed'
+						)));
+
+						// TODO watch this, it should be altered by the new ejournal_link_alter hook
+						// str_replace is added for the sake of ejournal module
+						//$output = str_replace('taxonomy/term', "ejournal/$journal->jid/term", taxonomy_render_nodes(taxonomy_select_nodes($tids, $operator, $depth, TRUE)));    
+
+						$output .= theme('xml_icon', url("ejournal/$journal->jid/term/$rss_tids/$depth/feed"));
+						print theme('ejournal_page', $output);
+						break;
+
+					case 'feed' :
+						$term = taxonomy_get_term($tids[0]);
+						$channel['link'] = url('ejournal/' . $journal->jid . '/term/' . $str_tids . '/' . $depth, NULL, NULL, TRUE);
+						$channel['title'] = variable_get('site_name', 'drupal') . ' - ' . $title;
+						$channel['description'] = $term->description;
+
+						$result = taxonomy_select_nodes($tids, $operator, $depth, FALSE);
+						node_feed($result, $channel);
+						break;
+					default :
+						drupal_not_found();
+				}
+			} else {
+				drupal_not_found();
+			}
+		}
+	}
+}
+
+if (!function_exists('theme_ejournal_article_citation')) {
+	function theme_ejournal_article_citation($journal, $issue, & $node) {
+
+		$array = array (
+			'{%journal}' => $journal->title,
+			'{%issn}' => $journal->issn,
+			'{%publisher}' => $journal->publisher_name,
+			'{%publisher_url}' => $journal->publisher_url,
+			'{%publisher_email}' => $journal->publisher_email,
+			'{%year}' => $issue->year,
+			'{%volume}' => $issue->volume,
+			'{%number}' => $issue->number,
+			'{%custom_id}' => $issue->custom_identification,
+			'{%issue_date}' => format_date($issue->date_published,
+			'custom',
+			'd. m. Y'
+		), '{%nid}' => $node->nid, '{%title}' => $node->title, '{%article_created}' => format_date($node->created, 'custom', 'd. m. Y'), '{%article_changed}' => format_date($node->changed, 'custom', 'd. m. Y'), '{%url}' => l(url('node/' . $node->nid, NULL, NULL, TRUE), 'node/' . $node->nid), '{%now}' => format_date(time(), 'custom', 'd. m. Y'), '{%section}' => _ejournal_article_get_section_name($journal, $node->nid), '{%authors}' => _ejournal_article_get_author_names($journal, $node->nid));
+
+		/* foreach(array_keys($array) as $key) {
+		  print "'<b>$key</b> ' . t('') . \"\\n\" ." . "\n";
+		}; */
+		return '<div class="citation">' . str_replace(array_keys($array), array_values($array), $journal->citation_template) . "</div>\n";
+	}
+}
+
+if (!function_exists('theme_ejournal_list_vocabulary')) {
+	function theme_ejournal_list_vocabulary($journal, $vid, $char = NULL) {
+
+		if (!is_numeric($vid)) {
+			return;
+		}
+
+		/*
+		$list = db_query("SELECT LEFT(name, 1) AS x FROM {term_data} WHERE vid='%d' GROUP BY x", $vid);
+		while($char = db_fetch_object($list)) {
+		  $chars[] = l($char->x, "ejournal/$journal->jid/list/$vid/" . urlencode($char->x));
+		}
+		
+		
+		$output = implode(' ', $chars);
+		*/
+
+		//select term together with synonyms (if any) - group by name and show duplicates in "num"
+		$sql = "(SELECT tid, name, COUNT(name) AS num FROM {term_data} WHERE vid=$vid GROUP BY name) UNION ALL (SELECT ts.tid, ts.name, 0 AS num FROM {term_synonym} ts INNER JOIN {term_data} td ON ts.tid=td.tid WHERE td.vid=$vid GROUP BY ts.name) ORDER BY name";
+
+		//$sql = "SELECT name, tid FROM {term_data} WHERE vid='".db_escape_string($vid)."' ORDER BY name";
+		$sql_count = "SELECT count(name) FROM {term_data} WHERE vid='" . db_escape_string($vid) . "'";
+		$result = pager_query($sql, 50, 0, $sql_count);
+
+		if ($journal->author_vid == "$vid") {
+			$type = 'author';
+			$url_type = urlencode("edit[type]") . "=$type";
+		}
+
+		$i = 0;
+		$output .= theme('pager', NULL, 50, 0);
+		$output .= "<div class=\"ejournal-list\">\n";
+		while ($term = db_fetch_object($result)) {
+			if ($term->num) {
+				if ($term->num > 1) { // two terms with identical name
+					$output .= l("$term->name *", "ejournal/$journal->jid/term/$term->tid", NULL, urlencode("edit[type]") . "=$type&" . urlencode("edit[multiple]") . "=1") . "<br/>\n";
+				} else {
+					$output .= l($term->name, "ejournal/$journal->jid/term/$term->tid", NULL, $url_type) . "<br/>\n";
+				}
+			} else {
+				$output .= $term->name . ' &nbsp;' . l(t('see this'), "ejournal/$journal->jid/term/$term->tid", NULL, $url_type) . "<br/>\n";
+			}
+			$i++;
+			if ($i == 25) {
+				$output .= "</div><div class=\"ejournal-list\">";
+				$i = 0;
+			}
+		}
+		$output .= "</div>\n";
+
+		$output .= theme('pager', NULL, 50, 0);
+		drupal_set_title(t('Browse journal %name', array (
+			'%name' => $journal->title
+		)));
+		print theme('ejournal_page', $output);
+
+	}
+}
+
+if (!function_exists('theme_ejournal_list_vocabularies')) {
+	function theme_ejournal_list_vocabularies($journal) {
+
+		$vocs = taxonomy_get_vocabularies();
+
+		foreach (split(',', ($journal->vid)) as $vid) {
+			if ($vocs[$vid]) {
+				$output .= "<h3>" . l($vocs[$vid]->name, "ejournal/$journal->jid/list/$vid") . "</h3>";
+				$output .= '<p>' . $vocs[$vid]->description . "</p>\n";
+				unset ($vocs[$vid]);
+			}
+		}
+		foreach (array (
+				'author_vid',
+				'other_vid'
+			) as $name) {
+			foreach (split(',', $journal-> $name) as $vid) {
+				if ($vocs[$vid]) {
+					$output .= "<h3>" . l($vocs[$vid]->name, "ejournal/$journal->jid/list/$vid") . "</h3>";
+					$output .= '<p>' . $vocs[$vid]->description . "</p>\n";
+					unset ($vocs[$vid]);
+				}
+			}
+		}
+		drupal_set_title(t('Browse journal %name', array (
+			'%name' => $journal->title
+		)));
+		print theme('ejournal_page', $output);
+	}
+}
+
+if (!function_exists('theme_ejournal_show_author')) {
+	function theme_ejournal_show_author($journal, $tid) {
+
+		if ($authors = ejournal_authors_find_by_tid($journal, $tid)) {
+			// find the authors mapped in ejournal_authors (uid <-> tid)
+
+		} else
+			if ($authors = ejournal_authors_find_by_name($journal, $tid)) {
+				// try to find author from profile_values be value (name) of its term
+				// but we are unable to distinguish their tids and map them to uids
+				$name = db_result(db_query("SELECT name FROM {term_data} WHERE tid='%d'", $tid));
+				$result = db_query("SELECT tid FROM {term_data} WHERE name='%s'", $name);
+				while ($tid = db_fetch_object($result)) {
+					$tids[] = $tid->tid;
+				}
+
+			} else { // last resort, send to taxonomy function to find all nodes with tid
+				print theme('ejournal_taxonomy_term_page', $journal, $tid);
+				return;
+			}
+
+		$names = array ();
+		while ($author = db_fetch_object($authors)) {
+
+			$names[] = $author->name;
+
+			if ($account = user_load(array (
+					'uid' => $author->uid,
+					'status' => 1
+				))) {
+
+				$fields = array ();
+				if (function_exists('profile_load_profile')) {
+					if ($data = module_invoke('profile', 'user', 'view', '', $account)) {
+						foreach ($data as $category => $content) {
+							$fields[$category] .= $content;
+						}
+					}
+				}
+
+				$output .= theme('user_profile', $account, $fields);
+			}
+
+			if ($author->tid) {
+				$tids[] = $author->tid;
+			}
+		}
+
+		$output .= "<hr/>\n";
+		$ejrn_find = array ();
+
+		foreach ($tids as $tid) {
+			$nodes = taxonomy_select_nodes(array (
+				$tid
+			), NULL, 0, TRUE);
+
+			while ($node = db_fetch_object($nodes)) {
+				$articles[$node->nid] = l($node->title, "node/$node->nid") . "<br/>\n";
+				$ejrn_find[] = $node->nid;
+			}
+		}
+
+		$issues = db_query("SELECT ei.*, ea.nid FROM {ejournal_issues} ei INNER JOIN {ejournal_articles} ea ON ei.iid=ea.iid WHERE ea.nid IN ('" . implode("','", $ejrn_find) . "') ORDER BY ei.date_published DESC");
+
+		$output .= "<div id=\"author-archive\">";
+
+		$old = "";
+		while ($issue = db_fetch_object($issues)) {
+			if ($old != $issue->iid) {
+				$output .= theme('ejournal_issue_reference', $issue);
+				$old = $issue->iid;
+			}
+
+			$output .= $articles[$issue->nid];
+
+		}
+		$output .= "</div>";
+
+		$output .= theme('pager', NULL, variable_get('default_nodes_main', 10), 0, array (
+			'edit[type]' => 'author'
+		));
+
+		drupal_set_title(t('Articles by %authors', array (
+			'%authors' => implode(', ',
+			$names
+		))));
+		print theme('ejournal_page', $output);
+	}
+}
+
+//I missed this in the 5.x Drupal
+function them_ejournal_weight($element) {
+
+  for ($n = (-1 * $element['#delta']); $n <= $element['#delta']; $n++) {
+    $weights[$n] = $n;
+  }
+  $element['#options'] = $weights;
+  $element['#type'] = 'select';
+
+  return drupal_render($element);
+} 
+
+/********************************************
+ *   COMMON FUNCTIONS
+ *******************************************/
+
+function ejournal_get_all_vocabularies() {
+	$vids = taxonomy_get_vocabularies();
+
+	$ret = array ();
+	$ret[0] = '<' . t('none') . '>';
+
+	foreach ($vids as $key => $value) {
+		$ret[$value->vid] = $value->name;
+	}
+
+	return $ret;
+}
+
+function ejournal_delete_everything($jid, $iid) {
+	$where = " jid='%d'";
+	$arg[] = $jid;
+	$affected = 0;
+
+	if ($iid) {
+		$where .= " AND iid='%d'";
+		$arg[] = $iid;
+	}
+
+	$edit['confirm'] = 1;
+
+	$result = db_query("SELECT nid FROM {ejournal_articles} WHERE $where", $arg);
+
+	while ($nid = db_fetch_object($result)) {
+		$edit['nid'] = $nid->nid;
+		node_delete($edit); // this is CPU intensive
+		$affected++;
+	}
+
+	return $affected;
+}
+
+// copied from flexinode_timestamp.inc
+function _ejournal_date_form($timestamp = NULL, $prefix = '') {
+
+	//determine settings for form's hour selector
+	if (variable_get('event_ampm', '0')) {
+		$hour_format = 'g';
+		$first_hour = 1;
+		$last_hour = 12;
+	} else {
+		$first_hour = 0;
+		$last_hour = 23;
+		$hour_format = 'G';
+	}
+
+	$years = drupal_map_assoc(range(date("Y", time()) - 10, date("Y", time()) + 1));
+	$months = array (
+		1 => t('January'
+	), t('February'), t('March'), t('April'), t('May'), t('June'), t('July'), t('August'), t('September'), t('October'), t('November'), t('December'));
+	for ($i = 1; $i <= 31; $i++)
+		$days[$i] = $i;
+	for ($i = $first_hour; $i <= $last_hour; $i++)
+		$hours[$i] = $i;
+	for ($i = 0; $i <= 59; $i++)
+		$minutes[$i] = $i < 10 ? "0$i" : $i;
+	$am_pms = array (
+		'am' => t('am'
+	), 'pm' => t('pm'));
+
+	if (!isset ($timestamp)) {
+		$timestamp = time();
+		// Round to nearest hour:
+		$timestamp -= $timestamp % (60 * 60);
+	}
+
+	// Use format_date(), it handles user timezone and locale.
+	$year = format_date($timestamp, 'custom', 'Y');
+	$month = format_date($timestamp, 'custom', 'm');
+	$day = format_date($timestamp, 'custom', 'd');
+	$hour = format_date($timestamp, 'custom', $hour_format);
+	$minute = format_date($timestamp, 'custom', 'i');
+	$am_pm = format_date($timestamp, 'custom', 'a');
+
+	$when = array ();
+	$when['day'] = array (
+		'#type' => 'item',
+		'#value' => '<h3>' . t("Issue published on"
+	) . "</h3>",);
+	$when['day'][$prefix . 'day'] = array (
+		'#type' => 'select',
+		'#default_value' => $day,
+		'#options' => $days
+	);
+	$when['day'][$prefix . 'month'] = array (
+		'#type' => 'select',
+		'#default_value' => $month,
+		'#options' => $months
+	);
+	$when['day'][$prefix . 'year'] = array (
+		'#type' => 'select',
+		'#default_value' => $year,
+		'#options' => $years
+	);
+	$when['day'][$prefix . 'hour'] = array (
+		'#type' => 'select',
+		'#default_value' => $hour,
+		'#options' => $hours
+	);
+	$when['day']['colon0'] = array (
+		'#type' => 'item',
+		'#value' => ':'
+	);
+	$when['day'][$prefix . 'minute'] = array (
+		'#type' => 'select',
+		'#default_value' => $minute,
+		'#options' => $minutes
+	);
+	if (variable_get('event_ampm', '0')) {
+		$when['day'][$prefix . 'ampm'] = array (
+			'#type' => 'select',
+			'#default_value' => $am_pm,
+			'#options' => $am_pms
+		);
+	}
+
+	return $when;
+}
+
+function _ejournal_validate_date(& $edit, $prefix = '') {
+
+	if (isset ($edit[$prefix . 'year']) && isset ($edit[$prefix . 'month']) && isset ($edit[$prefix . 'day']) && isset ($edit[$prefix . 'hour']) && isset ($edit[$prefix . 'minute'])) {
+
+		$hour = $edit[$prefix . 'hour'];
+		if (variable_get('event_ampm', '0')) {
+			if ($edit[$prefix . 'ampm'] == 'pm') {
+				$hour += 12;
+			} else
+				if ($hour == 12) {
+					$hour -= 12;
+				}
+		}
+		$result = gmmktime($hour, $edit[$prefix . 'minute'], 0, $edit[$prefix . 'month'], $edit[$prefix . 'day'], $edit[$prefix . 'year']) - $GLOBALS['user']->timezone;
+	} else if (isset ($edit[$prefix])) {
+			$result = $edit[$prefix];
+	}
+	//print_r(array (	$edit, $result,	format_date($result), $hour, $edit[$prefix . 'minute'], 0, $edit[$prefix . 'month'], $edit[$prefix . 'day'], $edit[$prefix . 'year']));
+	return $result;
+}
+
+function _ejournal_vocabulary_build_sql($vids, $alias = NULL) {
+
+	if (!$vids) {
+		return;
+	}
+
+	foreach (split(',', $vids) as $vid) {
+		$v[] = db_escape_string($vid);
+	}
+	$vocabularies = implode("', '", $v);
+
+	if ($alias) {
+		$alias .= '.';
+	}
+	$vids = "AND ${alias}vid IN ('$vocabularies') ";
+
+	return $vids;
+
+}
+
+function _delete_everything_form($type = 'issue', $selected_value = 0) {
+	$delete = array (
+		'0' => 'do not delete articles',
+		'1' => 'delete all associated articles'
+	);
+	$ret = array ();
+
+	return $ret['delete_everything'] = array (
+		'#type' => 'select',
+		'#title' => t("Delete everything?"
+	), '#default_value' => $selected_value, '#options' => $delete, '#description' => t("You may delete all documents that have been associated with this %type. But this cannot be undone! Note also, that deletion may fail if the current user does not have full rights to 'delete' all possible nodes.", array (
+		'%type' => $type
+	)),);
+
+}
+
+//finds the next future issue after the current issue
+//and stores its date in the variable, for usage in templates
+function _ejournal_set_ejrn_next_issue($edit) {
+	$next_issue = ejournal_global_variable('ejrn_next_date');
+	if(is_null($next_issue)) {
+		$next_issue = array();
+	}
+
+	if ($edit['status'] == ISSUE_CURRENT) {
+		$issue = db_fetch_object(db_query("SELECT * FROM {ejournal_issues} WHERE date_published > %d AND status = %d AND jid=%d LIMIT 1", $edit['date_published'], ISSUE_FUTURE, $edit['jid']));
+	} else {
+		$current = db_result(db_query("SELECT date_published FROM {ejournal_issues} WHERE status = %d AND jid=%d", ISSUE_FUTURE, $edit['jid']));
+		$issue = db_fetch_object(db_query("SELECT * FROM {ejournal_issues} WHERE date_published >= %d AND status = %d AND jid=%d", $current, ISSUE_FUTURE, $edit['jid']));
+	}
+
+	if ($issue->iid) {
+		$next_issue[$edit['jid']] = $issue;
+	} else {
+		unset ($next_issue[$edit['jid']]);
+	}
+	ejournal_global_variable('ejrn_next_date', $next_issue);
+}
+
+/**
+ * ejournal_global_variable: registers variables into a global array,
+ * from which you can get the variable back. Useful for themeing functions
+ * 
+ * @param $name
+ *   string, name of the variable
+ * @param $value
+ *   anything, which can be stored
+ * 
+ * @return
+ *   Returns the value. If it was not found, returns NULL.
+ */
+function ejournal_global_variable($name, $value = NULL) {
+	global $ejournal_run;
+	if(isset($value)) {
+		$ejournal_run[$name] = $value;		
+	}	
+	else {
+		if(!array_key_exists($name, (array)$ejournal_run)) {
+			return NULL;
+		}
+	}
+	return $ejournal_run[$name];
+}
+/**
+ * Invoke a plugin hook, adapted from flexinode
+ */
+
+function ejournal_invoke($hook, $plugin, $a1 = NULL, $a2 = NULL, $a3 = NULL, $a4 = NULL) {
+
+	$function = 'ejournal_' . $plugin . '_' . $hook;
+	if (function_exists($function)) {
+		return ($function ($a1, $a2, $a3, $a4));
+	}
+}
+
+/**
+ * Invoke an e-journal hook for all e-journal custom files (plugins)
+ */
+function ejournal_invoke_all($hook, $a1 = NULL, $a2 = NULL, $a3 = NULL, $a4 = NULL) {
+	$result = array ();
+	foreach (ejournal_plugins() as $type) {
+		$function = 'ejournal_' . $type . '_' . $hook;
+		if (function_exists($function)) {
+			$result = array_merge($result, (array) ($function ($a1, $a2, $a3, $a4)));
+		}
+	}
+	return $result;
+}
+
+/**
+ * Return a list of all available plugins
+ */
+function ejournal_plugins() {
+	static $types;
+
+	if (!isset ($types)) {
+		$types = array ();
+		$path = drupal_get_path('module', 'ejournal');
+		$files = file_scan_directory($path, '^ejournal_.*\.inc$');
+		foreach ($files as $filename => $file) {
+			include_once ($filename);
+			$types[] = substr($file->name, 9);
+		}
+	}
+	return $types;
+}
+
+/*
+ * Include all plugins that are available
+ */
+ejournal_plugins();
+?>

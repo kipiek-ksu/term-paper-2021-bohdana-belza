@@ -1,0 +1,382 @@
+<h2   class="main">vintexsbook</h2><hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): CREATE TABLE mdl_vintexsbook (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    intro TEXT NOT NULL,
+    introformat TINYINT(2) NOT NULL DEFAULT 0,
+    days MEDIUMINT(5) unsigned NOT NULL DEFAULT 7,
+    assessed BIGINT(10) NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vintexsbook COMMENT='data for each vintexsbook' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vint_cou_ix ON mdl_vintexsbook (course) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_vintexsbook_entries (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vintexsbook BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    userid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    modified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    text TEXT NOT NULL,
+    format TINYINT(2) NOT NULL DEFAULT 0,
+    rating BIGINT(10) DEFAULT 0,
+    entrycomment TEXT,
+    teacher BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemarked BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    mailed TINYINT(1) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vintexsbook_entries COMMENT='All the vintexsbook entries of all people' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vintentr_use_ix ON mdl_vintexsbook_entries (userid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vintentr_vin_ix ON mdl_vintexsbook_entries (vintexsbook) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vintexsbook', 'view', 'vintexsbook', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vintexsbook', 'add entry', 'vintexsbook', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vintexsbook', 'update entry', 'vintexsbook', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vintexsbook', 'view responses', 'vintexsbook', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<div class="notifysuccess" style="text-align:center">vintexsbook таблица была успешно установлена</div><br />
+<hr /><h2   class="main">email_list</h2><hr />
+(mysql): CREATE TABLE mdl_email_preference (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    trackbymail SMALLINT(4) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_email_preference' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_email_preference (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL ..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_email_preference (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL ...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_email_preference (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL ..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_preference COMMENT='Global preferences for Email' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_mail (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    subject VARCHAR(255) NOT NULL DEFAULT '',
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    body TEXT,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_email_mail' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_email_mail (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAUL..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_email_mail (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAUL...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_email_mail (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAUL..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_mail COMMENT='All mails are stored in this table' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_send (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    mailid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    type enum('to', 'cc', 'bcc') NOT NULL DEFAULT 'to',
+    readed SMALLINT(4) NOT NULL DEFAULT 0,
+    sended SMALLINT(4) NOT NULL DEFAULT 1,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_email_send' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_email_send (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAUL..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_email_send (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAUL...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_email_send (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAUL..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_send COMMENT='Mail user send, type and it is readed' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_folder (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    isparenttype enum('inbox', 'sendbox', 'trash', 'draft') DEFAULT NULL,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_email_folder' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_email_folder (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFA..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_email_folder (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFA...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_email_folder (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    userid BIGINT(10) unsigned NOT NULL DEFA..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_folder COMMENT='All Folders for store mails. \'isparenttype\' content only typ' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_subfolder (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    folderparentid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    folderchildid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_email_subfolder' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_email_subfolder (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    folderparentid BIGINT(10) unsigned NO..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_email_subfolder (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    folderparentid BIGINT(10) unsigned NO...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_email_subfolder (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    folderparentid BIGINT(10) unsigned NO..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_subfolder COMMENT='SubFolders for one folder for store mails' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_foldermail (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    mailid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    folderid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_email_foldermail' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_email_foldermail (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    mailid BIGINT(10) unsigned NOT NULL ..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_email_foldermail (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    mailid BIGINT(10) unsigned NOT NULL ...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_email_foldermail (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    mailid BIGINT(10) unsigned NOT NULL ..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_foldermail COMMENT='Mails of one folder' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_email_filter (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    folderid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    rules TEXT,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_email_filter' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_email_filter (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    folderid BIGINT(10) unsigned NOT NULL DE..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_email_filter (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    folderid BIGINT(10) unsigned NOT NULL DE...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_email_filter (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    folderid BIGINT(10) unsigned NOT NULL DE..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_email_filter COMMENT='Filter mail for one folder' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add mail', 'email_mail', 'subject') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-add mail' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add mail', 'email_mail', 'subject'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add mail', 'email_mail', 'subject'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add mail', 'email_mail', 'subject'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add mail in draft', 'email_mail', 'subject') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-add mail in draft' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add mail in draft', 'email_mail', 'subject'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add mail in draft', 'email_mail', 'subject'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add mail in draft', 'email_mail', 'subject'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'reply', 'email_mail', 'subject') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-reply' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'reply', 'email_mail', 'subject'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'reply', 'email_mail', 'subject'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'reply', 'email_mail', 'subject'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'reply all', 'email_mail', 'subject') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-reply all' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'reply all', 'email_mail', 'subject'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'reply all', 'email_mail', 'subject'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'reply all', 'email_mail', 'subject'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'forward', 'email_mail', 'subject') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-forward' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'forward', 'email_mail', 'subject'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'forward', 'email_mail', 'subject'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'forward', 'email_mail', 'subject'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add subfolder', 'email_folder', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-add subfolder' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add subfolder', 'email_folder', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add subfolder', 'email_folder', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'add subfolder', 'email_folder', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'update subfolder', 'email_folder', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-update subfolder' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'update subfolder', 'email_folder', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'update subfolder', 'email_folder', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'update subfolder', 'email_folder', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'remove subfolder', 'email_folder', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-remove subfolder' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'remove subfolder', 'email_folder', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'remove subfolder', 'email_folder', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'remove subfolder', 'email_folder', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view course mails', 'email_send', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-view course mails' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view course mails', 'email_send', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view course mails', 'email_send', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view course mails', 'email_send', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view all courses mails', 'email_send', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-view all courses mails' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view all courses mails', 'email_send', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view all courses mails', 'email_send', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view all courses mails', 'email_send', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view mail', 'email_send', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-view mail' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view mail', 'email_send', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view mail', 'email_send', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'view mail', 'email_send', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'remove mail', 'email_send', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'email-remove mail' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'remove mail', 'email_send', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'remove mail', 'email_send', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('email', 'remove mail', 'email_send', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[26])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/blocks/email_list/db/install.xml)</font><font color=#808080 size=-1> % line 1335, file: <a href="file:/G:\weboap2\lib\blocklib.php">blocklib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<br /><div class="box errorbox errorboxcontent">Block email_list tables could NOT be set up successfully!</div>

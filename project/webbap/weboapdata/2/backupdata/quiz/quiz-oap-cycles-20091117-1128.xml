@@ -1,0 +1,1978 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<!-- question: 282  -->
+  <question type="matching">
+    <name><text>08</text>
+</name>
+    <questiontext format="html">
+<text>Поставте у відповідність дії виконання оператора &amp;quot;for i:=a to b do &amp;lt;оператор&amp;gt;&amp;quot; з їх порядковими номерами</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+<subquestion>
+<text>змінній i присвоюється значення a</text>
+<answer><text>1</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>якщо i менше, або дорівнює b, то виконується &lt;оператор&gt;</text>
+<answer><text>2</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>змінній i присвоюється наступне значення</text>
+<answer><text>3</text>
+</answer>
+</subquestion>
+</question>
+
+
+
+<!-- question: 827  -->
+  <question type="matching">
+    <name><text>Ц3</text>
+</name>
+    <questiontext format="html">
+<text>В якому випадку, при k=3, тіло циклу буде виконуватись:</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+<subquestion>
+<text>While k&lt;=5 do
+       begin
+         S:=S+k;
+         k:=k+1;
+       end;</text>
+<answer><text>скінчене число раз</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>While k&gt;=5 do
+       begin
+         S:=S+k;
+         k:=k+1;
+       end;</text>
+<answer><text>жодного разу</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>While k&gt;=3 do
+       begin
+         S:=S+k;
+         k:=k+1;
+       end;</text>
+<answer><text>наступить &quot;зациклення&quot;</text>
+</answer>
+</subquestion>
+</question>
+
+
+
+<!-- question: 828  -->
+  <question type="matching">
+    <name><text>Ц4</text>
+</name>
+    <questiontext format="html">
+<text>В якому випадку, при К=1, тіло циклу буде виконуватись:</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+<subquestion>
+<text>  repeat
+       S:=S+k;
+       k:=k+1;
+  until k&lt;=5;</text>
+<answer><text>скінчене число раз</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>  repeat
+       S:=S+k;
+       k:=k+1;
+  until k&lt;=1;</text>
+<answer><text>наступить &quot;зациклення&quot;</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>  repeat
+       S:=S+k;
+       k:=k+1;
+  until k&gt;=3;
+       end;</text>
+<answer><text>скінчене число раз</text>
+</answer>
+</subquestion>
+</question>
+
+
+
+<!-- question: 829  -->
+  <question type="matching">
+    <name><text>Ц4</text>
+</name>
+    <questiontext format="html">
+<text>В якому випадку, при К=1, тіло циклу буде виконуватись:</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+<subquestion>
+<text>  repeat
+       S:=S+k;
+       k:=k+1;
+  until k&lt;=5;</text>
+<answer><text>скінчене число раз</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>  repeat
+       S:=S+k;
+       k:=k+1;
+  until k&lt;=1;</text>
+<answer><text>наступить &quot;зациклення&quot;</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>  repeat
+       S:=S+k;
+       k:=k+1;
+  until k&gt;=3;
+       end;</text>
+<answer><text>скінчене число раз</text>
+</answer>
+</subquestion>
+<subquestion>
+<text></text>
+<answer><text>Наступить зациклення</text>
+</answer>
+</subquestion>
+</question>
+
+
+
+<!-- question: 275  -->
+  <question type="multichoice">
+    <name><text>01</text>
+</name>
+    <questiontext format="html">
+<text>У яких операторах циклу кількість разів виконання тіла може бути визначена динамічно під час виконання програми?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+while-do
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+repeat-until
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+for-to
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+for-downto
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 276  -->
+  <question type="multichoice">
+    <name><text>02</text>
+</name>
+    <questiontext format="html">
+<text>Які оператори циклу можна використовувати тільки якщо кількість повторень тіла циклу відома заздалегідь?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-100">
+        <text>
+while-do
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+repeat-until
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+for-to
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+for-downto
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 277  -->
+  <question type="multichoice">
+    <name><text>03</text>
+</name>
+    <questiontext format="html">
+<text>Скільки разів виконається тіло циклу &amp;quot;for i:=a to b do &amp;lt;оператор&amp;gt;&amp;quot;, якщо a&amp;gt;b?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+|b-a|+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+(a+b)/2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 278  -->
+  <question type="multichoice">
+    <name><text>04</text>
+</name>
+    <questiontext format="html">
+<text>Скільки разів виконається тіло циклу &amp;quot;for i:=a to b do &amp;lt;оператор&amp;gt;&amp;quot;, якщо a&amp;lt;b?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+b-a+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+(a+b)/2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+b
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 279  -->
+  <question type="multichoice">
+    <name><text>05</text>
+</name>
+    <questiontext format="html">
+<text>Скільки разів виконається тіло циклу &amp;quot;for i:=a downto b do &amp;lt;оператор&amp;gt;&amp;quot;, якщо a=b?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+a
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2*a
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 283  -->
+  <question type="multichoice">
+    <name><text>09</text>
+</name>
+    <questiontext format="html">
+<text>Якою командою можна перервати виконання циклу?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+break
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+continue
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+stop
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+pause
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 142  -->
+  <question type="multichoice">
+    <name><text>Виконання оператора з передумовою 2</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Чому буде дорівнювати a після виконання циклу з передумовою?&lt;/font&gt;&lt;/p&gt; 
+  &lt;blockquote dir=&quot;ltr&quot; style=&quot;margin-right: 0px;&quot;&gt; 
+    &lt;pre&gt;&lt;font size=&quot;3&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;a:=0;
+while a&amp;gt;5 do
+&amp;nbsp; a:=a-2;&lt;/font&gt;&lt;/pre&gt; 
+  &lt;/blockquote&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+5
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+4
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 150  -->
+  <question type="multichoice">
+    <name><text>Виконання оператора з постумовою 2</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Чому буде дорівнювати a після виконання поданого нижче циклу з постумовою?&lt;/font&gt;&lt;/p&gt; 
+  &lt;blockquote&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;a:=5;&lt;br /&gt;repeat&lt;br /&gt;&amp;nbsp; a:=a+1;&lt;br /&gt;until a&amp;gt;0&lt;/font&gt; &lt;/blockquote&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+5
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+6
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 152  -->
+  <question type="multichoice">
+    <name><text>Виконання оператора з постумовою один раз</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Які оператори можуть бути в тілі представленого нижче циклу, щоб тіло циклу виконалося лише один раз?&lt;/font&gt;&lt;/p&gt; 
+  &lt;blockquote&gt;
+    &lt;pre&gt;&lt;font size=&quot;3&quot; face=&quot;courier new,courier,monospace&quot;&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;i:=1;
+repeat
+...
+until i&amp;gt;1;&lt;/font&gt;&lt;/font&gt;&lt;strong&gt;&lt;font size=&quot;2&quot; face=&quot;courier new,courier,monospace&quot;&gt;
+&lt;/font&gt;&lt;/strong&gt;&lt;/pre&gt;
+  &lt;/blockquote&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-100">
+        <text>
+i:=i-1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+i:=i+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+i:=i+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+i:=-2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 153  -->
+  <question type="multichoice">
+    <name><text>Зациклювання</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Що повинно бути в тілі нижчеподаного циклу, щоб відбулося зациклювання?&lt;/font&gt;&lt;/p&gt; 
+  &lt;blockquote&gt; 
+    &lt;pre&gt;&lt;font size=&quot;3&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;i:=1;
+repeat
+&amp;nbsp; ...
+until i&amp;gt;1;&lt;/font&gt;&lt;/pre&gt; 
+  &lt;/blockquote&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-100">
+        <text>
+i:=i+1;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+i:=2;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+i:=i-1;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+i:=0;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 144  -->
+  <question type="multichoice">
+    <name><text>Змінні</text>
+</name>
+    <questiontext format="html">
+<text>Якого типу даних змінних є&amp;nbsp;умова?&amp;nbsp;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+дійсні
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+цілі
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+логічні
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+рядкові
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 190  -->
+  <question type="multichoice">
+    <name><text>Кількість ітерацій</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Скільки ітерацій виконається в циклі?&lt;/font&gt;&lt;/p&gt; 
+  &lt;blockquote style=&quot;margin-right: 0px;&quot; dir=&quot;ltr&quot;&gt; 
+    &lt;pre&gt;&lt;font size=&quot;3&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;for i:=5 to 15 do
+&amp;nbsp;writeln(i);&lt;/font&gt;&lt;/pre&gt; 
+  &lt;/blockquote&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+11
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+10
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+9
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+15
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 192  -->
+  <question type="multichoice">
+    <name><text>Кількість ітерацій 2</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Скільки ітерацій виконається в циклі?&lt;/font&gt;&lt;/p&gt; 
+  &lt;blockquote style=&quot;margin-right: 0px;&quot; dir=&quot;ltr&quot;&gt; 
+    &lt;pre&gt;&lt;font size=&quot;3&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;i:=-10;
+while i&amp;gt;0 do
+&amp;nbsp; i:=i-2;&lt;/font&gt;&lt;/pre&gt; 
+  &lt;/blockquote&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+5
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+10
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+необмежана кількість
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 194  -->
+  <question type="multichoice">
+    <name><text>Кількість ітерацій 3</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Скільки ітерацій виконається у циклі?&lt;/font&gt;&lt;/p&gt; 
+  &lt;blockquote dir=&quot;ltr&quot; style=&quot;margin-right: 0px;&quot;&gt; 
+    &lt;pre&gt;&lt;font size=&quot;3&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;i:=0;
+repeat
+&amp;nbsp; i:=i-5;
+until i&amp;gt;=25;&lt;/font&gt;&lt;/pre&gt; 
+  &lt;/blockquote&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+5
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+25
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+Необмежана кількість
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 141  -->
+  <question type="multichoice">
+    <name><text>Кількість разів виконання</text>
+</name>
+    <questiontext format="html">
+<text>&lt;div&gt;&lt;font size=&quot;4&quot;&gt;Скільки разів виконається оператор з передумовою:&lt;/font&gt;&lt;/div&gt; 
+  &lt;blockquote&gt; 
+    &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;i:=1;&lt;/font&gt;&lt;/div&gt; 
+    &lt;div&gt;&lt;font face=&quot;courier new,courier,monospace&quot; size=&quot;3&quot;&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;while i&amp;lt;5 do i:=i+1;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt; 
+  &lt;/blockquote&gt; 
+  &lt;p&gt;&lt;br /&gt; &lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+4
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+5
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+6
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 148  -->
+  <question type="multichoice">
+    <name><text>Кількість разів виконання</text>
+</name>
+    <questiontext format="html">
+<text>&lt;pre&gt;&lt;font size=&quot;4&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;Скільки разів виконається поданий нижче цикл з постумовою?&lt;/font&gt;&lt;/pre&gt; 
+  &lt;blockquote&gt; 
+    &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;i:=1;&lt;br /&gt;repeat&lt;br /&gt;i:=i+2;&lt;br /&gt;until i&amp;lt;0;&lt;/font&gt;&lt;br /&gt;&lt;/div&gt; 
+  &lt;/blockquote&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+0
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 143  -->
+  <question type="multichoice">
+    <name><text>Невиконання циклу з передумовою</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Що може бути в тілі циклу&lt;/font&gt;&lt;br /&gt;&lt;/p&gt; 
+  &lt;blockquote&gt; 
+    &lt;p&gt;&lt;font face=&quot;courier new,courier,monospace&quot; size=&quot;3&quot;&gt;i:=6; while i&amp;gt;5 do ...&lt;/font&gt;&lt;font size=&quot;3&quot;&gt;;&lt;/font&gt;&lt;br /&gt;&lt;/p&gt; 
+  &lt;/blockquote&gt; 
+  &lt;p&gt;&lt;font size=&quot;4&quot;&gt;щоб він виконався лише один раз?&lt;/font&gt;&lt;br /&gt;&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+i:=i-1;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+i:=0;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+i:=i+1;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+i:=6;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 139  -->
+  <question type="multichoice">
+    <name><text>Оператор з передумовою</text>
+</name>
+    <questiontext format="html">
+<text>Якими службовими словами у мові Pascal позначається оператор з передумовою?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+while-do
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+repeat-until
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+for-to
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+for-downto
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 146  -->
+  <question type="multichoice">
+    <name><text>Оператор з постумовою</text>
+</name>
+    <questiontext format="html">
+<text>Якими службовими словами позначається оператор з постумовою у мові Pascal?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+repeat-until
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+while-do
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+for-to
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+for-downto
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 155  -->
+  <question type="multichoice">
+    <name><text>Оператор циклу з параметром</text>
+</name>
+    <questiontext format="html">
+<text>Якими службовими словами у мові Pascal позначається цикл з параметром?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+for-to
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+for-downto
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+while-do
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+repeat-until
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 825  -->
+  <question type="multichoice">
+    <name><text>Ц1</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Якщо умова у вказівці повторення while приймає значення False, то тіло циклу:&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+виконується 1 раз;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+не виконується жодного разу;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+наступає &quot;зациклення&quot;;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+не знаю відповіді на запитання.
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 826  -->
+  <question type="multichoice">
+    <name><text>Ц1</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Яка умова у вказівці повторення repeat-until приймає значення True, то тіло циклу:&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+виконується 1 раз;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+не виконується жодного разу;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+наступає &quot;зациклення&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+виконується 2 рази
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 280  -->
+  <question type="truefalse">
+    <name><text>06</text>
+</name>
+    <questiontext format="html">
+<text>У циклі &amp;quot;for i:=a to b do &amp;lt;оператор&amp;gt;&amp;quot;, величина з ідентифікатором &amp;quot;i&amp;quot; може бути константою.</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <answer fraction="0">
+      <text>true</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>false</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 281  -->
+  <question type="truefalse">
+    <name><text>07</text>
+</name>
+    <questiontext format="html">
+<text>У циклі &amp;quot;for i:=a to b do &amp;lt;оператор&amp;gt;&amp;quot;, величини з ідентифікаторами &amp;quot;a&amp;quot; та &amp;quot;b&amp;quot; можуть бути змінними.</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <answer fraction="100">
+      <text>true</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>false</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 140  -->
+  <question type="truefalse">
+    <name><text>Виконання оператора з передумовою</text>
+</name>
+    <questiontext format="html">
+<text>Оператор з передумовою виконується, якщо умова істина.</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <answer fraction="100">
+      <text>true</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>false</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 147  -->
+  <question type="truefalse">
+    <name><text>Виконання оператора з постумовою</text>
+</name>
+    <questiontext format="html">
+<text>Оператор з постумовою виконується до тих пір, поки умова істина.</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <answer fraction="0">
+      <text>true</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>false</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 151  -->
+  <question type="truefalse">
+    <name><text>Декілька операторів</text>
+</name>
+    <questiontext format="html">
+<text>Між словами repeat та until можуть стояти декілька операторів, і їх необов'язково заключати в операторні дужки begin-end.</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <answer fraction="100">
+      <text>true</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>false</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 145  -->
+  <question type="truefalse">
+    <name><text>Зациклювання</text>
+</name>
+    <questiontext format="html">
+<text>Невиключеною є ситуація, коли цикл з передумовою може виконуватись безліч разів, тобто відбудеться зациклювання.</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <answer fraction="100">
+      <text>true</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>false</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 149  -->
+  <question type="truefalse">
+    <name><text>Невиконання циклу з постумовою</text>
+</name>
+    <questiontext format="html">
+<text>Цикл з постумовою може не виконатись жодного разу.&lt;br /&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <answer fraction="0">
+      <text>true</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>false</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+</quiz>

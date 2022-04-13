@@ -1,0 +1,455 @@
+// question: 705  name: 35 
+::35::[html]<p>Вкажіть співвідношення у оголошені множин.</p>{
+	=type ch\=set of '0'..'9' -> стандартне оголошення множини
+	=const od\: ch\=['1','3','5','8'] -> як типізована константа
+	=var \: set of 'a'..'z'\=['a','o','u'] -> як типізована константа
+	= -> неправильний виклик
+}
+
+
+// question: 711  name: 41 
+::41::[html]<p>Операції над множинами. Вкажіть відповідності.</p>{
+	=список елементів множини s1 дорівнює  список елементів множини s2 -> s1\=s2
+	=всі елементи s1 містяться в множині s2 -> s1<\=s2
+	=всі елементи s2 містяться в множині s1 -> s1>\=s2
+}
+
+
+// question: 712  name: 42 
+::42::[html]<p>Операції допустимі для множин s1 і s2\:</p>{
+	=перетин -> s1*s2
+	=об'єднання -> s1+s2
+	=різниця -> s1-s2
+	=перевірка входження елементів в множину -> <el> in s
+	=перегляд -> не існує
+}
+
+
+// question: 716  name: 46 
+::46::[html]<p>Представлення множини має вид\:&nbsp; set_arr\: array[1..100] of boolean.</p>\n  <p>Виставте відповідності.</p>{
+	=is_in\:\=set_arr[element] -> перевірка ел.на належність множині 
+	=set_arr[element]\:\=true -> додавання елементу
+	=set_arr[element]\:\=false -> видалення елементу
+}
+
+
+// question: 717  name: 47 
+::47::[html]<p>Реалізація до побудови множени-результату на основі двох непустих множин.</p>{
+	=на входженні елементу хоча б в одну множину із двох і додавання елементу в множину-результат -> об'єднання
+	=на перевірці входження елементу в обидві множини, додавання в множину\=результат в тому випадку, коли елемент належить лише першій множині -> різниця
+	=на входженні елементу відразу в дві множини, результат записується до результуючої множини -> перетин
+}
+
+
+// question: 222  name: 01 
+::01::[html]Множина складається з...{
+	=однотипних елементів
+	~різнотипних елементів
+	~пустих елементів
+	~інших множин
+}
+
+
+// question: 223  name: 02 
+::02::[html]Як називаєтся <span id\="subject_184" onclick\="MyToogle( 'subject_184' )">тип елемента множини?</span>{
+	=базовим типом
+	~стандартним типом
+	~множинним типом
+	~елементним типом
+}
+
+
+// question: 224  name: 03 
+::03::[html]<span id\="subject_184" onclick\="MyToogle( 'subject_184' )">Базовим типом при описі множини може бути...</span>{
+	~%50%скалярний тип
+	~%50%обмежений тип
+	~%-100%множинний тип
+	~%-100%стандартний тип
+}
+
+
+// question: 225  name: 04 
+::04::[html]Скільки відповідний множинний тип буде містити елементів, якщо<span id\="subject_184" onclick\="MyToogle( 'subject_184' )"> базовий тип містить N елементів?</span>{
+	=2^N
+	~3^N
+	~4^N
+	~N
+}
+
+
+// question: 226  name: 05 
+::05::[html]В якому розділі описуються множінні типи?{
+	=Type
+	~Label
+	~Const
+	~Var
+}
+
+
+// question: 227  name: 06 
+::06::[html]<p>Type &lt; ім’я типу &gt; \= ??? &lt; базовий тип &gt;&nbsp;</p> \n  <p>Які службові слова треба поставити замість &quot;???&quot;<br /></p>{
+	=Set of
+	~Set on
+	~Var
+	~Set
+}
+
+
+// question: 228  name: 07 
+::07::[html]Який символ розділяє елементи конструктора?{
+	=, (кома)
+	~. (крапка)
+	~; (крапка з комою)
+	~пропуск
+}
+
+
+// question: 229  name: 08 
+::08::[html]Як <span onclick\="MyToogle( 'subject_185' )" id\="subject_185">позначається порожня множина?</span>{
+	=[ ]
+	~()
+	~' '
+	~" "
+}
+
+
+// question: 230  name: 09 
+::09::[html]<p>Що відобразить дана множина?</p> \n  <pre>[<s>'A'</s>..<s>'Z'</s>, <s>'0'</s>..<s>'9'</s>]</pre> \n  <p> </p>{
+	=усі великі латинські літери і цифри
+	~'A', 'Z', '0', '9'
+	~усі великі латинські літери
+	~усі цифри
+}
+
+
+// question: 231  name: 10 
+::10::[html]Що означає дія до однотипних операндів <span onclick\="MyToogle( 'subject_186' )" id\="subject_186">А * В?</span>{
+	=перетин A і B
+	~об’єднання А і В
+	~різниця А і В
+	~відношення А і В
+}
+
+
+// question: 233  name: 11 
+::11::[html]В яких з цих операціях результатом буде тип <span id\="subject_186" onclick\="MyToogle( 'subject_186' )">Boolean?</span>{
+	~%25%А \= В
+	~%25%А <> В
+	~%25%А <\= В
+	~%25%А > В
+}
+
+
+// question: 235  name: 13 
+::13::[html]<span id\="subject_187" onclick\="MyToogle( 'subject_187' )">Якщо елемент а належить множині А, що представляється, то значення координати вектора, що відповідає а, дорівнює...</span>{
+	=1
+	~2
+	~4
+	~0
+}
+
+
+// question: 236  name: 14 
+::14::[html]<pre>Запис №1\:</pre> \n  <pre><p><strong><u>For</u></strong> X \:\= <s>'A'</s> <strong><u>to</u></strong> <s>'Z'</s> <strong><u>do</u></strong>\n <strong><u>If</u></strong> (X \=<s>'A'</s>) <strong><u>or</u></strong> (X \=<s>'E'</s>) <strong><u>or</u></strong> (X \=<s>'I'</s>) <strong><u>or</u></strong> (X \=<s>'O'</s>) <strong><u>or</u></strong> (X\=<s>'U'</s>)\n <strong><u>then</u></strong> Statement1\n <strong><u>else</u></strong> Statement2\n</p><p>&nbsp;</p><p>Запис №2\:</p><pre><strong><u>For</u></strong> X \:\= <s>'A'</s> <strong><u>to</u></strong> <s>'Z'</s> <strong><u>do</u></strong>\n <strong><u>If</u></strong> X <strong><u>in</u></strong> [<s>'A'</s>,<s>'E'</s>,<s>'I'</s>,<s>'O'</s>,<s>'U'</s>]\n <strong><u>then</u></strong> Statement1\n <strong><u>else</u></strong> Statement2</pre><p>&nbsp;</p></pre>\nЯкий з цих записів буде швидше обчислюватись?<br />{
+	~Перший
+	=Другий
+	~Однаково
+	~Обидва записані з помилками
+}
+
+
+// question: 237  name: 15 
+::15::[html]Яка <span id\="subject_187" onclick\="MyToogle( 'subject_187' )">максимальна кількість елементів у множині в мові Pascal?</span>{
+	=256
+	~1024
+	~250
+	~безліч
+}
+
+
+// question: 239  name: 17 
+::17::[html]<p>var s1\: set of char;</p> \n  <p>Скільки елементів в цій множині?</p>{
+	=256
+	~250
+	~0
+	~2
+}
+
+
+// question: 240  name: 18 
+::18::[html]<p>var s1\: set of 'a'..'z','A'..'Z';</p> \n  <p>Скільки елементів в цій множині?</p>{
+	=52
+	~54
+	~256
+	~250
+}
+
+
+// question: 241  name: 19 
+::19::[html]<p>var s1\: set of 0..10;</p> \n  <p>Скільки елементів в цій множині?</p>{
+	=11
+	~10
+	~9
+	~1
+}
+
+
+// question: 242  name: 20 
+::20::[html]<p>var s1\: set of boolean;</p> \n  <p>Скільки елементів в цій множині?</p>{
+	=2
+	~1
+	~3
+	~4
+}
+
+
+// question: 243  name: 21 
+::21::[html]Задати множину як типізовану константу можна в розділі...{
+	=const
+	~type
+	~var
+	~uses
+}
+
+
+// question: 244  name: 22 
+::22::[html]<p>\{s\: set of type1; k\: type1\}<br />for k\:\= min_type1 to max_type1<br />&nbsp;&nbsp; do if k in s then write(k); </p> \n  <p>Для чого служить даний цикл?&nbsp;</p>{
+	=друкує елементи множини
+	~помилка в коді
+	~введення елементів  множини
+	~виводить сивол 'K'
+}
+
+
+// question: 245  name: 23 
+::23::[html]<p>p\:\= true;<br />for i\:\= 1 to N do<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if set_arr[i] then begin p\:\= false;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;</p> \n  <p>Що перевіряє даний код?</p>{
+	=множину на пустоту
+	~множину на переповнення
+	~множину на побудову елементів
+	~множину на рівність
+}
+
+
+// question: 246  name: 24 
+::24::[html]Які з цих операцій перевіряють множину на рівність?{
+	~%33.333%s1 \= s2
+	~%33.333%s1 > s2
+	~%33.333%s1 < s2
+	~%-100%s1 - s2
+}
+
+
+// question: 261  name: 25 
+::25::[html]<p>var s1\: set of integer;</p> \n  <p>Скільки елементів в цій множині?</p>{
+	=65536
+	~256
+	~250
+	~32767
+}
+
+
+// question: 696  name: 26 
+::26::[html]<p>Яка максимальна кількість елементів може міститися в структурованому типі Множина?</p>{
+	~%50%<\=256
+	~%50%<257
+	~%-100%<\=128
+}
+
+
+// question: 697  name: 27 
+::27::[html]Яка основна відмінність типу множина від інших структурованих типів?&nbsp;{
+	=елементи не упорядковані
+	~%-50%елементи впорядковані
+	~%-50%кількість елементів постійно змінюється
+}
+
+
+// question: 698  name: 28 
+::28::[html]<p>Скільки елементів в даній множині </p>\n  <p>var s\: set of 'a'..'z','A'..'Z' ?</p>{
+	=52
+	~%-50%256
+	~%-50%11
+}
+
+
+// question: 699  name: 29 
+::29::[html]<p>Яким ключовим словом позначається множина?&nbsp;</p>{
+	=set
+	~%-50%queue
+	~%-50%lists
+}
+
+
+// question: 700  name: 30 
+::30::[html]<p>Множини можна задавати як...</p>{
+	~%50%нейменовану константу
+	~%-100%нетипізовану константу
+	~%50%типізовану константу
+}
+
+
+// question: 701  name: 31 
+::31::[html]Яким способом можна задавати множини прямо в тексті програми?{
+	=нейменованою константою \: [<список_елементів>]
+	~%-50%нетипізованою константою \: <список_елементів>
+	~%-50%<список елементів>
+}
+
+
+// question: 702  name: 32 
+::32::[html]Чим можуть виступати елементи и границі в множинах?{
+	~%33.333%змінними 
+	~%33.333%константами
+	~%33.333%виразами
+	~%-100%операторами
+}
+
+
+// question: 703  name: 33 
+::33::[html]Якщо ліва межа інтервалу буде більшою за праву, то ...{
+	=результат - порожня множина
+	~%-50%множина з двох елементів
+	~%-50%безкінечна множина
+}
+
+
+// question: 704  name: 34 
+::34::[html]В якому розділі оголошуються множини, якщо вони виступають в ролі типізованих констант?{
+	=const
+	~%-50%var
+	~%-50%type
+}
+
+
+// question: 706  name: 36 
+::36::[html]Що дозволяє визначити структурований тип множина?{
+	=набір даних одного простого типу
+	~%-50%набір даних одного складного типу
+	~%-50%набір даних різних складних типів
+}
+
+
+// question: 709  name: 39 
+::39::[html]<p>Елементи, що повторюються в множині не розглядаються?</p>{
+	=так
+	~%-50%ні
+	~%-50%в залежності від типів елементів
+}
+
+
+// question: 710  name: 40 
+::40::[html]<p>Який об'єм пам'яті займає один елемент множини?</p>{
+	~%-50%2 біта
+	=1 біт
+	~%-50%4 біта
+}
+
+
+// question: 713  name: 43 
+::43::[html]<p>Для чого слугує наступна процедура?</p>\n  <address>\{s\: set of type1; k\:type1&nbsp;\}</address>\n  <address>for k\:\=min_type1 to max_type1</address>\n  <address>do&nbsp; if k in s then write (k);</address>\n  <p>&nbsp;</p>{
+	=для друку елементів множини
+	~%-50%для вводу елементів
+	~%-50%для сортування елементів
+}
+
+
+// question: 715  name: 45 
+::45::[html]<p>Що здійснбється за допомогою цього коду?</p>\n  <address><font size\="2">set_arr\:array [1..100] of boolean&nbsp; \{...\}</font></address>\n  <address><font size\="2">p\:\=true;</font></address>\n  <address><font size\="2">for i\:\=1 to n do </font></address>\n  <address><font size\="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if set_arr[1] then begin p\:\=false;</font></address>\n  <address><font size\="2">&nbsp;&nbsp;&nbsp;&nbsp; break;&nbsp; end</font></address>\n  <p>&nbsp;<br /></p>{
+	=перевірка множини на порожність
+	~%-50%додавання елементів в множину
+	~%-50%видалення елементів з множини
+}
+
+
+// question: 718  name: 48 
+::48::[html]<p>Результат виконяння коду?</p>\n  <p>subs\:\=true;</p>\n  <p>for i\:\=1 to n do</p>\n  <p>&nbsp;&nbsp;&nbsp;&nbsp; if s1[i] and not s2[i]</p>\n  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; then&nbsp; begin subs\:\=false; break</p>\n  <p>&nbsp;&nbsp;&nbsp;&nbsp; end;</p>{
+	=включення однієї множини в іншу
+	~%-50%додавання однієї множини до іншої
+	~%-50%перетин двох множин
+}
+
+
+// question: 719  name: 49 
+::49::[html]<p>Що виконує вказаний код?</p>\n  <address><font size\="2">equal\:\=true;</font></address>\n  <address><font size\="2">for i\:\=1 to n do</font></address>\n  <address><font size\="2">&nbsp;&nbsp;&nbsp;&nbsp; if set1[i]&lt;&gt;set2[i] then begin equal\:\=false; break</font></address>\n  <address><font size\="2">end</font></address>{
+	=перевірка двох множин на рівність
+	~%-50%перевірка входження елементів в обидві множини
+	~%-50%перевірка на порожність обох множин
+}
+
+
+// question: 720  name: 50 
+::50::[html]Якщо кількість елементів більше ніж 65000, то необхідно перейти від бітів до...{
+	=byte
+	~%-50%string
+	~%-50%char
+}
+
+
+// question: 721  name: 51 
+::51::[html]<p>Оберіть правильну відповідь\:</p>\n  <address><font size\="2">var s\:set of char;</font></address>\n  <address><font size\="2">inp,res\:string;</font></address>\n  <address><font size\="2">i\:byte;</font></address>\n  <address><font size\="2">Begin s\:\=[]; res\:\=''; </font></address>\n  <address><font size\="2">for i\:\=1 to length(inp) do&nbsp; if&nbsp; not(inp[i] in s) </font></address>\n  <address><font size\="2">&nbsp;&nbsp;&nbsp;&nbsp; then begin res\:\=res+inp[i];</font></address>\n  <address><font size\="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s\:\=s+inp[i]; end;</font></address>\n  <address><font size\="2">end.&nbsp; </font></address>{
+	=залишити в рядку тільки перше входження символу, порядок зберегти
+	~%-50%залишити в рядку тільки останне входження символу, порядок зберегти
+	~%-50%залишити в рядку тільки останне входження символу, порядок не важливий
+}
+
+
+// question: 722  name: 52 
+::52::[html]<p>Визначити, де правильно оголошено структурований тип множина?</p>{
+	~%50%s\:\=['k','l','d']
+	~%50%s\:\=['0'..'9']
+	~%-100%s\:\=(0,1,2,5,7,4)
+}
+
+
+// question: 723  name: 53 
+::53::[html]<p>Визначте множину, що буде результатом виконання дії\: M1(5,1,8)+M2(2,5,6)</p>{
+	=M(5,1,8,2,6)
+	~%-50%M(5,1,8)
+	~%-50%M(5,6,2)
+}
+
+
+// question: 724  name: 54 
+::54::[html]<p>Результатом&nbsp;M1(2,1,3,8,7)-M2(3,4,8) буде...</p>{
+	=M1(1,2,7)
+	~%-50%M(2,1,8,3)
+	~%-50%M(4,8)
+}
+
+
+// question: 727  name: 57 
+::57::[html]В чому полягає різниця між такими операціями\: &lt;\=, &gt;\= ?{
+	~%-50%немає різниці
+	=приналежності всіх елементів однієї множини до іншої
+	~%-50%в кількості елементів результуючої множини
+}
+
+
+// question: 234  name: 12 
+::12::[html]<span onclick\="MyToogle( 'subject_186' )" id\="subject_186">Якщо Init – змінна типу Boolean, можливе присвоювання Init \:\= A &lt; B</span>{TRUE}
+
+
+// question: 238  name: 16 
+::16::[html]<span onclick\="MyToogle( 'subject_187' )" id\="subject_187"><span onclick\="MyToogle( 'example_218' )" id\="example_218">Доступ до елемента множини у мові Pascal передбачений.</span></span>{FALSE}
+
+
+// question: 707  name: 37 
+::37::[html]Чи можливо, щоб множина була пустою?{TRUE}
+
+
+// question: 708  name: 38 
+::38::[html]<p>Можливий такий набір даних множини&nbsp; (Head, Club, House)?</p>{TRUE}
+
+
+// question: 714  name: 44 
+::44::[html]Чи існує можливість представлення множини масивом?{TRUE}
+
+
+// question: 725  name: 55 
+::55::[html]<p>Множина M1(1,2,3,4) і М2(1,4,2,5). Чи будуть в множині М\=М1*М2 елементи 1 і 2 ?</p>{TRUE}
+
+
+// question: 726  name: 56 
+::56::[html]<p>Чи має значення порядок слідування елементів у множинах під час їх порівняння?</p>{FALSE}
+
+

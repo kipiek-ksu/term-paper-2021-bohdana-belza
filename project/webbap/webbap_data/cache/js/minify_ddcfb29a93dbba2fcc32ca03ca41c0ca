@@ -1,0 +1,1 @@
+M.report_customlang=M.report_customlang||{};M.report_customlang.Y={};M.report_customlang.init_editor=function(Y){M.report_customlang.Y=Y;Y.all('#translator .local textarea').each(function(textarea){var cell=textarea.get('parentNode');textarea.setStyle('height',cell.getComputedStyle('height'));});}

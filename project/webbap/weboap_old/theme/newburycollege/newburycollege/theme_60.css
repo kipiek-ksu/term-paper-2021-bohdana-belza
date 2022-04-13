@@ -1,0 +1,192 @@
+/*******************************************************************
+ styles_variable.css
+  
+ This CSS file contains all color definitions like 
+ background-color, font-color, border-color etc.
+
+ 
+
+*******************************************************************/
+
+/***
+ ***  Core
+ ***/
+
+a:link,
+a:visited {
+  color:#4498ca;
+}
+
+a:hover {
+  color:#333333;
+
+}
+body {
+  background: #4faddc url('images/header-default.jpg') repeat-x center top;
+  border-color:#ffffff;
+  margin-left: auto; 
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.surround {
+  background: #e8e9ea;
+  margin-left: auto; 
+  margin-right: auto;
+  width: 960px;
+  border-top: 0px solid #ffffff;
+  border-right: 0px solid #ffffff;
+  border-bottom: 0px solid #ffffff;
+  border-left: 0px solid #ffffff;
+ 
+}
+
+
+div.headermenu 
+{
+	color:#ffffff;
+}
+
+.headermenu a:link {
+    color: #ffffff;
+}
+.headermenu a:visited {
+    color: #ffffff;
+}
+.headermenu a:hover {
+    color: #ffffff;
+}
+
+
+
+#logo { 
+background: url('images/logos/logo.png') no-repeat left top; 
+height: 100px;
+width: 400px;
+} 
+/***
+ ***	Core: ProfileBlock
+ ***/
+
+#profileblock {
+	float: right;
+	text-align: right;
+	max-width: 500px;
+	right: 0px;
+
+
+}
+
+#profilepic {
+	text-align:right;
+	float: right;
+	margin: 8px;
+	width: 80px;
+	height: 80px;
+	border: 1px solid #ffffff;
+}
+
+#profilelogin {
+	text-align:right;
+	width: 390px;
+	margin-right: 0px;
+	margin-top:6px;
+	margin-bottom:0px;
+	float: right;
+}
+
+#profilelogin ul li { 
+	padding-left: 10px;
+	padding-right: 0px;
+	display: inline; 
+	margin-right:0px;
+}
+
+.profilelogin .loginform { 
+	width: 8em;
+	margin-left:4px;
+	display: inline; 
+}
+
+.profilelogin, .profilelogin a {
+	color:#ffffff;
+	text-decoration: none;
+}
+
+.profilelogin, .profilelogin a:hover {
+	text-decoration:none;
+}
+
+#profilename {
+	text-align:right;
+	width: 390px;
+	margin-right: 0px;
+	margin-top:40px;
+	margin-bottom:0px;
+	float: right;
+}
+
+#profilename ul li { 
+	padding-left: 10px;
+	padding-right: 0px;
+	display: inline; 
+	margin-right:0px;
+}
+
+.profilename .loginform { 
+width: 5em;
+margin-left:4px;
+display: inline; 
+    font-size:0.8em;
+
+}
+
+.profilename, .profilename a {
+	color:#ffffff;
+    font-size:1.4em;
+	letter-spacing: -2px;
+	text-decoration: none;
+	font-weight:bold;
+	margin-right:2px;
+}
+
+.profilename, .profilename a:hover {
+	text-decoration:none;
+}
+.menulang{
+
+margin-left: 0px;
+	margin-top: 00px;
+}
+#profileoptions {
+	text-align:right;
+	width: 390px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+
+#profileoptions ul li { 
+	padding-left: 10px;
+	padding-right: 0px;
+	display: inline; 
+	margin-right:0px;
+}
+
+.profileoptions {
+	background-color: transparent;
+	color:#ffffff;
+	text-decoration: none;
+	letter-spacing: 0px;
+}
+
+.profileoptions, .profileoptions a {
+	background-color: transparent;
+	color:#ffffff;
+}
+
+.profileoptions a:hover {
+	background-color: transparent;
+	text-decoration:underline;
+}
+

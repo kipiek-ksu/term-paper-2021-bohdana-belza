@@ -1,0 +1,74 @@
+program lr12z1;
+Type Point = ^Item;
+ Item = Record
+  Data: Integer;
+   Right, Left: Point
+  End;
+ var First: Point;
+procedure Build(var First: Point);
+ var t,x6,x5,x4: point;
+  begin
+   new(t);
+   First:=t;
+   readLn(t^.Data);
+   new(t^.Left);
+   t:=t^.Left;
+   read(t^.Data);
+   new(t^.left);
+   t:=t^.Left;
+   read(t^.Data);
+   t:=First;
+   new(t^.Right);
+   x4:=t^.Right;
+   t:=t^.Right;
+   read(t^.Data);
+   t^.Right:=First;
+   t^.Left:=NIL;
+   t:=First^.Left;
+   new(t^.Right);
+   x5:=t^.Right;
+   t:=t^.Right;
+   read(t^.Data);
+   t^.Right:=x4;
+   new(t^.Left);
+   x6:=t^.Left;
+   t:=t^.Left;
+   read(t^.Data);
+   t^.Right:=x5;
+   t^.Left:=NIL;
+   t:=First^.Left^.Left;
+   t^.Right:=x6;
+  end;
+  procedure ReadGraph(First: Point);
+   var p: Point;
+    begin
+     p:=First;
+     write(p^.Data, ' ');
+     p:=p^.Left;
+     write(p^.Data, ' ');
+     p:=p^.Left;
+     write(p^.Data, ' ');
+     p:=p^.Right;
+     write(p^.Data, ' ');
+     p:=p^.Right;
+     write(p^.Data, ' ');
+     p:=p^.Right;
+     write(p^.Data, ' ');
+     p:=p^.Right;
+     writeLn(p^.Data);
+     write(p^.Data, ' ');
+     p:=p^.Right;
+     write(p^.Data, ' ');
+     p:=p^.Right;
+     write(p^.Data, ' ');
+     p:=p^.Left;
+     write(p^.Data, ' ');
+     p:=p^.Right;
+     write(p^.Data, ' ');
+     p:=p^.Left;
+     write(p^.Data);
+    end;
+BEGIN
+ Build(First);
+ ReadGraph(First);
+END.

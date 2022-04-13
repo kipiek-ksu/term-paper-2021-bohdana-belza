@@ -1,0 +1,534 @@
+// question: 695  name: 100 
+::100::[html]Встановіть відповідність{
+	=Процедура виділення пам'яті -> New
+	=Процедура звільнення пам'яті -> Dispose
+	=Опис типу вказівка на ціле -> p\=^Integer;
+	=Опис змінної типу вказівка на ціле -> x\:^Integer;
+}
+
+
+// question: 497  name: 15 
+::15::[html]<p>Як викликаються змінні? Вкажіть співвідношення.</p>{
+	=динамічні змінні -> за адресою
+	=статичні змінні -> за адресою
+	=змішані змінні -> не існують
+	= -> за значенням
+}
+
+
+// question: 499  name: 17 
+::17::[html]Вкажіть відповідність\:{
+	=і-му елементу масиву, на який вказує В, присвоюється значення і -> B^[i]\:\=i
+	=і-му елементу масиву, на який вказує С, присвоюється значення і-того елемента масиву, на який вказує В -> C^[i]\:\=B^[i]
+	=і-му елементу масиву, на який вказує С, присвоюється значення і-того елемента масиву, на який вказує В та попередне значення C[i] -> відповідь не правильна
+	= -> C^[i]\:\=B^[i]+ C^[i]
+}
+
+
+// question: 506  name: 24 
+::24::[html]<p>Вкажіть в якій послідовності будуть виконуватись оператори?</p>{
+	=оголошення масивів, символьного і числового -> 1
+	=оголошення посилань на змінні типів char і integer  -> 2
+	=друкування через відступ -> 3
+	=посиланню на А приєднується адреса масиву цілих чисел -> 4
+	=друкування чисел -> 5
+	=посиланню на Х приєднується адреса на символи -> 6, не виконується
+}
+
+
+// question: 508  name: 26 
+::26::[html]<p>Поставте в хронологічній послідовності порядок виконання дій в програмі формування списку чисел\: </p> \n  <p><span lang\="EN-US"><font size\="2" face\="times new roman,times,serif">Type</font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="times new roman,times,serif"><span> </span>Ukazatel \= ^S;</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="times new roman,times,serif"><span> </span>S \= Record</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="times new roman,times,serif"><span> </span>Data \: integer;</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="times new roman,times,serif"><span> </span>Next \: Ukazatel ;</font></font></span></p> \n  <p><font size\="2" face\="times new roman,times,serif">Var</font></p> \n  <p><font face\="times new roman,times,serif"><font size\="2"><span> </span>Head,</font><font size\="2">x</font><font size\="2"><span> </span>\: Ukazatel; </font></font></p> \n  <p><font size\="2" face\="times new roman,times,serif">...</font></p> \n  <p><font size\="2" face\="times new roman,times,serif">&nbsp; New(x);&nbsp;</font></p> \n  <p><font size\="2"><font face\="times new roman,times,serif"><span> </span>x^.Data \:\= 3;</font></font></p> \n  <p><font size\="2"><font face\="times new roman,times,serif"><span> </span>x^.Next \:\= Nil;&nbsp;</font></font></p> \n  <p><span style\="font-size\: 10pt;"><font face\="times new roman,times,serif"><span> </span>Head \:\= x;</font></span></p> \n  <p><span style\="font-size\: 10pt;"><font face\="times new roman,times,serif">...</font></span></p><span style\="font-size\: 10pt;"> \n    <p><span lang\="EN-US"><font face\="times new roman,times,serif">Head^.Next \= x^.Next;</font></span></p> \n    <p><span lang\="EN-US"><font face\="times new roman,times,serif">Head^.Data \= x^.Data;</font></span></p> \n    <p><span style\="font-size\: 10pt;"><font face\="times new roman,times,serif">Head \= x; </font></span></p> \n    <p><span style\="font-size\: 10pt;"><font face\="times new roman,times,serif">...</font></span></p></span>{
+	=оголошення списку, що містить цілі числа -> 1
+	=оголошення змінних-посилань -> 2
+	=виділення пам'яті для змінної типу S -> 3
+	=заповнення інформаційного поля елементу -> 4
+	=заповнення поля посилань нершого елемента\: вказує на кінець -> 5 
+	=установкана перший елемент голови списку -> 6
+	=добавлення елементу в кінець списку -> 7
+	=заповнюємо список значеннями -> 8
+	= -> не відбувається
+}
+
+
+// question: 592  name: 31 
+::31::[html]Виділення і звільнення памяті для змінних\:{
+	=типізовані посилання -> new/dispose
+	=нетипізовані посилання -> getmem/frimem
+	=для типізованих і нетипізованих -> new/mark/release
+	= -> new/frimem
+	= -> getmem/dispoze
+}
+
+
+// question: 593  name: 32 
+::32::[html]<p>Виставте співвідношення\:</p>{
+	=повертає адресустатичної змінної, що сумісна з Nil -> @
+	=указує посилання на х, сумісне з усіма типами посилань -> addr(x)
+	=перетворення адреси з вигляду \n<сегмент>\:<змінна> в посилання -> prt(<сегмент>\:<змінна>)
+	=адреса сегмента об'екта х -> seg(x)
+	=адреса зміщення об'екта х -> ofs(x)
+	=повертає адресу сегмента даних -> dset
+	=повертає адресу сегмента коду -> cseg
+	=адреса сегменту стеку -> sseg
+}
+
+
+// question: 594  name: 33 
+::33::[html]Скорочена форма опису\:&nbsp;{
+	=FILO -> стек
+	=FIFO -> черга
+	=FICO -> не існує
+	= -> список
+}
+
+
+// question: 684  name: 41 
+::41::[html]<p>Виставте відповідності\:</p>{
+	=рівень з максимальною кількістю елементів -> глибина
+	=кількість елементів певного рівня списку -> довжина
+	=спосіб організації -> структура
+	= -> кількість елементів найбільшого рівня списку
+}
+
+
+// question: 685  name: 42 
+::42::[html]Вираз (a+b)*c(-(d/e))+а представлено за допомогою розгалудженого списку. В якому порядку обчислюється вираз?{
+	=1 -> (a+b)
+	=2 -> d/e
+	=3 -> c-(d/e)
+	=4 -> (a+b)*(c-(d/e))
+	=5 -> (a+b)*(c-(d/e))+f
+	=6.не виконується -> (a+b)*(d/e)
+}
+
+
+// question: 686  name: 43 
+::43::[html]Базовими функціями обробки списків є\: car, cdr, cons, atom{
+	=за аргумент отримує список; резельтатом є перший елемент списку -> car
+	=за аргумент отримує список; резельтатом є остаток списку-покажчик на список після видалення з нього першого елементу -> cdr
+	=за аргумент отримує посилання на елемент списку і посилання на список; включаєелемент на початок списку і повертає показник на новий список -> cons
+	=за аргумент отримує список; перевіряє тип елементу списку; виводить trueякщо елемент являється атомом і false - якщо підсписок  -> atom
+}
+
+
+// question: 689  name: 46 
+::46::[html]<p>Зв'яжіть два поля.</p>{
+	=вид зв'зного списку, у якому показчик останнього елементу показує на перший -> кільце
+	=замкнутий шлях -> цикл
+	=непуста множина точок і множина відрізків, кінці яких належать заданій множині точок -> граф
+}
+
+
+// question: 693  name: 50 
+::50::[html]Згрупуйте записи?{
+	=кожному ребру графа задається напрямок -> граф ориєнтований
+	=якщо довільні дві вершини з'єднані ребром -> зв'язний граф
+	=дерево, що зв'язується з вершинами \nдерева; їх на дереві скінчена кількість -> піддерево
+	= -> ребра дерева напрямлені
+}
+
+
+// question: 385  name: 1 
+::1::[html]Які характеристики притаманні методу динамічного виділення пам'яті?{
+	~%50%розмір даних змінюється під час виконання програми
+	~%50%конфігурація має гнучку будову
+	~%-50%розмір виділеної пам'яті незмінний
+	~%-50%розмір/конфігурація може змінюваться, але визначається під час компіляції програми
+}
+
+
+// question: 393  name: 10 
+::10::[html]Граф - це...{
+	=утворення декількох записів, покажчики яких виставлені довільним чином
+	~%-50%утворення декількох записів, покажчики яких вказують на попередній та наступний елемент послідовності
+	~%-50%утворення записів, що не мають покажчика на вершину
+}
+
+
+// question: 400  name: 12 
+::12::[html]Посилання. Значення посилального типу та опис?{
+	=значенням є покажчик на інші дані; type <ім'я посилального типу> \= ^ <ім'я базового типу>
+	~%-33.333%значенням є посилання на наступні дані; type <ім'я посилального типу> \= ^ <ім'я базового типу>
+	~%-33.333%значенням є безпосередньо дані; type <ім'я посилального типу> \= ^ <тип значень>
+	~%-33.333%значенням є послідовність елементів зі вказуванням на наступний; type <ім'я посилального типу> \=  .<ім'я базового типу>
+}
+
+
+// question: 401  name: 13 
+::13::[html]<p>Вкажіть правильність&nbsp;оголошення зв'язку ім'я змінної з&nbsp;її описом.&nbsp;</p> \n  <p>1. type ar\=array [1..5] of real</p> \n  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;pl\=^ar</p> \n  <p>var a,b \: pl;</p> \n  <p>2. var a,b \: ^array [1..5] of real;&nbsp;</p>{
+	~%50%1.
+	~%50%2.
+}
+
+
+// question: 498  name: 16 
+::16::[html]Що повинно бути передбачене в програмі для роботи з динамічними змінними?{
+	~%33.333%виділення пам'яті під динамічні змінні
+	~%33.333%ініціалізація покажчика 
+	~%33.333%звільнення пам'яті після використання змінної
+	~%-33.333%резервування особливих процедур
+	~%-33.333%виклик змінної для перегляду
+	~%-33.333%зберігання екземпляру змінної
+}
+
+
+// question: 500  name: 18 
+::18::[html]<p>І-ті елементи масивів, на які вказують&nbsp;В і С, будуть \:</p> \n  <p>Type&nbsp; A\=array [1..10] of integer</p> \n  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tA\=^A;</p> \n  <p>var&nbsp;&nbsp;&nbsp;&nbsp; C\:^A;</p> \n  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B\:^tA;</p> \n  <p>...</p> \n  <p>B^[i]\:\=i;</p> \n  <p>С^[i]\:\=B^[i];</p> \n  <p>...</p>{
+	=рівні
+	~%-33.333%нерівні
+	~%-33.333%B^[i]<C^[i]
+	~%-33.333%B^[i]>C^[i]
+}
+
+
+// question: 501  name: 19 
+::19::[html]<p>Підрахуйте результат\:</p> \n  <p><span style\="font-family\: 'times new roman';">Var</span></p> \n  <p><span style\="font-family\: 'times new roman';"><span> </span>P \: ^Integer;&nbsp;</span></p>\n  <p>x\: Integer;&nbsp;</p> \n  <p><span style\="font-family\: 'times new roman';">...</span></p> \n  <p><span style\="font-family\: 'times new roman';"><span> </span>P^ \:\=16;</span></p>\n  <p>x\:\=P^;&nbsp;</p> \n  <p><span style\="font-family\: 'times new roman';"><span> </span>x \:\= x+P^; </span></p> \n  <p><span style\="font-family\: 'times new roman';">...</span></p>{
+	~%-33.333%16
+	=32
+	~%-33.333%48
+	~%-33.333%друге присвоєння неможливе
+}
+
+
+// question: 386  name: 2 
+::2::[html]<p>Динамічні структури даних представляються в вигляді, що містить\:</p>{
+	=інформаційні поля та поля посилань
+	~%-50%поля посилань та ідентифікатори
+	~%-50%поля стрілок-вказівок та полів даних
+}
+
+
+// question: 502  name: 20 
+::20::[html]В яких станах може перебувати змінна посилального типу?<br />{
+	~%33.333%містити адресу змінної, під яку вже виділена пам'ять
+	~%33.333%вміщувати спеціальну адресу Nil
+	~%33.333%знаходитись в невизначеному стані
+	~%-50%містити адресу змінної, під яку ще не виділено памяті
+	~%-50%містити спеціальну адресу, що вказує на змінну першу по списку
+}
+
+
+// question: 503  name: 21 
+::21::[html]<p>Які операції можуть виконуватись над посиланнями?</p>{
+	~%50%"\="
+	~%50%"<>"
+	~%-25%"<"
+	~%-25%">"
+	~%-25%"<\="
+	~%-25%">\="
+}
+
+
+// question: 504  name: 22 
+::22::[html]<p>Який тип посилань треба&nbsp;використовувати для присвоєнні одного посилання іншому, навіть при неспівпаданні типів?</p>{
+	=Pointer
+	~%-33.333%Char
+	~%-33.333%Boolean
+	~%-33.333%Real
+}
+
+
+// question: 505  name: 23 
+::23::[html]<p>За допомогою яких процедур чи&nbsp;функцій змінній посиланню можна приєднати значення?&nbsp;</p>{
+	~%33.333%new
+	~%33.333%@
+	~%33.333%Ptr
+	~%-33.333%\:\=
+	~%-33.333%^\:\=
+	~%-33.333%Prnt
+}
+
+
+// question: 507  name: 25 
+::25::[html]<p>Що представляє собою дана динамічна структура?</p> \n  <p>Type&nbsp;uk\=^s; </p> \n  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s\=record</p> \n  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data\:integer; </p> \n  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next\:uk;</p> \n  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end;</p>{
+	=оголошення списку, що буде містити цілі числа
+	~%-33.333%опис списку зі змінними типу uk
+	~%-33.333%опис складного типу даних запис
+	~%-33.333%оголошення запису, що являтиме собою стек цілих чисел
+}
+
+
+// question: 517  name: 27 
+::27::[html]<p>Що являє собою<font face\="times new roman,times,serif"> даний код?</font></p> \n  <p><span lang\="EN-US"><font face\="times new roman,times,serif">while p&lt;&gt;Nil do</font></span></p> \n  <p><span lang\="EN-US"><font face\="times new roman,times,serif">Begin</font></span></p> \n  <p><span lang\="EN-US"><font face\="times new roman,times,serif"><span> </span>Write(p^.Data, ' ');</font></span></p> \n  <p><span lang\="EN-US"><font face\="times new roman,times,serif"><span> </span>p \:\= p^.Next;</font></span></p> \n  <p><span lang\="EN-US"><font face\="Courier New"><font size\="2"><font size\="3" face\="times new roman,times,serif">End</font> </font></font></span></p>{
+	=перегляд елементів списку з виведенням на екран
+	~перегляд елементів стеку з виведенням на екран
+	~перегляд черги і виведенням на екран
+	~обробка масива чисел
+}
+
+
+// question: 387  name: 3 
+::3::[html]Що являють собою посилання?{
+	=адреса першого фрагмента оперативної пам'яті, виділеної під цей елемент
+	~%-50%адреса фрагмента оперативної пам'яті, що виділена під наступний елемент
+	~%-50%елемент, що займає виділену кількість пам'яті
+}
+
+
+// question: 595  name: 34 
+::34::[html]Вкажіть всі спискові структури.{
+	~%25%однозв'язковий список
+	~%25%двохзв'язковий список
+	~%25%бінарне жерево
+	~%25%орієнтовай граф
+	~%-50%дерева
+	~%-50%неорієнтований граф
+}
+
+
+// question: 596  name: 35 
+::35::[html]<p>Копіювання списків. Виберіть правильні відповіді.&nbsp;</p>{
+	~%20%інформаційні поля нового списку містять ту ж інформацію, що й елементи першого списку
+	~%20%поля посилань в новому списку інші
+	~%20%елементи нового списку розміщені по нових адресах в пам'яті
+	~%20%зміна в старому списку не відображається в новому і навпаки
+	~%-25%зміна в старому списку відображається в новому і навпаки
+	~%20%список, з якого копіюють зберігається та створюється новий
+	~%-25%перший список зберігається, новий не створюється, а створюються нові посилання на перший список
+	~%-25%інформаційні поля нового списку містять ті ж дані, лише збільшені на порядок
+	~%-25%поля посилань в новому списку залишаються тими ж, що й в першому списку
+}
+
+
+// question: 597  name: 36 
+::36::[html]<p>Яка операція виконується з однозв'язними списками? Який з них є результатом?</p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">Procedure Unite (var head1, head2 \: sllptr);</font></font></span></p> \n  <p><font size\="2"><font face\="Courier New"><span lang\="EN-US"><span> </span></span>var cur \: sllptr;</font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>begin</font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span><span lang\="EN-US">if head2&lt;&gt;nil then begin</span></font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span><span lang\="EN-US">if head1\=nil then head1\:\=head2</span></font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span lang\="EN-US"><span> </span></span>else<span> </span></font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span></span></font></font><font size\="2"><font face\="Courier New"><span> </span><span lang\="EN-US">begin<span> </span>cur\:\=head1;</span></font></font></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>while cur^.next&lt;&gt;nil do cur\:\=cur^.next;</font></font></span></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span><span lang\="EN-US">cur^.next\:\=head2;</span></font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span lang\="EN-US"><span> </span>end;<span> </span>head2\:\=nil;&nbsp;</span></font></font><font size\="2"><font face\="Courier New"><span lang\="EN-US"><span> </span></span></font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span lang\="EN-US"><span></span></span>end; end;</font></font></p>{
+	=злиття двох списків; head1 -результат; head2 стає продовженням першого
+	~%-50%злиття двох списків; head2 -результат; head1 стає продовженням першого
+	~%-50%злиття двох списків; head1 -результат; head2 знищуеться
+}
+
+
+// question: 598  name: 37 
+::37::[html]<p>Стек. Що я являється результатом виконання функції?</p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">Procedure writeStack(Var u \: EXST; Digit \: integer);</font></font></span></p> \n  <p><font size\="2" face\="Courier New">Var</font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>x \: EXST;</font></font></p> \n  <p><font size\="2" face\="Courier New">Begin</font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>new(x); </font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>x^.Data \:\= Digit; </font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>x^.Next \:\= u; </font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>u \:\= x; </font></font></p> \n  <p><font size\="2" face\="Courier New">End;</font></p> \n  <p><font size\="2" face\="Courier New">Begin</font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>Stack \:\= Nil;&nbsp;</font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>writeln('Введите элементы стека. Окончание ввода – 0');</font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>read(Digit);</font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span><span lang\="EN-US">while Digit &lt;&gt; 0 do</span></font></font></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>begin</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span><span> </span>writeStack(Stack, Digit);</font></font></span></p> \n  <p><font size\="2"><font face\="Courier New"><span lang\="EN-US"><span> </span></span>read(Digit);</font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>end;</font></font></p> \n  <p><font size\="2" face\="Courier New">End; </font></p> \n  <p> </p>\n  <p> </p>{
+	~%50%зенесення в стек елементу
+	~%-50%видалення зі стеку елементу
+	~%50%вставка елементу до стеку на початок
+	~%-50%видалення елементу зі списку
+}
+
+
+// question: 599  name: 38 
+::38::[html]<p><span>Яку функцію виконує даний фрагмент програми?</span><span lang\="EN-US" style\="font-size\: 10pt;"> </span></p> \n  <p><span lang\="EN-US" style\="font-size\: 10pt;">Procedure rStack(Var u \: EXST; Var i \: integer);</span></p> \n  <p><span lang\="EN-US" style\="font-size\: 10pt;">Var</span></p> \n  <p><span lang\="EN-US" style\="font-size\: 10pt;">&nbsp; x \: EXST;</span></p> \n  <p><span lang\="EN-US" style\="font-size\: 10pt;">Begin</span></p> \n  <p><span lang\="EN-US" style\="font-size\: 10pt;">&nbsp; i \:\= u^.Data;&nbsp;&nbsp; </span></p> \n  <p><span lang\="EN-US" style\="font-size\: 10pt;">&nbsp; x \:\= u;</span></p> \n  <p><span lang\="EN-US" style\="font-size\: 10pt;">&nbsp;&nbsp;u \:\= u^.Next;</span></p> \n  <p><span lang\="EN-US" style\="font-size\: 10pt;">&nbsp; dispose(x); </span></p> \n  <p><span style\="font-size\: 10pt;">End.&nbsp;</span></p>{
+	~%50%видалення елементу зі стеку
+	~%50%видалення елементу з голови стеку
+	~%-50%занесення елементу до стеку
+	~%-50%перегляд вмісту всього стека
+}
+
+
+// question: 600  name: 39 
+::39::[html]<p><span lang\="EN-US"><font size\="2"><font face\="Courier New">procedure&nbsp;S (var P\: PItem);</font></font></span></p> \n  <p><span lang\="EN-US"></span><span lang\="EN-US"><font size\="2"><font face\="Courier New">var Last\: PItem;</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">begin</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>repeat</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>Last \:\= P;</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>P \:\= P^.next;</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>Dispose (Last);</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>until P \= Nil;</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">end;</font></font></span></p> \n  <p><span lang\="EN-US"><font face\="Courier New">Результат виконання процедури...</font></span></p>{
+	=видалення зі стеку всіх елементів
+	~виведення відсортованого стеку
+	~введення  елементів, з виділенням для них посилань 
+}
+
+
+// question: 388  name: 4 
+::4::[html]Вкажіть, які з перерахованих нижче структур являються динамічними?{
+	~%33.333%списки
+	~%33.333%стеки
+	~%33.333%черги
+	~%-50%записи
+	~%-50%файли
+}
+
+
+// question: 601  name: 40 
+::40::[html]Мультисписки - це багатозв'язкові списки. Їх головні характеристики\:{
+	~%33.333%економія пам'яті
+	~%33.333%цілісність даних
+	~%33.333%при видалені елементу з неголовного списку, пам'ять не звільняється, а лише переадресовується посилання
+	~%-33.333%при видалені елементу з неголовного списку, пам'ять звільняється  і залишається екземпляр лише в головному списку
+	~%-33.333%дані втрачають цілісність, але стають більш гнучкими у використанні
+	~%-33.333%виділена пам'ять не економиться, лише багато посилань вказують на один проміжок в пам'яті
+}
+
+
+// question: 687  name: 44 
+::44::[html]<p>Внесення елементу до черги відповідає занесенню елементадо...</p>{
+	=кінця списку
+	~%-33.333%на початок списку
+	~%-33.333%на початок стеку
+	~%-33.333%в середину списку
+}
+
+
+// question: 688  name: 45 
+::45::[html]<p>Що являє собою функція FreeO?</p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">Function FreeO(x1 \: EXO)\: boolean;</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">Begin</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>FreeO \:\= (x1\=Nil);</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">End;</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">Begin</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>if FreeO(BeginO)</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>then</font></font></span></p> \n  <p><font size\="2"><font face\="Courier New"><span lang\="EN-US"><span> </span>writeln('</span>Empty<span lang\="EN-US">');</span></font></font></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>else</font></font></span></p> \n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span> </span>begin</font></font></span></p> \n  <p><font size\="2"><font face\="Courier New"><span lang\="EN-US"><span> </span></span>c \:\= BeginO^.Data;&nbsp;</font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>u \:\= BeginO;&nbsp;</font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>BeginO \:\= BeginO^.Next;</font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>dispose(u);&nbsp;</font></font></p> \n  <p><font size\="2"><font face\="Courier New"><span> </span>end;</font></font></p> \n  <p><font size\="2" face\="Courier New">End; </font></p>{
+	~%50%видалення елементу зчерги
+	~%50%видалення елементу з початку списку
+	~%-50%видалення елементу із стеку
+	~%-50%додавання елементу до черги
+}
+
+
+// question: 690  name: 47 
+::47::[html]<p>Маємо список. u- початок списку. </p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">Procedure F(Var u \: TypeCircle);</font></font></span></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">Var</font></font></span></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span>&nbsp; </span>x, y \: TypeCircle;</font></font></span></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span>&nbsp; </span>i, N \: integer;</font></font></span></p>\n  <p><font face\="Courier New" size\="2">Begin</font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp; </span>write('Введіть кількість елементів&nbsp;\: ');</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp; </span><span lang\="EN-US">readln(N);</span></font></font></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span>&nbsp; </span>for i \:\= 1 to N do</font></font></span></p>\n  <p><font size\="2"><font face\="Courier New"><span lang\="EN-US"><span>&nbsp;&nbsp;&nbsp; </span></span>begin</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>new(x);&nbsp;</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>write('Введіть дані&nbsp;вешнини\: ');</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>readln(i);</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>x^.Data \:\= i;&nbsp;</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if u\=nil&nbsp;</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>then</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>u \:\= x&nbsp;</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>y^.Next \:\= x;&nbsp;</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>y \:\= x; </font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp;&nbsp;&nbsp; </span>end;</font></font></p>\n  <p><font size\="2"><font face\="Courier New"><span>&nbsp; </span>x^.Next \:\= u;</font></font></p>\n  <p><font face\="Courier New" size\="2">End; </font></p>\n  <p>&nbsp;</p>\n  <p>Результатом виконання останньогоприєднання є...</p>\n  <p>&nbsp;</p>{
+	=приведення створеного списку в кільце
+	~%-50%установка останнього посилання на останній елемент
+	~%-50%приєднання нового елементу до кінця списку
+}
+
+
+// question: 691  name: 48 
+::48::[html]Операції над кільцями\:{
+	~%33.333%занесення елементу в кільце
+	~%33.333%видалення елементу з кільця
+	~%33.333%обхід кільця
+	~%-33.333%помічення елементів як Nil
+	~%-33.333%сортування елементів кільця
+	~%-33.333%перетворення кільця в стек
+}
+
+
+// question: 692  name: 49 
+::49::[html]<p>Вказана процедура обходу кільця\:</p>\n  <p><font face\="Courier New" size\="2">Procedure К(u \: TypeCircle);</font></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">Var</font></font></span></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span>&nbsp; </span>x \: TypeCircle;</font></font></span></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New">Begin</font></font></span></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span>&nbsp; </span>x \:\= u;</font></font></span></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span>&nbsp; </span>repeat</font></font></span></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span>&nbsp; </span>write(x^.Data,' ');</font></font></span></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span>&nbsp; </span>x \:\= x^.Next;</font></font></span></p>\n  <p><span lang\="EN-US"><font size\="2"><font face\="Courier New"><span>&nbsp; </span>until x\=u;</font></font></span></p>\n  <p><font size\="2"><font face\="Courier New"><span lang\="EN-US"><span>&nbsp; </span></span>readln;</font></font></p>\n  <p><span style\="font-size\: 10pt; font-family\: ">End;</span></p>\n  <p><span style\="font-size\: 10pt; font-family\: "><font size\="3">З якого елементу можна почати виведення?&nbsp;Від чого залежить?</font></span></p>{
+	~%50%залежить від адреси першого елемента, переданого до процедури обходу
+	~%50%почати можна з довільного елементу
+	~%-50%почати можна лише з першого елементу
+	~%-50%залежить від структури даного кільця
+}
+
+
+// question: 389  name: 5 
+::5::[html]Які характеристики притаманні структурі даних список?{
+	~%33.333%спосіб представлення однотипних елементів
+	~%33.333%вставка/вилучення елемента допускається на довільній позиції послідовності 
+	~%33.333%доступ до елемента здійснюється послідовним переглядом елементів від початку до кінця
+	~доступ можливий лише до першого і останнього елемента в послідовності
+	~%-33.333%вставка/вилучення з хвоста
+	~%-33.333%доступ до довільних елементів не підтримується методами доступу
+}
+
+
+// question: 694  name: 51 
+::51::[html]Оберіть неправильні відповіді.{
+	~%-33.333%граф не містить питель
+	~%-33.333%граф не містить двох різних ребер, що з'єднують одну пару вершин
+	~%-33.333%в графі важливий факт присутності зв'язку між двома вершинами
+	~%50%граф може містити петлі
+	~%50%в графі можуть існувати різні ребра, що з'єднують одну пару вешин
+}
+
+
+// question: 729  name: 52 
+::52::[html]<p>Граф можна задати як...</p>{
+	~%20%матрицю суміжності
+	~%20%список ребер
+	~%20%список суміжностей
+	~%20%ієрархічний список
+	~%20%дерева
+	~%-33.333%матриця несуміжності
+	~%-33.333%список дуг
+	~%-33.333%ієрархічні графи
+}
+
+
+// question: 728  name: 53 
+::53::[html]<p>Які означення дерева є рівносильними? Дерево - це...</p>{
+	~%33.333%зв'язний граф без циклів
+	~%33.333%зв'язний граф, у якого при n вершинах завжди n-1 ребро
+	~%33.333%граф, у якого між двома його точками існує kbit один шлях
+	~%-50%орграф, у якого між довільними двома вершинами існує лише один зв'язок 
+	~%-50%орграф, що не містить циклів
+}
+
+
+// question: 730  name: 54 
+::54::[html]Кореневе дерево - орієнтоване дерево, що містить вершини трьох видів\: корінь, термінальні вершини, нетермінальні вершини. До того ж наявні умови. Які саме?{
+	~%50%в корінь не заходить жодна дуга, в усі інші - рівно одна
+	~%50%з листя не виходить жодної дуги, з інших - довільна кількість 
+	~%-100%з листя виходить лише одна  дуги, з інших - довільна кількість 
+}
+
+
+// question: 731  name: 55 
+::55::[html]Приклади використання бінарних кореневих дерев\:{
+	~%33.333%дерево двоїчного пошуку
+	~%33.333%дерево частотного словника
+	~%33.333%дерево синтаксичного аналізу
+	~%-33.333%дерево пунктуаційного аналізу
+	~%-33.333%дерево часткового аналізу
+	~%-33.333%дерево організації пошуку слова в виразі
+}
+
+
+// question: 732  name: 56 
+::56::[html]До основних операцій над деревом відносять\:{
+	~%33.333%занесення елементу в дерево
+	~%33.333%видалення елементу з дерева
+	~%33.333%обхід дерева
+	~%-50%видалення всіх елементів одночасно
+	~%-50%занесення піддерева
+}
+
+
+// question: 733  name: 57 
+::57::[html]<p>При рекурсивному виведенні дерева необхідно виконати дії\:</p>{
+	~%33.333%виведення вмісту вузла
+	~%33.333%обхід лівого дерева
+	~%33.333%обхід правого дерева
+	~%-33.333%виведення вмісту вузлів лівої частини
+	~%-33.333%виведення вмісту вузлів правої частини
+	~%-33.333%немає жодної правильної відповіді
+}
+
+
+// question: 734  name: 58 
+::58::[html]Виконується порядок дій\: виведення інформації, що зберігається у вузлі; обхід лівого і правого піддерева. Що визначає ця послідовність&nbsp;?{
+	=обхід дерева
+	~%-50%спосіб виведення дених з дерева
+	~%-50%представлення дерева
+}
+
+
+// question: 390  name: 6 
+::6::[html]Стек. Вкажіть характеристики даної структури.{
+	~%33.333%спосіб представлення однотипних елементів
+	~%33.333%вставка/вилучення елемента допускається на початку(вершині)
+	~%33.333%доступ до довільного елемента не підтримується методами обробки 
+	~%-100%спосіб представлення різнотипних елементів
+	~%-100%вставка/вилучення допускається в довільному місці
+	~%-100%вставка/вилучення  елемента здійснюється послідовним переглядом від більшого до меншого
+}
+
+
+// question: 391  name: 7 
+::7::[html]Черга. Притаманні їй характеристики?{
+	~%25%спосіб представлення послідовності однотипних елементів
+	~%25%вставка у хвіст
+	~%25%вилучення - з хвоста
+	~%25%доступ до елементів не підтримується, окрім першого і останнього 
+	~%-33.333%вставка/вилучення з хвоста
+	~%-33.333%вставка до вершини послідовності 
+	~%-33.333%вилучення з хвоста
+}
+
+
+// question: 392  name: 8 
+::8::[html]Вкажіть, які динамічні структури відносяться до лінійних?{
+	~%33.333%списки 
+	~%33.333%стеки
+	~%33.333%черги
+	~%-50%дерева
+	~%-50%графи
+}
+
+
+// question: 397  name: 9 
+::9::[html]<p>Дерева. Вкажіть їх особливості.</p>{
+	~%25%структура даних, що розгалуджується
+	~%25%кожен запис має одного попередника
+	~%25%кореневий - попередників не має
+	~%25%елементи вказують на спадкоємців
+	~%-33.333%структура даних, що має лінійний характер
+	~%-33.333%всі записи мають своїх попередників
+	~%-33.333%"листя" вказують на корінь дерева
+}
+
+
+// question: 735  name: 59 
+::59::[html]Ідеально збалансоване дерево - це дерево, у якому для кожної його вершини в лівому і правому піддереві кількість вершин відрізняється не більше ніж на 1?{TRUE}
+
+

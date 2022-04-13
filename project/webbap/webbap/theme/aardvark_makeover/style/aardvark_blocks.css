@@ -1,0 +1,243 @@
+/*
+Core: side blocks
+-----------------------*/
+.block {
+    border:1px dotted #ddd;
+    margin-bottom:1em;
+}
+.block .header .block_action input {
+    bottom: 3px;
+    margin-right: 2px;
+    position: relative;
+}
+.block .content {
+    padding:4px;
+}
+.block.hidden .content {
+    display: none;
+}
+.block .content .userpicture {
+    width:16px;
+    height:16px;
+    margin-right:4px;
+}
+.block .content .list li.listentry {
+    clear:both;
+}
+.block .content .list .c0 {
+    display:inline;
+}
+.block .content .list .c1 {
+    margin-left:5px;
+    display:inline;
+}
+.block .footer {
+    margin-bottom: 4px;
+}
+.block .blockannotation {
+    font-size:0.75em;
+    margin: -1em 0 1em;
+}
+
+.block.beingmoved {
+    border-width: 2px;
+    border-style: dashed;
+}
+.blockmovetarget {
+    display: block;
+    height: 1em;
+    margin-bottom: 1em;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.block-region .invisible {
+opacity: 0.5;
+filter: alpha(opacity=50);
+}
+
+.block .block-hider-show,
+.block .block-hider-hide {
+cursor:pointer;
+}
+.block .block-hider-show,
+.block.hidden .block-hider-hide {
+display:none;
+}
+.block.hidden .block-hider-show {
+display:inline;
+}
+
+.block-region {
+    float: left;
+    padding: 0;
+    font-size: 90%;
+}
+.block-region ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.block-region li {
+    padding: 0;
+}
+
+.block-region li ul {
+}
+
+.block-region li li {
+    margin: 0 20px 0 10px;
+    padding: 8px 0px;
+}
+
+.block .header .block_action {
+    float:right;
+    margin:0.5em;
+    vertical-align:top;
+}
+
+.block_settings .block_tree li ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 16px;
+}
+
+/*
+List block contents
+-----------------------*/
+
+.block .list .c0 {
+display:inline;
+}
+
+.block .list .c0 img.icon {
+    vertical-align: middle
+}
+
+.block .list .c1 {
+    margin-left:5px;display:inline;
+}
+
+
+/*
+Calendar: side blocks
+-----------------------*/
+
+.block .minicalendar {
+    margin:10px auto;
+    width:100%;
+}
+
+.block .minicalendar th, .block .minicalendar td {
+    font-size: 110%;
+    padding: 2px;
+}
+
+.block .minicalendar {
+    border: 1px solid #DDDDDD;
+}
+
+.calendartable th, .calendartable td {
+    border-width: 0;
+    text-align: center;
+    vertical-align: top;
+    width: 14%;
+}
+
+.calendartable .today {
+    border: 1px solid #c06;
+}
+
+
+
+/*
+Bugfixes Smallicon & Navicon
+-----------------------*/
+
+.block_settings .block_tree li.item_with_icon > p img,
+.block_navigation .block_tree li.item_with_icon > p img {
+    left:0;
+    position:absolute;
+    top:0px !important;
+    vertical-align:middle;
+}
+
+
+.block_settings .block_tree li.item_with_icon p img.smallicon,
+.block_settings .block_tree li.item_with_icon p img.navicon,
+.block_navigation .block_tree li.item_with_icon p img.smallicon,
+.block_navigation .block_tree li.item_with_icon p img.navicon {
+    margin: 0;
+    padding: 0;
+    vertical-align:middle;
+}
+
+.block_navigation .block_tree .type_activity > .tree_item.branch img {
+    left:0px;
+    bottom: 0px;
+    position:absolute;
+}
+
+/*
+Miscellaneous Block Styles
+--------------------------*/
+
+.block_myprofile .myprofileitem.fullname {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #c06;
+}
+
+.block_myprofile .myprofileitem.city {
+  margin-bottom: 1em;
+}
+
+.block_myprofile img.profilepicture {
+    height: 50px;
+    width: 50px;
+    clear: both;
+    float: right;
+}
+
+.block_myprofile .myprofileitem.email {
+  text-align: right;
+}
+
+
+/*
+Overide for RTL layout
+-----------------------*/
+
+.dir-rtl .block .header .block_action {
+  float:left;
+}
+.dir-rtl .block .header .commands,
+.dir-rtl .block_myprofile .myprofileitem.email {
+  text-align: left;
+}
+
+.dir-rtl .block_myprofile img.profilepicture {
+  float: left;
+}
+
+
+/*
+Block Controls
+-------------------------------*/
+
+.block.block_with_controls div.header div.commands {
+    background: none repeat scroll 0 0 transparent;
+    border-top: 1px solid #CCCCCC;
+    left: 10px;
+    margin: 0 0 3em;
+    padding: 5px 15px 20px;
+    position: relative;
+    top: -30px;
+}
+
+.block.block_with_controls div.header { height: 50px;}
+
+
+.block.block_with_controls div.header div.commands a img {
+    margin-right: 3px;
+}

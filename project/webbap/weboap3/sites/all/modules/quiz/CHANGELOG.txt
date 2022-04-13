@@ -1,0 +1,38 @@
+$Id: CHANGELOG.txt,v 1.2.2.1 2007/06/14 03:11:23 add1sun Exp $
+
+2007-06-13
+----------
+Removed non-working features, to be fixed in future versions
+
+2007-02-02
+----------
+Updated module to Drupal 5
+
+2005-08-31
+----------
+Initial release after Summer of Code:
+
+- Admininistration side completed, including:
+  o Create/Edit permissions
+  o Multichoice question creation
+  o Quiz creation
+  o Interface for adding questions to quizzes
+  o Taxonomy selection
+  o Taxonomy filtering on question bank
+- Implemented several hooks:
+  o hook_access
+  o hook_delete
+  o hook_help
+  o hook_validate
+  o new node hooks for 4.7
+- Formatted queries to support table prefixes
+- Added Doxygen comments throughout
+- Created user documentation in admin/help
+- Fixed numerous bugs
+- Fixed numerous formatting issues
+- Fixed numerous UI issues
+
+
+2005-07-03
+----------
+Original code written by chx

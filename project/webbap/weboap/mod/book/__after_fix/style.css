@@ -1,0 +1,172 @@
+/*content styles*/
+body.content {
+	background-color: transparent;
+	background-image: url('img/grid.png'); 
+	font-family:Times New Roman;
+	line-height:150%; 
+	text-align:justify;
+	text-indent:0pt; 
+	font-size:13pt;
+}
+.chapter {
+	font-family: Times New Roman;
+	text-align:center; 
+	font-size:16pt; 
+	color:#F24F27; 
+	font-style:italic;
+	font-weight:bold; 
+	line-height:200%;
+}
+.subject {
+	font-weight: bold;
+	color: #6382AD;
+	text-indent: 0pt;
+	line-height: 150%;
+	font-family: Tahoma;
+	text-align: justify;
+	font-size:13pt;
+	cursor: hand;
+	cursor: pointer;
+}
+.stext {
+	text-indent: 15pt;
+}
+.problem, .commentary, .example, .fragment_symboll, .subject_symboll  
+ {
+	font-weight: bold;
+	color: #6382AD;
+	text-indent:10pt;
+	line-height: 150%;
+	font-family: Tahoma;
+	text-align: justify;
+	font-size:11pt;
+	cursor: hand;
+	cursor: pointer;
+}
+.subject_symboll {
+	text-align: center;
+}
+.listing {
+	font-weight: bold;
+	color: #6382AD;
+	text-indent:10pt;
+	line-height: 150%;
+	font-family: Tahoma;
+	text-align: justify;
+	font-size:8pt;
+	cursor: hand;
+	cursor: pointer;
+}
+
+
+/*search styles*/
+.search_object_content {
+	display: block;
+	width:95%;
+	padding: 10px;
+	background-color: #FDEFD7;
+	border-width: 1px 2px 2px 1px;
+	border-style: solid;
+	border-color: #674A49;
+	overflow: auto;
+}
+.search_title {
+    border: 1pt dashed #C0C0C0;
+    font-size: 12pt;
+    background : #E6E6DC;
+	color : #000000;
+}
+
+
+/*menu styles*/
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  outline: none;
+  color: #2e4c6b;
+  border-color: #2e4c6b;
+  cursor: hand;
+  cursor: pointer;
+}
+.toc_chapter {
+  text-decoration: none;
+  outline: none;
+  color: #2e4c6b;
+  border-color: #2e4c6b;
+  cursor: hand;
+  cursor: pointer;
+}
+.toc_subject {
+  text-decoration: none;
+  outline: none;
+  color: #2e4c6b;
+  border-color: #2e4c6b;
+}
+
+
+
+
+/*old styles */
+/*
+.problem {
+	font-family: Arial Black;
+	font-size:16pt; 
+	font-style:italic; 
+	line-height:150%; 
+	text-indent:10pt;
+	cursor: hand; 
+}
+
+.example { 
+	font-family: Verda;
+	font-size:16pt; 
+	font-style:oblique; 
+	font-weight:bold; 
+	color:#339933; 
+	line-height:150%; 
+	text-indent:10pt;
+	cursor: hand;
+}
+
+.commentary {
+	font-family: Verdana;
+	font-size:16pt; 
+	font-style:italic; 
+	font-weight:bold;
+	color:#FF0000; 
+	line-height:150%; 
+	text-indent:10pt;
+	cursor: hand; 
+}
+
+.fragment_symboll { 
+	font-family: Wingdings 2;
+	text-align:center;
+	color:#FF5050;
+	cursor: hand;
+	cursor: pointer;
+}
+
+.subject_symboll { 
+	font-family: Wingdings 2;
+	text-align:center;
+	color: #6382ad;
+	cursor: hand;
+	cursor: pointer;
+}
+
+*/
+/*
+pre {
+    border: 1pt dashed #C0C0C0;
+    white-space: pre;
+    font-size: 8pt;
+    overflow: auto;
+    background : #FFFFCC;
+	color : #000000;
+	padding-left:0; 
+	padding-right:0; 
+	padding-top:1em; 
+	padding-bottom:1em
+}*/

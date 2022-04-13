@@ -1,0 +1,153 @@
+<table cellpadding="9" cellspacing="0">
+<input name="block" type="hidden" value="<?php echo intval($_REQUEST['block']); ?>" />
+
+<tr valign="top">
+    <td align="right">block_graph_stats_graphwidth:</td>
+    <td>
+    <input name="block_graph_stats_graphwidth" type="text" size="5" value="<?php 
+    if(isset($CFG->block_graph_stats_graphwidth)) {
+        p($CFG->block_graph_stats_graphwidth);
+    } else {
+        p(180);
+    } ?>" />
+    </td>
+    <td>
+    <?php print_string('graphwidth', 'block_graph_stats') ?>
+    </td>
+</tr>
+
+<tr valign="top">
+    <td align="right">block_graph_stats_graphheight:</td>
+    <td>
+    <input name="block_graph_stats_graphheight" type="text" size="5" value="<?php 
+    if(isset($CFG->block_graph_stats_graphheight)) {
+        p($CFG->block_graph_stats_graphheight);
+    } else {
+        p(150);
+    } ?>" />
+    </td>
+    <td>
+    <?php print_string('graphheight', 'block_graph_stats') ?>
+    </td>
+</tr>
+
+<tr valign="top">
+    <td align="right">block_graph_stats_daysnb:</td>
+    <td>
+    <input name="block_graph_stats_daysnb" type="text" size="5" value="<?php 
+    if(isset($CFG->block_graph_stats_daysnb)) {
+        p($CFG->block_graph_stats_daysnb);
+    } else {
+        p(30);
+    } ?>" />
+    </td>
+    <td>
+    <?php print_string('daysnb', 'block_graph_stats') ?>
+    </td>
+</tr>
+
+<tr valign="top">
+    <td align="right">block_graph_stats_multi:</td>
+    <td>
+	<select name="block_graph_stats_multi">
+		<option value="1" 
+			<?php if($CFG->block_graph_stats_multi == "1"){
+				echo " selected=\"selected\" "; }
+				echo '>';
+			p(get_string('yes', 'block_graph_stats')) ?>
+		</option>
+		<option value="0" 
+			<?php if($CFG->block_graph_stats_multi == "0"){
+				echo " selected=\"selected\" "; }
+				echo '>';
+			p(get_string('no', 'block_graph_stats')) ?>
+		</option>
+    </select>
+    </td>
+    <td>
+    <?php print_string('multi', 'block_graph_stats') ?>
+    </td>
+</tr>
+
+<tr valign="top">
+    <td align="right">block_graph_stats_color1:</td>
+    <td>
+	<select name="block_graph_stats_color1">
+		<option value="blue" 
+			<?php if($CFG->block_graph_stats_color1 == "blue"){
+				echo " selected=\"selected\" "; }
+				echo '>';
+			p(get_string('color_blue', 'block_graph_stats')) ?>
+		</option>
+		<option value="green" 
+			<?php if($CFG->block_graph_stats_color1 == "green"){
+				echo " selected=\"selected\" "; }
+				echo '>';
+			p(get_string('color_green', 'block_graph_stats')) ?>
+		</option>
+		<option value="red" 
+			<?php if($CFG->block_graph_stats_color1 == "red"){
+				echo " selected=\"selected\" "; }
+				echo '>';
+			p(get_string('color_red', 'block_graph_stats')) ?>
+		</option>
+		<option value="black" 
+			<?php if($CFG->block_graph_stats_color1 == "black"){
+				echo " selected=\"selected\" "; }
+				echo '>';
+			p(get_string('color_black', 'block_graph_stats')) ?>
+		</option>
+    </select>
+    </td>
+    <td>
+    <?php print_string('color1', 'block_graph_stats') ?>
+    </td>
+</tr>
+
+<tr valign="top">
+    <td align="right">block_graph_stats_color2:</td>
+    <td>
+	<select name="block_graph_stats_color2">
+		<option value="blue" 
+			<?php if($CFG->block_graph_stats_color2 == "blue"){
+				echo " selected=\"selected\" "; }
+				echo '>';
+			p(get_string('color_blue', 'block_graph_stats')) ?>
+		</option>
+		<option value="green" 
+			<?php if($CFG->block_graph_stats_color2 == "green"){
+				echo " selected=\"selected\" "; }
+				echo '>';
+			p(get_string('color_green', 'block_graph_stats')) ?>
+		</option>
+		<option value="red" 
+			<?php if($CFG->block_graph_stats_color2 == "red"){
+				echo " selected=\"selected\" "; }
+				echo '>';
+			p(get_string('color_red', 'block_graph_stats')) ?>
+		</option>
+		<option value="black" 
+			<?php if($CFG->block_graph_stats_color2 == "black"){
+				echo " selected=\"selected\" "; }
+				echo '>';
+			p(get_string('color_black', 'block_graph_stats')) ?>
+		</option>
+    </select>
+    </td>
+    <td>
+    <?php print_string('color2', 'block_graph_stats') ?>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="3" align="center">
+    <?php print_string('warning', 'block_graph_stats') ?><br />
+	<img src="<?php echo ($CFG->wwwroot) ; ?>/blocks/<?php echo ($this->name()) ; ?>/badgraph.jpg" alt="Bad Graph"/>
+	</td>
+</tr>
+
+<tr>
+    <td colspan="3" align="center">
+    <input type="submit" value="<?php print_string('savechanges') ?>" /></td>
+</tr>
+</table>

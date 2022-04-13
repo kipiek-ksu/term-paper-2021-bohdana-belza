@@ -1,0 +1,192 @@
+<?php 
+global $CFG;
+global $COURSE;
+
+if(isset($this->config)){
+$config = $this->config;
+} else{
+$config = get_config('blocks/textclouds');
+}
+?>
+
+
+<link rel="StyleSheet" href="<?php echo $CFG->wwwroot; ?>/blocks/textclouds/css/config_instance.css"></link>
+
+<input type="hidden" id="currentPath" value="<?php echo $CFG->wwwroot; ?>"/>
+<input type="hidden" name="id" value="<?php echo $COURSE->id; ?>"/>
+
+
+<table cellpadding="0" cellspacing="0" class="page-table">
+    <tr class="menu-panel">
+        <td>
+            <div id="mdata1" class="menu-item" onclick="switchPanel('data1')" onmouseover="this.style.cursor='pointer'"
+                 onmouseout="this.style.cursor='auto'"><?php print_string("resources","block_textclouds") ?>
+                <?php echo helpbutton('tab_resources', 'Text Clouds', 'block_textclouds', true, false, '', true); ?>
+            </div>
+        </td>
+        <td>
+            <div id="mdata2" class="menu-item" onclick="switchPanel('data2')" onmouseover="this.style.cursor='pointer'"
+                 onmouseout="this.style.cursor='auto'"><?php print_string("config","block_textclouds") ?>
+                <?php echo helpbutton('tab_config', 'Text Clouds', 'block_textclouds', true, false, '', true); ?>
+            </div>
+        </td>
+        <td>
+            <div id="mdata3" class="menu-item" onclick="switchPanel('data3')" onmouseover="this.style.cursor='pointer'"
+                 onmouseout="this.style.cursor='auto'"><?php print_string("stopwords","block_textclouds") ?>
+                <?php echo helpbutton('tab_stopwords', 'Text Clouds', 'block_textclouds', true, false, '', true); ?>
+            </div>
+        </td>
+
+    </tr>
+    <tr>
+        <td style="width:700px" id="panel-container" colspan="3">
+            <!-- Panels -->
+            <div id="data1" class="page-panel">
+                <table class="main_table">
+                    <tr>
+                        <td><?php print_string("show","block_textclouds") ?> <select id="select_filter"
+                                                                                     onchange="createTable()">
+                            <option value="all"><?php print_string("all","block_textclouds") ?></option>
+                            <option value="file"><?php print_string("file","block_textclouds") ?></option>
+                            <option value="page"><?php print_string("page","block_textclouds") ?></option>
+                            <option value="text"><?php print_string("text","block_textclouds") ?></option>
+                            <option value="html"><?php print_string("html","block_textclouds") ?></option>
+                            <option value="directory"><?php print_string("directory","block_textclouds") ?></option>
+                        </select> <?php print_string("resourceswith","block_textclouds") ?>
+                            <select id="select_status" onchange="createTable()">
+                                <option value="any"><?php print_string("any","block_textclouds") ?></option>
+                                <option value="Disabled"><?php print_string("disabled","block_textclouds") ?></option>
+                                <option value="Pending"><?php print_string("pending","block_textclouds") ?></option>
+                                <option value="Processed"><?php print_string("processed","block_textclouds") ?></option>
+                                <option value="Pending Removal"><?php print_string("pending_removal","block_textclouds") ?></option>
+                                <option value="Invisible"><?php print_string("invisible","block_textclouds") ?></option>
+                                <option value="Unsupported"><?php print_string("unsupported","block_textclouds") ?></option>
+                            </select> <?php print_string("status","block_textclouds"); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="resource_div">
+                                <table id="resource_table" class="resource_table">
+                                    <thead>
+                                    <tr class="resource_head">
+                                        <th width="30px" class="col_id">Id</th>
+                                        <th width="300px"><?php print_string("name","block_textclouds") ?></th>
+                                        <th width="100px"><?php print_string("type","block_textclouds") ?></th>
+                                        <th width="200px"><?php print_string("status2","block_textclouds") ?></th>
+                                        <th width="150px"><?php print_string("language","block_textclouds") ?></th>
+                                        <th width="75px"><?php print_string("include","block_textclouds") ?></th>
+                                        <th width="75px"><?php print_string("manage","block_textclouds") ?></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="resource_table_data">
+                                    </tbody>
+                                </table>
+                                <div id="nothingtoshow"><?php print_string("nothingtoshow","block_textclouds"); ?></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="data2" class="page-panel">
+                <table cellpadding="9" cellspacing="0" class="blockconfigtable">
+
+                    <tr valign="top">
+                        <td align="right"><?php print_string("numbertags","block_textclouds"); ?></td>
+                        <td><input type="text" name="numtags" size="2" value="<?php echo isset($this->config->numtags)?p($this->config->numtags):''; ?>"/></td>
+                    </tr>
+
+                    <tr valign="top">
+                        <td align="right"><?php print_string("minimumsize","block_textclouds") ?></td>
+                        <td><input type="text" name="minsize" size="2" value="<?php echo isset($this->config->minsize)?p($this->config->minsize):''; ?>"/></td>
+                    </tr>
+
+                    <tr valign="top">
+                        <td align="right"><?php print_string("usecolorsystem","block_textclouds") ?></td>
+                        <td>
+                        <?php
+                        if(isset($this->config->usecolors))
+						print_checkbox("usecolors",true,$this->config->usecolors);
+						else print_checkbox("usecolors",true,false);
+						?>
+                   		</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                        	<input type="submit" value="<?php print_string('savechanges') ?>"/>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div id="data3" class="page-panel">
+                <table cellpadding="0" cellspacing="0" class="stopwords_panel">
+                    <tr>
+                        <td>
+                            <?php print_string("stop_admit","block_textclouds"); ?>
+                        </td>
+                        <td></td>
+                        <td>
+                            <?php print_string("stop_block","block_textclouds"); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <div class="words_list">
+                                <table class="words_table">
+                                    <thead class="resource_head">
+                                    <tr>
+                                        <th style="padding-left:10px"><?php print_string("word_word","block_textclouds"); ?></th>
+                                        <th width="100"><?php print_string("word_remove","block_textclouds"); ?></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="word_admit_body"></tbody>
+                                </table>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td align="center">
+                            <div class="words_list">
+                                <table class="words_table">
+                                    <thead class="resource_head">
+                                    <tr>
+                                        <th style="padding-left:10px"><?php print_string("word_word","block_textclouds"); ?></th>
+                                        <th width="100"><?php print_string("word_remove","block_textclouds"); ?></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="word_block_body"></tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:10px;">
+                            <?php print_string("word_new","block_textclouds"); ?>
+                            <input type="text" id="newword_admit"/>
+                            <input type="button" value="<?php print_string('word_add','block_textclouds'); ?>"
+                                   onclick="addword('admit')"/>
+                        </td>
+                        <td></td>
+                        <td style="padding-top:10px;">
+                            <?php print_string("word_new","block_textclouds"); ?>
+                            <input type="text" id="newword_block"/>
+                            <input type="button" value="<?php print_string('word_add','block_textclouds'); ?>"
+                                   onclick="addword('block')"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="padding-top:3px">
+                            <b><?php print_string("word_alert","block_textclouds");?></b></td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+
+</table>
+
+<script type="text/javascript"
+        src="<?php echo $CFG->wwwroot; ?>/blocks/textclouds/js/config_instance.js"></script>

@@ -1,0 +1,1708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<!-- question: 188  -->
+  <question type="multichoice">
+    <name><text>01</text>
+</name>
+    <questiontext format="html">
+<text>&lt;span onclick=&quot;MyToogle( 'subject_121' )&quot; id=&quot;subject_121&quot;&gt;Концепція використання яких синтаксичних структур полягає в принципі ділення складних задач на більш прості?&lt;br /&gt;&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+підпрограм
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+массивів
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+динамічних структуд даних
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+операторів
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 189  -->
+  <question type="multichoice">
+    <name><text>02</text>
+</name>
+    <questiontext format="html">
+<text>&lt;span onclick=&quot;MyToogle( 'subject_121' )&quot; id=&quot;subject_121&quot;&gt;Опис процедури такий же, як і опис програми, окрім...&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+заголовка
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+тіла
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+змінних
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+міток
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 191  -->
+  <question type="multichoice">
+    <name><text>03</text>
+</name>
+    <questiontext format="html">
+<text>&lt;pre&gt;&lt;font size=&quot;3&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;procedure Power(X: real; n: Integer; var u, v: Real);&lt;/font&gt;&lt;/pre&gt; 
+  &lt;p&gt;&lt;font size=&quot;4&quot;&gt;Що в цьому прикладі є &lt;span id=&quot;subject_122&quot; onclick=&quot;MyToogle( 'subject_122' )&quot;&gt;параметрами-змінними?&lt;/span&gt;&lt;/font&gt; &lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+u
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+v
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+x
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+n
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 193  -->
+  <question type="multichoice">
+    <name><text>04</text>
+</name>
+    <questiontext format="html">
+<text>&lt;pre&gt;&lt;font size=&quot;3&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;procedure Power(X: real; n: Integer; var u, v: Real);&lt;/font&gt;
+&lt;p&gt;&lt;font size=&quot;4&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;Що в цьому прикладі є &lt;span id=&quot;subject_122&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'subject_122' )&quot;&gt;параметри-значення&lt;/span&gt;&lt;span id=&quot;subject_122&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'subject_122' )&quot;&gt;?&lt;/span&gt; &lt;/font&gt;
+&lt;/p&gt;&lt;/pre&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+x
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+n
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+u
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+v
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 195  -->
+  <question type="multichoice">
+    <name><text>05</text>
+</name>
+    <questiontext format="html">
+<text>&lt;pre&gt;&lt;font size=&quot;3&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;procedure Integral( a, b, epsilon: Real; var S: Real);&lt;/font&gt;
+&lt;font size=&quot;3&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;var x,y: Bool; z: Integer;
+begin
+  ...
+end;&lt;/font&gt;
+&lt;pre&gt;&lt;font size=&quot;4&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;Які змінні для цієї процедури є локальними?&amp;nbsp;&lt;/font&gt;&lt;/pre&gt;&lt;/pre&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+всі
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+a, b , epsilon, x, y, z
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+a, b , epsilon, S
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+x, y, z
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 196  -->
+  <question type="multichoice">
+    <name><text>06</text>
+</name>
+    <questiontext format="html">
+<text>&lt;span onclick=&quot;MyToogle( 'subject_122' )&quot; id=&quot;subject_122&quot;&gt;Який розподіл в процедурі дозволяє економити пам’ять, що адресується?&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+динамічний
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+логічний
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+глобальний
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+місцевий
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 197  -->
+  <question type="multichoice">
+    <name><text>07</text>
+</name>
+    <questiontext format="html">
+<text>&lt;span onclick=&quot;MyToogle( 'subject_122' )&quot; id=&quot;subject_122&quot;&gt;Об’єкти, які описані в основній програмі, доступні для використання в процедурі. Як вони називаються?&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+глобальними
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+локальними
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+місцевими
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+логічними
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 199  -->
+  <question type="multichoice">
+    <name><text>09</text>
+</name>
+    <questiontext format="html">
+<text>&lt;span onclick=&quot;MyToogle( 'subject_123' )&quot; id=&quot;subject_123&quot;&gt;&lt;span onclick=&quot;MyToogle( 'example_465' )&quot; id=&quot;example_465&quot;&gt;Фактичними параметрами-значеннями можуть бути...&lt;/span&gt;&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+вирази
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+дані відповідних типів
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+значення типів
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+значення виразів
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 200  -->
+  <question type="multichoice">
+    <name><text>10</text>
+</name>
+    <questiontext format="html">
+<text>&lt;span onclick=&quot;MyToogle( 'subject_124' )&quot; id=&quot;subject_124&quot;&gt;Підпрограма, яка визначає одне - єдине скалярне або посилальне значення, що використовується при обчисленні виразу є&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+функція
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+процедура
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+оператор
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+цикл
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 201  -->
+  <question type="multichoice">
+    <name><text>11</text>
+</name>
+    <questiontext format="html">
+<text>&lt;div style=&quot;direction: ltr;&quot;&gt; 
+    &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;Function GCD (x, y : Integer) : Integer ;&lt;br /&gt;&lt;/font&gt;&lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div style=&quot;direction: ltr;&quot;&gt; 
+    &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;Begin&lt;/font&gt;&lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div style=&quot;direction: ltr;&quot;&gt; 
+    &lt;div&gt; 
+      &lt;div style=&quot;direction: ltr;&quot;&gt; 
+        &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; While x &amp;lt;&amp;gt; y do&lt;/font&gt;&lt;/div&gt; 
+      &lt;/div&gt; 
+      &lt;div&gt; 
+        &lt;div style=&quot;direction: ltr;&quot;&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; If x &amp;lt; y&lt;/font&gt;&lt;/div&gt; 
+      &lt;/div&gt; 
+    &lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div style=&quot;direction: ltr;&quot;&gt; 
+    &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; then y := y - x&lt;/font&gt;&lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div&gt; 
+    &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; else x := x - y ;&lt;/font&gt;&lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div&gt; 
+    &lt;div style=&quot;direction: ltr;&quot;&gt; 
+      &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; GCD := x&lt;/font&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&lt;/font&gt;&lt;/div&gt; 
+      &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;End;&lt;/font&gt;&lt;font face=&quot;arial,helvetica,sans-serif&quot; size=&quot;4&quot;&gt;&lt;span id=&quot;subject_125&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'subject_125' )&quot;&gt;&lt;span id=&quot;example_466&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'example_466' )&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt; 
+    &lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;div&gt; 
+    &lt;div&gt; &lt;/div&gt; 
+    &lt;p&gt;&lt;font face=&quot;arial,helvetica,sans-serif&quot; size=&quot;4&quot;&gt;&lt;span onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'subject_125' )&quot; id=&quot;subject_125&quot;&gt;&lt;span onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'example_466' )&quot; id=&quot;example_466&quot;&gt;Що &lt;/span&gt;&lt;/span&gt;&lt;span onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'subject_125' )&quot; id=&quot;subject_125&quot;&gt;&lt;span onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'example_466' )&quot; id=&quot;example_466&quot;&gt;обчислює&lt;/span&gt;&lt;/span&gt; &lt;span onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'subject_125' )&quot; id=&quot;subject_125&quot;&gt;&lt;span onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'example_466' )&quot; id=&quot;example_466&quot;&gt;функція GCD&lt;/span&gt;&lt;/span&gt;?&lt;/font&gt;&lt;/p&gt; 
+  &lt;/div&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+знаходить найбільше число, на яке діляться числа х та у
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+найбільший спільний дільник двох натуральних чисел за алгоритмом Евкліда
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+знаходить найменше число, яке ділиться на числа х та у
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+знаходить різницю чисел х та у, або у та х
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 202  -->
+  <question type="multichoice">
+    <name><text>12</text>
+</name>
+    <questiontext format="html">
+<text>&lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;Function IntPow(x: Real; N: Integer) : Real;&lt;/font&gt;&lt;/div&gt; 
+  &lt;div&gt; 
+    &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;Var і:Integer;&lt;/font&gt;&lt;/div&gt; 
+    &lt;div&gt; 
+      &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; Begin&lt;/font&gt;&lt;/div&gt; 
+      &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; IntPow := 1;&lt;/font&gt;&lt;/div&gt; 
+      &lt;div&gt; 
+        &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; For i:=1 to Abs(N) do&lt;/font&gt;&lt;/div&gt; 
+        &lt;div&gt; 
+          &lt;div&gt; 
+            &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; IntPow := IntPow * x;&lt;/font&gt;&lt;/div&gt; 
+            &lt;div&gt; 
+              &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&lt;/font&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; If N &amp;lt; 0 then IntPow := 1/IntPow&lt;/font&gt;&lt;/div&gt; 
+              &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&lt;/font&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;&amp;nbsp; End;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt; 
+            &lt;/div&gt; 
+          &lt;/div&gt; 
+        &lt;/div&gt; 
+      &lt;/div&gt; 
+    &lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;pre&gt;&lt;pre&gt;&lt;p&gt;&lt;font size=&quot;4&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;&lt;span id=&quot;subject_125&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'subject_125' )&quot;&gt;&lt;span id=&quot;example_466&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'example_466' )&quot;&gt;Що &lt;/span&gt;&lt;/span&gt;&lt;span id=&quot;subject_125&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'subject_125' )&quot;&gt;&lt;span id=&quot;example_466&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'example_466' )&quot;&gt;обчислює&lt;/span&gt;&lt;/span&gt; &lt;span id=&quot;subject_125&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'subject_125' )&quot;&gt;&lt;span id=&quot;example_466&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'example_466' )&quot;&gt;функція &lt;/span&gt;&lt;/span&gt;&lt;span id=&quot;subject_125&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'subject_125' )&quot;&gt;&lt;span id=&quot;example_467&quot; onclick=&quot;if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}if(window.top &amp;amp;&amp;amp; window.top.Xinha){return false}MyToogle( 'example_467' )&quot;&gt;IntPow&lt;/span&gt;&lt;/span&gt;?&lt;/font&gt;&lt;/p&gt;&lt;/pre&gt;&lt;/pre&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+підносить дійсне число x до цілого степеня N
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+Y = x^N (де х та N - дійсні числа)
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+Y = x*n
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+Y = x/n
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 203  -->
+  <question type="multichoice">
+    <name><text>13</text>
+</name>
+    <questiontext format="html">
+<text>Що з цього може мати підпрограма?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+label
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+const
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+type
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+program
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 204  -->
+  <question type="multichoice">
+    <name><text>14</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;На відміну від констант та змінних, оголошення підпрограми може бути відірване від її опису. В цьому випадку після оголошення треба вказати ключове слово...&lt;br /&gt;&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+forward
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+backward
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+ward
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+forword
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 205  -->
+  <question type="multichoice">
+    <name><text>15</text>
+</name>
+    <questiontext format="html">
+<text>Якщо в підпрограмі описані інші процедури і функції, то на них кажуть...&lt;br /&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+вкладені
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+внутрішні
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+зовнішні
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+звичайні
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 206  -->
+  <question type="multichoice">
+    <name><text>16</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Після того як викликана підпрограма закінчить свою роботу, управління передається...&amp;nbsp;&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+наступному оператору після того, який викликав підпрограму
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+програма починається заново
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+наступній підпрограмі
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+управління не передається
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 207  -->
+  <question type="multichoice">
+    <name><text>17</text>
+</name>
+    <questiontext format="html">
+<text>Як зміниться значення аргументу підпрограми після закінчення її роботи, при умові, що аргумент передавався за значенням?&lt;br /&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+залишиться незмінним
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+зміниться
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+буде знищений
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+перейде в іншу підпрограму
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 208  -->
+  <question type="multichoice">
+    <name><text>18</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Які з дій будуть виконані при виклику&lt;/font&gt;&lt;/p&gt; 
+  &lt;pre&gt;&lt;font size=&quot;3&quot; face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot;&gt;func3(1+a/2,a,true)&amp;nbsp;&lt;/font&gt;&lt;/pre&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="0">
+        <text>
+створити тимчасові змінні func3.x, func3.k, func3.flag
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+знайти значення виразу 1+а/2 і записати його в змінну func3.x
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+записати в змінну func3.k значення зміної а
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+записати в змінну func3.flag значення константи true
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+будуть виконанні всі перелічені дії
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 209  -->
+  <question type="multichoice">
+    <name><text>19</text>
+</name>
+    <questiontext format="html">
+<text>&lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;var S:string;&lt;/font&gt;&lt;/div&gt; 
+  &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;...&lt;/font&gt;&lt;/div&gt; 
+  &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt; S:= 'Hello World!';&lt;br /&gt;&lt;/font&gt;&lt;/div&gt; 
+  &lt;div&gt;&lt;font face=&quot;Trebuchet MS,Verdana,Arial,Helvetica,sans-serif&quot; size=&quot;3&quot;&gt;... &lt;/font&gt;&lt;/div&gt; 
+  &lt;p&gt;&lt;font size=&quot;4&quot;&gt;Що міститься в S[0]?&lt;/font&gt;&lt;br /&gt;&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+11
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+'H'
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+невизначено
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+помилка доступу
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 210  -->
+  <question type="multichoice">
+    <name><text>20</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Яким з цих способів в розділі type створюється процедурний тип даних?&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+&lt;ім'я_типа&gt; = function[(&lt;список_параметрів&gt;)]:&lt;тип_результату&gt;;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+&lt;ім'я_типа&gt; = procedure[(&lt;список_параметрів&gt;)];
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+&lt;ім'я_типа&gt; = procedure[];
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+&lt;ім'я_типа&gt; = function[]:&lt;тип_результату&gt;;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 211  -->
+  <question type="multichoice">
+    <name><text>21</text>
+</name>
+    <questiontext format="html">
+<text>З яких частин складається процедура?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+заголовок
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+розділ описів процедур та функцій
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+тіло
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+розділ рекурсивного виклику
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 214  -->
+  <question type="multichoice">
+    <name><text>24</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Розділ описів процедури містить опис об'єктів, які будуть використовуватись лише даною процедурою. Такі об'єкти називаються&lt;/font&gt;&lt;br /&gt;&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+локальними
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+глобальними
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+місцевими
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+константними
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 215  -->
+  <question type="multichoice">
+    <name><text>25</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&amp;nbsp;Що з наведеного є видом параметрів?&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+значення
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+змінна
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+нетипізована змінна
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+нетипізоване значення
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 212  -->
+  <question type="shortanswer">
+    <name><text>22</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;&amp;nbsp;Загаловок процедури починається службовим словом...&lt;/font&gt;&lt;br /&gt;&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <usecase>0</usecase>
+     <answer fraction="100">
+      <text>
+procedure
+      </text>
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 213  -->
+  <question type="shortanswer">
+    <name><text>23</text>
+</name>
+    <questiontext format="html">
+<text>Заголовок функції починається службовим словом...</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <usecase>0</usecase>
+     <answer fraction="100">
+      <text>
+function
+      </text>
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 198  -->
+  <question type="truefalse">
+    <name><text>08</text>
+</name>
+    <questiontext format="html">
+<text>&lt;span onclick=&quot;MyToogle( 'subject_122' )&quot; id=&quot;subject_122&quot;&gt;Локальний і глобальний об’єкти можуть мати одне й те ж ім’я.&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <answer fraction="100">
+      <text>true</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>false</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 830  -->
+  <question type="truefalse">
+    <name><text>26</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Чи є функція різновидом підпрограми?&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <answer fraction="100">
+      <text>true</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>false</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+</quiz>

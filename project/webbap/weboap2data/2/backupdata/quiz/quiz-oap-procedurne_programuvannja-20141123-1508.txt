@@ -1,0 +1,223 @@
+// question: 0  name: switch category to Процедурне програмування 
+$CATEGORY: Процедурне програмування
+
+
+// question: 188  name: 01 
+::01::[html]<span onclick\="MyToogle( 'subject_121' )" id\="subject_121">Концепція використання яких синтаксичних структур полягає в принципі ділення складних задач на більш прості?<br /></span>{
+	=підпрограм
+	~%-100%массивів
+	~%-100%динамічних структуд даних
+	~%-100%операторів
+}
+
+
+// question: 189  name: 02 
+::02::[html]<span onclick\="MyToogle( 'subject_121' )" id\="subject_121">Опис процедури такий же, як і опис програми, окрім...</span>{
+	=заголовка
+	~тіла
+	~змінних
+	~міток
+}
+
+
+// question: 191  name: 03 
+::03::[html]<pre><font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">procedure Power(X\: real; n\: Integer; var u, v\: Real);</font></pre> \n  <p><font size\="4">Що в цьому прикладі є <span id\="subject_122" onclick\="MyToogle( 'subject_122' )">параметрами-змінними?</span></font> </p>{
+	~%50%u
+	~%50%v
+	~%-100%x
+	~%-100%n
+}
+
+
+// question: 193  name: 04 
+::04::[html]<pre><font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">procedure Power(X\: real; n\: Integer; var u, v\: Real);</font>\n<p><font size\="4" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">Що в цьому прикладі є <span id\="subject_122" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'subject_122' )">параметри-значення</span><span id\="subject_122" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'subject_122' )">?</span> </font>\n</p></pre>{
+	~%50%x
+	~%50%n
+	~%-100%u
+	~%-100%v
+}
+
+
+// question: 195  name: 05 
+::05::[html]<pre><font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">procedure Integral( a, b, epsilon\: Real; var S\: Real);</font>\n<font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">var x,y\: Bool; z\: Integer;\nbegin\n  ...\nend;</font>\n<pre><font size\="4" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">Які змінні для цієї процедури є локальними?&nbsp;</font></pre></pre>{
+	~всі
+	~a, b , epsilon, x, y, z
+	~a, b , epsilon, S
+	=x, y, z
+}
+
+
+// question: 196  name: 06 
+::06::[html]<span onclick\="MyToogle( 'subject_122' )" id\="subject_122">Який розподіл в процедурі дозволяє економити пам’ять, що адресується?</span>{
+	=динамічний
+	~логічний
+	~глобальний
+	~місцевий
+}
+
+
+// question: 197  name: 07 
+::07::[html]<span onclick\="MyToogle( 'subject_122' )" id\="subject_122">Об’єкти, які описані в основній програмі, доступні для використання в процедурі. Як вони називаються?</span>{
+	=глобальними
+	~локальними
+	~місцевими
+	~логічними
+}
+
+
+// question: 199  name: 09 
+::09::[html]<span onclick\="MyToogle( 'subject_123' )" id\="subject_123"><span onclick\="MyToogle( 'example_465' )" id\="example_465">Фактичними параметрами-значеннями можуть бути...</span></span>{
+	~%50%вирази
+	~%50%дані відповідних типів
+	~%-100%значення типів
+	~%-100%значення виразів
+}
+
+
+// question: 200  name: 10 
+::10::[html]<span onclick\="MyToogle( 'subject_124' )" id\="subject_124">Підпрограма, яка визначає одне - єдине скалярне або посилальне значення, що використовується при обчисленні виразу є</span>{
+	=функція
+	~процедура
+	~оператор
+	~цикл
+}
+
+
+// question: 201  name: 11 
+::11::[html]<div style\="direction\: ltr;"> \n    <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">Function GCD (x, y \: Integer) \: Integer ;<br /></font></div> \n  </div> \n  <div style\="direction\: ltr;"> \n    <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;Begin</font></div> \n  </div> \n  <div style\="direction\: ltr;"> \n    <div> \n      <div style\="direction\: ltr;"> \n        <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp; While x &lt;&gt; y do</font></div> \n      </div> \n      <div> \n        <div style\="direction\: ltr;"><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If x &lt; y</font></div> \n      </div> \n    </div> \n  </div> \n  <div style\="direction\: ltr;"> \n    <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; then y \:\= y - x</font></div> \n  </div> \n  <div> \n    <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else x \:\= x - y ;</font></div> \n  </div> \n  <div> \n    <div style\="direction\: ltr;"> \n      <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp;&nbsp; GCD \:\= x</font><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3"></font></div> \n      <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;End;</font><font face\="arial,helvetica,sans-serif" size\="4"><span id\="subject_125" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'subject_125' )"><span id\="example_466" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'example_466' )"></span></span></font></div> \n    </div> \n  </div> \n  <div> \n    <div> </div> \n    <p><font face\="arial,helvetica,sans-serif" size\="4"><span onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'subject_125' )" id\="subject_125"><span onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'example_466' )" id\="example_466">Що </span></span><span onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'subject_125' )" id\="subject_125"><span onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'example_466' )" id\="example_466">обчислює</span></span> <span onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'subject_125' )" id\="subject_125"><span onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'example_466' )" id\="example_466">функція GCD</span></span>?</font></p> \n  </div>{
+	~%50%знаходить найбільше число, на яке діляться числа х та у
+	~%50%найбільший спільний дільник двох натуральних чисел за алгоритмом Евкліда
+	~%-100%знаходить найменше число, яке ділиться на числа х та у
+	~%-100%знаходить різницю чисел х та у, або у та х
+}
+
+
+// question: 202  name: 12 
+::12::[html]<div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">Function IntPow(x\: Real; N\: Integer) \: Real;</font></div> \n  <div> \n    <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;Var і\:Integer;</font></div> \n    <div> \n      <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp; Begin</font></div> \n      <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp;&nbsp; IntPow \:\= 1;</font></div> \n      <div> \n        <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp;&nbsp; For i\:\=1 to Abs(N) do</font></div> \n        <div> \n          <div> \n            <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp;&nbsp; IntPow \:\= IntPow * x;</font></div> \n            <div> \n              <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3"></font><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp;&nbsp; If N &lt; 0 then IntPow \:\= 1/IntPow</font></div> \n              <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3"></font><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3"><font size\="3">&nbsp;&nbsp; End;</font></font></div> \n            </div> \n          </div> \n        </div> \n      </div> \n    </div> \n  </div> \n  <pre><pre><p><font size\="4" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif"><span id\="subject_125" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'subject_125' )"><span id\="example_466" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'example_466' )">Що </span></span><span id\="subject_125" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'subject_125' )"><span id\="example_466" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'example_466' )">обчислює</span></span> <span id\="subject_125" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'subject_125' )"><span id\="example_466" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'example_466' )">функція </span></span><span id\="subject_125" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'subject_125' )"><span id\="example_467" onclick\="if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}if(window.top &amp;&amp; window.top.Xinha)\{return false\}MyToogle( 'example_467' )">IntPow</span></span>?</font></p></pre></pre>{
+	=підносить дійсне число x до цілого степеня N
+	~%-100%Y \= x^N (де х та N - дійсні числа)
+	~%-100%Y \= x*n
+	~%-100%Y \= x/n
+}
+
+
+// question: 203  name: 13 
+::13::[html]Що з цього може мати підпрограма?{
+	~%33.333%label
+	~%33.333%const
+	~%33.333%type
+	~%-100%program
+}
+
+
+// question: 204  name: 14 
+::14::[html]<p>На відміну від констант та змінних, оголошення підпрограми може бути відірване від її опису. В цьому випадку після оголошення треба вказати ключове слово...<br /></p>{
+	=forward
+	~backward
+	~ward
+	~forword
+}
+
+
+// question: 205  name: 15 
+::15::[html]Якщо в підпрограмі описані інші процедури і функції, то на них кажуть...<br />{
+	=вкладені
+	~внутрішні
+	~зовнішні
+	~звичайні
+}
+
+
+// question: 206  name: 16 
+::16::[html]<p>Після того як викликана підпрограма закінчить свою роботу, управління передається...&nbsp;</p>{
+	=наступному оператору після того, який викликав підпрограму
+	~програма починається заново
+	~наступній підпрограмі
+	~управління не передається
+}
+
+
+// question: 207  name: 17 
+::17::[html]Як зміниться значення аргументу підпрограми після закінчення її роботи, при умові, що аргумент передавався за значенням?<br />{
+	=залишиться незмінним
+	~зміниться
+	~буде знищений
+	~перейде в іншу підпрограму
+}
+
+
+// question: 208  name: 18 
+::18::[html]<p><font size\="4">Які з дій будуть виконані при виклику</font></p> \n  <pre><font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">func3(1+a/2,a,true)&nbsp;</font></pre>{
+	~створити тимчасові змінні func3.x, func3.k, func3.flag
+	~знайти значення виразу 1+а/2 і записати його в змінну func3.x
+	~записати в змінну func3.k значення зміної а
+	~записати в змінну func3.flag значення константи true
+	=будуть виконанні всі перелічені дії
+}
+
+
+// question: 209  name: 19 
+::19::[html]<div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">var S\:string;</font></div> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">...</font></div> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3"> S\:\= 'Hello World!';<br /></font></div> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">... </font></div> \n  <p><font size\="4">Що міститься в S[0]?</font><br /></p>{
+	=11
+	~'H'
+	~невизначено
+	~помилка доступу
+}
+
+
+// question: 210  name: 20 
+::20::[html]<p>Яким з цих способів в розділі type створюється процедурний тип даних?</p>{
+	~%50%<ім'я_типа> \= function[(<список_параметрів>)]\:<тип_результату>;
+	~%50%<ім'я_типа> \= procedure[(<список_параметрів>)];
+	~%-100%<ім'я_типа> \= procedure[];
+	~%-100%<ім'я_типа> \= function[]\:<тип_результату>;
+}
+
+
+// question: 211  name: 21 
+::21::[html]З яких частин складається процедура?{
+	~%33.333%заголовок
+	~%33.333%розділ описів процедур та функцій
+	~%33.333%тіло
+	~%-100%розділ рекурсивного виклику
+}
+
+
+// question: 214  name: 24 
+::24::[html]<p><font size\="4">Розділ описів процедури містить опис об'єктів, які будуть використовуватись лише даною процедурою. Такі об'єкти називаються</font><br /></p>{
+	=локальними
+	~глобальними
+	~місцевими
+	~константними
+}
+
+
+// question: 215  name: 25 
+::25::[html]<p>&nbsp;Що з наведеного є видом параметрів?</p>{
+	~%33.333%значення
+	~%33.333%змінна
+	~%33.333%нетипізована змінна
+	~%-100%нетипізоване значення
+}
+
+
+// question: 212  name: 22 
+::22::[html]<p><font size\="4">&nbsp;Загаловок процедури починається службовим словом...</font><br /></p>{
+	=%100%procedure#
+}
+
+
+// question: 213  name: 23 
+::23::[html]Заголовок функції починається службовим словом...{
+	=%100%function#
+}
+
+
+// question: 198  name: 08 
+::08::[html]<span onclick\="MyToogle( 'subject_122' )" id\="subject_122">Локальний і глобальний об’єкти можуть мати одне й те ж ім’я.</span>{TRUE}
+
+
+// question: 830  name: 26 
+::26::[html]<p>Чи є функція різновидом підпрограми?</p>{TRUE}
+
+

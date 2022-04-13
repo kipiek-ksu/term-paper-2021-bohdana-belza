@@ -1,0 +1,1 @@
+SESSION|O:6:"object":8:{s:12:"session_test";s:10:"K8UJrWHoHP";s:18:"cal_course_referer";i:0;s:15:"cal_show_global";b:1;s:15:"cal_show_groups";b:1;s:15:"cal_show_course";b:0;s:13:"cal_show_user";b:1;s:17:"cal_courses_shown";a:0:{}s:15:"cal_users_shown";b:0;}USER|O:6:"object":2:{s:2:"id";i:0;s:10:"preference";a:1:{s:17:"calendar_savedflt";s:2:"13";}}

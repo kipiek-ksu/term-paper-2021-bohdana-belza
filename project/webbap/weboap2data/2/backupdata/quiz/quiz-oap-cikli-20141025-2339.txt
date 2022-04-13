@@ -1,0 +1,259 @@
+// question: 282  name: 08 
+::08::[html]Поставте у відповідність дії виконання оператора &quot;for i\:\=a to b do &lt;оператор&gt;&quot; з їх порядковими номерами{
+	=змінній i присвоюється значення a -> 1
+	=якщо i менше, або дорівнює b, то виконується <оператор> -> 2
+	=змінній i присвоюється наступне значення -> 3
+}
+
+
+// question: 827  name: Ц3 
+::Ц3::[html]В якому випадку, при k\=3, тіло циклу буде виконуватись\:{
+	=While k<\=5 do\n       begin\n         S\:\=S+k;\n         k\:\=k+1;\n       end; -> скінчене число раз
+	=While k>\=5 do\n       begin\n         S\:\=S+k;\n         k\:\=k+1;\n       end; -> жодного разу
+	=While k>\=3 do\n       begin\n         S\:\=S+k;\n         k\:\=k+1;\n       end; -> наступить "зациклення"
+}
+
+
+// question: 828  name: Ц4 
+::Ц4::[html]В якому випадку, при К\=1, тіло циклу буде виконуватись\:{
+	=  repeat\n       S\:\=S+k;\n       k\:\=k+1;\n  until k<\=5; -> скінчене число раз
+	=  repeat\n       S\:\=S+k;\n       k\:\=k+1;\n  until k<\=1; -> наступить "зациклення"
+	=  repeat\n       S\:\=S+k;\n       k\:\=k+1;\n  until k>\=3;\n       end; -> скінчене число раз
+}
+
+
+// question: 829  name: Ц4 
+::Ц4::[html]В якому випадку, при К\=1, тіло циклу буде виконуватись\:{
+	=  repeat\n       S\:\=S+k;\n       k\:\=k+1;\n  until k<\=5; -> скінчене число раз
+	=  repeat\n       S\:\=S+k;\n       k\:\=k+1;\n  until k<\=1; -> наступить "зациклення"
+	=  repeat\n       S\:\=S+k;\n       k\:\=k+1;\n  until k>\=3;\n       end; -> скінчене число раз
+	= -> Наступить зациклення
+}
+
+
+// question: 275  name: 01 
+::01::[html]У яких операторах циклу кількість разів виконання тіла може бути визначена динамічно під час виконання програми?{
+	~%50%while-do
+	~%50%repeat-until
+	~%-100%for-to
+	~%-100%for-downto
+}
+
+
+// question: 276  name: 02 
+::02::[html]Які оператори циклу можна використовувати тільки якщо кількість повторень тіла циклу відома заздалегідь?{
+	~%-100%while-do
+	~%-100%repeat-until
+	~%50%for-to
+	~%50%for-downto
+}
+
+
+// question: 277  name: 03 
+::03::[html]Скільки разів виконається тіло циклу &quot;for i\:\=a to b do &lt;оператор&gt;&quot;, якщо a&gt;b?{
+	~|b-a|+1
+	~(a+b)/2
+	~1
+	=0
+}
+
+
+// question: 278  name: 04 
+::04::[html]Скільки разів виконається тіло циклу &quot;for i\:\=a to b do &lt;оператор&gt;&quot;, якщо a&lt;b?{
+	=b-a+1
+	~(a+b)/2
+	~b
+	~0
+}
+
+
+// question: 279  name: 05 
+::05::[html]Скільки разів виконається тіло циклу &quot;for i\:\=a downto b do &lt;оператор&gt;&quot;, якщо a\=b?{
+	=1
+	~0
+	~a
+	~2*a
+}
+
+
+// question: 283  name: 09 
+::09::[html]Якою командою можна перервати виконання циклу?{
+	=break
+	~continue
+	~stop
+	~pause
+}
+
+
+// question: 142  name: Виконання оператора з передумовою 2 
+::Виконання оператора з передумовою 2::[html]<p><font size\="4">Чому буде дорівнювати a після виконання циклу з передумовою?</font></p> \n  <blockquote dir\="ltr" style\="margin-right\: 0px;"> \n    <pre><font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">a\:\=0;\nwhile a&gt;5 do\n&nbsp; a\:\=a-2;</font></pre> \n  </blockquote>{
+	=0
+	~5
+	~4
+	~2
+}
+
+
+// question: 150  name: Виконання оператора з постумовою 2 
+::Виконання оператора з постумовою 2::[html]<p><font size\="4">Чому буде дорівнювати a після виконання поданого нижче циклу з постумовою?</font></p> \n  <blockquote><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">a\:\=5;<br />repeat<br />&nbsp; a\:\=a+1;<br />until a&gt;0</font> </blockquote>{
+	~5
+	=6
+	~1
+	~0
+}
+
+
+// question: 152  name: Виконання оператора з постумовою один раз 
+::Виконання оператора з постумовою один раз::[html]<p><font size\="4">Які оператори можуть бути в тілі представленого нижче циклу, щоб тіло циклу виконалося лише один раз?</font></p> \n  <blockquote>\n    <pre><font size\="3" face\="courier new,courier,monospace"><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">i\:\=1;\nrepeat\n...\nuntil i&gt;1;</font></font><strong><font size\="2" face\="courier new,courier,monospace">\n</font></strong></pre>\n  </blockquote>{
+	~%-100%i\:\=i-1
+	~%50%i\:\=i+1
+	~%50%i\:\=i+2
+	~%-100%i\:\=-2
+}
+
+
+// question: 153  name: Зациклювання 
+::Зациклювання::[html]<p><font size\="4">Що повинно бути в тілі нижчеподаного циклу, щоб відбулося зациклювання?</font></p> \n  <blockquote> \n    <pre><font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">i\:\=1;\nrepeat\n&nbsp; ...\nuntil i&gt;1;</font></pre> \n  </blockquote>{
+	~%-100%i\:\=i+1;
+	~%-100%i\:\=2;
+	~%50%i\:\=i-1;
+	~%50%i\:\=0;
+}
+
+
+// question: 144  name: Змінні 
+::Змінні::[html]Якого типу даних змінних є&nbsp;умова?&nbsp;{
+	~дійсні
+	~цілі
+	=логічні
+	~рядкові
+}
+
+
+// question: 190  name: Кількість ітерацій 
+::Кількість ітерацій::[html]<p><font size\="4">Скільки ітерацій виконається в циклі?</font></p> \n  <blockquote style\="margin-right\: 0px;" dir\="ltr"> \n    <pre><font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">for i\:\=5 to 15 do\n&nbsp;writeln(i);</font></pre> \n  </blockquote>{
+	=11
+	~10
+	~9
+	~15
+}
+
+
+// question: 192  name: Кількість ітерацій 2 
+::Кількість ітерацій 2::[html]<p><font size\="4">Скільки ітерацій виконається в циклі?</font></p> \n  <blockquote style\="margin-right\: 0px;" dir\="ltr"> \n    <pre><font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">i\:\=-10;\nwhile i&gt;0 do\n&nbsp; i\:\=i-2;</font></pre> \n  </blockquote>{
+	=0
+	~5
+	~10
+	~необмежана кількість
+}
+
+
+// question: 194  name: Кількість ітерацій 3 
+::Кількість ітерацій 3::[html]<p><font size\="4">Скільки ітерацій виконається у циклі?</font></p> \n  <blockquote dir\="ltr" style\="margin-right\: 0px;"> \n    <pre><font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">i\:\=0;\nrepeat\n&nbsp; i\:\=i-5;\nuntil i&gt;\=25;</font></pre> \n  </blockquote>{
+	~0
+	~5
+	~25
+	=Необмежана кількість
+}
+
+
+// question: 141  name: Кількість разів виконання 
+::Кількість разів виконання::[html]<div><font size\="4">Скільки разів виконається оператор з передумовою\:</font></div> \n  <blockquote> \n    <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">i\:\=1;</font></div> \n    <div><font face\="courier new,courier,monospace" size\="3"><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">while i&lt;5 do i\:\=i+1;</font></font></div> \n  </blockquote> \n  <p><br /> </p>{
+	=4
+	~5
+	~6
+	~0
+}
+
+
+// question: 148  name: Кількість разів виконання 
+::Кількість разів виконання::[html]<pre><font size\="4" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">Скільки разів виконається поданий нижче цикл з постумовою?</font></pre> \n  <blockquote> \n    <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">i\:\=1;<br />repeat<br />i\:\=i+2;<br />until i&lt;0;</font><br /></div> \n  </blockquote>{
+	=1
+	~0
+	~2
+	~3
+}
+
+
+// question: 143  name: Невиконання циклу з передумовою 
+::Невиконання циклу з передумовою::[html]<p><font size\="4">Що може бути в тілі циклу</font><br /></p> \n  <blockquote> \n    <p><font face\="courier new,courier,monospace" size\="3">i\:\=6; while i&gt;5 do ...</font><font size\="3">;</font><br /></p> \n  </blockquote> \n  <p><font size\="4">щоб він виконався лише один раз?</font><br /></p>{
+	~%50%i\:\=i-1;
+	~%50%i\:\=0;
+	~%-100%i\:\=i+1;
+	~%-100%i\:\=6;
+}
+
+
+// question: 139  name: Оператор з передумовою 
+::Оператор з передумовою::[html]Якими службовими словами у мові Pascal позначається оператор з передумовою?{
+	=while-do
+	~repeat-until
+	~for-to
+	~for-downto
+}
+
+
+// question: 146  name: Оператор з постумовою 
+::Оператор з постумовою::[html]Якими службовими словами позначається оператор з постумовою у мові Pascal?{
+	=repeat-until
+	~while-do
+	~for-to
+	~for-downto
+}
+
+
+// question: 155  name: Оператор циклу з параметром 
+::Оператор циклу з параметром::[html]Якими службовими словами у мові Pascal позначається цикл з параметром?{
+	~%50%for-to
+	~%50%for-downto
+	~%-100%while-do
+	~%-100%repeat-until
+}
+
+
+// question: 825  name: Ц1 
+::Ц1::[html]<p>Якщо умова у вказівці повторення while приймає значення False, то тіло циклу\:</p>{
+	~виконується 1 раз;
+	=не виконується жодного разу;
+	~наступає "зациклення";
+	~не знаю відповіді на запитання.
+}
+
+
+// question: 826  name: Ц1 
+::Ц1::[html]<p>Яка умова у вказівці повторення repeat-until приймає значення True, то тіло циклу\:</p>{
+	=виконується 1 раз;
+	~не виконується жодного разу;
+	~наступає "зациклення"
+	~виконується 2 рази
+}
+
+
+// question: 280  name: 06 
+::06::[html]У циклі &quot;for i\:\=a to b do &lt;оператор&gt;&quot;, величина з ідентифікатором &quot;i&quot; може бути константою.{FALSE}
+
+
+// question: 281  name: 07 
+::07::[html]У циклі &quot;for i\:\=a to b do &lt;оператор&gt;&quot;, величини з ідентифікаторами &quot;a&quot; та &quot;b&quot; можуть бути змінними.{TRUE}
+
+
+// question: 140  name: Виконання оператора з передумовою 
+::Виконання оператора з передумовою::[html]Оператор з передумовою виконується, якщо умова істина.{TRUE}
+
+
+// question: 147  name: Виконання оператора з постумовою 
+::Виконання оператора з постумовою::[html]Оператор з постумовою виконується до тих пір, поки умова істина.{FALSE}
+
+
+// question: 151  name: Декілька операторів 
+::Декілька операторів::[html]Між словами repeat та until можуть стояти декілька операторів, і їх необов'язково заключати в операторні дужки begin-end.{TRUE}
+
+
+// question: 145  name: Зациклювання 
+::Зациклювання::[html]Невиключеною є ситуація, коли цикл з передумовою може виконуватись безліч разів, тобто відбудеться зациклювання.{TRUE}
+
+
+// question: 149  name: Невиконання циклу з постумовою 
+::Невиконання циклу з постумовою::[html]Цикл з постумовою може не виконатись жодного разу.<br />{FALSE}
+
+

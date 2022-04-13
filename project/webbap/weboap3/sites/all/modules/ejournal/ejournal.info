@@ -1,0 +1,10 @@
+name = E-journal
+description = Basic package for an e-journal management system
+package = ejournal
+version = 0.9
+
+; Information added by drupal.org packaging script on 2007-09-04
+version = "5.x-1.x-dev"
+project = "ejournal"
+datestamp = "1188864189"
+

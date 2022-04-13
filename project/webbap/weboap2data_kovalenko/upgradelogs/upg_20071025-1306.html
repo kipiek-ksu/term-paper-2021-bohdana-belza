@@ -1,0 +1,77 @@
+<h2   class="main">vinttaskbook</h2><hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): CREATE TABLE mdl_vinttaskbook (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    summary MEDIUMTEXT NOT NULL,
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vinttaskbook COMMENT='VINT TASKBOOK table 1' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vint_cou_ix ON mdl_vinttaskbook (course) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_vinttaskbook_categories (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vinttaskbook_categories COMMENT='TASKBOOK CATEGORIES' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vintcate_vin_ix ON mdl_vinttaskbook_categories (vinttaskbook) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_vinttaskbook_tasks (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vinttaskbook_tasks COMMENT='TASKBOOK TASKS' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vinttask_vin_ix ON mdl_vinttaskbook_tasks (vinttaskbook) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'add', 'vinttaskbook', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'update', 'vinttaskbook', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<div class="notifysuccess" style="text-align:center">vinttaskbook таблица была успешно установлена</div><br />
+<hr />

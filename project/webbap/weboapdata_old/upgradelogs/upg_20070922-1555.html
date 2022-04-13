@@ -1,0 +1,219 @@
+<h2   class="main">!!!!book</h2><hr />
+(mysql): CREATE TABLE mdl_book (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    summary MEDIUMTEXT NOT NULL,
+    numbering SMALLINT(4) unsigned NOT NULL DEFAULT 0,
+    disableprinting TINYINT(2) unsigned NOT NULL DEFAULT 2,
+    customtitles TINYINT(2) unsigned NOT NULL DEFAULT 0,
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_book' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_book (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_book (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_book (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_book COMMENT='Defines book' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_book_chapters (
+    id BIGINT(10) NOT NULL auto_increment,
+    bookid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    pagenum BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    subchapter BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    title VARCHAR(255) NOT NULL DEFAULT '',
+    content LONGTEXT NOT NULL,
+    hidden TINYINT(2) unsigned NOT NULL DEFAULT 0,
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    importsrc BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_book_chapters' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_book_chapters (
+    id BIGINT(10) NOT NULL auto_increment,
+    bookid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_book_chapters (
+    id BIGINT(10) NOT NULL auto_increment,
+    bookid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_book_chapters (
+    id BIGINT(10) NOT NULL auto_increment,
+    bookid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_book_chapters COMMENT='Defines book_chapters' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'update', 'book', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'book-update' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'update', 'book', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'update', 'book', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'update', 'book', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view', 'book', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'book-view' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view', 'book', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view', 'book', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view', 'book', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view all', 'book', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'book-view all' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view all', 'book', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view all', 'book', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view all', 'book', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'print', 'book', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'book-print' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'print', 'book', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'print', 'book', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'print', 'book', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<br /><div class="box errorbox errorboxcontent">!!!!book tables could NOT be set up successfully!</div><h2   class="main">!!!!book</h2><hr />
+(mysql): CREATE TABLE mdl_book (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    summary MEDIUMTEXT NOT NULL,
+    numbering SMALLINT(4) unsigned NOT NULL DEFAULT 0,
+    disableprinting TINYINT(2) unsigned NOT NULL DEFAULT 2,
+    customtitles TINYINT(2) unsigned NOT NULL DEFAULT 0,
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_book' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_book (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_book (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_book (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_book COMMENT='Defines book' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_book_chapters (
+    id BIGINT(10) NOT NULL auto_increment,
+    bookid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    pagenum BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    subchapter BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    title VARCHAR(255) NOT NULL DEFAULT '',
+    content LONGTEXT NOT NULL,
+    hidden TINYINT(2) unsigned NOT NULL DEFAULT 0,
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    importsrc BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_book_chapters' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_book_chapters (
+    id BIGINT(10) NOT NULL auto_increment,
+    bookid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_book_chapters (
+    id BIGINT(10) NOT NULL auto_increment,
+    bookid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_book_chapters (
+    id BIGINT(10) NOT NULL auto_increment,
+    bookid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+ ..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_book_chapters COMMENT='Defines book_chapters' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'update', 'book', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'book-update' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'update', 'book', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'update', 'book', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'update', 'book', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view', 'book', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'book-view' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view', 'book', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view', 'book', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view', 'book', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view all', 'book', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'book-view all' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view all', 'book', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view all', 'book', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'view all', 'book', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'print', 'book', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'book-print' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'print', 'book', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'print', 'book', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('book', 'print', 'book', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[8])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/!!!!book/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<br /><div class="box errorbox errorboxcontent">!!!!book tables could NOT be set up successfully!</div>

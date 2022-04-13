@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>JavaScript BS_DataGrid Example 2</title>
+<link rel="stylesheet" type="text/css" href="./DataGrid.css"/>
+<script type="text/javascript" src="/_bsJavascript/core/lang/Bs_Misc.lib.js"></script>
+<script type="text/javascript" src="/_bsJavascript/components/datagrid/Bs_DataGrid.class.js"></script>
+<script type="text/javascript">
+function DataGridinit() {
+	bsDpDataGrid = new Bs_DataGrid('bsDpDataGrid');
+	bsDpDataGrid.buttonsDefaultPath = '/_bsJavascript/components/datagrid/img/ms/';
+	bsDpDataGrid.bHeaderFix = true;
+	bsDpDataGrid.height     = 200;
+	bsDpDataGrid.width      = '300';
+	bsDpDataGrid.setDataProps(new Array( {align:'left'}, {align:'left'}));
+	bsDpDataGrid.setHeaderProps(new Array( {text:'ID',align:'center',title:'It&#039;s Country ID',sort:'numeric',width:'10%'}, {text:'NAME of the country',align:'center',sort:'alpha',width:'90%'}));
+	var data = new Array();
+	data[data.length] = new Array( 1.21, 'Afghanistan');
+	data[data.length] = new Array( 1.2, 'Albania');
+	data[data.length] = new Array( 1.3, 'Algeria');
+	data[data.length] = new Array( 1.162, 'American Samoa');
+	data[data.length] = new Array( 1.5, 'Andorra');
+	data[data.length] = new Array( 1.6, 'Angola');
+	data[data.length] = new Array( 1.221, 'Anguilla');
+	data[data.length] = new Array( 1.7, 'Antigua & Barbuda');
+	data[data.length] = new Array( 1.10, 'Argentina');
+	data[data.length] = new Array( 1.11, 'Armenia');
+	data[data.length] = new Array( 1.12, 'Aruba');
+	data[data.length] = new Array( 1.13, 'Ascension Island');
+	data[data.length] = new Array( '1.14.1', 'Australia');
+	data[data.length] = new Array( 1.15, 'Austria');
+	data[data.length] = new Array( 1.16, 'Azerbaijan');
+	data[data.length] = new Array( 1.17, 'Bahamas, The');
+	data[data.length] = new Array( 1.18, 'Bahrain');
+	data[data.length] = new Array( 1.19, 'Bangladesh');
+	data[data.length] = new Array( 1.20, 'Barbados');
+	data[data.length] = new Array( 1.26, 'Belarus');
+	data[data.length] = new Array( '1.43.2', 'Belgium - Flemish');
+	data[data.length] = new Array( '1.43.3', 'Belgium - Walloon');
+	data[data.length] = new Array( 1.22, 'Belize');
+	data[data.length] = new Array( 1.23, 'Benin');
+	data[data.length] = new Array( 1.24, 'Bermuda');
+	data[data.length] = new Array( 1.25, 'Bhutan');
+	data[data.length] = new Array( 1.54, 'BIOT (Diego Garcia)');
+	data[data.length] = new Array( 1.27, 'Bolivia');
+	data[data.length] = new Array( 1.28, 'Bosnia & Herzegovina');
+	data[data.length] = new Array( 1.29, 'Botswana');
+	data[data.length] = new Array( 1.30, 'Brazil');
+	data[data.length] = new Array( 1.223, 'British Virgin Islands');
+	data[data.length] = new Array( 1.31, 'Brunei');
+	data[data.length] = new Array( 1.32, 'Bulgaria');
+	data[data.length] = new Array( 1.33, 'Burkina Faso');
+	data[data.length] = new Array( 1.127, 'Burma');
+	data[data.length] = new Array( 1.34, 'Burundi');
+	data[data.length] = new Array( 1.35, 'Cambodia');
+	data[data.length] = new Array( 1.36, 'Cameroon');
+	data[data.length] = new Array( 1.37, 'Canada');
+	data[data.length] = new Array( 1.38, 'Cape Verde');
+	data[data.length] = new Array( 1.40, 'Cayman Islands');
+	data[data.length] = new Array( 1.153, 'Central African Republic');
+	data[data.length] = new Array( 1.186, 'Chad');
+	data[data.length] = new Array( '1.41.1', 'Chile');
+	data[data.length] = new Array( 1.42, 'China - PR');
+	data[data.length] = new Array( '1.14.2', 'Christmas Island');
+	data[data.length] = new Array( '1.14.3', 'Cocos-Keeling Islands');
+	data[data.length] = new Array( 1.44, 'Colombia');
+	data[data.length] = new Array( 1.45, 'Comoros');
+	data[data.length] = new Array( 1.46, 'Congo');
+	data[data.length] = new Array( 1.203, 'Congo - DR');
+	data[data.length] = new Array( 1.47, 'Cook Islands');
+	data[data.length] = new Array( 1.49, 'Costa Rica');
+	data[data.length] = new Array( 1.50, 'Cote Ivoire');
+	data[data.length] = new Array( 1.51, 'Croatia');
+	data[data.length] = new Array( 1.52, 'Cuba');
+	data[data.length] = new Array( 1.224, 'Curacao');
+	data[data.length] = new Array( 1.210, 'Cyprus');
+	data[data.length] = new Array( 1.187, 'Czech Republic');
+	data[data.length] = new Array( 1.53, 'Denmark');
+	data[data.length] = new Array( 1.4, 'Deutschland');
+	data[data.length] = new Array( 1.55, 'Djibouti');
+	data[data.length] = new Array( 1.225, 'Dominica');
+	data[data.length] = new Array( 1.39, 'Dominican Republic');
+	data[data.length] = new Array( 1.226, 'East Timor');
+	data[data.length] = new Array( 1.58, 'Ecuador');
+	data[data.length] = new Array( 1.56, 'Egypt');
+	data[data.length] = new Array( 1.161, 'El Salvador');
+	data[data.length] = new Array( 1.76, 'Equatorial Guinea');
+	data[data.length] = new Array( 1.59, 'Eritrea');
+	data[data.length] = new Array( 1.60, 'Espana');
+	data[data.length] = new Array( 1.61, 'Estonia');
+	data[data.length] = new Array( 1.62, 'Ethiopia');
+	data[data.length] = new Array( 1.63, 'Falkland Islands');
+	data[data.length] = new Array( 1.82, 'Faroe Islands');
+	data[data.length] = new Array( 1.64, 'Fiji');
+	data[data.length] = new Array( 1.65, 'Finland');
+	data[data.length] = new Array( 1.212, 'France');
+	data[data.length] = new Array( 1.218, 'French Antilles');
+	data[data.length] = new Array( 1.219, 'French Guiana');
+	data[data.length] = new Array( 1.208, 'French Polynesia');
+	data[data.length] = new Array( 1.66, 'Gabon');
+	data[data.length] = new Array( 1.67, 'Gambia, The');
+	data[data.length] = new Array( 1.68, 'Georgia');
+	data[data.length] = new Array( 1.69, 'Ghana');
+	data[data.length] = new Array( 1.70, 'Gibraltar');
+	data[data.length] = new Array( 1.71, 'Greece');
+	data[data.length] = new Array( 1.228, 'Greenland');
+	data[data.length] = new Array( 1.229, 'Grenada');
+	data[data.length] = new Array( 1.197, 'Guadeloupe');
+	data[data.length] = new Array( 1.72, 'Guam');
+	data[data.length] = new Array( 1.243, 'Guantanamo Bay');
+	data[data.length] = new Array( 1.73, 'Guatemala');
+	data[data.length] = new Array( 1.74, 'Guinea - PRP');
+	data[data.length] = new Array( 1.75, 'Guinea-Bissau');
+	data[data.length] = new Array( 1.77, 'Guyana');
+	data[data.length] = new Array( 1.78, 'Haiti');
+	data[data.length] = new Array( 1.79, 'Honduras');
+	data[data.length] = new Array( 1.80, 'Hong Kong');
+	data[data.length] = new Array( 1.81, 'Hungary');
+	data[data.length] = new Array( 1.89, 'Iceland');
+	data[data.length] = new Array( 1.83, 'India');
+	data[data.length] = new Array( 1.84, 'Indonesia');
+	data[data.length] = new Array( 1.86, 'Iran');
+	data[data.length] = new Array( 1.87, 'Iraq');
+	data[data.length] = new Array( 1.88, 'Ireland');
+	data[data.length] = new Array( 1.90, 'Israel');
+	data[data.length] = new Array( 1.91, 'Italia');
+	data[data.length] = new Array( 1.207, 'Jamaica');
+	data[data.length] = new Array( 1.92, 'Japan');
+	data[data.length] = new Array( 1.93, 'Jordan');
+	data[data.length] = new Array( 1.94, 'Kazakhstan');
+	data[data.length] = new Array( 1.95, 'Kenya');
+	data[data.length] = new Array( 1.97, 'Kiribati');
+	data[data.length] = new Array( 1.154, 'Korea - North');
+	data[data.length] = new Array( 1.48, 'Korea - South');
+	data[data.length] = new Array( 1.98, 'Kuwait');
+	data[data.length] = new Array( 1.96, 'Kyrgyzstan');
+	data[data.length] = new Array( 1.99, 'Laos');
+	data[data.length] = new Array( 1.101, 'Latvia');
+	data[data.length] = new Array( 1.102, 'Lebanon');
+	data[data.length] = new Array( 1.100, 'Lesotho');
+	data[data.length] = new Array( 1.103, 'Liberia');
+	data[data.length] = new Array( 1.107, 'Libya');
+	data[data.length] = new Array( 1.104, 'Liechtenstein');
+	data[data.length] = new Array( 1.105, 'Lithuania');
+	data[data.length] = new Array( 1.106, 'Luxembourg');
+	data[data.length] = new Array( 1.108, 'Macau');
+	data[data.length] = new Array( 1.109, 'Macedonia');
+	data[data.length] = new Array( 1.110, 'Madagascar');
+	data[data.length] = new Array( 1.112, 'Malawi');
+	data[data.length] = new Array( 1.111, 'Malaysia');
+	data[data.length] = new Array( 1.113, 'Maldives');
+	data[data.length] = new Array( 1.114, 'Mali');
+	data[data.length] = new Array( 1.115, 'Malta');
+	data[data.length] = new Array( 1.118, 'Marshall Islands');
+	data[data.length] = new Array( 1.209, 'Martinique');
+	data[data.length] = new Array( 1.120, 'Mauritania');
+	data[data.length] = new Array( 1.119, 'Mauritius');
+	data[data.length] = new Array( 1.85, 'Mayotte');
+	data[data.length] = new Array( 1.121, 'Mexico');
+	data[data.length] = new Array( 1.235, 'Micronesia - FS');
+	data[data.length] = new Array( 1.122, 'Moldova');
+	data[data.length] = new Array( 1.123, 'Monaco');
+	data[data.length] = new Array( 1, 'Monde');
+	data[data.length] = new Array( 1.124, 'Mongolia');
+	data[data.length] = new Array( 1.125, 'Montserrat');
+	data[data.length] = new Array( 1.117, 'Morocco');
+	data[data.length] = new Array( 1.126, 'Mozambique');
+	data[data.length] = new Array( 1.128, 'Namibia');
+	data[data.length] = new Array( 1.129, 'Nauru');
+	data[data.length] = new Array( 1.146, 'Nederland');
+	data[data.length] = new Array( 1.130, 'Nepal');
+	data[data.length] = new Array( 1.8, 'Netherlands Antilles');
+	data[data.length] = new Array( 1.213, 'New Caledonia');
+	data[data.length] = new Array( 1.138, 'New Zealand');
+	data[data.length] = new Array( 1.131, 'Nicaragua');
+	data[data.length] = new Array( 1.132, 'Niger');
+	data[data.length] = new Array( 1.133, 'Nigeria');
+	data[data.length] = new Array( 1.134, 'Niue');
+	data[data.length] = new Array( 1.135, 'Norfolk Island');
+	data[data.length] = new Array( 1.116, 'Northern Marianas I.');
+	data[data.length] = new Array( '1.136.1', 'Norway');
+	data[data.length] = new Array( 1.139, 'Oman');
+	data[data.length] = new Array( 1.142, 'Pakistan');
+	data[data.length] = new Array( 1.143, 'Palau');
+	data[data.length] = new Array( 1.236, 'Palestine');
+	data[data.length] = new Array( 1.144, 'Panama');
+	data[data.length] = new Array( 1.137, 'Papua New Guinea');
+	data[data.length] = new Array( 1.145, 'Paraguay');
+	data[data.length] = new Array( 1.147, 'Peru');
+	data[data.length] = new Array( 1.148, 'Philippines');
+	data[data.length] = new Array( 1.149, 'Poland');
+	data[data.length] = new Array( 1.151, 'Portugal');
+	data[data.length] = new Array( 1.150, 'Puerto Rico');
+	data[data.length] = new Array( 1.152, 'Qatar');
+	data[data.length] = new Array( '1.37.30', 'Quebec');
+	data[data.length] = new Array( 1.211, 'Reunion');
+	data[data.length] = new Array( 1.155, 'Romania');
+	data[data.length] = new Array( 1.157, 'Russia');
+	data[data.length] = new Array( 1.158, 'Rwanda');
+	data[data.length] = new Array( 1.175, 'Saint Helena');
+	data[data.length] = new Array( 1.177, 'Saint Kitts & Nevis');
+	data[data.length] = new Array( 1.176, 'Saint Lucia');
+	data[data.length] = new Array( 1.220, 'Saint Pierre et Miquelon');
+	data[data.length] = new Array( 1.237, 'Saint Vincent and the Grenadines');
+	data[data.length] = new Array( 1.163, 'Samoa');
+	data[data.length] = new Array( 1.159, 'San Marino');
+	data[data.length] = new Array( 1.164, 'Sao Tome & Principe');
+	data[data.length] = new Array( 1.9, 'Saudi Arabia');
+	data[data.length] = new Array( '1.179.3', 'Schweiz Deutsche');
+	data[data.length] = new Array( 1.165, 'Senegal');
+	data[data.length] = new Array( 1.166, 'Serbia & Montenegro');
+	data[data.length] = new Array( 1.167, 'Seychelles');
+	data[data.length] = new Array( 1.168, 'Sierra Leone');
+	data[data.length] = new Array( 1.169, 'Singapore');
+	data[data.length] = new Array( 1.170, 'Slovakia');
+	data[data.length] = new Array( 1.171, 'Slovenia');
+	data[data.length] = new Array( 1.160, 'Solomon Islands');
+	data[data.length] = new Array( 1.172, 'Somalia');
+	data[data.length] = new Array( 1.1, 'South Africa');
+	data[data.length] = new Array( 1.174, 'Sri Lanka');
+	data[data.length] = new Array( 1.173, 'Sudan');
+	data[data.length] = new Array( '1.179.2', 'Suisse Francaise');
+	data[data.length] = new Array( 1.180, 'Suriname');
+	data[data.length] = new Array( '1.179.4', 'Svizzera Italiana');
+	data[data.length] = new Array( 1.181, 'Swaziland');
+	data[data.length] = new Array( 1.178, 'Sweden');
+	data[data.length] = new Array( 1.182, 'Syria');
+	data[data.length] = new Array( 1.184, 'Taiwan');
+	data[data.length] = new Array( 1.183, 'Tajikistan');
+	data[data.length] = new Array( '1.185.1', 'Tanzania');
+	data[data.length] = new Array( 1.188, 'Thailand');
+	data[data.length] = new Array( 1.189, 'Togo');
+	data[data.length] = new Array( 1.238, 'Tokelau');
+	data[data.length] = new Array( 1.190, 'Tonga');
+	data[data.length] = new Array( 1.214, 'Trinidad and Tobago');
+	data[data.length] = new Array( 1.191, 'Tunisia');
+	data[data.length] = new Array( 1.193, 'Turkey');
+	data[data.length] = new Array( 1.192, 'Turkmenistan');
+	data[data.length] = new Array( 1.215, 'Turks and Caicos Islands');
+	data[data.length] = new Array( 1.194, 'Tuvalu');
+	data[data.length] = new Array( 1.57, 'UAE - United Arab Emirates');
+	data[data.length] = new Array( 1.140, 'Uganda');
+	data[data.length] = new Array( 1.156, 'UK - United Kingdom');
+	data[data.length] = new Array( 1.195, 'Ukraine');
+	data[data.length] = new Array( 1.196, 'Uruguay');
+	data[data.length] = new Array( '1.206.1', 'USA');
+	data[data.length] = new Array( '1.206.14', 'USA Secondary');
+	data[data.length] = new Array( 1.141, 'Uzbekistan');
+	data[data.length] = new Array( 1.198, 'Vanuatu');
+	data[data.length] = new Array( 1.199, 'Venezuela');
+	data[data.length] = new Array( 1.200, 'Vietnam');
+	data[data.length] = new Array( 1.216, 'Virgin Islands');
+	data[data.length] = new Array( '1.251.1', 'Virtual State to Delete');
+	data[data.length] = new Array( 1.201, 'Wallis & Futuna');
+	data[data.length] = new Array( 1.246, 'World');
+	data[data.length] = new Array( 1.202, 'Yemen');
+	data[data.length] = new Array( 1.217, 'Yugoslavia');
+	data[data.length] = new Array( 1.204, 'Zambia');
+	data[data.length] = new Array( '1.185.2', 'Zanzibar');
+	data[data.length] = new Array( 1.205, 'Zimbabwe');
+	bsDpDataGrid.setData(data);
+	bsDpDataGrid.drawInto('bsDpDivDataGrid');
+	
+	
+	
+	bsDpDataGrid_2 = new Bs_DataGrid('bsDpDataGrid_2');
+	bsDpDataGrid_2.buttonsDefaultPath = '/_bsJavascript/components/datagrid/img/ms/';
+	bsDpDataGrid_2.bHeaderFix = true;
+	bsDpDataGrid_2.height     = 200;
+	bsDpDataGrid_2.width      = '300';
+	bsDpDataGrid_2.setDataProps(new Array( {align:'left'}, {align:'left'}));
+	bsDpDataGrid_2.setHeaderProps(new Array( {text:'ID',align:'center',title:'It&#039;s Country ID',sort:'numeric',width:'10%'}, {text:'NAME of the country',align:'center',sort:'alpha',width:'90%'}));
+	var data = new Array();
+	data[data.length] = new Array( 1.21, 'Afghanistan');
+	data[data.length] = new Array( 1.2, 'Albania');
+	bsDpDataGrid_2.setData(data);
+	
+	bsDpDataGrid_2.drawInto('bsDpDivDataGrid_2');
+}
+</script>
+</head>
+
+<body onLoad="DataGridinit();">
+
+<h1>JavaScript Bs_DataGrid Example 2</h1>
+
+This is an example of the <a href="http://www.blueshoes.org/en/javascript/datagrid/" target="_blank">DataGrid Control</a>.
+<br><br>
+
+<ul>
+	<li>Shows that you can use more than just one instance on the same page.</li>
+	<li>Both Bs_DataGrid instances use a fixed header (bHeaderFix), but the 2nd cannot be expanded/collapsed because it would make no sense; not enough data.</li>
+</ul>
+
+<div id="bsDpDivDataGrid"></div><br><br>
+
+<div id="bsDpDivDataGrid_2"></div><br><br>
+
+<div id="debug"></div>
+
+
+</body>
+</html>

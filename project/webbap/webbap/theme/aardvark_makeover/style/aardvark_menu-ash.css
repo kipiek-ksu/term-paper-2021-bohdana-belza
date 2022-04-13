@@ -1,0 +1,251 @@
+/* Custom Menu
+-------------------------- */
+
+#custommenu { 
+        width: 96%; 
+        margin: 0 auto; 
+        padding: 0;
+        clear:both; 
+        height: 30px; 
+        background: #333 repeat-x center top;
+/*  position: fixed;*/
+        text-shadow: 0 1px 0 #000;
+}
+#custommenu ul li { 
+    border-right: 1px solid #3d3d3d; 
+    border-left: 1px solid #5b5b5b;
+}
+
+/* 
+Dropdown Menu - CSS from DeCaf Theme by Lei Zhang
+-------------------------------------------------*/
+
+ul.dropdown span.customitem { 
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+ul.dropdown li a,
+ul.dropdown span.customitem a { 
+    padding:6px 20px;
+}
+ul.dropdown span.customitem a:hover { 
+    border: 0;
+}
+#custommenu ul.dropdown ul { 
+    padding:0;
+    width:auto;
+    /* width:185px*/;
+}
+#custommenu ul.dropdown ul a { 
+        padding:4px 0px 4px 18px;
+}
+
+#custommenu ul.dropdown > li span a { 
+        height:16px;
+}
+
+ul.dropdown,
+ul.dropdown li,
+ul.dropdown ul {
+        list-style:none;
+        margin:0;
+        padding:0;
+}
+
+ul.dropdown {
+    position:relative;
+    top:0px;
+    z-index:597;
+    float:left;
+    font:13px "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+
+ul.dropdown li {
+    float:left;
+    line-height:1.3em;
+    vertical-align:middle;
+  background-color: transparent; 
+    color:#fff;
+    zoom:1 !important;
+}
+
+ul.dropdown li.hover,
+ul.dropdown li:hover {
+    position:relative;
+    z-index:599;
+    cursor:default;
+}
+
+ul.dropdown ul {
+    visibility:hidden;
+    position:absolute;
+    top:100%;z-index:598;
+    left:0%;
+    right:auto;
+    margin-top: 0px;
+    font:100% "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+
+ul.dropdown ul li {
+    float:none;
+    background-color:#3d3d3d;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #777 #3d3d3d #333;
+    padding:0;
+}
+
+ul.dropdown ul ul {
+    top:0;
+    right:auto;
+    left:100%;
+    margin-top:0;
+    border-top:none;
+    border-left:none;
+    font-weight:400;
+}
+ul.dropdown li:hover > ul {
+    visibility:visible;
+}
+ul.dropdown span,
+ul.dropdown span a,
+ul.dropdown li.clickable-with-children > a {
+  background-color:#3d3d3d;
+    /* width:145px;*/
+    width: auto;
+    padding:2px 6px 4px 20px;
+    color: #fff;
+}
+
+ul.dropdown ul span, 
+ul.dropdown ul span a, 
+ul.dropdown ul li.clickable-with-children > a { 
+    background:#3d3d3d url([[pix:theme|menu/nav-arrow-right]]);
+    background-position:100% 50%;
+    background-repeat:no-repeat;
+    color: #fff;
+}
+
+
+ul.dropdown ul ul span,
+ul.dropdown ul ul span a,
+ul.dropdown ul ul li.clickable-with-children > a {
+    background-image:#3d3d3d url([[pix:theme|menu/nav-arrow-right2]]);
+    background-position:100% 50%;
+    background-repeat:no-repeat;    
+    color: #fff;
+}
+
+ul.dropdown a:link, 
+ul.dropdown a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+ul.dropdown a:hover {
+    border:0;
+    background-color: #666666;
+    color: #fff;
+}
+
+ul.dropdown ul ul li { 
+    background-color:#3d3d3d;
+}
+
+ul.dropdown ul ul ul li { 
+    background-color:#3d3d3d;
+}
+
+ul.dropdown li a,
+ul.dropdown span,
+ul.dropdown span a { 
+    border: none; 
+    background-color: transparent;
+}
+
+ul.dropdown ul li a,
+ul.dropdown ul span,
+ul.dropdown ul span a { 
+    border: 0;
+}
+
+ul.dropdown ul ul li a,
+ul.dropdown ul ul span, 
+ul.dropdown ul ul span a {
+    border:0
+}
+
+ul.dropdown ul ul ul li a,
+ul.dropdown ul ul ul span, 
+ul.dropdown ul ul ul span a {
+    border:0;
+}
+
+ul.dropdown a,ul.dropdown span{ 
+    display:block; 
+}
+
+ul.dropdown ul a {
+    width:170px;
+    padding:2px 0 4px 5px;
+}
+
+ul.dropdown ul a.open:hover {
+    background-color: #666666;
+    color:#fff;
+}
+
+ul.dropdown ul li:hover > span, 
+ul.dropdown ul li:hover > span a {
+    background-color:#666666;
+    background-image:url([[pix:theme|menu/ab-arrowover]]);
+    color: #fff;
+}
+
+ul.dropdown li.clickable-with-children:hover > a {
+  background-image:url([[pix:theme|menu/ab-arrowover]]);
+}
+
+ul.dropdown *.open,
+ul.dropdown li:hover > span, 
+ul.dropdown li:hover > span a {
+    background-color: #666666;
+    color: #fff;
+}
+ul.dropdown ul ul *.open,
+ul.dropdown ul ul li:hover > span,
+ul.dropdown ul ul li:hover > span a {
+    background-color:#666666;
+    background-image:url([[pix:theme|menu/ab-arrowover]]);
+    color:#fff;
+}
+
+
+
+/* 
+Additional CSS for HOME Icon & Date in Custom Menu by Daniel Wahl (see renderers.php)
+----------------------------------------------------------------------------------------*/
+
+
+ul.dropdown {
+  width:100%
+}
+
+ul.dropdown > li:last-child {
+  float:right;
+}
+
+ul.dropdown > li:first-child a { 
+  background: url([[pix:theme|menu/home_icon]]) no-repeat scroll center center;
+  height: 17px;  
+}
+
+ul.dropdown > li:first-child a:hover {
+    background-color:#666666;
+}
+
+ul.dropdown > li:last-child a:hover{
+    background-color: #666666;
+}

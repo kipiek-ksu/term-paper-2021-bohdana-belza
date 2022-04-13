@@ -1,0 +1,6 @@
+I have reworked the original files so that now, in addition to the previously available features:<br />
+<ul>
+  <li>Titles can now be added on the caption page</li>
+  <li>Thumbnails can go over or under the main pic, configured 'per slideshow'</li>
+  <li>Captions are stored in the database</li>
+</ul>This should solve any of the caption bugs at a stroke; it may generate a whole set of new problems, although I have tested on whatever systems I could without issues.<br /><br />If you are upgrading from an earlier version, the first time a slideshow is looked at the module will populate the new caption table from the original xml file for that slideshow instance, then delete that file. This has worked well for me so far, but I suggest backing up the /moddata/jpgs_data/[path]/slideshow[n].xml file so you have a record just in case. <br /><br />I haven't done anything to enable unicode migration or fixed the backup/restore functionality.<br /><br /> 

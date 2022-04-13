@@ -1,0 +1,64 @@
+/*******************************************************************
+ styles_variable.css
+  
+ This CSS file contains all color definitions like 
+ background-color, font-color, border-color etc.
+
+ 
+
+*******************************************************************/
+
+/***
+ ***  Core
+ ***/
+
+a:link,
+a:visited {
+  color:#1c5a04;
+}
+
+a:hover {
+  color:#333333;
+
+}
+body {
+  background: #cce04d url('images/header-spring.jpg') repeat-x center top;
+  border-color:#ffffff;
+  margin-left: auto; 
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.surround {
+  background: #e8e9ea;
+  margin-left: auto; 
+  margin-right: auto;
+  width: 960px;
+  border-top: 0px solid #ffffff;
+  border-right: 0px solid #ffffff;
+  border-bottom: 0px solid #ffffff;
+  border-left: 0px solid #ffffff;
+ 
+}
+
+
+div.headermenu 
+{
+	color:#1c5a04;
+}
+
+.headermenu a:link {
+    color: #1c5a04;
+}
+.headermenu a:visited {
+    color: #1c5a04;
+}
+.headermenu a:hover {
+    color: #cce04d;
+}
+
+#logo { 
+background: url('images/logos/logo-spring.png') no-repeat left top; 
+height: 100px;
+} 

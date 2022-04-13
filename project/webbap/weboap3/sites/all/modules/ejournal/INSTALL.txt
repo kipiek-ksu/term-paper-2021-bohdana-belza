@@ -1,0 +1,66 @@
+********************************************************************
+                     D R U P A L    M O D U L E
+********************************************************************
+Name: ejournal.module
+Author: roman dot chyla at seznam dot cz
+********************************************************************
+
+** NOTES **
+- This module requires taxonomy.module to function
+- If you want to use some additional features, you will need user.module, and queue.module (both from Drupal core)
+
+INSTALLATION:
+
+1. Place the ejournal directory in the modules directory of your drupal installation
+   
+2. Load the database definition file using the tool of your choice 
+   (e.g. phpmyadmin). For command line access use:
+   
+     mysql -u user -p drupal < ejournal.mysql
+   
+   Replace user with the MySQL username, and drupal with the database being used.
+   You will be prompted for a password.
+   
+3. Enable this module by navigating to:
+        administer > configuration > modules
+	
+4. Enable site wide use of custom layouts in the ejournal generates pages:
+        administer > setttings > ejournal
+	
+5. Create jour own ejournal publication
+        administer > ejournal
+
+   - ejournal uses taxonomy to organize nodes into sections, if you dont't have suitable vocabulary in hand, create one
+      
+   - ejournal uses document types (e.g. story, page, flexinode) to understand which node should be recognized as an "ejournal node", you may select whatever node type you want, but you probably want to install flexinode module and create document type that best suits your own journal
+   
+   - ejournal cooperates with the profile.module and taxonomy module to manage authors, if you want to have authors under the published articles (and you want)
+   
+      - you will have to create taxonomy of authors (i.e. vocabulary with authors' names)
+      
+      - create role called "ejournal author" 
+            administer > access control > roles
+	    
+      - find your users that should have the status of the "ejournal author" and give them this role
+            administer > users
+	    
+6. Adjust permission rights
+        administer > access control
+	
+   The ejournal module works with four roles
+        1. chief editor
+	2. editor
+	3. proofreader
+	4. ejournal author
+	
+   You already have the fourth, you may create the others (it is not necessary, you may use whatever
+   role you already have) and set appropriate permission rights for each.
+      
+        chief editor has rights to manage issues, to create/delete journals (may be changed in the
+	future)
+	editor may edit article before the issue was published
+	proofreader marks the article as gramatically correct/incorrect (may also edit the body)
+	ejournal author may create nodes that were assigned to ejournal module, may see own articles
+	before their publication (normal users are not allowed to see them)
+	    
+      

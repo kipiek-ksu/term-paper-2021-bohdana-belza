@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        По умолчанию
+    </category>
+  </question>
+
+
+
+<!-- question: 1  -->
+  <question type="description">
+    <name><text>234</text>
+</name>
+    <questiontext format="html">
+<text></text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text>234</text>
+    </generalfeedback>
+    <defaultgrade>0</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+</question>
+
+
+
+<!-- question: 3  -->
+  <question type="multichoice">
+    <name><text>1</text>
+</name>
+    <questiontext format="html">
+<text>123</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+7
+        </text>
+      <feedback>
+          <text>
+89
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+9
+        </text>
+      <feedback>
+          <text>
+96
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 5  -->
+  <question type="multichoice">
+    <name><text>1</text>
+</name>
+    <questiontext format="html">
+<text>dgdfgfhfh</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+1
+        </text>
+      <feedback>
+          <text>
+&lt;p&gt;прав&lt;/p&gt;
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+2
+        </text>
+      <feedback>
+          <text>
+повторите 3
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 2  -->
+  <question type="multichoice">
+    <name><text>234234234</text>
+</name>
+    <questiontext format="html">
+<text></text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text>123</text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text>123&lt;br /&gt;
+&lt;div style=&quot;text-align: justify;&quot;&gt; &lt;/div&gt;</text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text>123</text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+123
+        </text>
+      <feedback>
+          <text>
+ 123 
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+32
+        </text>
+      <feedback>
+          <text>
+ 321 
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="30">
+        <text>
+3
+        </text>
+      <feedback>
+          <text>
+ 3 
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 173  -->
+  <question type="multichoice">
+    <name><text>вопрос1</text>
+</name>
+    <questiontext format="html">
+<text>формулировка вопроса</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+отв
+        </text>
+      <feedback>
+          <text>
+вірна
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+відп
+        </text>
+      <feedback>
+          <text>
+невірно
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+відп 3
+        </text>
+      <feedback>
+          <text>
+невірно
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+</quiz>

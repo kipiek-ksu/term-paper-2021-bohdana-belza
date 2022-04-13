@@ -1,0 +1,435 @@
+// question: 0  name: switch category to Рекурсія 
+$CATEGORY: Рекурсія
+
+
+// question: 509  name: 01 
+::01::[html]Як називаються об'єкти, що визначаються за допомогою самих себе?{
+	=рекурсивні
+	~самовизначні
+	~самодостатні
+	~прості
+}
+
+
+// question: 510  name: 02 
+::02::[html]В якому разі описання процедури можна вважати рекурсивним?{
+	=якщо в розділі операторів використовується оператор цієї процедури
+	~якщо в розділі операторів використовується оператор рекурсивної процедури
+	~якщо в розділі операторів здійснюється виклик рекурсивної функції
+	~якщо ім'я процедури починається з 're'
+}
+
+
+// question: 511  name: 03 
+::03::[html]В якому разі описання функції можна вважати рекурсивним?{
+	=якщо в розділі операторів використовується виклик цієї функції
+	~якщо в розділі операторів використовується оператор рекурсивної процедури
+	~якщо в розділі операторів здійснюється виклик рекурсивної функції
+	~якщо ім'я функції починається з 're'
+}
+
+
+// question: 512  name: 04 
+::04::[html]<p><font size\="4">\nЩо описує дана рекурсія?</font></p> \n  <div><font size\="3">function f(x\: byte)\: longint;</font></div>\n  <div><font size\="3">&nbsp;&nbsp; begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x\=1 then f\:\=1;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else f\:\=x*f(x-1)</font></div>\n  <div><font size\="3">&nbsp;&nbsp; end</font></div>\n  <pre> </pre>{
+	=факторіал
+	~добуток виразів
+	~середнє геометричне
+	~середнє арифметичне
+}
+
+
+// question: 513  name: 05 
+::05::[html]Які бувають типи рекурсій?{
+	~%50%пряма
+	~%50%непряма
+	~%-100%замкнута
+	~%-100%розімкнута
+}
+
+
+// question: 514  name: 06 
+::06::[html]Що означає пряма рекурсія?{
+	=підпрограма просто визиває саму себе
+	~підпрограма обов'язково для отримання наступного елементу за допомогою самої ж себе отримує попередній
+	~підпрограма обов'язково для отримання попереднього елементу за допомогою самої ж себе отримує наступний
+	~декілька підпрограм викликають одна одну, але ці виклики пов'язані "в кільце"
+}
+
+
+// question: 515  name: 07 
+::07::[html]Що означає непряма рекурсія?{
+	~підпрограма просто визиває саму себе
+	~підпрограма обов'язково для отримання наступного елементу за допомогою самої ж себе отримує попередній
+	~підпрограма обов'язково для отримання попереднього елементу за допомогою самої ж себе отримує наступний
+	=декілька підпрограм викликають одна одну, але ці виклики пов'язані "в кільце"
+}
+
+
+// question: 516  name: 08 
+::08::[html]Як описується непряма рекурсія?{
+	=об'ява підпрограми відривається від її опису
+	~підпрограми описуються одна за одною
+	~всі підпрограми описуються в одній, загальній рекурсивній підпрограмі
+	~рекурсивні функції записуються в рекурсивних процедурах
+}
+
+
+// question: 520  name: 11 
+::11::[html]За допомогою якого службового слова можна виконати попередню об'яву підпрограми?{
+	=forward
+	~backward
+	~fwd
+	~temp
+}
+
+
+// question: 521  name: 12 
+::12::[html]Що є контекстом програми?{
+	=місце, що виділяється під всі параметри, локальні змінні і константи у пам'яті
+	~опис програми
+	~лексема програми
+	~синтаксис програми
+}
+
+
+// question: 522  name: 13 
+::13::[html]В якому разі контекст пам'яті очищується?{
+	~%50%при досягненні слова end
+	~%50%при досягненні слова exit
+	~%-100%тільки при виконанні операції очищування пам'яті
+	~%-100%тільки при перезавантаженні комп'ютера
+}
+
+
+// question: 523  name: 14 
+::14::[html]Що відбувається з контекстом підпрограми при її рекурсивному самовиклику?{
+	=залишається, для нового виклику створюється новий контекст
+	~заміщується новим контекстом
+	~залишається, новий дописується у цей же контекст
+	~всі контексти знищуються
+}
+
+
+// question: 524  name: 15 
+::15::[html]Який контекст рекурсивної процедури є активним в кожний момент часу?{
+	=завжди останній
+	~завжди перший
+	~динамічно визначається
+	~статично визначається за формулами
+}
+
+
+// question: 525  name: 16 
+::16::[html]Що стає активним контекстом після видалення поточного активного контексту?{
+	=останній відкладений контекст
+	~контекст, що знаходиться в блоці пам'яті, що стоїть перед поточним
+	~контекст, що знаходиться в блоці пам'яті, що стоїть після поточного
+	~контекст всієї програми
+}
+
+
+// question: 526  name: 17 
+::17::[html]Яка максимальна глибина рекурсії?{
+	=теоретично необмежена
+	~до 7 викликів
+	~до 127 викликів
+	~до 255 викликів
+}
+
+
+// question: 527  name: 18 
+::18::[html]Що обов'язково повинна мати рекурсивна програма?{
+	=ознака закінчення рекурсії
+	~ознака продовження виконання рекурсії
+	~обмеженість
+	~глибину, не перевищуючу задану
+}
+
+
+// question: 528  name: 19 
+::19::[html]Який головний недолік рекурсії?{
+	=швидкий розхід пам'яті
+	~обмеженість
+	~складна реалізація
+	~ненаочність
+}
+
+
+// question: 530  name: 21 
+::21::[html]Як називається рекурсія, якщо виконання підпрограми призводить тільки до одного виклику цієї ж підпрограми?{
+	~пряма
+	=лінійна
+	~нелінійна
+	~проста
+}
+
+
+// question: 531  name: 22 
+::22::[html]<p><font size\="4">\nЩо описує дана ітеративна реалізація?</font></p>\n  <div> <font size\="3">&nbsp; f\:\= 1; for i\:\= 2 to k do f \:\= f * i;</font></div>{
+	=факторіал
+	~добуток виразів
+	~середнє геометричне
+	~середнє арифметичне
+}
+
+
+// question: 532  name: 23 
+::23::[html]З якою метою рекурсивна реалізація, при можливості, замінюється на ітеративну?{
+	=економія пам'яті
+	~більша наочність
+	~легкість програмування
+	~необмеженість глибини
+}
+
+
+// question: 533  name: 24 
+::24::[html]Як називається рекурсія, якщо виконання програми призводить до декількох викликів цієї підпрограми{
+	~%-100%непряма
+	~%50%нелінійна
+	~%50%рекурсія, що гілкується
+	~%-100%непроста
+}
+
+
+// question: 534  name: 25 
+::25::[html]<p><font size\="4">\nСкільки разів треба виконати функцію, щоб отримати значення f(5)?</font></p> \n  <div><font size\="3">&nbsp;&nbsp; function f(x\: integer)\: integer;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; if x\=3 then f\:\=1 else f\:\=f(x-1)*2;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; end</font></div>{
+	=3
+	~2
+	~4
+	~0
+}
+
+
+// question: 535  name: 26 
+::26::[html]<p><font size\="4">\nСкільки разів треба виконати функцію, щоб отримати значення f(10)?</font></p> \n  <div> <font size\="3"> function f(x\: integer)\: integer;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; if x\=0 then f\:\=1 else f\:\=f(x+1)*2;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; end</font></div>{
+	~3
+	~2
+	~4
+	=виникне помилка\: переповнення стеку
+}
+
+
+// question: 536  name: 27 
+::27::[html]<p><font size\="4">\nСкільки разів треба виконати функцію, щоб отримати значення f(10)?</font></p> <font size\="3">function f(x\: integer)\: integer;<br />&nbsp;&nbsp; begin<br />&nbsp;&nbsp;&nbsp;&nbsp; if x\=0 then f\:\=1 else f\:\=f(x-1)*2;<br />&nbsp;&nbsp; end</font>{
+	=11
+	~10
+	~9
+	~виникне помилка\: переповнення стеку
+}
+
+
+// question: 537  name: 28 
+::28::[html]<p><font size\="4">\nСкільки разів треба виконати функцію, щоб отримати значення f(0)?</font></p> \n  <div> <font size\="3">function f(x\: integer)\: integer;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; if x\=0 then f\:\=1 else f\:\=f(x-1)*2;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; end</font></div>{
+	=1
+	~2
+	~4
+	~0
+}
+
+
+// question: 538  name: 29 
+::29::[html]<p><font size\="4">\nСкільки разів треба виконати функцію, щоб отримати значення f(2)?</font></p> \n  <div> <font size\="3"> function f(x\: integer)\: integer;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; if x\=3 then f\:\=1 else f\:\=f(x-1)*2;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; end</font></div>{
+	=виникне помилка\: переповнення стеку
+	~2
+	~4
+	~0
+}
+
+
+// question: 539  name: 30 
+::30::[html]<p><font size\="4">\nСкільки разів треба виконати функцію, щоб отримати значення f(12)?</font></p> \n  <div> <font size\="3">function f(x\: integer)\: integer;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; if x\=3 then f\:\=1 else f\:\=f(x-1)*2;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; end</font></div>{
+	=10
+	~9
+	~11
+	~виникне помилка\: переповнення стеку
+}
+
+
+// question: 540  name: 31 
+::31::[html]<p><font size\="4">\nСкільки разів треба виконати функцію, щоб отримати значення f(15)?</font></p> \n  <div> <font size\="3"> function f(x\: integer)\: integer;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; if x\=0 then f\:\=2 else f\:\=f(x-1)*2;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; end</font></div>{
+	=16
+	~15
+	~14
+	~виникне помилка\: переповнення стеку
+}
+
+
+// question: 541  name: 32 
+::32::[html]<p><font size\="4">\nСкільки разів виконається рекурсивна процедура якщо x\=5?</font></p> \n  <div><font size\="3">procedure pr(x\: integer);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x-1;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;0 then pr(x);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	=5
+	~4
+	~6
+	~відбудеться зациклювання
+}
+
+
+// question: 542  name: 33 
+::33::[html]<p><font size\="4">\nСкільки разів виконається рекурсивна процедура, якщо x\=6?</font></p> \n  <div><font size\="3">&nbsp;&nbsp; procedure pr(x\: integer);</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x+1;</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;0 then pr(x);</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	~5
+	~4
+	~6
+	=виникне помилка\: переповнення стеку
+}
+
+
+// question: 543  name: 34 
+::34::[html]<p><font size\="4">\nСкільки разів виконається рекурсивна процедура, якщо x\=5?</font></p>\n  <div> <font size\="3">&nbsp; procedure pr(x\: integer);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x*2;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;0 then pr(x);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	~5
+	~4
+	~6
+	=1
+}
+
+
+// question: 544  name: 35 
+::35::[html]<p><font size\="4">\nСкільки разів виконається рекурсивна процедура, якщо x\=8?</font></p>\n  <div> <font size\="3"> procedure pr(x\: integer);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x div 2;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;2 then pr(x);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	=2
+	~4
+	~6
+	~відбудеться зациклювання
+}
+
+
+// question: 545  name: 36 
+::36::[html]<p><font size\="4">\nСкільки разів виконається рекурсивна процедура, якщо x\=10?</font></p>\n  <div> <font size\="3"> procedure pr(x\: integer);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x-1;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;0 then pr(x);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	=10
+	~9
+	~11
+	~відбудеться зациклювання
+}
+
+
+// question: 546  name: 37 
+::37::[html]<p><font size\="4">\nСкільки разів виконається рекурсивна процедура, якщо x\=12?</font></p> <font size\="3">procedure pr(x\: integer);<br />&nbsp;&nbsp;&nbsp;&nbsp; begin<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x-12;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;0 then pr(x);<br />&nbsp;&nbsp;&nbsp;&nbsp; end</font>{
+	=1
+	~2
+	~0
+	~відбудеться зациклювання
+}
+
+
+// question: 547  name: 38 
+::38::[html]<p><font size\="4">\nЧому буде дорівнювати f(5)?</font></p> \n  <div> <font size\="3">function f(x\: integer)\: integer;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; if x\=3 then f\:\=1 else f\:\=f(x-1)*2;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; end</font></div>{
+	=4
+	~2
+	~8
+	~1
+}
+
+
+// question: 548  name: 39 
+::39::[html]<p><font size\="4">\nЧому буде дорівнювати f(10)?</font></p> \n  <div> <font size\="3">function f(x\: integer)\: integer;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; if x\=0 then f\:\=1 else f\:\=f(x+1)*2;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; end</font></div>{
+	~3
+	~2
+	~4
+	=виникне помилка\: переповнення стеку
+}
+
+
+// question: 549  name: 40 
+::40::[html]<p><font size\="4">\nЧому буде дорівнювати f(3)?</font></p> \n  <div><font size\="3">function f(x\: integer)\:Integer;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; if x\=0 then f\:\=1 else f\:\=f(x-1)*2;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; end</font></div>{
+	=8
+	~20
+	~16
+	~виникне помилка\: переповнення стеку
+}
+
+
+// question: 550  name: 41 
+::41::[html]<p><font size\="4">\nЧому буде дорівнювати f(0)?</font></p> <font size\="3"> function f(x\: integer)\: integer;<br />&nbsp;&nbsp; begin<br />&nbsp;&nbsp;&nbsp;&nbsp; if x\=0 then f\:\=1 else f\:\=f(x-1)*2;<br />&nbsp;&nbsp; end</font>{
+	=1
+	~2
+	~4
+	~0
+}
+
+
+// question: 551  name: 42 
+::42::[html]<p><font size\="4">\nЧому буде дорівнювати f(2)?</font></p> \n  <div> <font size\="3">function f(x\: integer)\: integer;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; if x\=3 then f\:\=1 else f\:\=f(x-1)*2;</font></div> \n  <div><font size\="3">&nbsp;&nbsp; end</font></div>{
+	=виникне помилка\: переповнення стеку
+	~2
+	~4
+	~0
+}
+
+
+// question: 552  name: 43 
+::43::[html]<p><font size\="4">\nЧому буде дорівнювати f(12)?</font></p> <font size\="3">function f(x\: integer)\: integer;<br />&nbsp;&nbsp; begin<br />&nbsp;&nbsp;&nbsp;&nbsp; if x\=3 then f\:\=1 else f\:\=f(x-1)*2;<br />&nbsp;&nbsp; end;</font>{
+	=20
+	~18
+	~22
+	~виникне помилка\: переповнення стеку
+}
+
+
+// question: 553  name: 44 
+::44::[html]<p><font size\="4">\nЧому буде дорівнювати f(7)?</font></p> \n  <div><font size\="3">function f(x\: integer)\: integer;</font></div> \n  <div><font size\="3">&nbsp; &nbsp; &nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; if x\=0 then f\:\=2 else f\:\=f(x-1)*2;</font></div> \n  <div><font size\="3">&nbsp; &nbsp; &nbsp;&nbsp; end</font></div>{
+	=128
+	~30
+	~32
+	~виникне помилка\: переповнення стеку
+}
+
+
+// question: 554  name: 45 
+::45::[html]<p><font size\="4">\nЧому буде дорівнювати x після виконання рекурсивної процедури, якщо на її початку x\=5?</font></p> \n  <div> <font size\="3"> procedure pr(x\: integer);</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x-1;</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;0 then pr(x);</font></div> \n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	~0
+	~1
+	=4
+	~виникне помилка\: переповнення стеку
+}
+
+
+// question: 555  name: 46 
+::46::[html]<p><font size\="4">\nЧому буде дорівнювати x після виконання рекурсивної процедури, якщо на її початку x\=6?</font></p>\n  <div> <font size\="3"> procedure pr(x\: integer);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x+1;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;1 then pr(x);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	~5
+	~4
+	~6
+	=7
+}
+
+
+// question: 556  name: 47 
+::47::[html]<p><font size\="4">\nЧому буде дорівнювати x після виконання рекурсивної процедури, якщо на її початку x\=5?</font></p>\n  <div> <font size\="3"> procedure pr(x\: integer);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x*2;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;0 then pr(x);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	~5
+	~4
+	~6
+	=10
+}
+
+
+// question: 557  name: 48 
+::48::[html]<p><font size\="4">\nЧому буде дорівнювати x після виконання рекурсивної процедури, якщо на її початку x\=8?</font></p>\n  <div> <font size\="3"> procedure pr(x\: integer);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x div 2;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;2 then pr(x);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	=2
+	~4
+	~6
+	~0
+}
+
+
+// question: 558  name: 49 
+::49::[html]<p><font size\="4">\nЧому буде дорівнювати x після виконання рекурсивної процедури, якщо на її початку x\=10?</font></p>\n  <div> <font size\="3">procedure pr(x\: integer);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x-1;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;0 then pr(x);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	=0
+	~1
+	~-1
+	~відбудеться зациклювання
+}
+
+
+// question: 559  name: 50 
+::50::[html]<p><font size\="4">\nЧому буде дорівнювати x після виконання рекурсивної процедури, якщо на її початку x\=12?</font></p> \n  <div><font size\="3">procedure pr(x\: integer);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x\:\=x-12;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;0 then pr(x);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp; end</font></div>{
+	=0
+	~2
+	~1
+	~відбудеться зациклювання
+}
+
+
+// question: 518  name: 09 
+::09::[html]<p><font size\="4">\nЧи є рекурсивною процедура?</font></p>\n  <div> <font size\="3">Procedure A(u, v \: real);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp; Begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if x&gt;5 then begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; readln(x,y);</font></div>\n  <div><font size\="3">&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; A(x, y);</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp; End;</font></div>{TRUE}
+
+
+// question: 519  name: 10 
+::10::[html]<p><font size\="4">\nЧи є рекурсивною функція?</font></p>\n  <div> <font size\="3"> Function F(u, v \: real)\: real;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp; Begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if u&lt;v then begin</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; u\:\=u+1;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z \:\= g(F(x, y));</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;</font></div>\n  <div><font size\="3">&nbsp;&nbsp;&nbsp; End;</font></div>{TRUE}
+
+

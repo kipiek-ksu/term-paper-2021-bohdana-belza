@@ -1,0 +1,341 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    background: #eee url([[pix:theme|core/overlay]]) center top repeat-x fixed;
+}
+
+body {
+    color:#4b4b4b;
+}
+
+#page {
+    font-size: 108%;
+    font-family: 'Trebuchet MS', serif;
+    padding: 0;
+}
+
+a:link,
+a:visited {
+    color:#036;
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: #c06;
+    text-decoration: none;
+
+}
+a.dimmed:link,
+a.dimmed:visited {
+    color:#aaa;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ color: #c06;
+}
+
+h1 { font-size: 175%;}
+h2 { font-size: 125%;}
+h3 { font-size: 105%;}
+h4 { font-size: 90%;}
+h5 { font-size: 85%;}
+h6 { font-size: 80%;}
+
+
+hr {
+    border-bottom:1px dotted gray;
+    border-top:0px;
+}
+
+/*
+Modules: Forum
+-----------------------*/
+
+
+.forumpost .row.maincontent {
+    background: #fff url([[pix:theme|forum/leftpost]]) no-repeat left top;
+}
+.forumpost .row.header {
+    background: #eee url([[pix:theme|forum/forumheader]]) repeat left top;
+    border:0px;
+}
+
+.forumpost .content .posting {
+    margin-top: 15px;
+    max-width:100%;
+    overflow: crop;
+}
+.forumpost .topic a:link,
+.forumpost .topic a:visited {
+    color: #036;
+}
+
+.forumpost .topic a:hover,
+.forumpost .topic a:active {
+    color: #c06;
+}
+
+
+.mod-indent { } /* resourses & activities container */
+
+/*
+General Box
+-----------------------*/
+
+.generalbox {
+border:0 none;
+}
+
+#notice.generalbox {
+  margin: 0 auto;
+}
+
+#notice.generalbox p {
+  text-align: left;
+}
+
+
+.errorbox {
+    background-color: #c06;
+    color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    width: 75%;
+
+
+}
+
+/*
+Login (Front Page)
+-----------------------*/
+.block_login
+{
+    margin: 0;
+    padding: 0;
+}
+
+.block_login .footer
+{
+    text-align: right;
+    clear: both
+}
+
+
+.block_login .loginform .c1 {
+    margin: 0.3em 15px;
+    text-align: left;
+
+}
+
+/*
+Miscellaneous
+-----------------------*/
+#page-site-index .headingblock {
+margin-bottom:9px;
+margin-left: 3px;
+}
+
+/*
+Profileblock
+-----------------------*/
+
+#profileblock {
+    float: right;
+    text-align: right;
+    width: 450px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.headermenu {
+    float:right;
+    font-size:1em;
+    margin:0px;
+    text-align:right;
+}
+
+.user-pic img.userpicture {
+    float: right;
+    clear: right;
+    margin: 8px 8px 8px 0;
+    padding: 0;
+    width: 80px;
+    height: 80px;
+}
+
+#post-log {
+margin-right: 5px;
+}
+
+#pro-opt {
+    float: right;
+    left: 90px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    position: relative;
+    top: 95px;
+    width: 150px;
+}
+
+#pro-opt p.pro-log a,
+#pro-opt p.pro-log a:link {
+    color: #036;
+}
+
+#pro-opt p.pro-log a:hover {
+    color: #c06;
+}
+
+#pro-opt h3 {
+  color: #036;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+Course - Topic
+-----------------------*/
+.course-content ul.topics li.section,
+.course-content ul.weeks li.section {
+    border: 1px solid #ddd;
+    list-style: none outside none;
+}
+
+/*
+navbar and breadcrumb
+-----------------------*/
+
+.navbar {
+    clear:both;
+    font-size: 100%;
+    height: 3em;
+    width: 95%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-bottom:solid 1px #ddd;
+    padding-left: 1%;
+}
+.breadcrumb {
+    float:left;
+    color: #616161;
+}
+.navbutton {
+    text-align:right;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.navbutton .singlebutton input {
+  background:#fff url([[pix:theme|navbar]]) repeat-y 50% 0;
+    border-width:1px;
+    border-style:outset;
+    border-color:#787878;
+    font-size: 85%;
+    cursor: pointer;
+}
+
+.breadcrumb ul {
+    margin-top: 10px;
+    margin-left: 10px;
+    text-indent:0;
+    list-style:none;
+}
+.breadcrumb li,
+.navbutton div,
+.navbutton form {
+    display:inline;
+}
+
+.logininfo
+.breadcrumb {font-size: 1.5em;}
+
+.breadcrumb a,
+.breadcrumb a:link,
+.breadcrumb a:visited {
+        color: #c06;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:active { color: #036;}
+
+.forumpost {
+    border-collapse:separate;
+    border-style:solid;
+    border-width:0;
+    margin-top:10px;
+    width: 100%;
+}
+
+.jsenabled .course_category_tree .controls {
+visibility:visible;
+float: right;
+}
+
+.category_label {padding-left: 20px;}
+
+/*
+Collapse All - Expand All
+-------------------------*/
+
+div.controls .expandall,
+div.controls .collapseall {
+    font-size: .8em;
+    color: #036;
+    margin: 2px;
+    padding: 0;
+    float: right;
+    clear: both;
+    text-transform: capitalize;
+    font-variant; small-caps;
+    border-bottom: 1px solid #036;
+}
+
+
+/*
+Redirect Message
+-----------------------*/
+.redirectmessage,
+.continuebutton {
+    text-align: center;
+    font-size: 12pt;
+    color: #444;
+    padding-bottom: 10px;
+}
+
+/*
+YUI CSS
+-----------------------*/
+.yui-skin-sam .yui-panel-container {
+    z-index: 9999999!important;
+}
+
+.user-enroller-panel {
+    z-index: 9999999!important;
+}
+
+/*
+Misc course page styling
+-------------------------*/
+.path-course-view .weeks .current,
+.path-course-view .topics .current,
+.path-course-view .current td.side {
+    background-color: #c06;
+    color: #fff;
+}
+
+.course-content ul.topics li.section .left,
+.course-content ul.topics li.section .right {
+    padding-top: 10px;
+}
+
+.path-grade-report-grader #page-header {width: 100%; height: 100px;}
+
+.path-grade-report-grader .navbar { width: 98%;}

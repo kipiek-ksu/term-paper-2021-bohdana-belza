@@ -1,0 +1,26 @@
+ body{
+     font-family: "Arial";
+     font-size:12px;
+ }
+
+.resource_table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	font-size:12px;
+}
+
+.resource_head {
+	background-color: rgb(100, 100, 100);
+	color: white;
+	font-weight: bold;
+	text-align:left;
+}
+
+.elm_odd {
+	background-color: rgb(190, 190, 190);
+}
+
+.elm_even {
+	background-color: rgb(230, 230, 230);
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html<?php echo $direction ?>>
+<head> 
+	<title>Інтегроване середовище вивчення курсу «Основи алгоритмізації та програмування». Візуалізація роботи алгоритмів, алгоритмічне тестування.</title>
+	<meta name="keywords" content="Визуализация,алгоритм,демонстрация,сортировка,программа,программирование,визуализатор,обучение,Pascal,тестирование,учебник,библиотека алгоритмов,вычислительный эксперимент,эффективность алгоритма" />
+	    
+    <?php echo $meta ?>
+    <!--link rel="stylesheet" href="<?php echo $CFG->themewww .'/'. current_theme() ?>/styles_solstice.css" /-->
+    
+   <link rel="shortcut icon" href="<?php echo $CFG->themewww .'/'. current_theme() ?>/favicon.ico" />
+    <?php include("$CFG->javascript");
+include($CFG->themedir.'/my_js/js.php');
+	?>
+</head>
+
+<body<?php
+    echo " $bodytags";
+    if ($focus) {
+        echo " onload=\"setfocus()\"";
+    }
+    ?>>
+
+<div id="page">
+
+<?php if ($home) :  // This is what gets printed on the home page only?>
+	<div id="header" class="main">
+	<div id="myheader">
+    <div id="course_menu">
+      <ul>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/book/view.php?id=14">Навчальний посібник</a></li>
+        <li><img src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/images/separator1.jpg"/></li>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/data/view.php?id=38">Бібліотека лекцій</a></li>
+        <li><img src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/images/separator1.jpg"/></li>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/vint/view.php?id=37">Середовище демонстрації</a></li>
+        <li><img src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/images/separator1.jpg"/></li>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/vinttaskbook/view.php?id=35">Бібліотека задач</a></li>
+        <li><img src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/images/separator1.jpg"/></li>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/quiz/index.php?id=2">Поточний контроль</a></li>
+        <li><img src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/images/separator1.jpg"/></li>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/quiz/view.php?id=26">Підсумковий контроль</a></li>
+      </ul>
+    </div>
+    <div id="header_img">
+      <a href="<?php echo $CFG->wwwroot?>">
+        <span class="line1">Інтегроване середовище курсу</span>
+        <span class="line2">“Основи алгоритмізації та програмування”</span>
+        <span class="line3">для вищих навчальних закладів</span>
+      </a>
+    </div>
+	</div>
+      <?php if ($navigation) : // This is the navigation bar with breadcrumbs  ?>
+	  <div class="navbar clearfix">
+        <div class="breadcrumb" id="mybreadcrumb">
+          <?php print_navigation($navigation); ?>
+        </div>
+		
+		<div class="navbutton" id="myloginas"></div>
+		<div class="navbutton" id="hdmenubuttons"><?php echo $button; ?></div>
+		
+	  </div>
+      <?php endif; ?>
+  </div>
+
+<?php elseif ($heading) :  // This is what gets printed on any other page with a heading?>
+    <div id="header" class="second">
+	<div id="myheader">
+    <div id="course_menu">
+      <ul>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/book/view.php?id=14">Навчальний посібник</a></li>
+        <li><img src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/images/separator1.jpg"/></li>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/data/view.php?id=38">Бібліотека лекцій</a></li>
+        <li><img src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/images/separator1.jpg"/></li>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/vint/view.php?id=37">Середовище демонстрації</a></li>
+        <li><img src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/images/separator1.jpg"/></li>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/vinttaskbook/view.php?id=35">Бібліотека задач</a></li>
+        <li><img src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/images/separator1.jpg"/></li>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/quiz/index.php?id=2">Поточний контроль</a></li>
+        <li><img src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/images/separator1.jpg"/></li>
+        <li><a href="<?php echo $CFG->wwwroot?>/mod/quiz/view.php?id=26">Підсумковий контроль</a></li>
+      </ul>
+    </div>
+    <div id="header_img">
+      <a href="<?php echo $CFG->wwwroot?>">
+        <span class="line1">Інтегроване середовище курсу</span>
+        <span class="line2">“Основи алгоритмізації та програмування”</span>
+        <span class="line3">для вищих навчальних закладів</span>
+      </a>
+    </div>
+	</div>
+      <?php if ($navigation) : // This is the navigation bar with breadcrumbs  ?>
+	  <div class="navbar clearfix">
+        <div class="breadcrumb" id="mybreadcrumb">
+          <?php print_navigation($navigation); ?>
+        </div>
+		
+		<div class="navbutton" id="myloginas"></div><br/>
+		<div class="navbutton" id="hdmenubuttons" style=""><?php echo $button; ?>
+		</div>
+		
+		
+	  </div>
+      <?php endif; ?>
+  </div>
+<?php endif; ?>
+
+    <!-- END OF HEADER -->
+		<div class="headerbottom"></div>
+		<div id="wrapper">
+		<div id="topright">
+		<div id="bottomleft">
+		<div id="bottomright">
+
+    <div id="content">

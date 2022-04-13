@@ -1,0 +1,56 @@
+/* 
+
+	Main Block Changes
+	Alex Mills - SIDE - 16/12/2010
+	Theme: Connect Core (Royal) 
+
+*/
+
+
+
+
+
+/* 
+
+	Course overview block. Sits in the center column on the 'My Home' page. 
+	The 'width' fixes the rendering issues in IE6
+
+*/
+
+.block_course_overview
+{
+	width: 100%;
+}
+
+.block_course_overview .content
+{
+	border-radius: 0px;
+}
+
+
+/* 
+
+	Private files block 
+	
+	Fixes the uber pixelated button in IE6
+
+*/
+
+.block_private_files .content .singlebutton input
+{
+	overflow: visible;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+/* 
+
+	Fix the massive curved corners in Firefox 
+
+*/
+
+.block_course_summary
+{
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+}

@@ -1,0 +1,57 @@
+<h2   class="main">vint</h2><hr />
+(mysql): CREATE TABLE mdl_vint (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    summary MEDIUMTEXT NOT NULL,
+    numbering SMALLINT(4) unsigned NOT NULL DEFAULT 0,
+    disableprinting TINYINT(2) unsigned NOT NULL DEFAULT 2,
+    customtitles TINYINT(2) unsigned NOT NULL DEFAULT 0,
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vint COMMENT='Defines vint' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_vint_chapters (
+    id BIGINT(10) NOT NULL auto_increment,
+    vintid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    pagenum BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    subchapter BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    title VARCHAR(255) NOT NULL DEFAULT '',
+    content LONGTEXT NOT NULL,
+    hidden TINYINT(2) unsigned NOT NULL DEFAULT 0,
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    importsrc BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vint_chapters COMMENT='Defines vint_chapters' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vint', 'update', 'vint', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vint', 'view', 'vint', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vint', 'view all', 'vint', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vint', 'print', 'vint', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<div class="notifysuccess" style="text-align:center">vint таблица была успешно установлена</div><br />
+<hr />

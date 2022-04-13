@@ -1,0 +1,1422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quiz>
+  <!-- question: 0  -->
+  <question type="category">
+    <category>Алгоритми</category>
+  </question>
+  <!-- question: 53  -->
+  <question type="matching">
+    <name>
+      <text>Блок-схеми</text>
+    </name>
+    <questiontext format="html">
+      <text>Поставте у відповідність до типу операції фігуру блок-схеми &lt;br /&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <subquestion>
+      <text>початок та кінець</text>
+      <answer>
+        <text>Овал</text>
+      </answer>
+    </subquestion>
+    <subquestion>
+      <text>введення</text>
+      <answer>
+        <text>Паралелограм</text>
+      </answer>
+    </subquestion>
+    <subquestion>
+      <text>умова</text>
+      <answer>
+        <text>Ромб</text>
+      </answer>
+    </subquestion>
+    <subquestion>
+      <text>обчислення</text>
+      <answer>
+        <text>Прямокутник</text>
+      </answer>
+    </subquestion>
+  </question>
+  <!-- question: 737  -->
+  <question type="matching">
+    <name>
+      <text>Блок-схеми</text>
+    </name>
+    <questiontext format="html">
+      <text>Поставте у відповідності до типу операції фігуру блок-схеми &lt;br /&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <subquestion>
+      <text>початок та кінець</text>
+      <answer>
+        <text>овал</text>
+      </answer>
+    </subquestion>
+    <subquestion>
+      <text>введення</text>
+      <answer>
+        <text>паралелограм</text>
+      </answer>
+    </subquestion>
+    <subquestion>
+      <text>умова</text>
+      <answer>
+        <text>ромб</text>
+      </answer>
+    </subquestion>
+    <subquestion>
+      <text>обчислення</text>
+      <answer>
+        <text>прямокутник</text>
+      </answer>
+    </subquestion>
+  </question>
+  <!-- question: 805  -->
+  <question type="multichoice">
+    <name>
+      <text>А1</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;span onclick="MyToogle( 'subject_79' )" id="subject_79"&gt;Алгоритм, який записаний мовою виконавця називається&amp;nbsp; &lt;/span&gt;&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text></text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="0">
+      <text>блок-схема</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>програма</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>документ</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>вказівка</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>код</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 807  -->
+  <question type="multichoice">
+    <name>
+      <text>А2</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;span id="subject_79" onclick="MyToogle( 'subject_79' )"&gt;Алгоритми, які призначені для розв'язання окремих підзадач основної задачі називають&lt;/span&gt;&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text></text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="0">
+      <text>структурними алгоритмами</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>допоміжними алгоритмами</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>базовими алгоритмами</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>проміжними алгоритмами</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>кінцевими алгоритмами</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 814  -->
+  <question type="multichoice">
+    <name>
+      <text>А3</text>
+    </name>
+    <questiontext format="html">
+      <text>Структура даних складається з трьох основних компонентів:</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text></text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="33.333">
+      <text>набір предметно-орієнтованих операцій для обробки специфічних типів абстрактних об'єктів описуваної предметної області;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>структура пам'яті, в якій зберігаються дані, що описують абстрактні об'єкти;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>структура пам'яті, в якій зберігаються абстрактні типи данних, а також їх реалізація за допомогою операцій, що містяться у ній;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>інтерпретація (реалізація) кожної з операцій в термінах структури пам'яті.</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>інтерполяція операцій</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 70  -->
+  <question type="multichoice">
+    <name>
+      <text>Величини</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;span id="subject_79" onclick="MyToogle( 'subject_79' )"&gt;Як називаються типи величин, що визначаються декількома числовими значеннями?&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text></text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="100">
+      <text>векторні</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>растрові</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>багатозначні</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>неоднозначні</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>лінії</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 4  -->
+  <question type="multichoice">
+    <name>
+      <text>Визначення</text>
+    </name>
+    <questiontext format="html">
+      <text>Виберіть&amp;nbsp;означення, які відповідають поняттю&amp;nbsp;алгоритма:&lt;br /&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="33.333">
+      <text>будь-яка система обчислень, що виконуються за чітко визначеними правилами, яка після скінченого числа виконаних кроків приводить до рішення поставленої задачі</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>точне передписання, яке визначає обчислювальний процес, що йде від різних вихідних даних до шуканого результату</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>послідовність дій, що направлені на отримання визначеного результату за кінцеву кількість кроків</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>неоднозначно описана послідовність процедур у змішаному порядку</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 84  -->
+  <question type="multichoice">
+    <name>
+      <text>Виконавець</text>
+    </name>
+    <questiontext format="html">
+      <text>Виконавець алгоритму це</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text></text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="100">
+      <text>суб’єкт чи пристрій, що здатні правильно інтерпретувати описання алгоритму і виконувати перелік дій, що містяться в ньому</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>суб’єкт чи пристрій, що здатні виконувати перелік дій, що містяться в алгоритмі</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>суб’єкт чи пристрій, що здатні правильно інтерпретувати описання алгоритму</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>суб’єкт чи пристрій, що не здатні правильно інтерпретувати описання алгоритму і виконувати перелік дій, що містяться в ньому</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 30  -->
+  <question type="multichoice">
+    <name>
+      <text>Дійсні числа</text>
+    </name>
+    <questiontext format="html">
+      <text>Які з цих арифметичних операцій можна виконувати з дійсними числами?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="50">
+      <text>Множення</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="50">
+      <text>Ділення</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-50">
+      <text>Знаходження неповної частки</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-50">
+      <text>Знаходження залишку</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 32  -->
+  <question type="multichoice">
+    <name>
+      <text>Дійсні числа</text>
+    </name>
+    <questiontext format="html">
+      <text>Які з цих логічних операцій можна використовувати при роботі з дійсними числами?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="33.333">
+      <text>&gt;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>&lt;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>&lt;&gt;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>not</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 43  -->
+  <question type="multichoice">
+    <name>
+      <text>Команди</text>
+    </name>
+    <questiontext format="html">
+      <text>Виберіть команди, які є командами управління:</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="33.333">
+      <text>вибору</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>повторення</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>переходу</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>видалення</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>копіювання</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 47  -->
+  <question type="multichoice">
+    <name>
+      <text>Операції</text>
+    </name>
+    <questiontext format="html">
+      <text>Вкажіть всі вірні варіанти присвоєння:&lt;br /&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="50">
+      <text>&lt;Змінна&gt; := &lt;Константа&gt;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="50">
+      <text>&lt;Змінна&gt; := &lt;Змінна&gt;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-50">
+      <text>&lt;Константа&gt; := &lt;Константа&gt;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-50">
+      <text>&lt;Константа&gt; := &lt;Змінна&gt;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 15  -->
+  <question type="multichoice">
+    <name>
+      <text>Поняття</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;span id="subject_78" onclick="MyToogle( 'subject_78' )"&gt;Як називається характеристика предмета або явища, значення якої можна виміряти або обчислити?&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="100">
+      <text>величина</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>змінна</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>константа</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>множина</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>визначення</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 66  -->
+  <question type="multichoice">
+    <name>
+      <text>Поняття</text>
+    </name>
+    <questiontext format="html">
+      <text>&amp;nbsp; Властивість алгоритму, яка передбачає, що &lt;span onclick="MyToogle( 'subject_77' )" id="subject_77"&gt;кожна команда з набору команд виконавця містить вказівку виконати деяку не деталізовану більш детально дію, яку розуміє, однозначно і точно виконує виконавець - це ...&lt;br /&gt;&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="100">
+      <text>елементарність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>масовість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>визначеність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>результативність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>характерність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 67  -->
+  <question type="multichoice">
+    <name>
+      <text>Поняття</text>
+    </name>
+    <questiontext format="html">
+      <text>&amp;nbsp; Властивість алгоритму, яка передбачає, що &lt;span onclick="MyToogle( 'subject_77' )" id="subject_77"&gt;повторне виконання алгоритму для тих же вхідних даних у точності повторює перше його виконання - це ...&lt;br /&gt;&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="100">
+      <text>визначеність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>масовість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>елементарність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>результативність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>точність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 68  -->
+  <question type="multichoice">
+    <name>
+      <text>Поняття</text>
+    </name>
+    <questiontext format="html">
+      <text>&amp;nbsp; Властивість алгоритму, яка визначає, що &lt;span id="subject_77" onclick="MyToogle( 'subject_77' )"&gt;виконання будь-якого алгоритму повинно бути закінчене через скінчену кількість кроків з деяким результатом - це ...&lt;br /&gt;&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="0">
+      <text>визначеність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>результативність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>масовість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>елементарність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 69  -->
+  <question type="multichoice">
+    <name>
+      <text>Поняття</text>
+    </name>
+    <questiontext format="html">
+      <text>&amp;nbsp; Властивість алгоритму, яка визначає, що а&lt;span id="subject_77" onclick="MyToogle( 'subject_77' )"&gt;лгоритми описують хід розв’язування не однієї-єдиної задачі, а цілого класу однотипних задач - це ...&lt;br /&gt;&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="100">
+      <text>масовість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>результативність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>елементарність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>визначеність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>універсальність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 89  -->
+  <question type="multichoice">
+    <name>
+      <text>Рекурсія</text>
+    </name>
+    <questiontext format="html">
+      <text>Рекурсія в алгоритмі буде прямою, коли</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="0">
+      <text>рекурсивний виклик даного алгоритму відбувається з допоміжного алгоритму</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>порядок команд визначається в залежності від результатів перевірки умов</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>команда звернення алгоритму самого до себе знаходиться в самому алгоритмі</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>один виклик алгоритму йде за іншим</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 86  -->
+  <question type="multichoice">
+    <name>
+      <text>Службові слова</text>
+    </name>
+    <questiontext format="html">
+      <text>Що називають службовими словами в алгоритмічній мові?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text></text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="0">
+      <text>слова, які використовуються для запису команд, що входять до складу системи команд виконавця</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>слова, зміст і спосіб застосування яких задано раз і назавжди</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>допоміжні алгоритми, що використовуються у складі інших алгоритмів</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>константи з постійним значенням</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>англійська мова</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 7  -->
+  <question type="multichoice">
+    <name>
+      <text>Формальні ознаки алгоритмів</text>
+    </name>
+    <questiontext format="html">
+      <text>Якої формальної ознаки алгоритмів не існує?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно&lt;br /&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="0">
+      <text>Дискретність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Скінченість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Масовість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>Програмованість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 738  -->
+  <question type="multichoice">
+    <name>
+      <text>Формальні ознаки алгоритмів</text>
+    </name>
+    <questiontext format="html">
+      <text>Якої, з перерахованих ознак алгоритмів не існує?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно&lt;br /&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="-100">
+      <text>дискретність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>скінченість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>масовість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="50">
+      <text>програмованість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="50">
+      <text>об'ємність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 739  -->
+  <question type="multichoice">
+    <name>
+      <text>Формальні ознаки алгоритмів</text>
+    </name>
+    <questiontext format="html">
+      <text>Якої, з перерахованих ознак алгоритмів не існує?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно&lt;br /&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="0">
+      <text>дискретність</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>скінченість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>масовість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>програмованість</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 23  -->
+  <question type="multichoice">
+    <name>
+      <text>Характеристика величин</text>
+    </name>
+    <questiontext format="html">
+      <text>Чим характеризуються величини в алгоритмах?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="33.333">
+      <text>Ім'ям</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>Значенням</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>Типом</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>Місцем використання</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 27  -->
+  <question type="multichoice">
+    <name>
+      <text>Цілі числа</text>
+    </name>
+    <questiontext format="html">
+      <text>Які з цих арифметичних операцій можна використовувати з цілими числами?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text>Вірно</text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text>Частково вірно</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text>Невірно</text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="33.333">
+      <text>Додавання</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>Віднімання</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>Множення</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>Ділення</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 28  -->
+  <question type="multichoice">
+    <name>
+      <text>Цілі числа</text>
+    </name>
+    <questiontext format="html">
+      <text>Які з цих логічних операцій можна використовувати з цілими числами?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback>
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback>
+      <text></text>
+    </incorrectfeedback>
+    <answernumbering></answernumbering>
+    <answer fraction="33.333">
+      <text>&gt;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>&lt;</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="33.333">
+      <text>=</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-100">
+      <text>Or</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 24  -->
+  <question type="shortanswer">
+    <name>
+      <text>Характеристика величин</text>
+    </name>
+    <questiontext format="html">
+      <text>Як називається єдина характеристика величини, що точно її ідентифікує?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <usecase>0</usecase>
+    <answer fraction="100">
+      <text>Ім"я</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+  <!-- question: 25  -->
+  <question type="shortanswer">
+    <name>
+      <text>Характеристика величин</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;span onclick="MyToogle( 'subject_79' )" id="subject_79"&gt;Яка характеристика величини визначає набір припустимих операцій над даною величиною, область її визначення і форму запису її значень?&lt;/span&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <usecase>0</usecase>
+    <answer fraction="100">
+      <text>Тип</text>
+      <feedback>
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+</quiz>

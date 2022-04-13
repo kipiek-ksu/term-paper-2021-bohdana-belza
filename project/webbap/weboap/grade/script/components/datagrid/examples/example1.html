@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>JavaScript Bs_DataGrid Example 1</title>
+<script type="text/javascript" src="/_bsJavascript/core/lang/Bs_Misc.lib.js"></script>
+<script type="text/javascript" src="/_bsJavascript/components/datagrid/Bs_DataGrid.class.js"></script>
+<link rel='stylesheet' href='./style1.css'>
+
+<script type="text/javascript">
+function init() {
+  myGrid = new Bs_DataGrid('myGrid');
+	myGrid.bHeaderFix = false;
+  var header = new Array({text:'#'}, 'Foo', {text:'Bar', align:'right', width:50});
+  var data   = new Array();
+  data[data.length] = new Array('1', 'asdfasdf', '19');
+  data[data.length] = new Array('2', 'bbbbbb', '15');
+  data[data.length] = new Array('3', 'zzzzzz', '111');
+  data[data.length] = new Array('4', 'dddddd', '183');
+  myGrid.setHeaderProps(header);
+  myGrid.setData(data);
+  myGrid.drawInto('myGridDiv');
+}
+</script>
+</head>
+
+<body onLoad="init();">
+
+<h1>JavaScript Bs_DataGrid Example 1</h1>
+
+This is an example of the <a href="http://www.blueshoes.org/en/javascript/datagrid/" target="_blank">DataGrid Control</a>.
+<br><br>
+
+<div id="myGridDiv"></div>
+
+</body>
+</html>

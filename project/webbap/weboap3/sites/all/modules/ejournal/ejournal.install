@@ -1,0 +1,130 @@
+<?php
+
+function ejournal_install() {
+  switch ($GLOBALS['db_type']) {
+  	case 'pqsql':
+     drupal_set_message(t('I am sorry, the E-Journal module was not tested with the Postgresql, no tables were loaded. If you would like to test it and include the Postgres support, please contact me.'));
+     return;
+     
+    case 'mysql':
+    case 'mysqli':
+    drupal_set_message(t('Creating the database schema for the e-journal core'));
+    db_query("CREATE TABLE {ejournal_articles} (
+        nid int(6) NOT NULL default '0',
+        iid int(6) NOT NULL default '0',
+        jid int(6) NOT NULL default '0',
+        weight int(4) NOT NULL default '0',
+        editor_mark int(4) NOT NULL default '0',
+        proofreader_mark int(4) NOT NULL default '0',
+        PRIMARY KEY  (nid)
+      ) Type=MyISAM;");
+      db_query("CREATE TABLE {ejournal_articles_log} (
+        id int(6) NOT NULL auto_increment,
+        nid int(6) NOT NULL default '0',
+        iid int(6) NOT NULL default '0',
+        uid int(6) NOT NULL default '0',
+        type varchar(16) NOT NULL default '',
+        message text NOT NULL,
+        hostname varchar(128) NOT NULL default '',
+        timestamp int(11) NOT NULL default '0',
+        PRIMARY KEY  (id)
+      ) Type=MyISAM;");
+      db_query("CREATE TABLE {ejournal_authors} (
+        uid int(4) NOT NULL default '0',
+        tid int(4) NOT NULL default '0',
+        PRIMARY KEY  (uid)
+      ) Type=MyISAM;");
+      db_query("CREATE TABLE {ejournal_email_templates} (
+        eid int(6) NOT NULL default '0',
+        jid int(6) NOT NULL default '0',
+        email_key varchar(64) NOT NULL default '',
+        subject varchar(128) NOT NULL default '',
+        body text,
+        description text,
+        PRIMARY KEY  (eid)
+      ) Type=MyISAM;");
+      db_query("CREATE TABLE {ejournal_issues} (
+        iid int(4) NOT NULL default '0',
+        jid int(4) NOT NULL default '0',
+        year varchar(64) NOT NULL default '0',
+        volume varchar(64) NOT NULL default '0',
+        number varchar(64) NOT NULL default '0',
+        custom_identification varchar(128) NOT NULL default '',
+        cover_page_nid int(6) NOT NULL default '0',
+        date_published int(11) NOT NULL default '0',
+        status int(4) NOT NULL default '0',
+        issue_order int(4) NOT NULL default '0',
+        description varchar(255) NOT NULL default '',
+        PRIMARY KEY  (iid)
+      ) Type=MyISAM;");
+      db_query("CREATE TABLE {ejournal_journals} (
+        jid int(6) NOT NULL default '0',
+        vid varchar(255) NOT NULL default '0',
+        path varchar(64) NOT NULL default '',
+        title varchar(255) NOT NULL default '',
+        description text NOT NULL,
+        citation_template varchar(255) NOT NULL default '',
+        about_page varchar(255) NOT NULL default '',
+        ejournal_layout varchar(255) NOT NULL default '',
+        archive_order varchar(4) NOT NULL default 'DESC',
+        enabled tinyint(1) NOT NULL default '1',
+        issn varchar(64) NOT NULL default '',
+        publisher_name varchar(128) NOT NULL default '',
+        publisher_url varchar(128) NOT NULL default '',
+        publisher_email varchar(128) NOT NULL default '',
+        issue_format int(4) NOT NULL default '0',
+        PRIMARY KEY  (jid)
+      ) Type=MyISAM;");
+      db_query("CREATE TABLE {ejournal_store} (
+        jid int(6) NOT NULL default '0',
+        jkey varchar(255) NOT NULL default '',
+        jvalue text
+      ) Type=MyISAM ;");
+      db_query("CREATE TABLE {ejournal_shortly} (
+        nid int(6) NOT NULL default '0',
+        iid int(6) NOT NULL default '0',
+        jid int(6) NOT NULL default '0',
+        PRIMARY KEY  (nid)
+      ) Type=MyISAM;");
+      db_query("CREATE TABLE {ejournal_node_access} (                                
+       nid int(10) unsigned NOT NULL default '0',              
+       gid int(10) unsigned NOT NULL default '0',              
+       realm varchar(255) NOT NULL default '',                 
+       grant_view tinyint(3) unsigned NOT NULL default '0',    
+       grant_update tinyint(3) unsigned NOT NULL default '0',  
+       grant_delete tinyint(3) unsigned NOT NULL default '0',  
+       PRIMARY KEY  (nid,gid,realm)                       
+       ) Type=MyISAM;");
+       
+      drupal_set_message(t('E-Journal database tables created'));
+      
+      require_once('ejournal.module');
+      ejournal_invoke_all('install'); //TODO watch this, is plugin loaded when calling?
+      break;
+  }
+  
+}
+
+/**
+* Implementation of hook_uninstall().
+*/
+function ejournal_uninstall() {
+  //TODO - how the confirmation works for this?
+  db_query('DROP TABLE {ejournal_articles}');
+  db_query('DROP TABLE {ejournal_articles_log}');
+  db_query('DROP TABLE {ejournal_authors}');
+  db_query('DROP TABLE {ejournal_email_templates}');
+  db_query('DROP TABLE {ejournal_issues}');
+  db_query('DROP TABLE {ejournal_journals}');
+  db_query('DROP TABLE {ejournal_store}');
+  
+  variable_del('ejournal_custom_layouts');
+  variable_del('ejournal_use_cron');
+  variable_del('ejournal_issue_order');
+  
+  require_once('ejournal.module');
+  ejournal_invoke_all('uninstall');
+  drupal_set_message(t('E-Journal database tables were removed'));
+}
+
+?>

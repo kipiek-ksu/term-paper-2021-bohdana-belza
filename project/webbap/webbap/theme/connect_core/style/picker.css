@@ -1,0 +1,71 @@
+/* 
+
+	YUI File Picker Fixes and Styling
+	Alex Mills - SIDE - 10/1/2011
+	Theme: Connect Core (Royal)
+	
+	This styling is a simple attempt to do a little cleanup of the YUI File picker
+	without having to change it's own style sheets. The biggest problem is that the 
+	window chrome was only shown behin the text in IE6, making it impossible to move, 
+	while not perfect, it now works a little better.
+	
+	Other changes are just some proper margins for the buttons and nice window shadow 
+	on modern browsers.
+
+*/
+
+.yui-panel-container .file-picker
+{
+	padding: 0px !important;
+	-webkit-box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* 
+
+	The YUI File Picker window chrome - still has small gap in IE6 
+
+*/
+
+.yui-panel-container .file-picker .hd
+{
+	width: 710px !important;
+	padding-left: 10px !important;
+	padding-right: 0px !important;
+}
+
+/* 
+
+	File Picker Icon/List Buttons 
+
+*/
+
+.yui-panel-container .file-picker .bd .yui-buttongroup
+{
+}
+
+.yui-panel-container .file-picker .bd .yui-buttongroup .yui-button
+{
+	margin-top: 1px !important;
+}
+
+/* 
+
+	File Picker source list 
+
+*/
+
+.yui-panel-container .file-picker .bd #yui-gen4 .yui-layout-bd
+{
+
+}
+
+.yui-panel-container .file-picker .bd #yui-gen4 .yui-layout-bd .fp-list
+{
+
+}
+
+.yui-panel-container .file-picker .bd #yui-gen4 .yui-layout-bd .fp-list li .fp-repo-name
+{
+
+}

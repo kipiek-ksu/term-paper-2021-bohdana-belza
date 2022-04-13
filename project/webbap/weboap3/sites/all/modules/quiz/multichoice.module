@@ -1,0 +1,544 @@
+<?php
+/* $Id: multichoice.module,v 1.39.2.8 2007/08/18 00:12:45 kscheirer Exp $ */
+
+define('MULTICHOICE_NAME', 'Multi-Choice Question');
+
+/**
+ * @file
+ * Multiple choice question type for quiz module
+ *
+ * Allows the creation of multiple choice questions (ex: a, b, c, d or true/false)
+ */
+
+/**
+ * Implementation of hook_perm().
+ */
+function multichoice_perm() {
+  return array('create multichoice', 'edit own multichoice');
+}
+
+/**
+ * Implementation of hook_access().
+ */
+function multichoice_access($op, $node) {
+  global $user;
+
+  if ($op == 'create') {
+    return user_access('create multichoice');
+  }
+
+  if ($op == 'update' || $op == 'delete') {
+    if (user_access('edit own multichoice') && ($user->uid == $node->uid)) {
+      return TRUE;
+    }
+  }
+}
+
+/**
+ * Implementation of hook_node_info().
+ */
+function multichoice_node_info() {
+  return array(
+    'multichoice' => array(
+      'name' => t(MULTICHOICE_NAME),
+      'module' => 'multichoice',
+      'description' => t('A question type for the quiz module: allows you to create multiple choice questions (ex: A, B, C, D or true/false)'),
+    )
+  );
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function multichoice_menu($may_cache) {
+  $items = array();
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'node/add/multichoice',
+      'title' => t(MULTICHOICE_NAME),
+      'access' => user_access('create multichoice'),
+    );
+  }
+  return $items;
+}
+
+/**
+ * Implementation of hook_form().
+ */
+function multichoice_form(&$node) {
+  // quiz id here to tie creating a question to a specific quiz
+  $quiz_id = arg(3); 
+  if (!empty($quiz_id)) {
+    $form['quiz_id'] = array(
+      '#type' => 'value',
+      '#value' => $quiz_id,
+    );
+  }    
+
+  // Display multichoice form
+  $form['title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title'),
+    '#default_value' => $node->title,
+    '#required' => TRUE,
+    '#description' => t('Add a title that will help distinguish this question from other questions. This will not be seen during the quiz.'),
+  );
+
+  $form['body'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Question'),
+    '#default_value' => $node->body,
+    '#required' => TRUE,
+  );
+  
+  $form['body_filter']['format'] = filter_form($node->format);
+
+  $form['multiple_answers'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Multiple answers'),
+    '#default_value' => $node->multiple_answers,
+  );
+
+  // Determine number of answer rows to display
+  if (!isset($node->rows)) {
+     $node->rows = max(2, $node->answers ? count($node->answers) : 5);
+  }
+  if ($_POST['more']) {
+    $node->rows += 5;
+  }
+  $answers = $node->answers;
+
+  // Display answer rows
+  $form['answers'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Choices'),
+    '#tree' => TRUE,
+    '#theme' => 'multichoice_form',
+  );
+  
+  for ($i = 0; $i < $node->rows; $i++) {
+    $form['answers'][$i]['correct'] = array(
+      '#type' => 'checkbox',
+      '#default_value' => $answers[$i]['points'],
+    );
+    
+    $form['answers'][$i]['answer'] = array(
+      '#type' => 'textarea',
+      '#default_value' => $answers[$i]['answer'],
+      '#cols' => 30, '#rows' => 2,
+    );
+    
+    $form['answers'][$i]['feedback'] = array(
+      '#type' => 'textarea',
+      '#default_value' => $answers[$i]['feedback'],
+      '#cols' => 30, '#rows' => 2,
+    );
+    
+    if ($answers[$i]['aid']) {
+      $form['answers'][$i]['delete'] = array(
+        '#type' => 'checkbox',
+        '#default_value' => 0,
+      );
+
+      $form['answers'][$i]['aid'] = array(
+        '#type' => 'hidden',
+        '#value' => $answers[$i]['aid'],
+      );
+    }
+  }
+
+  $form['more'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('I need more answers'),
+  );
+
+  // if coming from quiz view, go back there on submit
+  if (!empty($quiz_id)) {
+    $form['#redirect'] = 'node/'. $quiz_id .'/questions'; 
+  }
+
+  return $form;
+}
+
+/**
+ * Implementation of hook_validate().
+ */
+function multichoice_validate(&$node) {
+
+  // Hard-code questions to have no teaser and to not be promoted to front page
+  $node->teaser = 0;
+  $node->promote = 0;
+
+  if (!$node->nid && empty($_POST)) return;
+
+  // Validate body
+  if (!$node->body) {
+    form_set_error('body', t('Question text is empty'));
+  }
+
+  // Validate answers
+  $answers = 0;
+  $corrects = 0;
+
+  while (list($key, $answer) = each($node->answers)) {
+    if (trim($answer['answer']) != '') {
+      $answers++;    
+      if ($answer['correct'] > 0) {
+        if ($corrects && !$node->multiple_answers) {
+          form_set_error('multiple_answers', t('Single choice yet multiple correct answers are present'));
+        }
+        $corrects++;
+      }
+    }
+    else {
+      // warn feedback is present without an answer
+      if (trim($answer['feedback']) != '') {
+        form_set_error("answers][$key][feedback", t('Feedback is given without an answer.'));
+      }
+      // warn marking correct without answer
+      if ($answer['correct'] > 0) {
+        form_set_error("answers][$key][correct", t('Empty answer marked as correct choice.'));
+      }
+    }
+  }
+
+  if (!$corrects) {
+    form_set_error("answers][0]['correct'", t('No correct choice(s).'));
+  }
+  if ($node->multiple_answers && $corrects < 2) {
+    form_set_error('multiple_answers', t('Multiple answers selected, but only %count correct answer(s) present.', array('%count' => $corrects)));
+  }
+  if (!$answers) {
+    form_set_error("answers][0]['answer'", t('No answers.'));
+  }
+  if ($answers < 2) {
+    form_set_error("answers][1]['answer'", t('Must have at least two answers.'));
+  }
+}
+
+/**
+ * Implementation of hook_insert().
+ */
+function multichoice_insert(&$node) {
+  db_query("INSERT INTO {quiz_question} (nid, properties) VALUES(%d, '%s')", $node->nid, serialize(array('multiple_answers' => $node->multiple_answers)));
+  // we came from editing a quiz, so we should add this question to the quiz directly
+  if ($node->quiz_id > 0) { 
+    db_query('INSERT INTO {quiz_questions} (quiz_nid, question_nid, question_status) VALUES (%d, %d, %d)', $node->quiz_id, $node->nid, QUESTION_ALWAYS);
+  }
+  
+  while (list($key, $value) = each($node->answers)) {
+    if (trim($value['answer']) != "")
+      db_query("INSERT INTO {quiz_question_answer} (aid, question_nid, answer, feedback, points) VALUES(%d, %d, '%s', '%s', %d)", 
+        db_next_id('{quiz_question_answer}_aid'), $node->nid, $value['answer'], $value['feedback'], $value['correct']);
+  }
+}
+
+/**
+ * Implementation of hook_update().
+ */
+function multichoice_update($node) {
+  db_query("UPDATE {quiz_question} SET properties = '%s' WHERE nid = %d", serialize(array('multiple_answers' => $node->multiple_answers)), $node->nid);
+  
+  while (list($key, $value) = each($node->answers)) {
+    if ($value['aid']) {
+      $value['answer'] = trim($value['answer']);
+      if ($value['delete'] == 1 || !isset($value['answer']) || $value['answer'] == '') {
+        //Delete this entry
+        db_query("DELETE FROM {quiz_question_answer} WHERE aid = %d", $value['aid']);
+      } 
+      else {
+        //Update this entry
+        db_query("UPDATE {quiz_question_answer} SET answer = '%s', feedback = '%s', points = %s WHERE aid = %d", $value['answer'], $value['feedback'], $value['correct'], $value['aid']);
+      }
+    } 
+    else if (trim($value['answer']) != "") {
+      //If there is an answer, insert a new row
+      db_query("INSERT INTO {quiz_question_answer} (aid, question_nid, answer, feedback, points) VALUES(%d, %d, '%s', '%s', %d)", 
+        db_next_id('{quiz_question_answer}_aid'), $node->nid, $value['answer'], $value['feedback'], $value['correct']);
+    }
+  }
+}
+
+/**
+ * Implementation of hook_delete().
+ */
+function multichoice_delete(&$node) {
+  // for all quizzes that have this quiz with status ALWAYS, reduce number of questions by 1
+  db_query("UPDATE {quiz} SET number_of_questions = number_of_questions-1 WHERE nid IN (SELECT quiz_nid FROM {quiz_questions} WHERE question_status = %d AND question_nid = %d)", QUESTION_ALWAYS, $node->nid);
+  // delete all answers for this question
+  db_query("DELETE FROM {quiz_question_answer} WHERE question_nid = %d", $node->nid);
+  // delete this question from all quizzes
+  db_query("DELETE FROM {quiz_question} WHERE nid = %d", $node->nid);
+  db_query("DELETE FROM {quiz_questions} WHERE question_nid = %d", $node->nid);
+}
+
+/**
+ * Implementation of hook_load().
+ */
+function multichoice_load($node) {
+  $additions = db_fetch_object(db_query("SELECT * FROM {quiz_question} WHERE nid = %d", $node->nid));
+  $answers = array();
+  $result = db_query("SELECT * FROM {quiz_question_answer} WHERE question_nid = %d", $node->nid);
+  while ($line = db_fetch_array($result)) {
+    $answers[] = $line;
+  }
+
+  $additions->answers = $answers;
+  $additions->properties = unserialize($additions->properties);
+  $additions->multiple_answers = $additions->properties['multiple_answers'];
+  return $additions;
+}
+
+/**
+ * Implementation of hook_view().
+ */
+function multichoice_view(&$node, $teaser = FALSE, $page = FALSE) {
+  if (user_access('create multichoice')) {
+    if (!$teaser) {
+      $mynode = node_prepare($node, $teaser);
+      $mynode->content['body'] = array('#value' => multichoice_render_question($node));
+      return $mynode;
+      //$node->body = multichoice_render_question($node);
+    }
+  }
+  else if ($teaser) {
+    $mynode = node_prepare($node, $teaser);
+    return $mynode;
+    //$node->teaser = t('This is a quiz question, not to be viewed independently.');
+    //$node->body = $node->teaser; // we do not need Read more...
+  }
+  else {
+    drupal_access_denied();
+  }
+}
+
+/**
+ * Print question to screen
+ *
+ * @param $node
+ *   Question node
+ *
+ * @return
+ *   HTML output
+ */
+function multichoice_render_question_form($node) {
+  // Radio buttons for single selection questions, checkboxes for multiselect
+  if ($node->multiple_answers == 0) {
+    $type = 'radios';
+  }
+  else {
+    $type = 'checkboxes';
+  }
+
+  // Get options
+  $options = array();
+
+  while (list($key, $answer) = each($node->answers)) {
+    if (empty($answer['correct']) && !isset($answer['answer']) && empty($answer['feedback'])) {
+      unset($node->answers[$key]);
+    }
+    else {
+      $options[$key] = '<div class="multichoice_answer_text">'. check_markup($answer['answer'], $node->format, FALSE) .'</div>';
+    }
+  }
+  
+  $form['start'] = array('#type' => 'markup', '#value' => '<div class="multichoice_form">');
+  $form['question'] = array('#type' => 'markup', '#value' => check_markup($node->body, $node->format, FALSE));
+  
+  // Create form
+  $form['tries'] = array(
+    '#type' => $type,
+    '#options' => $options,
+    '#default_value' => -1,
+  );
+  
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+  
+  return $form;
+}
+
+function multichoice_render_question($node) {
+  return drupal_get_form('multichoice_render_question_form', $node);
+}
+
+/**
+ * Evaluate whether question is correct
+ *
+ * @param $nid
+ *   Question Node ID
+ *
+ * @return
+ *   Array of results, in the form of:
+ *   array(
+ *     'answers' => array of correct answer(s)
+ *     'tried' => array of selected answer(s)
+ *   );
+ */
+function multichoice_evaluate_question($nid) {
+  $question = node_load($nid);
+  $results = array();
+
+  if (isset($_POST['tries'])) {
+    if (is_array($_POST['tries'])) {
+
+      // Multi-answer question
+      while (list($key, $try) = each($_POST['tries'])) {
+        $results['answers'] = $question->answers;
+        $results['tried'][] = $question->answers[$try]['aid'];
+      }
+    }
+    else {
+
+      // Single-answer question
+      $results['answers'] = $question->answers;
+      $results['tried'][] = $question->answers[$_POST['tries']]['aid'];
+    }
+  }
+  //Unset $_POST, otherwise it tries to use the previous answers on the next page...
+  unset($_POST['tries']);
+  
+  //Return the result
+  return $results;
+}
+
+/**
+ * check if the user selected all the correct answers for this question
+ * @param $answers array of answers
+ * @param $tried array of answer id's the user selected
+ * @return true if the user selected exactly all of the correct answers, otherwise false
+ */
+function multichoice_calculate_result($answers, $tried) {
+  if (empty($answers) || empty($tried)) {
+    return FALSE;
+  }
+      
+  foreach ($answers as $answer) {    
+    if ($answer['points'] == 1) {
+      $correctanswers[] = $answer['aid'];
+    }
+  }
+  
+  return ($correctanswers === $tried) ? TRUE : FALSE;
+}
+
+//New singing and dancing one
+function multichoice_calculate_results($answers, $tried, $showpoints = FALSE, $showfeedback = FALSE) {
+  //Create results table
+  $rows = array();
+  $correctanswers = array();
+  
+  while (list($key, $answer) = each($answers)) {
+    $cols = array();
+    
+    $cols[] = $answer['answer'];
+    if ($showpoints) $cols[] = (($answer['points'] == 0) ? theme_multichoice_unselected() : theme_multichoice_selected());
+    $selected = (array_search($answer['aid'], $tried) !== FALSE);
+    $cols[] = ($selected ? theme_multichoice_selected() : theme_multichoice_unselected());
+    if ($showfeedback) $cols[] = ($selected ? '<div class="quiz_answer_feedback">'. $answer['feedback'] .'</div>' : '');
+  
+    $rows[] = $cols;
+  
+  	
+    if ($answer['points'] > 0) {
+      $correctanswers[] = $answer['aid'];
+    }
+  }
+
+  
+  if ($correctanswers === $tried) {
+    $score = 1;
+  }
+  else {
+    $score = 0;
+    }
+
+  return array('score' => $score, 'resultstable' => $rows);
+}
+
+/**
+ * List all multiple choice questions
+ *
+ * @return
+ *   Array of questions
+ */
+function multichoice_list_questions() {
+  $result = db_query("SELECT nid, body, format FROM {node} WHERE type= '%s'", 'multichoice');
+  $questions = array();
+  while ($node = db_fetch_object($result)) {
+    $question = new stdClass();
+    $question->question = check_markup($node->body, $node->format);
+    $question->nid = $node->nid;
+    $questions[] = $question;
+  }
+  return $questions;
+}
+
+/////////////////////////////////////////////////
+/// Theme functions
+/////////////////////////////////////////////////
+
+/**
+ * Theme function for multichoice form
+ *
+ * Lays out answer field elements into a table
+ *
+ * @return string
+ *   HTML output
+ */
+function theme_multichoice_form($form) {
+
+  // Format table header
+  $header = array(
+    array('data' => t('Correct')),
+    array('data' => t('Answer'), 'style' => 'width:250px;'),
+    array('data' => t('Feedback'), 'style' => 'width:250px;'),
+    array('data' => t('Delete')),
+  );
+
+  // Format table rows
+  $rows = array();
+  foreach (element_children($form) as $key) {
+    $rows[] = array(
+      drupal_render($form[$key]['correct']),
+      drupal_render($form[$key]['answer']),
+      drupal_render($form[$key]['feedback']),
+      drupal_render($form[$key]['delete']),
+    );
+  }
+
+  // Theme output and display to screen
+  $output = theme('table', $header, $rows);
+
+  return $output;
+}
+
+
+/**
+ * Theme a selection indicator for an answer
+ * TODO: Default images would be nice
+ */
+function theme_multichoice_selected() {
+  return theme_image(drupal_get_path('module', 'quiz') .'/images/selected.gif', t('selected'));
+}
+
+
+/**
+ * Theme an indicator that an answer is not selected / correct
+ * TODO: Default images would be nice
+ */
+function theme_multichoice_unselected() {
+  return theme_image(drupal_get_path('module', 'quiz') .'/images/unselected.gif', t('unselected'));
+}
+
+
+/**
+ * Theme function for the multichoice form
+ */
+function theme_multichoice_render_question_form($form) {
+  $output = '';
+  $output .= drupal_render($form) .'</div>';
+  return $output;
+}

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        MultiTest
+    </category>
+  </question>
+
+
+
+<!-- question: 181  -->
+  <question type="matching">
+    <name><text>sootv</text>
+</name>
+    <questiontext format="html">
+<text>analog</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+<subquestion>
+<text>q1</text>
+<answer><text>a1</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>q1</text>
+<answer><text>a1</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>q1</text>
+<answer><text>a1</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>q1</text>
+<answer><text>a1</text>
+</answer>
+</subquestion>
+</question>
+
+
+
+<!-- question: 179  -->
+  <question type="multichoice">
+    <name><text>Question2</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;bla-bla 2&lt;/p&gt; 
+  &lt;p&gt;bla-bla 2 &lt;br /&gt;&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+a1
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+a2
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+a3
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="0">
+        <text>
+a4
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 180  -->
+  <question type="truefalse">
+    <name><text>Quesation3</text>
+</name>
+    <questiontext format="html">
+<text>it must be true!!!!&lt;br /&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+    <answer fraction="100">
+      <text>true</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>false</text>
+
+      <feedback>
+        <text>
+
+        </text>
+      </feedback>
+    </answer>
+</question>
+
+
+</quiz>

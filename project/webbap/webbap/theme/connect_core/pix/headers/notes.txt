@@ -1,0 +1,8 @@
+Connect Core - Header Images
+
+Version 1.01 - Universal Header Version
+
+#### IMPORTANT ####
+
+The universal header component is image name sensitive. Until a full connect core settings feature is finished, the headers images
+in this folder must keep the 'Connect_Header' and 'Connect_Header_Front' titles.

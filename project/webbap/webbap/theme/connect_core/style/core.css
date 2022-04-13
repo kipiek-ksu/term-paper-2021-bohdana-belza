@@ -1,0 +1,257 @@
+/* 
+
+	Core Styling
+	Alex Mills - SIDE - 1/12/2010
+	Theme: Connect Core (Royal) 
+
+*/
+
+a
+{ 
+	color: #336699; text-decoration: none;
+}
+
+html
+{
+	background-color: [[setting:backgroundcolor]];
+}
+
+
+/* 
+	
+	The main breadcrumb navbar (Not always displayed).
+	The arrows will change colour based on what the text colour is.
+	The link colour can be changed using the .navbar a selector
+	
+	The navbar button changes are to stop pixelation on certain sized strings
+
+*/
+
+.navbar 
+{ 
+	color: [[setting:navtext]];
+	text-shadow: 0px -1px [[setting:navshadow]]; 
+	background-repeat: repeat-x; 
+	border-color: [[setting:navborder]]; border-style: solid; border-width: 1px; 
+	border-radius: 4px;
+	background-image: url([[setting:navgradient]]);
+	
+}
+
+.navbar .breadcrumb a
+{
+	color: [[setting:navlink]];
+	text-decoration: underline;
+}
+
+/* 
+
+	For use with the 'In Maintenance Mode' text 
+
+*/
+
+.navbar .navbutton a
+{
+	color: white;
+	text-shadow: 0px -1px #210405;
+	background-color: red;
+	margin-right: 10px;
+	
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 3px;
+	padding-right: 3px;
+	
+	border: 1px solid #210405;
+	
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, rgb(252,122,119)), color-stop(0.05, rgb(245,54,49)), color-stop(1.0, rgb(182,25,0)));
+	background: -moz-linear-gradient(270deg, rgb(252,122,119), rgb(245,54,49) 5%, rgb(182,25,0));
+}
+
+.navbar .navbutton a:hover
+{
+	text-decoration: none;
+}
+
+.navbar .navbutton a:active
+{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, rgb(182,25,0)), color-stop(1.0, rgb(245,54,49)));
+	background: -moz-linear-gradient(270deg, rgb(182,25,0), rgb(245,54,49));
+}
+
+/* 
+
+	Stops the help button from getting the maintenance mode styling
+	
+	This needs to be looked at when the navbar gets re-tooled. 
+
+*/
+
+.navbar .navbutton .helplink a
+{
+	background: none !important;
+	padding: 0px !important;
+	border: none !important;
+}
+
+/* 
+
+	The universal do all most of the time button in the breadcrumb 
+
+*/
+
+.navbar .navbutton .singlebutton input
+{
+	overflow: visible;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+
+/* 
+
+	For the quiz module fix.
+	For some reason they used a table, a form and seperate div
+	for one button, instead of just a form. Extra styling is needed to keep it from
+	expanding the size of the navbar for no reason. 
+
+*/
+
+.navbar .navbutton table
+{
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.navbar .navbutton table tr td
+{
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
+/* 
+
+	The main sidebar blocks
+	It has been fixed so that the header div actually takes up the whole header
+	The text, header and links in blocks can be changed by using the .block selector 
+	
+	The .block ul selector is to fix the scrollbars appearing in IE6
+
+*/
+
+.block 
+{ 
+	padding-top: 0px; 
+	border:1px solid [[setting:blockborder]];
+	border-radius: 0px;
+}
+
+.block .header 
+{
+	background-image: url([[setting:blockgradient]]);
+	background-repeat: repeat-x;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: [[setting:blocktitle]];
+	text-shadow: 0px -1px [[setting:navshadow]];
+	border-bottom: 1px solid [[setting:blockborder]];
+}
+
+.block ul
+{
+	overflow-x: hidden !important;
+}
+
+
+/* 
+
+	The connect header is displayed 'general_layout.php' pages.
+	It normally has the breadcrumb navbar present beneath it. 
+	The login status is displayed within this DIV.
+	DO NOT change the width of the header, it's managed by the main page css.
+	Height can be changed, as well as colour. 
+	To use a background image, change the css property, don't use an img tag. 
+
+*/
+
+.connectHeader 
+{
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-left: 10px;
+	height: 80px;
+	
+	background-image: url([[setting:bannerimage]]);
+	background-repeat: no-repeat;
+}
+
+/* 
+
+	The front header is displayed in the 'frontpage_layout.php' pages
+	It's generally bigger than the in-course header. 
+	
+	NOTE: This could be changed to a seperate div style like the .connectHeader
+
+*/
+
+#page-header-front 
+{
+	padding-top: 30px;
+	
+	background-image: url([[setting:bannerimagefront]]);
+	background-repeat: no-repeat;
+	
+	height: 90px;
+}
+
+
+/* 
+
+	The homelink accross the bottom of most pages. 
+
+*/
+
+.homelink a
+{
+	background-color: grey;
+	background-image: url([[setting:blockgradient]]);
+	background-repeat: repeat-x;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: [[setting:blocktitle]];
+	border:1px solid [[setting:blockborder]];
+	font-weight: bold;
+}
+
+.homelink a:hover
+{
+	background-color: grey;
+	background-image: url([[setting:blockgradient]]);
+	background-repeat: repeat-x;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: [[setting:blocktitle]];
+	border:1px solid [[setting:blockborder]];
+	font-weight: bold;
+}
+
+
+/* 
+
+	The login container. This is a fix to keep it centered on the page 
+
+*/
+
+.loginbox
+{
+	border-color: [[setting:blockborder]];
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+

@@ -1,0 +1,105 @@
+.mybody {
+  background-color: #98AAB9;
+}
+
+pre.data{
+    font-size: 12pt;
+    line-height: 12pt; 
+    font-family: serif; 
+    font-variant: normal;
+    font-style: normal;
+}
+
+pre.solution{
+    font-size: 10pt;
+    line-height: 10pt; 
+    font-family: serif; 
+    font-variant: normal;
+    font-style: normal;
+}
+
+.maintable {
+  border: thin solid #4D4D4D;
+}
+
+.innertable {
+  border: thin solid #8A8A8A;
+}
+
+.tasktable{
+  background-color: #ffffff;
+  border: medium double #C7C7C7;
+	margin: 5px;
+}
+.tasktable td{
+  border: thin solid #C7C7C7;
+	padding: 2px 10px 2px 10px;
+}
+
+.solutiontable{
+  background-color: #ffffff;
+  border: medium double #C7C7C7;
+	margin: 5px;
+}
+.solutiontable td{
+  border: thin solid #C7C7C7;
+  text-align:left;
+	padding: 2px 10px 2px 10px;
+}
+
+.solutiontable tr.expanded{
+  background-color: #A9C0D6;
+}
+
+.testtable{
+  background-color: #A9C0D6;
+}
+.testtable th{
+  background-color: #91A5B8;
+  text-align:left;
+}
+.testtable tr{
+  border: thin solid #C7C7C7;
+}
+
+
+.bottomborder{
+  border-bottom: medium double #8A8A8A;
+}
+
+.topborder{
+  border-top: medium double #8A8A8A;
+}
+
+
+.condition{
+  font-weight: bold;
+}
+
+.mess{
+  color: #FFFFFF;
+  font-weight: bold; 
+}
+
+.textright{
+  color: #22ff22;
+  font-weight: bold; 
+}
+
+.textnoright{
+  color: #ff2222;
+  font-weight: bold; 
+}
+
+.test{
+  color: #000000;
+  font-weight: bold; 
+}
+
+a .selectedtask{
+  color: #3375B3;
+}
+
+a .selectedcat{
+  color: #3375B3;
+}

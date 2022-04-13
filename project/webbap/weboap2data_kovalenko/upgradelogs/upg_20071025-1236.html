@@ -1,0 +1,59 @@
+<h2   class="main">New version of Global Search (search) exists</h2><hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): CREATE TABLE mdl_search_documents (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    docid VARCHAR(32) NOT NULL DEFAULT '',
+    doctype VARCHAR(32) NOT NULL DEFAULT 'none',
+    itemtype VARCHAR(32) NOT NULL DEFAULT 'standard',
+    title VARCHAR(255) NOT NULL DEFAULT '',
+    url VARCHAR(255) NOT NULL DEFAULT '',
+    docdate DATETIME NOT NULL,
+    updated DATETIME NOT NULL,
+    courseid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    groupid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_seardocu_doc_ix ON mdl_search_documents (docid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_seardocu_doc2_ix ON mdl_search_documents (doctype) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_seardocu_ite_ix ON mdl_search_documents (itemtype) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_search_documents RENAME TO mdl_block_search_documents &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_block_search_documents MODIFY COLUMN doctype VARCHAR(32) NOT NULL DEFAULT 'none' after docid &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_block_search_documents MODIFY COLUMN itemtype VARCHAR(32) NOT NULL DEFAULT 'standard' after doctype &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_block_search_documents MODIFY COLUMN title VARCHAR(255) NOT NULL DEFAULT '' after itemtype &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_block_search_documents MODIFY COLUMN url VARCHAR(255) NOT NULL DEFAULT '' after title &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<div class="notifysuccess" style="text-align:center">Global Search таблицы были правильно установлены</div><br />
+<hr />

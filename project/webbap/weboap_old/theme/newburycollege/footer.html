@@ -1,0 +1,48 @@
+﻿
+</div> <!-- end div containerContent -->
+<!-- START OF FOOTER -->
+<div id="footer">
+
+<?php if ($navigation and false) { ?>
+    <div class="navbar clearfix">
+        <div class="breadcrumb"><?php print_navigation($navigation); ?></div>
+        <div class="menu"><?php echo $menu; ?></div>
+    </div>
+<?php } ?>
+<div class="footer">
+<table class="footer_panel" width="100%" border="0" cellpadding="5" cellspacing="0">
+  <tr> 
+    <td  align="left" valign="middle"><a href="http://www.ksu.ks.ua"><img src="<?php echo $CFG->httpswwwroot.'/theme/'.current_theme() ?>/images/nclogo.png" width="90" height="90" border="0" align="absmiddle"></a>
+     </td>
+       <td align="center" valign="middle"> <P class="footer">Для отримання додаткової інформації та надання прав викладачам або у разі виникнення проблем при роботі з сайтом <a href="mailto:alferov_jk@ksu.ks.ua">з'вяжіться з нами</a>.</p>
+		  <p class="footer">Виконано на замовлення Міністерства освіти і науки, молоді та спорту України за договором ІТ/493-2007 від 22.08.2007 р. в межах державної програми “Інформаційні та комунікаційні технології в освіті і науці” на 2006–2010 рр.
+</p>
+&copy; <?php 
+$copyYear = 2007; 
+$curYear = date('Y'); 
+echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : '');
+?> KSU
+		  </td>
+    <td class="footer" width="180px" align="right" > 
+	<?php $currlang = current_language(); 
+	if ($currlang=='uk_utf8'){ echo '';} ?>
+
+      
+	  
+	  <a href="http://www.ksu.ks.ua"><?php $currlang = current_language(); 
+	if ($currlang=='uk_utf8'){ echo 'Херсонський державний університет';} else if ($currlang=='ru_utf8'){ echo 'Херсонский государственный университет';} else { echo 'Kherson state university';} ?></a><BR>
+	  <a href="http://riit.ksu.ks.ua">Центр ІКТ ХДУ</a><BR>
+	  <a href="http://www.ksu.ks.ua/About/DepartmentAndServices/DISO.aspx">Відділ інтегрованих середовищ навчання ХДУ</a><BR>
+	  </td>
+  </tr>
+</table>
+</div>
+<?php if (!empty($performanceinfo)) {
+          echo $performanceinfo;
+} ?>
+
+</div>
+
+</body>
+
+</html>

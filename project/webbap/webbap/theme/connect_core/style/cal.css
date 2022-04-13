@@ -1,0 +1,357 @@
+/* 
+
+	Calendar Block Styling
+	Alex Mills - SIDE - 13/12/2010
+	Theme: Connect Core (Royal) 
+	
+	###### NOTES ########
+	
+	The reason for the use of the '!important' tag rather than the 
+	proper css links is so that calendars displayed on other pages are
+	also themed. This will be looked at again in the future to make this
+	more elegant.
+	
+	More work will be done to make sure the proper selector paths are used, 
+	that way, the '!important' tag wont have to be used. 
+
+*/
+
+/* 
+
+	The MINI calendar located within the blocks 
+
+*/
+
+table.minicalendar
+{
+	background-color: rgb(237,240,243);
+	border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-color: rgb(180,180,180) !important; 
+	border-style: solid !important; 
+	border-width: 1px !important; 
+	
+	color: rgb(71,71,71) !important;
+}
+
+/* 
+
+	The weekday title row 
+
+*/
+
+table.minicalendar tr.weekdays th
+{
+	background-color: none;
+	border: none;
+}
+
+/* 
+
+	Stops YUI from adding an ugly underline to the weekday titles 
+
+*/
+
+table.minicalendar abbr
+{
+	border: none;
+}
+
+/* 
+
+	A global mini calendar selector for the day cells 
+
+*/
+
+table.minicalendar tr td
+{
+	border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+}
+
+/* 
+
+	Day blank are days that aren't in the selected month 
+
+*/
+
+table.minicalendar tr td.dayblank
+{
+	background-color: rgb(237,240,243);
+	border-color: rgb(237,240,243);
+}
+
+/* 
+
+	Weekend day cells 
+
+*/
+
+table.minicalendar tr td.weekend
+{
+	background-color: rgb(218,224,230) !important;
+	border-color: rgb(197,199,212) !important;
+	font-weight: normal !important;
+	color: rgb(71,71,71) !important;
+}
+
+/* 
+
+	Normal day cells 
+
+*/
+
+table.minicalendar tr td.day
+{
+	background-color: rgb(199,205,212);
+	border-color: rgb(160,171,186);
+	font-weight: bold;
+}
+
+
+/* 
+
+	Today cell 
+
+*/
+
+table.minicalendar tr td.today
+{
+	background-color: rgb(57,138,234) !important;
+	border-color: rgb(21,61,110) !important;
+	border-width: 1px !important;
+}
+
+table.minicalendar tr td.today a
+{
+	color: white !important;
+	font-weight: bold !important;
+}
+
+/* 
+
+	Mini calendar event global (green) 
+
+*/
+
+table.minicalendar tr td.calendar_event_global
+{
+	background-color: #cdf8c2 !important;
+	border-color: #78c572 !important;
+	border-width: 1px !important;
+}
+
+table.minicalendar tr td.calendar_event_global a
+{
+	color: #264723 !important;
+	font-weight: bold !important;
+}
+
+/* 
+
+	Mini calendar event user (blue) 
+
+*/
+
+table.minicalendar tr td.calendar_event_user
+{
+	background-color: #d4e1e7 !important;
+	border-width: 1px !important;
+	border-color: #2898b0 !important;
+}
+
+table.minicalendar tr td.calendar_event_user a
+{
+	color: #234160 !important;
+	font-weight: bold !important;
+}
+
+/* 
+
+	Mini calendar event course (orange) 
+
+*/
+
+table.minicalendar tr td.calendar_event_course
+{
+	background-color: #fdc8af !important;
+	border-width: 1px !important;
+	border-color: #d0927b !important;
+}
+
+table.minicalendar tr td.calendar_event_course a
+{
+	color: #6e1d17 !important;
+	font-weight: bold !important;
+}
+
+/* 
+
+	Mini calendar event group (yellow) 
+
+*/
+
+table.minicalendar tr td.calendar_event_group
+{
+	background-color: #fde29e !important;
+	border-width: 1px !important;
+	border-color: #978454 !important;
+}
+
+table.minicalendar tr td.calendar_event_group a
+{
+	color: #695c3a !important;
+	font-weight: bold !important;
+}
+
+
+
+/* 
+
+	The  'Upcoming Events' block used in course.
+	This adds a little more layout and style to this block.
+
+*/
+
+.block_calendar_upcoming .footer
+{
+	border-top-color: [[setting:blockborder]];
+	border-top-width: 1px;
+	border-top-style: solid;
+	margin-top: 10px;
+	padding-top: 7px;
+	height: 15px;
+}
+
+.block_calendar_upcoming .gotocal
+{
+	float: left;
+}
+
+.block_calendar_upcoming .newevent
+{
+	float: right;
+}
+
+
+/* 
+
+	The MAIN BIG CALENDAR on the actual calendar page
+	
+	Work still needs to be done to clean up the layout of the header controls
+
+*/
+
+.maincalendar
+{
+	border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-color: #999999 !important;
+}
+
+/* 
+
+	Header and control container of the main calendar 
+
+*/
+
+.maincalendar .header
+{
+	background-image: url([[setting:coursegradient]]) !important;
+	border-bottom: solid 1px #999999;
+}
+
+/* 
+
+	Each event component of the list 
+
+*/
+
+.maincalendar .eventlist .event
+{
+	border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-color: #999999 !important;
+}
+
+/* 
+
+	The coloured section of the event list. Stops it from showing curved corners 
+
+*/
+
+.maincalendar .eventlist .event .description
+{
+	border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+}
+
+/* 
+
+	The actual grid calendar styling 
+
+*/
+
+.maincalendar .controls
+{
+	border-bottom: solid 1px #CCCCCC;
+}
+
+/* 
+
+	The previous and next day/month controls 
+
+*/
+
+.maincalendar .controls .calendar-controls
+{
+	font-size: 13px !important;
+}
+
+/* 
+
+	The current day/month text 
+
+*/
+
+.maincalendar .controls .calendar-controls .current
+{
+	font-size: 15px !important;
+	margin-top: 0px !important;
+	color: #333333 !important;
+}
+
+/* 
+
+	Global calendar grid cell styling 
+
+*/
+
+.maincalendar table.calendartable tr td
+{
+	border-width: 1px;
+	border-color: #999999 !important;
+}
+
+/* 
+
+	The cells of the grid not currently used in the month 
+
+*/
+
+.maincalendar table.calendartable tr td.nottoday
+{
+	background-color: #e8e8e8;
+}
+
+/* 
+
+	The weekend cells of the calendar grid 
+
+*/
+
+.maincalendar table.calendartable tr td.weekend
+{
+	background-color: #eaf2f9;
+	color: #333333 !important;
+}

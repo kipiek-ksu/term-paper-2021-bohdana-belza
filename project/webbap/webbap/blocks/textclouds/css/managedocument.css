@@ -1,0 +1,56 @@
+ html,body{
+     font-family: "Arial";
+     font-size:12px;
+ }
+
+.resource_table {
+	width: 400px;
+	font-size:12px;
+}
+
+.resource_head {
+	background-color: rgb(100, 100, 100);
+	color: white;
+	font-weight: bold;
+	text-align:left;
+}
+
+.elm_odd {
+	background-color: rgb(190, 190, 190);
+}
+
+.elm_even {
+	background-color: rgb(230, 230, 230);
+}
+
+.error_message{
+    background-color: rgb(255,0,0);
+}
+
+.ok_message{
+    background-color: rgb(0,255,0);
+   }
+
+.resource_div {
+    margin-left: auto;
+	margin-right: auto;
+    height:400px;
+    width:420px;
+    overflow:auto;
+    padding-top:5px;
+}
+
+.new_tag_form{
+    margin-left:auto;
+    margin-right:auto;
+    width:413px;
+    background-color:rgb(240, 240, 240);
+    padding-top:5px;
+    padding-bottom:5px;
+    text-align:center;
+}
+
+.update_commands{
+    width: 100%;
+    vertical-align: middle;
+}

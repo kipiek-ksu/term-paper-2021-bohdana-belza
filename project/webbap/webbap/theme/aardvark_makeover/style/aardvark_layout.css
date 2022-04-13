@@ -1,0 +1,250 @@
+/* 
+Page Layout for Aardvark Makeover - Moodle 2.0 Theme Set
+-----------------------------------------------------------------*/
+/* 
+Core: Page Header and Logo
+---------------------------*/
+
+#page { 
+	width: 95%; 
+	margin: 5% auto;
+	padding:0;
+}
+
+#page-header {
+	height: 155px;
+	width: 96%;
+	margin: 0 auto;
+	background: #fff url([[pix:theme|core/overlay-rose]]) center top repeat-x;
+}
+
+#logo { 
+	background: url([[pix:theme|header/logo]]) no-repeat left top;
+	width: 100%;
+	height: 150px;
+	float: left;
+}
+
+/* 
+3 Column Page Layout
+-----------------------*/ 
+
+#page-content-outer { 
+	width: 100%; 
+	margin: 2% auto;
+	padding:0;
+	overflow:hidden;		/* This chops off any overhanging divs */
+	position:relative;	/* This fixes the IE7 overflow hidden bug and stops the layout jumping out of place */
+}
+
+#page-content-wrap {
+  clear:both;
+	margin: 0 auto;
+	width:96%;
+	padding: 0 2%;	
+}
+#page-content {
+	clear:both;
+	float:left;
+	width:100%;	/* width of whole page */
+	background: #fff url([[pix:theme|core/h2grad]]) repeat-x left top; /* Left column background colour */
+}
+#region-main-box {
+	float:left;
+	width:200%;
+	position:relative;
+	left:210px;
+	background: transparent;   	/* Centre column background colour */
+}
+
+#region-main-box .region-content {
+width: 98%;
+margin: 0;
+margin-top: 15px;
+padding:0 1%;
+}
+
+#region-post-box {
+	float:left;
+	width:100%;
+	position:relative;
+	left:50%;
+	margin-top: 15px;
+	margin-left:-420px;
+}
+
+#region-main-wrap {
+	float:right;
+	width:50%;
+	position:relative;
+	right:100%;
+}
+#region-main-pad {
+	margin:0 10px 0 430px;
+}
+#region-main {
+	width:100%;
+}
+#region-pre {
+	float:left;
+	width:210px;
+	position:relative;
+	margin-left:-50%;
+	left:210px;
+}
+#region-post {
+	float:left;
+	width:210px;
+	position:relative;
+	left:0px;
+}
+
+#region-pre .block-region {
+	float: left;
+	width: 210px;
+	margin: 0;
+	padding: 0;
+}
+#region-post .block-region {
+	float: right;
+	width: 210px;
+	margin: 0;
+	padding: 0;
+}
+
+#region-pre .block .header,
+#region-post .block .header {
+	border-bottom:0px none none;
+	height: 40px;
+	width: 100%;
+	position: relative;
+}
+
+
+
+#region-pre .block .header { right: 25px;}
+#region-post .block .header { left: 15px;}
+
+#region-pre .block .header h2 {
+	background: url([[pix:theme|sideblocks/leftrib]]) no-repeat left top;
+	margin-left: 4px;
+}
+
+#region-post .block .header h2 {
+	background: url([[pix:theme|sideblocks/rtrib]]) no-repeat right top;
+	margin-rt: 4px;
+}
+
+
+#region-pre .block .header h2,
+#region-post .block .header h2 {
+	font-size: 120%;
+	font-weight: normal;
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+	height: 35px;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+
+#region-pre .header .title { width: 215px;}
+#region-post .header .title { width: 210px;}
+
+/* 
+Core: Page Footer
+-----------------------*/
+
+#page-footer {
+  clear:both;
+	background: #fff url([[pix:theme|core/h2grad]]) repeat-x left top;
+	height: auto;
+	width:92%;
+	margin: 0 auto;
+	padding: 0 2%;
+	color: #4b4b4b;
+	border-top:1px dotted #ddd;
+	line-height: 2.5em;
+	font-size: 1em;
+}
+
+#page-footer a:link,
+#page-footer a:visited  {
+	color: #aaa;
+	text-decoration:none;
+}
+#page-footer a:hover,
+#page-footer a:active { 
+	color: #036;
+	text-decoration:underline overline;
+}
+
+#page-footer p { 
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1em;
+	font-size: 75%;
+}
+
+#page-footer p.copyright { 
+margin: 0;
+padding: 0;
+padding-bottom: 15px; 
+}
+
+#page-footer .socioweb-icons { 
+	margin-top: 5px;
+}
+
+#page-footer .socioweb-icons ul { 
+  margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#page-footer .socioweb-icons ul li { 
+	display: inline; 
+	height: 30px;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/* 
+PLEASE DO NOT ALTER THESE SETTING UNLESS YOU KNOW WHAT YOU ARE DOING AS IT WILL BREAK PAGE LAYOUT
+-----------------------------------------------------------------------------------------------*/
+
+/* 
+SIDE-PRE-ONLY (Left Column)
+---------------------------*/
+.side-pre-only #region-main-box {width: 200%; left: 210px;}
+.side-pre-only #region-post-box {width: 100%; left: 50%; margin-left: -220px;}
+.side-pre-only #region-main-wrap {width: 50%; right: 100%;}
+.side-pre-only #region-main-pad {margin: 0px 10px 0px 220px;}
+.side-pre-only #region-main {width: 100%;}
+.side-pre-only #region-pre {width: 210px; left: 10px; margin-left:-50%;}
+.side-pre-only #region-post {width: 0px; left: 0px;}
+
+
+/* 
+SIDE-POST-ONLY (Right Column)
+----------------------------*/
+.side-post-only #region-main-box {width: 200%; left: 210px;}
+.side-post-only #region-post-box {width: 100%; left: 50%; margin-left: -430px;}
+.side-post-only #region-main-wrap {width: 50%; right: 100%;}
+.side-post-only #region-main-pad {margin: 0px 10px 0px 220px;}
+.side-post-only #region-main {width: 100%;}
+.side-post-only #region-pre {width: 0px;left: 0px;}
+.side-post-only #region-post {width: 210px; left: 10px;}
+
+/* 
+CONTENT ONLY - NO SIDE BLOCKS WHATSOEVER (Middle Column) 
+--------------------------------------------------------*/
+.content-only #region-main-box {width: 200%; left: 0px;}
+.content-only #region-post-box {width: 100%; left: 50%; margin-left: 0px;}
+.content-only #region-main-wrap {width: 50%; right: 100%;}
+.content-only #region-main-pad {margin: 0px 10px 0px 10px;}
+.content-only #region-main {width: 100%}
+.content-only #region-pre { width:0;left:0;}
+.content-only #region-post { width: 0;left:0;}

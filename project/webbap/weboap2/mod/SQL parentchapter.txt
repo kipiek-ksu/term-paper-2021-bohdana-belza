@@ -1,0 +1,34 @@
+UPDATE `mdl_book_chapters` SET `parentchapter` = '0' WHERE ((`mdl_book_chapters`.`pagenum`>'0') AND (`mdl_book_chapters`.`pagenum`<'4'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '1' WHERE ((`mdl_book_chapters`.`pagenum`>'3') AND (`mdl_book_chapters`.`pagenum`<'110'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '2' WHERE ((`mdl_book_chapters`.`pagenum`>'109') AND (`mdl_book_chapters`.`pagenum`<'131'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '3' WHERE ((`mdl_book_chapters`.`pagenum`>'130') AND (`mdl_book_chapters`.`pagenum`<'146'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '4' WHERE ((`mdl_book_chapters`.`pagenum`>'145') AND (`mdl_book_chapters`.`pagenum`<'195'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '5' WHERE ((`mdl_book_chapters`.`pagenum`>'194') AND (`mdl_book_chapters`.`pagenum`<'221'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '6' WHERE ((`mdl_book_chapters`.`pagenum`>'220') AND (`mdl_book_chapters`.`pagenum`<'316'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '7' WHERE ((`mdl_book_chapters`.`pagenum`>'315') AND (`mdl_book_chapters`.`pagenum`<'363'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '8' WHERE ((`mdl_book_chapters`.`pagenum`>'362') AND (`mdl_book_chapters`.`pagenum`<'402'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '9' WHERE ((`mdl_book_chapters`.`pagenum`>'401') AND (`mdl_book_chapters`.`pagenum`<'439'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '10' WHERE ((`mdl_book_chapters`.`pagenum`>'439') AND (`mdl_book_chapters`.`pagenum`<'452'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '11' WHERE ((`mdl_book_chapters`.`pagenum`>'451') AND (`mdl_book_chapters`.`pagenum`<'497'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '12' WHERE ((`mdl_book_chapters`.`pagenum`>'496') AND (`mdl_book_chapters`.`pagenum`<'518'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '13' WHERE ((`mdl_book_chapters`.`pagenum`>'517') AND (`mdl_book_chapters`.`pagenum`<'573'));
+
+UPDATE `mdl_book_chapters` SET `parentchapter` = '14' WHERE ((`mdl_book_chapters`.`pagenum`>'572') AND (`mdl_book_chapters`.`pagenum`<'634'));
+
+
+
+
+

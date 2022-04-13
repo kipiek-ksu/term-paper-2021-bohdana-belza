@@ -1,0 +1,186 @@
+<!-- $Id: edit.html,v 1.1.8.2 2007/05/20 06:01:53 skodak Exp $ //-->
+<script language="javascript">
+function hide(){
+	document.getElementById('text_block').style.visibility = 'hidden';
+    document.getElementById('tohid').style.visibility = 'hidden';
+};
+
+</script>
+
+
+
+
+<form name="chaptereditform" method="post" action="edit.php">
+<table align="center" cellpadding="5">
+
+<tr valign="top">
+    <td align="right">
+        <b><?php print_string("Title", "labs") ?>:</b>
+    </td>
+    <td align="left">
+        <input type="text" name="title" size="50" style="width: 99.3%;" value="<?php p($chapter->title) ?>">
+    </td>
+</tr>
+<tr valign="top">
+    <td align="right">
+        <b><?php print_string("ParentChapter", "parentchapter") ?>:</b>
+    </td>
+    <td align="left">
+        <input type="text" name="parentchapter" size="50" style="width: 99.3%;" value="<?php p($chapter->parentchapter) ?>">
+    </td>
+</tr>
+<tr valign="top" id="element_block">
+    <td align="right">
+        <b><?php print_string('object_type', 'labs') ?>:</b>
+    </td>
+    <td align="left">
+
+	<fieldset style="padding: 0">
+	<legend></legend>
+<?php
+    $slct_subchapter = ' ';
+    $slct_chapter = ' ';
+    $slct_fragment = ' ';
+    $slct_example = ' ';
+    $slct_problem = ' ';
+    $slct_commentary = ' ';
+    $slct_none = ' ';
+
+    switch ($chapter->element) {
+        case 0:
+  		    if ($chapter->subchapter)
+  		        $slct_subchapter = ' checked="checked"';
+  		    else
+  		        $slct_chapter = ' checked="checked"';
+  		        break;
+  		case 1:
+  		    $slct_fragment = ' checked="checked"';
+  		    break;
+  		case 2:
+  		    $slct_example = ' checked="checked"';
+  		    break;
+  		case 3:
+  		    $slct_problem = ' checked="checked"';
+  		    break;
+  		case 4:
+  		    $slct_commentary = ' checked="checked"';
+  		    break;
+  	    case 5:
+  		    $slct_none = ' checked="checked"';
+  		    break;
+  		}
+
+    echo '<p><input type="radio" name="R1" value="5" onclick="
+	    document.getElementById(\'text_block\').style.visibility = \'visible\';
+	    document.getElementById(\'tohid\').style.visibility = \'visible\';"'.$slct_none.'>None</p>';
+	echo '<p><input type="radio" name="R1" value="20" onclick="
+	    document.getElementById(\'text_block\').style.visibility = \'hidden\';
+	    document.getElementById(\'tohid\').style.visibility = \'hidden\';"'.$slct_chapter.'>Chapter</p>';
+	echo '<p><input type="radio" name="R1" value="21" onclick="
+	    document.getElementById(\'text_block\').style.visibility = \'hidden\';
+	    document.getElementById(\'tohid\').style.visibility = \'hidden\';"'.$slct_subchapter.'>SubChapter</p>';
+	echo '<p><input type="radio" name="R1" value="1" onclick="
+	    document.getElementById(\'text_block\').style.visibility = \'hidden\';
+	    document.getElementById(\'tohid\').style.visibility = \'hidden\';"'.$slct_fragment.'>Fragment</p>';
+	echo '<p><input type="radio" name="R1" value="2" onclick="
+	    document.getElementById(\'text_block\').style.visibility = \'hidden\';
+	    document.getElementById(\'tohid\').style.visibility = \'hidden\';"'.$slct_example.'>Example</p>';
+	echo '<p><input type="radio" name="R1" value="3" onclick="
+	    document.getElementById(\'text_block\').style.visibility = \'hidden\';
+	    document.getElementById(\'tohid\').style.visibility = \'hidden\';"'.$slct_problem.'>Problem</p>';
+	echo '<p><input type="radio" name="R1" value="4" onclick="
+	    document.getElementById(\'text_block\').style.visibility = \'hidden\';
+	    document.getElementById(\'tohid\').style.visibility = \'hidden\';"'.$slct_commentary.'>Commentary</p>';
+
+?>
+</fieldset></td>
+</tr>
+<tr valign="top" id="text_block">
+    <td align="right">
+        <b><?php print_string('text_type', 'labs') ?>:</b>
+    </td>
+    <td align="left">
+	<fieldset style="padding: 0">
+	<legend></legend>
+<?php
+    $slct_text = ' ';
+    $slct_listing = ' ';
+	 $slct_listingNone = ' ';
+
+    switch ($chapter->contenttype) {
+  		case 1:
+  		    $slct_text = ' checked="checked"';
+  		    break;
+  		case 2:
+  		    $slct_listing = ' checked="checked"';
+  		    break;
+		case 3:
+  		    $slct_listingNone = ' checked="checked"';
+  		    break;
+  	}
+
+    echo '<p><input type="radio" name="R2" value="1"'.$slct_text.'>Text</p>';
+	echo '<p><input type="radio" name="R2" value="2"'.$slct_listing.'>Listing</p>';
+	echo '<p><input type="radio" name="R2" value="3"'.$slct_listingNone.'>ListingNone</p>';
+
+?>
+</fieldset></td>
+    <!--td align="left">
+	<fieldset style="padding: 0">
+	<legend></legend>
+	<p><input type="radio" name="R2" value="1" checked>Text</p>
+	<p><input type="radio" name="R2" value="2">Listing</p>
+	</fieldset></form></td-->
+</tr>
+<tr valign="top" id="tohid">
+    <td valign="top" align="right">
+        <p><b><?php print_string('content', 'labs') ?>:</b></p>
+        <font size="1">
+            <?PHP
+            helpbutton('writing', get_string('helpwriting'), 'moodle', true, true);
+            echo '<br />';
+            if ($usehtmleditor) {
+               helpbutton('richtext', get_string('helprichtext'), 'moodle', true, true);
+            } else {
+               emoticonhelpbutton('theform', 'text');
+            }
+             ?><br />
+        </font>
+    </td>
+    <td align="center">
+        <?php
+        /*echo $usehtmleditor.'11';
+        echo $chapter->content.'22';
+        echo $course->id.'33';
+        */
+        print_textarea($usehtmleditor, 10, 80, '100%', 600, 'content', $chapter->content, $course->id); ?>
+
+
+<!--textarea id="edit-content" name="myTextArea" rows="10" cols="80" style="width:100%">
+<?PHP
+	echo html_to_text($chapter->content);
+?>
+</textarea-->
+
+
+
+
+
+
+    </td>
+</tr>
+</table>
+<center>
+    <input type="submit" value="<?php print_string('savechanges') ?>" />
+    <input type="reset" value="<?php print_string('revert') ?>" />
+    <?php
+        if($chapter->id == -1) {
+            echo '<font size="-1"> (<a href="import.php?id='.$cm->id.'">'.get_string('doimport', 'labs').'</a>)</font>';
+        }
+    ?>
+</center>
+    <input  name="id"        value="<?php p($cm->id) ?>" />
+    <input  name="pagenum"   value="<?php p($chapter->pagenum) ?>" />
+    <input type="hidden" name="chapterid" value="<?php p($chapter->id) ?>" />
+    <input type="hidden" name="sesskey" value="<?php echo $USER->sesskey ?>" />
+</form>

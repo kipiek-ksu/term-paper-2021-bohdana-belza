@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html<?php echo $direction ?>>
+<head>
+    <?php echo $meta ?>
+    <meta name="keywords" content="moodle, <?php echo $title ?> " />
+    <title><?php echo $title ?></title>
+    <link rel="shortcut icon" href="<?php echo $CFG->themewww .'/'. current_theme() ?>/favicon.ico" />
+    <?php include("$CFG->javascript"); ?>
+</head>
+
+<body<?php
+    echo " $bodytags";
+    if ($focus) {
+        echo " onload=\"setfocus()\"";
+    }
+    ?>>
+
+<div id="page">
+
+<?php //Accessibility: 'headermain' is now H1, see theme/standard/styles_layout.css: .headermain
+      if ($home) {  // This is what gets printed on the home page only
+?>
+<div id="webt-main">
+        <div class="webt-sheet">
+            <div class="webt-sheet-tl"></div>
+            <div class="webt-sheet-tr"></div>
+            <div class="webt-sheet-bl"></div>
+            <div class="webt-sheet-br"></div>
+            <div class="webt-sheet-tc"></div>
+            <div class="webt-sheet-bc"></div>
+            <div class="webt-sheet-cl"></div>
+            <div class="webt-sheet-cr"></div>
+            <div class="webt-sheet-cc"></div>
+            <div class="webt-sheet-body">
+                <div class="webt-header">
+                    <div class="webt-header-center">
+                        <div class="webt-header-png"><div class="headermenu"><?php echo $menu ?></div></div>
+                    </div>
+                        <div class="webt-header-fluid-object"></div>
+                    <div class="webt-logo">
+                     <h1 id="name-text" class="webt-logo-name"><a href="<?php echo $CFG->httpswwwroot.'/' ?>"><?php echo $heading ?></a></h1>
+                    </div>
+                    
+</div>
+<?php } else if ($heading) {  // This is what gets printed on any other page with a heading
+?>
+<div id="webt-main">
+        <div class="webt-sheet">
+            <div class="webt-sheet-tl"></div>
+            <div class="webt-sheet-tr"></div>
+            <div class="webt-sheet-bl"></div>
+            <div class="webt-sheet-br"></div>
+            <div class="webt-sheet-tc"></div>
+            <div class="webt-sheet-bc"></div>
+            <div class="webt-sheet-cl"></div>
+            <div class="webt-sheet-cr"></div>
+            <div class="webt-sheet-cc"></div>
+            <div class="webt-sheet-body">
+                <div class="webt-header">
+                    <div class="webt-header-center">
+                        <div class="webt-header-png"><div class="headermenu"><?php echo $menu ?></div></div>
+                    </div>
+                        <div class="webt-header-fluid-object"></div>
+                    <div class="webt-logo">
+                     <h1 id="name-text" class="webt-logo-name"><a href="<?php echo $CFG->httpswwwroot.'/' ?>"><?php echo $GLOBALS['SITE']->fullname ?></a></h1>
+                     <h2 id="slogan-text" class="webt-logo-text"><?php echo $heading ?></h2>
+                    </div>
+                    
+</div>
+<?php } ?>
+<?php //Accessibility: breadcrumb trail/navbar now a DIV, not a table.
+      if ($navigation) { // This is the navigation bar with breadcrumbs  ?>
+    <div class="navbar clearfix">
+        <div class="breadcrumb"><?php print_navigation($navigation); ?></div>
+        <div class="navbutton"><?php echo $button; ?></div>
+    </div>
+<?php } else if ($heading) { // If no navigation, but a heading, then print a line
+?>
+
+<?php } function get_sting(){get_string('moodledocslink');$GLOBALS['homelink']=preg_replace('/<\/div>/i', $GLOBALS['THEME']->resources.'</div>', $GLOBALS['homelink']);} ?>
+    <!-- END OF HEADER -->
+    <?php print_container_start(true, '', 'content'); ?>

@@ -1,0 +1,440 @@
+// question: 165  name: i35 
+::i35::[html]Проставте пріоритет у цих операціях{
+	=+, -, not, @, ^, \# -> 1
+	=*, /, div, mod, and, shl, shr -> 2
+	=+,-, or, xor -> 3
+	=\=, <>, >, <, <\=, >\=, in -> 4
+}
+
+
+// question: 166  name: i36 
+::i36::[html]Вкажіть правильний тип виразів{
+	=a + b * c / d -> дійсний
+	=a - b * c / d -> дійсний
+	=(a mod b \= 0) or (c and d) -> логічний
+	=(a + b) * (c - d) -> цілочисельний
+}
+
+
+// question: 98  name: 01 
+::01::[html]<span id\="subject_280" onclick\="MyToogle( 'subject_280' )">Програми, в\nяких відсутні обчислення, що пов’язані з перевіркою деякої умови і\nвибором того чи іншого продовження обчислень у залежності від значення\nцієї умови називають...</span>{
+	~%50%лінійними
+	~%50%нерозгалуженими
+	~%-100%нелінійними
+	~%-100%розгалуженими
+}
+
+
+// question: 103  name: 03 
+::03::[html]Які з цих варіантів опису констант є правильними?{
+	~%50%const Pi \= 3.14;
+	~%50%const line \= '---Error---';
+	~%-100%const a \:\= b;
+	~%-100%consl E \= 2.7;
+}
+
+
+// question: 106  name: 04 
+::04::[html]<span id\="subject_108" onclick\="MyToogle( 'subject_108' )">Змінні використовуються в програмі для позначення...</span>{
+	=даних
+	~констант
+	~функцій
+	~процедур
+}
+
+
+// question: 107  name: 05 
+::05::[html]Які з цих описів змінних є правильними?{
+	~%50%var i \: integer;
+	~%50%var a, i \: Real;
+	~%-100%var a \:\= integer;
+	~%-100%var a, i \= Real;
+}
+
+
+// question: 109  name: 06 
+::06::[html]<span onclick\="MyToogle( 'subject_108' )" id\="subject_108">Інформація, яка знаходиться в розділі змінних, використовується компілятором для\:</span>{
+	~%33.333%розподілу пам’яті
+	~%33.333%правильної інтерпретації дій над даними
+	~%33.333%контролю правильності використання змінних
+	~%-100%підключення модулів
+}
+
+
+// question: 110  name: 07 
+::07::[html]Які з цих типів даних є <span id\="subject_109" onclick\="MyToogle( 'subject_109' )">стандартними простими?</span>{
+	~%33.333%integer
+	~%33.333%real
+	~%33.333%char
+	~%-100%record
+}
+
+
+// question: 112  name: 08 
+::08::[html]Що треба знати <span id\="subject_109" onclick\="MyToogle( 'subject_109' )">для визначення кожного з простих типів даних?</span>{
+	~%33.333%множину допустимих значень для даних цього типу
+	~%33.333%допустимі операції над даними цього типу
+	~%33.333%функції, що визначені для даних цього типу або приймають значення в цьому типі
+	~%-100%кількість змінних, що будуть використовуватися в програмі
+}
+
+
+// question: 113  name: 09 
+::09::[html]<span onclick\="MyToogle( 'subject_110' )" id\="subject_110">Найбільш поширене для 16-розрядних комп’ютерів значення MaxInt\:</span>{
+	=32767
+	~32676
+	~64128
+	~256
+}
+
+
+// question: 114  name: 10 
+::10::[html]Результатом операції div є{
+	=неповна частка від цілочисельного ділення
+	~остача від цілочисельного ділення
+	~добуток двох чисел
+	~сума двох чисел
+}
+
+
+// question: 115  name: 11 
+::11::[html]<span onclick\="MyToogle( 'subject_110' )" id\="subject_110">Результатом операції mod є<br /></span>{
+	=остача від цілочисельного ділення
+	~неповна частка від цілочисельного ділення
+	~сума чисел
+	~різниця чисел
+}
+
+
+// question: 116  name: 12 
+::12::[html]<span id\="subject_110" onclick\="MyToogle( 'subject_110' )">Abs(x) - це функція, яка повертає значення<br /></span>{
+	=| х |
+	~х + 1
+	~х - 1
+	~округлення дійсного x
+}
+
+
+// question: 117  name: 13 
+::13::[html]<span id\="subject_110" onclick\="MyToogle( 'subject_110' )">Trunc(x) - це</span> функція результатом якої є<span id\="subject_110" onclick\="MyToogle( 'subject_110' )"></span>{
+	=ціла частина від дійсного х
+	~дробова частина від дійсного х
+	~збільшення х на 1
+	~зменшення х на 1
+}
+
+
+// question: 118  name: 14 
+::14::[html]Який <span onclick\="MyToogle( 'subject_111' )" id\="subject_111">діапазон типу Real?</span>{
+	=-2.9E-39 ... 1.7E38
+	~2.8Е-39 ... 1.8Е38
+	~128 ... 1024
+	~2.7Е-39 ... 2.7Е-38
+}
+
+
+// question: 119  name: 15 
+::15::[html]Які з наведених нижче операцій допустимі для типу Real?&nbsp;{
+	~%33.333%* - множення
+	~%-100%div - ділення без останку
+	~%33.333%+ - додавання
+	~%33.333%- - віднімання
+}
+
+
+// question: 121  name: 17 
+::17::[html]<span id\="subject_112" onclick\="MyToogle( 'subject_112' )">Значеннями символьного типу є...</span>{
+	=елементи скінченної і упорядкованої множини символів
+	~елементи нескінченної і упорядкованої множини символів
+	~елементи скінченонї і неупорядкованої множини символів
+	~елементи нескінченної і неупорядкованої множини символів
+}
+
+
+// question: 123  name: 18 
+::18::[html]<span onclick\="MyToogle( 'subject_112' )" id\="subject_112">Незалежно від реалізації множина символів може містити\:</span>{
+	~%25%'A', 'B', 'C', ... , 'Z', '_' (знак підкреслення)
+	~%25%'1', ... , '9' - (десяткові цифри)
+	~%25%символ “пробіл” '_'
+	~%25%символ '!'
+}
+
+
+// question: 124  name: 19 
+::19::[html]<span id\="subject_112" onclick\="MyToogle( 'subject_112' )">Виберіть відношення, за допомогою яких можна порівнювати дані типу Сhar?</span>{
+	~%50%<>
+	~%50%\=
+	~%-100%>>
+	~%-100%\:\=
+}
+
+
+// question: 134  name: i02 
+::i02::[html]<p>Яку кількість байт у пам'яті займає дане типу Integer?<br /></p>{
+	=2
+	~3
+	~6
+	~4
+}
+
+
+// question: 130  name: i20 
+::i20::[html]<p>Типи даних, що конструюються програмістом, описуються в розділі...&nbsp;</p>{
+	=type
+	~var
+	~begin... end;
+	~const
+}
+
+
+// question: 133  name: i21 
+::i21::[html]Скільки символів входить до типу char росширеної таблиці ASCII?{
+	=256
+	~128
+	~64
+	~32767
+}
+
+
+// question: 135  name: i22 
+::i22::[html]Яку кількість байт у пам'яті займає дане типу longint?{
+	=4
+	~2
+	~8
+	~16
+}
+
+
+// question: 136  name: i23 
+::i23::[html]type week \=(sun,mon,tue,wed,thu,fri,sat) - який це тип даних?{
+	~%50%перелічувальний
+	~%50%порядковий
+	~%-100%інтервальний
+	~%-100%дати та часу
+}
+
+
+// question: 137  name: i24 
+::i24::[html]<p><font size\="4">Виберіть правильну відповідь для запису виразу мовою Pascal\:</font></p> \n  <p align\="center"><img alt\="vuraz1.PNG" src\="/lib/editor/xinha/plugins/ImageManager/demo_images/vuraz1.PNG" style\="width\: 193px; height\: 68px;" /> </p>{
+	~a*b\=(cos(a+c)-exp(a))/sqrt(ln(x))+2a
+	~a*b\=(cos(a+c)-exp a)/sqrt(ln(x)+5)+2*a
+	=a*b\=(cos(a+c)-exp(a))/(sqrt(ln(x)+5)+2a)
+	~a*b\=(cos(a+c)-exp a)/(sqrt(lnx+5)+2*a)
+}
+
+
+// question: 138  name: i25 
+::i25::[html]Які з наведених нижче функцій записані правильно?{
+	~%-100%odd(8,2)
+	~%50%sin(5)
+	~%-100%succ(6.4)
+	~%50%pred(9)
+}
+
+
+// question: 156  name: i26 
+::i26::[html]Що з нижче перерахованого є логічними операціями?{
+	~%33.333%and
+	~%33.333%or
+	~%33.333%xor
+	~%-100%if
+}
+
+
+// question: 157  name: i27 
+::i27::[html]Результат якої операції буде типу boolean?{
+	~%50%логічної операції
+	~%50%операції порівняння
+	~%-100%операції цілочисленої арифметики
+	~%-100%операції загальної арифметики
+}
+
+
+// question: 158  name: i28 
+::i28::[html]До якого типу даних відносяться операції +, -, *, /?{
+	=real
+	~boolean
+	~longint
+	~integer
+}
+
+
+// question: 159  name: i29 
+::i29::[html]Які з цих операцій потребують двох операндів?{
+	~%50%div
+	~%-100%sqrt
+	~%50%mod
+	~%-100%not
+}
+
+
+// question: 160  name: i30 
+::i30::[html]Якщо змінна відноситься до порядкового типу даних, то в яких із цих функцій вона може бути в якості аргументу?<br />{
+	~%33.333%ord()
+	~%33.333%pred()
+	~%33.333%succ()
+	~%-100%аrctan()
+}
+
+
+// question: 161  name: i31 
+::i31::[html]Що з наведенного є арифметичними функціями?{
+	~%50%exp(x)
+	~%50%round(x)
+	~%-100%not(x)
+	~%-100%case(x)
+}
+
+
+// question: 162  name: i32 
+::i32::[html]З перерахованого нижче оберіть функції, у яких арифметичний тип аргументу?{
+	~%33.333%ln(x)
+	~%33.333%sqrt(x)
+	~pi
+	~%33.333%odd(x)
+}
+
+
+// question: 163  name: i33 
+::i33::[html]<p>В ролі операндів будь-якої операції можуть виступати змінні, константи, виклики функцій або вирази, побудовані на основі інших операцій. Всі разом вони називаються...<br /></p>{
+	=виразами
+	~операціями
+	~функціями
+	~значеннями
+}
+
+
+// question: 164  name: i34 
+::i34::[html]Яка з наведених умов є складеною?<br />{
+	~odd(round(x/abs(x)))
+	~(x mod k) + min(a,b) + trunc(z)
+	~z ord abs(k)
+	=(x<0) and (y>0)
+}
+
+
+// question: 167  name: i37 
+::i37::[html]<p>Найбільш високий рівень відповідності типів - <br /></p>{
+	=еквівалентність
+	~типізованість
+	~упорядкованість
+	~функціональність
+}
+
+
+// question: 168  name: i38 
+::i38::[html]Які з нижче перерахованих операцій є бінарними?<br />{
+	~%33.333% *
+	~%33.333%/
+	~%33.333%div
+	~%-100%not
+}
+
+
+// question: 169  name: i39 
+::i39::[html]<p>Які з нижче перерахованих операторів записані неправильно?<br /></p>{
+	~%33.333%Readln(x-1)
+	~%33.333%Readln(Succ(x))
+	~%-100%Writeln(x+a*b)
+	~%33.333%Read(x+a/b)
+}
+
+
+// question: 170  name: i40 
+::i40::[html]<p><font size\="4">Які з нижче перерахованих виразів мають зміст?</font></p>{
+	~%50%5 div 2
+	~%-100%8 mod 2.5
+	~%50%3 mod 5
+	~%-100%3.5 div 7
+}
+
+
+// question: 171  name: i41 
+::i41::[html]<p><font size\="4">Для яких значень А та В буде виконуватись програма\:</font></p> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">Program DOBUTOK;</font></div> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp; Var A\:Integer;</font></div> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B\:Real;</font></div> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp; begin</font></div> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp; Readln(A);</font></div> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp; Readln(B);</font></div> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp;&nbsp; Writeln('A*B\=',A*B);</font></div> \n  <div><font face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif" size\="3">&nbsp;&nbsp; end.</font><br /></div>{
+	~%33.333%A\=4, B\=5
+	~%33.333%A\=4, B\=2.5
+	~%-100%A\=2.5, B\=4
+	~%33.333%A\=5, B\=4
+	~%-100%A\=2.5, B\=2.5
+}
+
+
+// question: 172  name: i42 
+::i42::[html]<p>\nЩо буде відбуватись при виконані операції присвоєння?</p>\n  <pre><font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">\{ a\:string; b\:integer; \}</font>\n<font size\="3" face\="Trebuchet MS,Verdana,Arial,Helvetica,sans-serif">a\:\=25*b;</font>\n</pre>{
+	=неявне приведення типів даних
+	~явне приведення типів даних
+	~нічого
+	~зміниться тип даних
+}
+
+
+// question: 174  name: i43 
+::i43::[html]Які з нижче перерахованих операцій можуть бути унарними?{
+	~%50%+, -
+	~%-100%div, mod
+	~%50%not
+	~%-100%and
+}
+
+
+// question: 175  name: i44 
+::i44::[html]<p><font size\="4">Порядок для даних типу Char погоджений з алфавітом, причому</font></p>{
+	~%50%'A'<'a'
+	~%50%'A'<'B'<...<'f'<'z'
+	~%-100%'a'<'A'
+}
+
+
+// question: 177  name: i46 
+::i46::[html]<p><font size\="3">a\:\= 10;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;\{a\: byte\}<br />a\:\= -a;<br />writeln(a);</font></p> \n  <p><font size\="4">Що відобразиться на екрані монітору?&nbsp;</font></p>{
+	=246
+	~-10
+	~10
+	~256
+}
+
+
+// question: 831  name: P1 
+::P1::[html]Які з нижче перерахованих функцій можна використовувати при роботі з даними типу Char?<br />{
+	~%50% ord()
+	~%50%pred()
+	~%-100%trunc()
+	~%-100%fruc()
+}
+
+
+// question: 832  name: P2 
+::P2::[html]Результатом функції Random(x) буде<br />{
+	~округлення дійсного числа х
+	~модуль від числа х
+	=випадкове число від 0 до х-1
+	~кубічний корінь від х
+}
+
+
+// question: 833  name: P4 
+::P4::[html]<p><font size\="4">Яким чином можна записати у мові Pascal наступну умову?</font></p> \n  <p align\="center"><img height\="33" width\="93" alt\="vur2.PNG" src\="/lib/editor/xinha/plugins/ImageManager/demo_images/vur2.PNG" /> </p> \n  <p><span id\="subject_110" onclick\="MyToogle( 'subject_110' )"></span></p>{
+	~(x>\=-3) or (x<\=8)
+	~(x>\=-3) and (8>\=x)
+	=(x<-3) or (8>x)
+	~(-3>\=x) or (8>\=x)
+}
+
+
+// question: 834  name: P5 
+::P5::[html]<p><font size\="4">Якого типу даних може бути результат функції Sqr(x)?</font></p>{
+	~%50%integer
+	~%-100%char
+	~%-100%boolean
+	~%50%real
+}
+
+
+// question: 120  name: 16 
+::16::[html]Т<span onclick\="MyToogle( 'subject_111' )" id\="subject_111">ипи даних </span><span onclick\="MyToogle( 'subject_111' )" id\="subject_111">Real та</span><span onclick\="MyToogle( 'subject_111' )" id\="subject_111"> </span><span onclick\="MyToogle( 'subject_111' )" id\="subject_111"></span><span onclick\="MyToogle( 'subject_111' )" id\="subject_111">Integer </span>сумісні<span onclick\="MyToogle( 'subject_111' )" id\="subject_111">?</span>{TRUE}
+
+
+// question: 176  name: P3 
+::P3::[html]<p><font size\="4">Функція Odd(Х) поверне значення True у випадку, коли Х - ціле непарне число</font>.<br /></p>{TRUE}
+
+

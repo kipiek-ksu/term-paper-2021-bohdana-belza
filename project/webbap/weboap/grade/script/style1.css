@@ -1,0 +1,35 @@
+.bsDg_table {
+	font-family: verdana;
+	font-size:   11px;
+}
+
+.bsDb_tr_header {
+  background-color: menu;
+  color: black;
+}
+
+.bsDb_td_header {
+  border: 1px ridge;
+}
+
+.bsDb_td_header_sort {
+  border: 1px groove;
+  border-right:1px solid gray;
+}
+
+
+.bsDg_tr_row_zebra_0 {
+	background-color: antiquewhite;
+	font-size:   11px;
+}
+.bsDg_td_row_zebra_0 {
+	font-size:   11px;
+}
+.bsDg_tr_row_zebra_1 {
+	background-color: white;
+	font-size:   11px;
+}
+.bsDg_td_row_zebra_1 {
+	font-size:   11px;
+}
+

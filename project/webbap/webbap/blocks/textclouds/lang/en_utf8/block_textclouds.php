@@ -1,0 +1,55 @@
+<?php
+
+$string["resources"] = "Resources";
+$string["config"] = "Config";
+$string["stopwords"] = "Stop Words";
+$string["show"] = "Show";
+$string["resourceswith"] = "resources with";
+$string["status"]= "status";
+$string["numbertags"] = "Number of tags to show (default is 30)";
+$string["minimumsize"] = "Minimum size of font (default is 15)";
+$string["usecolorsystem"] = "Enable user-click frequency color system";
+$string["all"] = "all";
+$string["file"] = "file";
+$string["page"] = "page";
+$string["text"] = "text";
+$string["html"] = "html";
+$string["directory"] = "directory";
+$string["name"] = "Name";
+$string["type"] = "Type";
+$string["status2"] = "Status";
+$string["include"] = "Include";
+$string["any"] = "any";
+$string["disabled"] = "disabled";
+$string["pending"] = "pending";
+$string["processed"] = "processed";
+$string["unsupported"] = "unsupported";
+$string["pending_removal"] = "pending removal";
+$string["invisible"] = "invisible";
+$string["language"] = "Language";
+$string["manage"] = "Manage";
+$string["managemod"] = "Manage tags for resource";
+$string["newtag_remove"] = "Remove";
+$string["newtag_update"] = "update";
+$string["newtag_text"] = "Text";
+$string["newtag_weight"] = "Weight";
+$string["newtag_head"] = "Add a new tag";
+$string["tagref_success"] = "Tag reference removed successfully";
+$string["tagref_error"] = "Error removing tag reference";
+$string["tagrefupd_success1"] = "Tag reference for ";
+$string["tagrefupd_success2"] = " updated successfully";
+$string["tagrefupd_error"] = "Error updating tag reference";
+$string["tagempty"] = "Tag name and tag weight cannot be empty";
+$string["tagadd_success"] = "Tag added successfully";
+$string["tegadd_error"] = "Tag is already present!";
+$string["stop_admit"] = "Terms accepted";
+$string["stop_block"] = "Terms discarded";
+$string["word_remove"] = "Remove";
+$string["word_word"] = "Word";
+$string["word_new"] = "Add new";
+$string["word_add"] = "add";
+$string["word_alert"] = "Note: changes doesn't affect already tagged resources";
+$string["nothingtoshow"] = "Course has not indexable resources.";
+$string["tagcloudempty"] = "Tag cloud is empty. There aren't indexed resources or the system is waiting for indexing";
+?>
+ 

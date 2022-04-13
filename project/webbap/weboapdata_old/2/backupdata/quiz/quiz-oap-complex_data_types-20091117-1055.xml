@@ -1,0 +1,1990 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<!-- question: 273  -->
+  <question type="matching">
+    <name><text>26</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Вкажіть співвідношення:&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+<subquestion>
+<text>ототожнення внутрішнього ім'я файлу із зовнішнім </text>
+<answer><text>Assign</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>відкриття файл для запису</text>
+<answer><text>Rewrite</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>закриття файлу</text>
+<answer><text>Close</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>відкриття файлу для читання</text>
+<answer><text>Reset</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>Читання даних з файлу</text>
+<answer><text>Read</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>запис даних до файлу</text>
+<answer><text>Write</text>
+</answer>
+</subquestion>
+</question>
+
+
+
+<!-- question: 269  -->
+  <question type="matching">
+    <name><text>28</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Вкажіть&amp;nbsp;співвідношення.&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+<subquestion>
+<text>Признак кінця файла</text>
+<answer><text>Eof()</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>Признак кінця рядка текстового файла</text>
+<answer><text>Eoln()</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>Якщо рядок текстового файла закінчено</text>
+<answer><text>Eoln()=True</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>Якщо файл невичерпаний</text>
+<answer><text>Eof()=False</text>
+</answer>
+</subquestion>
+</question>
+
+
+
+<!-- question: 270  -->
+  <question type="matching">
+    <name><text>30</text>
+</name>
+    <questiontext format="html">
+<text>Вкажіть послідовність виклику процедур при роботі з файлами.</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>0</shuffleanswers>
+<subquestion>
+<text>1.</text>
+<answer><text>Assign</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>2.</text>
+<answer><text>Rewrite</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>3.</text>
+<answer><text>Write</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>4.</text>
+<answer><text>Close</text>
+</answer>
+</subquestion>
+</question>
+
+
+
+<!-- question: 260  -->
+  <question type="matching">
+    <name><text>Процедури на типі strng</text>
+</name>
+    <questiontext format="html">
+<text>Поставте свіввідношення між назвами процедур та їх реалізаціями:</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+<subquestion>
+<text>Видалення i символів з рядка А починаючи з позиції В</text>
+<answer><text>Delete(A,B,i) </text>
+</answer>
+</subquestion>
+<subquestion>
+<text>Встввити рядок А рядок В починаючи з позиції i</text>
+<answer><text>Insert(A,B,i)</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>Обновити рядок А</text>
+<answer><text>не існує</text>
+</answer>
+</subquestion>
+<subquestion>
+<text></text>
+<answer><text>Update(A)</text>
+</answer>
+</subquestion>
+</question>
+
+
+
+<!-- question: 258  -->
+  <question type="matching">
+    <name><text>Функції на string</text>
+</name>
+    <questiontext format="html">
+<text>Поставте співвідношення між назвами функцій для string і їх прзначенням:</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+<subquestion>
+<text>довжина рядка А</text>
+<answer><text>Length(A)</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>позиція першого символа паршого зліва входження підрядка В в рядок А</text>
+<answer><text>Pos(B,A)</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>виділення підрядка А, починаючи з позиції i, з рядка В</text>
+<answer><text>Copy(B,i,A)</text>
+</answer>
+</subquestion>
+<subquestion>
+<text>з'єднання рядків А, В, С</text>
+<answer><text>Concat(A,B,C)</text>
+</answer>
+</subquestion>
+</question>
+
+
+
+<!-- question: 259  -->
+  <question type="multichoice">
+    <name><text>16Операції і відношення для типу string</text>
+</name>
+    <questiontext format="html">
+<text>Які операції і відношення визначені для типу string?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="14.2857">
+        <text>
+&quot;=&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="14.2857">
+        <text>
+&quot;&lt;&gt;&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="14.2857">
+        <text>
+&quot;&lt;&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="14.2857">
+        <text>
+&quot;&gt;&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="14.2857">
+        <text>
+&quot;&lt;=&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="14.2857">
+        <text>
+&quot;&gt;=&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="14.2857">
+        <text>
+&quot;+&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+&quot;%&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+&quot;-&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 265  -->
+  <question type="multichoice">
+    <name><text>23 Означення файлового типу даних</text>
+</name>
+    <questiontext format="html">
+<text>Сформулюйте означення файлового типу даних.</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+Файл - послідовність однотипних компонент, яка має ознаку кінця і обробляється послідовно - від початку до кінця.
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+Файл - послідовність однотипних компонент, яка має ознаку кінця і обробляється обробляється в довільному порядку.
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+Файл - послідовність компонент, яка не має ознаки кінця і обробляється обробляється в довільному порядку. 
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+Файл - група компонент, що не мають спільних характеристик.
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 268  -->
+  <question type="multichoice">
+    <name><text>24</text>
+</name>
+    <questiontext format="html">
+<text>Як називаються стандартні файли введення/виведення даних&amp;nbsp;для типу даних записи&amp;nbsp;і які види дій над ними можна виконати?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="20">
+        <text>
+перегляд
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="20">
+        <text>
+створення
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-25">
+        <text>
+читання/запис
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="20">
+        <text>
+input
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="20">
+        <text>
+output
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-25">
+        <text>
+chengin
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-25">
+        <text>
+chengout
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-25">
+        <text>
+форматування
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="20">
+        <text>
+отримання інформації про поточний файл
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 274  -->
+  <question type="multichoice">
+    <name><text>25</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Вкажіть, в якому прикладі правильно указано оголошення змінної файлового типу.&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+&lt;ім'я типу&gt;=file of &lt;тип компонент&gt; 
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+&lt;ім'я типу&gt;:file of &lt;тип компонент&gt;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+file of &lt;тип компонент&gt;=&lt;ім'я файлу&gt;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+file of &lt;тип компонент&gt;:&lt;ім'я файлу&gt;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 272  -->
+  <question type="multichoice">
+    <name><text>27</text>
+</name>
+    <questiontext format="html">
+<text>Вкажіть допустимі для списків введення/виведення типи змінних/виразів.</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+integer
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+real
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+char
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+set
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+record
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 266  -->
+  <question type="multichoice">
+    <name><text>33 Способи представлення фізичних файлів</text>
+</name>
+    <questiontext format="html">
+<text>Скількома і якими саме способами можна представити фізичний файл в мові програмування Pascal?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+типизовавані файли
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+текстові файли
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+нетипизовані файли
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+заархівовані файли
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+медіа-файли
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 267  -->
+  <question type="multichoice">
+    <name><text>34</text>
+</name>
+    <questiontext format="html">
+<text>Що відбудеться, якщо на диску буде створюватись файл із&amp;nbsp; вже існуючим ім'ям?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+стає пустим, його вміст втрачється
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+стає пустим, з паралельним створенням копії файла
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+дописується нова інформація в кінець файла
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 253  -->
+  <question type="multichoice">
+    <name><text>Альтернативи запису</text>
+</name>
+    <questiontext format="html">
+<text>Яка кількість альтернатив може міститись у варіантній частині запису?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-33.333">
+        <text>
+фіксована
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+довільна
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+лише дві
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+не більше десяти
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 221  -->
+  <question type="multichoice">
+    <name><text>Відношення рівності</text>
+</name>
+    <questiontext format="html">
+<text>Які відношення рівності можна застосовувати до змінних типу записи?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+&quot;=&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-25">
+        <text>
+&quot;&lt;&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-25">
+        <text>
+&quot;&gt;&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+&quot;&lt;&gt;&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-25">
+        <text>
+&quot;&lt;=&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-25">
+        <text>
+&quot;&gt;=&quot;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 254  -->
+  <question type="multichoice">
+    <name><text>Визначення рядка</text>
+</name>
+    <questiontext format="html">
+<text>Що являє собою рядок і який діапазон його допустимих значень?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-50">
+        <text>
+послідовність літер; діапазон [0..255]
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+набір літер; діапазон довільний
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+послідовність літер; діапазон (0..255]
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+послідовність літер; діапазон [1..255]
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 255  -->
+  <question type="multichoice">
+    <name><text>Дії над рядками1</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Якщо рядок А є початком рядка В, то...&lt;/p&gt;
+  &lt;p&gt;Вкажіть правильні відповіді:&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-33.333">
+        <text>
+A=B
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+A&lt;B
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+A&gt;B
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+A&lt;=B
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 256  -->
+  <question type="multichoice">
+    <name><text>Дії над рядками2</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Порівняння двох рядків здійснюється...&lt;/p&gt;
+  &lt;p&gt;Вкажіть правильні відповіді:&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+посимвольно
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+посимвольно, починаючи з першого символу
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+посимвольно, починаючи з останнього символу
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+посимвольно, в хаотичному порядку
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 250  -->
+  <question type="multichoice">
+    <name><text>Еквівалентність записів</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Визначить, які з цих операторів являються еквівалентними один до одного?&lt;/font&gt;&lt;/p&gt; 
+  &lt;p&gt;&lt;font size=&quot;3&quot;&gt;1.&amp;nbsp;&amp;nbsp;&amp;nbsp;Payroll[i].Residence.HouseNumber := 50;&lt;/font&gt;&lt;/p&gt; 
+  &lt;p&gt;&lt;font size=&quot;3&quot;&gt;2.&amp;nbsp;&amp;nbsp;&amp;nbsp;with Payroll[i].Residence do&lt;br /&gt;&amp;nbsp;&amp;nbsp; HouseNumber := 50;&lt;/font&gt;&lt;/p&gt; 
+  &lt;p&gt;&lt;font size=&quot;3&quot;&gt;3.&amp;nbsp;&amp;nbsp;with Payroll[i].Residence.HouseNumber := 50;&lt;/font&gt;&lt;/p&gt; 
+  &lt;p&gt;&lt;font size=&quot;3&quot;&gt;4.&amp;nbsp;with Payroll[i] do&lt;br /&gt;&amp;nbsp; &amp;nbsp;with Residence do&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;HouseNumber := 50;&lt;/font&gt;&lt;/p&gt; 
+  &lt;p&gt;&lt;font size=&quot;3&quot;&gt;5.&amp;nbsp;with Payroll[i] do&lt;br /&gt;&amp;nbsp; &amp;nbsp;with Residence do&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; HouseNumber := 50;&lt;/font&gt;&lt;/p&gt; 
+  &lt;p&gt;&lt;font size=&quot;3&quot;&gt;6.with Payroll[i] do&lt;br /&gt;&amp;nbsp;&amp;nbsp; with Payroll[i]do&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; PayScale :='A'; &lt;/font&gt;&lt;br /&gt;&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+1.
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+2.
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+3.
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+4.
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+5.
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+6.
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 263  -->
+  <question type="multichoice">
+    <name><text>Застосування рядків</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;&lt;font size=&quot;4&quot;&gt;Вкажіть результат виконання програми.&lt;/font&gt;&lt;/p&gt; 
+  &lt;p&gt;Program Elements;&lt;br /&gt;Var&lt;br /&gt;&amp;nbsp; Str : string[26]; &lt;br /&gt;&amp;nbsp; i : integer;&lt;br /&gt;Begin&lt;br /&gt;&amp;nbsp; S:=''; &lt;br /&gt;&amp;nbsp; for i := 'A' to 'Z' do&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; Str := Str + i;&lt;br /&gt;&amp;nbsp; writeln(Str);&lt;br /&gt;End.&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+формування рядка з 26 символів, що містить послідовність великих букв латинського алфавіту
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+формування рядка з 26 символів, що містить послідовність букв латинського алфавіту
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+читає рядок з 26 символів, і виводить на екран
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 217  -->
+  <question type="multichoice">
+    <name><text>Комбінований тип даних</text>
+</name>
+    <questiontext format="html">
+<text>Що задає комбінований тип даних?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-33.333">
+        <text>
+об'єкт
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+образ структури об'єкта
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+змінну
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+тип змінної
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 262  -->
+  <question type="multichoice">
+    <name><text>Оператор виведення рядків</text>
+</name>
+    <questiontext format="html">
+<text>Який оператор необхідно використовувати при виведенні декількох рядків?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-33.333">
+        <text>
+Read
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+Write
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+Readln
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+Writeln
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 248  -->
+  <question type="multichoice">
+    <name><text>Оператор доступу</text>
+</name>
+    <questiontext format="html">
+<text>Який оператор використовується для доступу до поля запису?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-100">
+        <text>
+case&lt;вираз&gt; of&lt;список міток&gt;:&lt;оператор&gt;;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+with&lt;змінна-запис&gt; do&lt;оператор зі звертанням до поля&gt;;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+while&lt;умова&gt; do&lt;оператор&gt;;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-100">
+        <text>
+&lt;ім'я змінної&gt;:=&lt;ім'я поля&gt;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+&lt;ім'я змінної&gt;.&lt;ім'я поля&gt;;
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 218  -->
+  <question type="multichoice">
+    <name><text>Особливості типу</text>
+</name>
+    <questiontext format="html">
+<text>У чому полягають особливості типу даних &amp;quot;Записи&amp;quot;?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+кожна частина може мати різні характеристики
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+неможливість задання полів складними типами даних
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+не обов'язково вказувати тип полів
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 216  -->
+  <question type="multichoice">
+    <name><text>Поняття складні типи даних</text>
+</name>
+    <questiontext format="html">
+<text>Які характеристики пов'язані з поняттям складного типу даних?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="33.333">
+        <text>
+ім'я типу
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+спосіб об'єднання даних
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+множина допустимих значень типу 
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+набір відношень, визначених на цьому типі
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="33.333">
+        <text>
+спосіб доступу до даних
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+набір допустимих функцій
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 232  -->
+  <question type="multichoice">
+    <name><text>Призначення оператора with do</text>
+</name>
+    <questiontext format="html">
+<text>Для чого слугує в Pascal оператор with do?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-25">
+        <text>
+для представлення способу об'єднання даних в складнішу структуру
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+для компактного представлення часто використовуваних зміних
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+для зручного доступу до полів запису
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 251  -->
+  <question type="multichoice">
+    <name><text>Проблема миттєвого стану кожного запису</text>
+</name>
+    <questiontext format="html">
+<text>Поле варіантної частини запису має декілька альтернатив значень. &lt;br /&gt;Як програма може зберігати інформацію про миттєвий стан кожного запису?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="100">
+        <text>
+додати кожному запису нове поле, що являється змінною типу вариантної частини
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+не використовувати записи з варіантною частиною
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+додати кожному запису ще по одній варіантній частині
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+додати ше одне поле, яке буде підтверджувати вибір варіанта
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 264  -->
+  <question type="multichoice">
+    <name><text>Робота з рядками</text>
+</name>
+    <questiontext format="html">
+<text>Існує функція, яка здійснює пошук деякого підряка в рядку і виводить позицію, з якої починається входження. Що це за функція?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-33.333">
+        <text>
+Copy
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="100">
+        <text>
+Pos
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+Concat
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-33.333">
+        <text>
+Upcase 
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 219  -->
+  <question type="multichoice">
+    <name><text>Складові типу</text>
+</name>
+    <questiontext format="html">
+<text>&lt;p&gt;Як називається складова частина запису?&lt;/p&gt;</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="50">
+        <text>
+поле
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+компонент
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+стовбець
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="-50">
+        <text>
+змінна
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+
+<!-- question: 220  -->
+  <question type="multichoice">
+    <name><text>Творення складних структур за допомогою записів</text>
+</name>
+    <questiontext format="html">
+<text>До яких ще складніших структур данних можуть входити записи?</text>
+    </questiontext>
+    <image></image>
+    <generalfeedback>
+<text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback>      <text></text>
+</correctfeedback>
+    <partiallycorrectfeedback>      <text></text>
+</partiallycorrectfeedback>
+    <incorrectfeedback>      <text></text>
+</incorrectfeedback>
+    <answernumbering></answernumbering>
+      <answer fraction="-50">
+        <text>
+посилання
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+масиви
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+      <answer fraction="50">
+        <text>
+записи
+        </text>
+      <feedback>
+          <text>
+
+          </text>
+      </feedback>
+    </answer>
+</question>
+
+
+</quiz>

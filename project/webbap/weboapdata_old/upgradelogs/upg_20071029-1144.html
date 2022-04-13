@@ -1,0 +1,284 @@
+<h2   class="main">vint</h2><hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): CREATE TABLE mdl_vint (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vint COMMENT='VINT table 1' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vint_cou_ix ON mdl_vint (course) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_vint_table2 (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    vint BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    userid BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vint_table2 COMMENT='VINT table 2' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vinttabl_use_ix ON mdl_vint_table2 (userid) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vinttabl_vin_ix ON mdl_vint_table2 (vint) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vint', 'add', 'vint', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vint', 'update', 'vint', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<div class="notifysuccess" style="text-align:center">vint таблица была успешно установлена</div><br />
+<hr /><h2   class="main">vinttaskbook</h2><hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): SHOW TABLES &nbsp; 
+<hr />
+<hr />
+(mysql): CREATE TABLE mdl_vinttaskbook (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    summary MEDIUMTEXT NOT NULL,
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vinttaskbook COMMENT='VINT TASKBOOK table 1' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vint_cou2_ix ON mdl_vinttaskbook (course) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_vinttaskbook_categories (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    number BIGINT(10) unsigned NOT NULL,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vinttaskbook_categories COMMENT='TASKBOOK CATEGORIES' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vintcate_vin_ix ON mdl_vinttaskbook_categories (vinttaskbook) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_vinttaskbook_tasks (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    vinttaskcategories BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    number BIGINT(10) unsigned NOT NULL,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    description TEXT NOT NULL,
+    input_data VARCHAR(50) NOT NULL DEFAULT '',
+    output_data VARCHAR(50) NOT NULL DEFAULT '',
+    description_data TEXT NOT NULL,
+    input_example VARCHAR(255) NOT NULL DEFAULT '',
+    output_example VARCHAR(255) NOT NULL DEFAULT '',
+    original_solution TEXT NOT NULL,
+    original_compilator VARCHAR(50) NOT NULL DEFAULT '',
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vinttaskbook_tasks COMMENT='TASKBOOK TASKS' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE INDEX mdl_vinttask_vin_ix ON mdl_vinttaskbook_tasks (vinttaskbook) &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'add', 'vinttaskbook', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'vinttaskbook-add' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'add', 'vinttaskbook', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'add', 'vinttaskbook', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'add', 'vinttaskbook', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[12])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/vinttaskbook/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'update', 'vinttaskbook', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'vinttaskbook-update' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'update', 'vinttaskbook', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'update', 'vinttaskbook', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'update', 'vinttaskbook', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[12])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/vinttaskbook/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'delete', 'vinttaskbook', 'name') &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<br /><div class="box errorbox errorboxcontent">vinttaskbook tables could NOT be set up successfully!</div><h2   class="main">vinttaskbook</h2><hr />
+(mysql): CREATE TABLE mdl_vinttaskbook (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    summary MEDIUMTEXT NOT NULL,
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_vinttaskbook' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_vinttaskbook (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFA..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_vinttaskbook (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFA...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_vinttaskbook (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    course BIGINT(10) unsigned NOT NULL DEFA..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[9])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/vinttaskbook/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vinttaskbook COMMENT='VINT TASKBOOK table 1' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_vinttaskbook_categories (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    number BIGINT(10) unsigned NOT NULL,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_vinttaskbook_categories' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_vinttaskbook_categories (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsig..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_vinttaskbook_categories (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsig...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_vinttaskbook_categories (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsig..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[9])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/vinttaskbook/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vinttaskbook_categories COMMENT='TASKBOOK CATEGORIES' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): CREATE TABLE mdl_vinttaskbook_tasks (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    vinttaskcategories BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    number BIGINT(10) unsigned NOT NULL,
+    name VARCHAR(255) NOT NULL DEFAULT '',
+    description TEXT NOT NULL,
+    input_data VARCHAR(50) NOT NULL DEFAULT '',
+    output_data VARCHAR(50) NOT NULL DEFAULT '',
+    description_data TEXT NOT NULL,
+    input_example VARCHAR(255) NOT NULL DEFAULT '',
+    output_example VARCHAR(255) NOT NULL DEFAULT '',
+    original_solution TEXT NOT NULL,
+    original_compilator VARCHAR(50) NOT NULL DEFAULT '',
+    timecreated BIGINT(10) unsigned NOT NULL DEFAULT 0,
+    timemodified BIGINT(10) unsigned NOT NULL DEFAULT 0,
+CONSTRAINT  PRIMARY KEY (id)
+) &nbsp; 
+<hr />
+1050: Table 'mdl_vinttaskbook_tasks' already exists<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(CREATE TABLE mdl_vinttaskbook_tasks (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsigned N..., false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(CREATE TABLE mdl_vinttaskbook_tasks (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsigned N...)</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(CREATE TABLE mdl_vinttaskbook_tasks (
+    id BIGINT(10) unsigned NOT NULL auto_increment,
+    vinttaskbook BIGINT(10) unsigned N..., true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[9])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/vinttaskbook/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): ALTER TABLE mdl_vinttaskbook_tasks COMMENT='TASKBOOK TASKS' &nbsp; 
+<hr />
+<div class="notifysuccess" style="text-align:center">Успешно</div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'add', 'vinttaskbook', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'vinttaskbook-add' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'add', 'vinttaskbook', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'add', 'vinttaskbook', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'add', 'vinttaskbook', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[9])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/vinttaskbook/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'update', 'vinttaskbook', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'vinttaskbook-update' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'update', 'vinttaskbook', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'update', 'vinttaskbook', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'update', 'vinttaskbook', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[9])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/vinttaskbook/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<hr />
+(mysql): INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'delete', 'vinttaskbook', 'name') &nbsp; 
+<hr />
+1062: Duplicate entry 'vinttaskbook-delete' for key 2<br>
+<pre align=left> &nbsp;  &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql._execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'delete', 'vinttaskbook', 'name'), false)</font><font color=#808080 size=-1> % line  889, file: <a href="file:/G:\weboap2\lib\adodb\adodb.inc.php">adodb.inc.php</a></font>
+ &nbsp;  &nbsp;  &nbsp; <font face="Courier New,Courier">adodb_mysql.execute(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'delete', 'vinttaskbook', 'name'))</font><font color=#808080 size=-1> % line   89, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp;  &nbsp; <font face="Courier New,Courier">execute_sql(INSERT INTO mdl_log_display(module, action, mtable, field) VALUES ('vinttaskbook', 'delete', 'vinttaskbook', 'name'), true)</font><font color=#808080 size=-1> % line 1911, file: <a href="file:/G:\weboap2\lib\dmllib.php">dmllib.php</a></font>
+ &nbsp; <font face="Courier New,Courier">execute_sql_arr(Array[9])</font><font color=#808080 size=-1> % line  548, file: <a href="file:/G:\weboap2\lib\ddllib.php">ddllib.php</a></font>
+<font face="Courier New,Courier">install_from_xmldb_file(G:\weboap2/mod/vinttaskbook/db/install.xml)</font><font color=#808080 size=-1> % line  328, file: <a href="file:/G:\weboap2\lib\adminlib.php">adminlib.php</a></font>
+</pre><div class="notifyproblem" style="text-align:center"><strong>Ошибка</strong></div><br />
+<br /><div class="box errorbox errorboxcontent">vinttaskbook tables could NOT be set up successfully!</div>

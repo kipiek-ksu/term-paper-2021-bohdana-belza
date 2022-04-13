@@ -1,0 +1,72 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>NICOWEB w/ Scriptaculous or Scriptaculous presented by NICOWEB</title>
+<script language="javascript" type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript" language="javascript">
+/* NICOWEB : 07/08/2006 :: script ajax prototype de verification de disponibilite pseudo submate */
+var imgPseudo = "";
+function formVerifierDisponibilitePseudo (idImg)
+{
+    var pseudoToTest =  $('pseudo').value;
+    imgPseudo = idImg;
+
+    if (pseudoToTest != "")
+    {
+            alert('let\'s start the ajax process with "'+pseudoToTest+'".');
+          /*new Ajax.Request("http://ns34.hosteur.com/~learnc/espaceemploi/ajax/get.verifierPseudoScriptaculous.php?pseudo"+pseudoToTest, { method: 'get', asynchronous: true, onSuccess:succesRetourAjax, onFailure:erreurRetourAjax} );*/
+
+            new Ajax.Updater('retour','test.php?pseudo='+pseudoToTest,{ method:'get' , onComplete: succesRetourAjax, onFailure: erreurRetourAjax});
+    }
+    else
+    {
+        alert('oops, broken.')
+        $(idImg).src = 'http://ns34.hosteur.com/~learnc/espaceemploi/ajax/images/champNonValide.gif';
+        return true;
+    }
+}
+
+function succesRetourAjax (t)
+{
+    alert(t.responseText);
+    if (t.responseText == "succes")
+    {
+        alert('you can use this pseudo (ndr : test version).');
+        $(imgPseudo).src = 'http://ns34.hosteur.com/~learnc/espaceemploi/ajax/images/champValide.gif';
+    }
+    else
+    {
+        alert('you can\'t use this pseudo (ndr : test version).');
+        $(imgPseudo).src = 'http://ns34.hosteur.com/~learnc/espaceemploi/ajax/images/champNonValide.gif';
+    }
+}
+
+function erreurRetourAjax (t)
+{
+    alert('Error ' + t.status + ' -- ' + t.statusText);
+    alert('you can\'t user this pseudo (ndr : test version).');
+    $(imgPseudo).src = 'http://ns34.hosteur.com/~learnc/espaceemploi/ajax/images/champNonValide.gif';
+}
+/*  NICOWEB : 07/08/2006 :: fin script ajax prototype de verification de disponibilite pseudo submate */
+</script>
+
+</head>
+<body>
+<div id="retour"></div>
+<table>
+    <tr><td colspan="2"><input type="button" name="test" value="other"/></td></tr>
+    <tr>
+      <td>Enter a pseudo and test his disponibility :</td>
+      <td>
+          <input name="pseudo" type="text" id="pseudo" value="" class="input" onBlur="formVerifierDisponibilitePseudo('imgPse');"/>
+          <img src="http://ns34.hosteur.com/~learnc/espaceemploi/ajax/images/champNonValide.gif" alt="nicoweb/scriptaculous icone champ non valide" id="imgPse" />
+      </td>
+  </tr>
+  <tr><td colspan="2"><input type="button" name="test" value="other"/></td></tr>
+  <tr><td colspan="2">NICOWEB NOTES :: in the test version you can't user 'nicoweb', 'nicoweb.fr', 'bertelle nicolas', 'saved', 'ganjaman', 'feliz' as pseudo.<br/>All others are welcome ;-)</td></tr>
+</table>
+
+</body>
+</html>

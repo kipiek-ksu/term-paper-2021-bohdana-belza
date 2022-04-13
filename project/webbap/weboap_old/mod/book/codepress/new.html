@@ -1,0 +1,175 @@
+<script src="codepress.js" type="text/javascript"></script>
+<textarea id="cp1" class="codepress csharp" style="width:700px;height:300px;" wrap="off">
+
+program Project2;
+
+const num=3;
+type
+  Tmas=array[1..num+2,1..num+2]of integer;
+  TStat=array[1..num*num+1,1..3]of integer;
+var
+  A:Tmas;
+  stat:TStat;
+  Sdlr,Sdrl:integer;
+  Kdlr,Kdrl:integer;
+  f,g:boolean;
+  x,y,user,number,i:integer;
+
+procedure Init();
+var i,j:integer;
+begin
+  //обнуляем массив квадрата
+  for i:=1 to num do
+  for j:=1 to num do
+     A[i,j]:=0;
+  //обнуляем диагональные суммы
+  Sdlr:=0; Kdlr:=0;
+  Sdrl:=0; Kdrl:=0;
+  //обнуляем массив Статистики игры
+  for i:=1 to num*num+1 do
+    begin
+      Stat[i,1]:=0;
+      Stat[i,2]:=0;
+      Stat[i,3]:=0;
+    end;
+end;
+
+function check_Sum():boolean;
+var i,j:integer;
+begin
+  //обнуляем промежуточные данные
+  check_Sum:=false;
+  Sdlr:=0; Kdlr:=0;
+  Sdrl:=0; Kdrl:=0;
+
+  for i:=1 to num do
+    begin
+      A[i,num+1]:=0;
+      A[i,num+2]:=0;
+    end;
+  for j:=1 to num do
+    begin
+      A[num+1,j]:=0;
+      A[num+2,j]:=0;
+    end;
+
+  //считаем вертикальную сумму
+  for i:=1 to num do
+  for j:=1 to num do
+    if (A[i,j]&lt;&gt;0) then
+      begin
+        A[num+2,j]:=A[num+2,j]+1;
+        A[num+1,j]:=A[num+1,j]+A[i,j];
+      end;
+  //считаем горизонтальную сумму
+  for i:=1 to num do
+  for j:=1 to num do
+    if (A[i,j]&lt;&gt;0) then
+      begin
+        A[i,num+2]:=A[i,num+2]+1;
+        A[i,num+1]:=A[i,num+1]+A[i,j];
+      end;
+  //Считаем диагонали
+  for i:=1 to num do
+    if (A[i,i]&lt;&gt;0) then
+      begin
+        Kdlr:=Kdlr+1;
+        Sdlr:=Sdlr+A[i,i];
+      end;
+  for i:=num downto 1 do
+    if (A[i,i]&lt;&gt;0) then
+    begin
+        Kdrl:=Kdrl+1;
+        Sdrl:=Sdrl+A[i,i];
+    end;
+  if ( ((Kdlr&gt;2)and(Sdlr&lt;&gt;15)) or ((Kdrl&gt;2)and(Sdrl&lt;&gt;15)) ) then
+    begin
+      check_Sum:=true;
+      exit;
+    end;
+
+  for i:=1 to num do
+    if ((A[i,num+2]&gt;2)and(A[i,num+1]&lt;&gt;15)) then
+      begin
+        check_Sum:=true;
+        exit;
+      end;
+
+  for j:=1 to num do
+    if ((A[num+2,j]&gt;2)and(A[num+1,j]&lt;&gt;15)) then
+      begin
+        check_Sum:=true;
+        exit;
+      end;
+end;
+
+function Action_Stat(number:integer;user:integer;op_number:integer):boolean;
+begin
+  Action_Stat:=false;
+  if (Stat[number,1]=0) then
+    begin
+      Stat[number,1]:=1;
+      Stat[number,2]:=user;
+      Stat[number,3]:=op_number;
+      Action_Stat:=true;
+    end;
+end;
+
+function check_point(x:integer;y:integer):boolean;
+begin
+  check_point:=true;
+  if (A[x,y]&lt;&gt;0) then check_point:=false;
+end;
+
+procedure print_mas();
+var i,j:integer;
+begin
+  for i:=1 to num do
+    begin
+      for j:=1 to num do
+        write(' ',A[i,j]);
+      writeln;
+    end;
+end;
+
+begin
+  { TODO -oUser -cConsole Main : Insert code here }
+ // clrscr;
+
+  i:=1;
+  repeat
+    print_mas();
+    writeln('ход №',i);
+    f:=true;
+    if (i mod 2=0) then user:=2 else user:=1;
+    repeat
+      g:=true;
+      repeat
+        writeln('Игрок № ',user,' введите координаты');
+        readln(x,y);
+      until ((x&lt;=3)and(y&lt;=3));
+      if (check_point(x,y)) then
+        begin
+          repeat
+            writeln('введите число которое хотите добавить');
+            readln(number);
+          until ((number&lt;=9)and(number&gt;=1));
+          if (Action_Stat(number,user,i)) then g:=false;
+        end;
+      if g then writeln('ошибка при вводе данных');
+    until (g=false);
+
+    A[x,y]:=number;
+
+    if Check_Sum() then
+      begin
+        print_mas();
+        writeln('игрок № ',user,' проиграл');
+        f:=false;
+      end;
+    inc(i);
+  until (f=false);
+  readln;
+end.
+
+</textarea>

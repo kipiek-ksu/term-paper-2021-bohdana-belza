@@ -1,0 +1,306 @@
+/* 
+
+	Main Course Content
+	Alex Mills - SIDE - 14/12/2010
+	Theme: Connect Core (Royal) 
+
+*/
+
+#region-main .region-content
+{
+	padding-top: 9px;
+}
+
+/* 
+
+	The heading block is dsiplay generally when viewing a course over view.
+	
+	IE6 has problems showing a image behind a 'h2' text object...
+
+*/
+
+h2.headingblock
+{
+	border:1px solid #999999;
+	border-radius: 0px !important;
+	-moz-border-radius: 0px;
+	background-image: url([[setting:coursegradient]]);
+	background-repeat: repeat-x;
+	color: #333333;
+	
+	font-size: 13px;
+}
+
+
+/* 
+	BOXES
+	
+	Course Boxes - these are generally shown as 'Courses Available' 
+	General Boxes - holds non custom content like text and html
+
+*/
+
+.coursebox
+{
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-color: #999999 !important;
+}
+
+.generalbox
+{
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-color: #999999 !important;
+}
+
+/* 
+
+	For some reason, lesson edit pages use tables for layout,
+	This is their style 
+
+*/
+
+.generaltable
+{
+	border-color: #999999 !important;
+}
+
+.generaltable .cell
+{
+	border-color: #999999 !important;
+}
+
+/* 
+
+	Course Content Sections (Topics/Weeks etc) 
+
+*/
+
+.section 
+{
+	border-color: #999999 !important;
+}
+
+.course-content .current
+{
+	background-color: #cfd9e7 !important;
+}
+
+
+/* 
+
+	Forum header list is the main list of disucssions in a course 
+
+*/
+
+.forumheaderlist
+{
+	border-color: #999999 !important;
+}
+
+.forumheaderlist .header
+{
+	background-image: url([[setting:coursegradient]]);
+	border-bottom-width: 1px;
+	border-bottom-color: #999999;
+	border-bottom-style: solid;
+	
+	color: #333333;
+}	
+
+/* 
+
+	Forum discussion objects 
+
+*/
+
+.forumpost
+{
+	border-color: #999999 !important;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+}
+
+
+/* 
+
+	Tab Tree Refresh/Reset for IE6
+	
+	A better colour scheme is required for IE6
+	
+	The use of the '!important' tag is so that all tab tree's get the styling
+	
+	A lot more work is required to get these tabs working better.
+
+*/
+
+.tabtree ul.tabrow0
+{
+	height: 30px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.tabtree ul.tabrow0 li a
+{
+	padding: 0px !important;
+	background-image: none !important;
+}
+
+.tabtree ul.tabrow0 li span
+{
+	padding: 0px !important;
+	background-image: none !important;
+}
+
+/* 
+
+	Individual tab items
+	
+	The link-span style has been dropped for a css-complete version
+	that's smaller, faster, prettier and easier to use/code.
+
+*/
+
+.tabtree ul.tabrow0 li a
+{
+	padding-top: 7px !important;
+	padding-bottom: 5px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	
+	border-left: solid 1px #a4a8ad;
+	border-top: solid 1px #a4a8ad;
+	border-bottom: solid 1px #a4a8ad;
+	
+	background-color: #eeeeee;
+	color: #0a3366;
+	
+	position: relative !important;
+	
+	text-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, rgb(255,255,255)), color-stop(0.05, rgb(237,238,242)), color-stop(1.0, rgb(220,220,226))) !important;
+	background: -moz-linear-gradient(270deg, rgb(255,255,255), rgb(237,238,242) 5%, rgb(220,220,226)) !important;
+	
+}
+
+/* 
+
+	The First item of the first tab bar.
+	This is to add the css border radius for modern browsers 
+
+*/
+
+.tabtree ul.tabrow0 li.first a
+{
+	-webkit-border-radius: 5px 0px 0px 5px;
+	-moz-border-radius: 5px 0px 0px 5px;
+	border-radius: 5px 0px 0px 5px;
+}
+
+/* 
+
+	The last item of the first row of tabs
+	This adds the missing right border and curved corners for modern browsers 
+
+*/
+
+.tabtree ul.tabrow0 li.last a
+{
+	border-right: solid 1px #a4a8ad;
+	
+	-webkit-border-radius: 0px 5px 5px 0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	border-radius: 0px 5px 5px 0px;
+}
+
+/* 
+
+	The selected tab item for all tab rows. 
+
+*/
+
+.tabtree ul.tabrow0 li.selected a
+{
+	background-color: #cccccc;
+	color: #36373a;
+	
+	text-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, rgb(220,220,226)), color-stop(1.0, rgb(237,238,242))) !important;
+	background: -moz-linear-gradient(270deg, rgb(220,220,226), rgb(237,238,242)) !important;
+}
+
+/* 
+
+	Tab Row 2 IE Poor Code Layout Fix *delicate hack*
+	The second and third lists should be seperate for best performance
+
+*/
+
+.tabtree ul.tabrow0 li ul.tabrow1
+{
+	left: 0px;
+	top: 35px;
+	z-index: 99;
+	background-image: none !important;
+	border: none !important;
+	
+	position: absolute !important;
+	
+	height: 25px;
+	padding: 0px;
+	margin-top: 9px;
+}
+
+/* 
+
+	The 'empty' row divider fix for IE6 
+
+*/
+
+.tabtree .empty
+{
+	left: 0px;
+}
+
+
+/* 
+
+	Quiz Module Cleanup
+	
+	Layout is	Page
+					questions
+						add page
+				Page
+					questions
+						add page	
+
+*/
+
+#page-mod-quiz-edit .quizpage
+{
+	margin-top: 10px;
+}
+
+#page-mod-quiz-edit .editq .addpage
+{
+	margin-bottom: 20px;
+}
+
+/* 
+
+	The grey background for each page that contains questions 
+
+*/
+
+#page-mod-quiz-edit .quizpage .pagecontent
+{
+	border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+}
+
+
+
+
+

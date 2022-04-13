@@ -1,0 +1,21 @@
+/*******************************************************************
+ styles_frontpage.css
+  
+ This CSS file contains all color definitions like 
+ background-color, font-color, border-color etc.
+
+ 
+
+*******************************************************************/
+
+.frontpage { 
+align: center;
+vertical-align: middle; 
+padding: 5px;
+border: 1px solid ;
+height: 160px;
+width: 160px;
+display: block;
+} 
+
+

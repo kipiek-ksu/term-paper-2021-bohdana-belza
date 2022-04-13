@@ -1,0 +1,95 @@
+/*
+Docking Module
+-----------------------*/
+
+body.has_dock { width: 97%; margin-left:3%} /* This allows you to shrink the main body of */
+                                        /* your page to accomodate the docking module */
+
+#dock {
+    width:3%;
+    position:fixed;
+    top:0px;
+    left:0px;
+    height:100%;
+    background: #333 url([[pix:theme|dock/dockbg]]) repeat-y center top;
+    border-right: 1px solid #444;
+    font-family: sans-serif;
+    z-index:11000;
+}
+#dock.nothingdocked {
+    visibility: hidden;
+    display:none;
+}
+#dock .dockeditem .firstdockitem {
+    margin-top:1em;
+}
+#dock .dockedtitle {
+    background: url([[pix:theme|dock/dockdiv]]) no-repeat left top;
+    padding-bottom: 5px;
+    cursor:pointer;
+}
+#dock .dockedtitle h2 {
+    margin: 0;
+    padding: 10px 3px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+#dock .dockedtitle .filterrotate {
+    margin-left:10px;
+}
+#dock .controls {
+    position:absolute;
+    bottom:1em;
+    text-align:center;
+    width:100%;
+}
+#dock .controls img {cursor:pointer;}
+
+/*
+Docked Item Panel
+-----------------------*/
+
+#dockeditempanel {
+    width: 150px;
+    position:relative;
+    z-index:12000;
+    left:100%;
+}
+#dockeditempanel.dockitempanel_hidden {
+    display:none;
+}
+#dockeditempanel .dockeditempanel_content {
+    color: #616161;
+    border:1px dotted #616161;
+    background-color: #fff;
+    z-index:12050;
+}
+#dockeditempanel .dockeditempanel_bd {
+    overflow:auto;
+    width:auto;
+}
+#dockeditempanel .dockeditempanel_bd .block_docked {
+    margin:10px;
+}
+#dockeditempanel .block_calendar_month.block_docked {
+    text-align: center;
+}
+#dockeditempanel .dockeditempanel_hd {
+    border-bottom:1px solid #000;
+    text-align:right;
+}
+#dockeditempanel .dockeditempanel_hd h2 {
+    display:inline;
+    margin:0;
+    padding-right:1em;
+    font-size: 90%;
+}
+#dockeditempanel .dockeditempanel_hd .commands {
+    display:inline;
+}
+
+#dockeditempanel .dockeditempanel_hd .commands img {
+    margin-right:3px;
+    vertical-align:middle;
+}
